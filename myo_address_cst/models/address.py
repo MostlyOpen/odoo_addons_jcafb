@@ -21,6 +21,14 @@
 from openerp import models
 
 
+class AddressCategory(models.Model):
+    _inherit = 'myo.address.category'
+
+    _defaults = {
+        'active_history': True,
+    }
+
+
 class Address(models.Model):
     _inherit = 'myo.address'
 
