@@ -25,7 +25,7 @@ class AddressCategory(models.Model):
     _inherit = 'myo.address.category'
 
     _defaults = {
-        'active_history': True,
+        'active_log': True,
     }
 
 
@@ -33,5 +33,7 @@ class Address(models.Model):
     _inherit = 'myo.address'
 
     _defaults = {
-        'active_history': True,
+        'name': '/',
+        'automatic_set_name': True,
+        'active_log': True,
     }

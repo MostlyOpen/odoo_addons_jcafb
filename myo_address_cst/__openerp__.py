@@ -27,7 +27,7 @@
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'depends': [
-        'myo_address',
+        'myo_address_l10n_br',
     ],
     'data': [
         'data/address_seq.xml',
