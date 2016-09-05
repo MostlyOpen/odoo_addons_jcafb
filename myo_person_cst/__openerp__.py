@@ -27,7 +27,7 @@
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'depends': [
-        'myo_person',
+        'myo_person_l10n_br',
     ],
     'data': [
         'data/person_seq.xml',
