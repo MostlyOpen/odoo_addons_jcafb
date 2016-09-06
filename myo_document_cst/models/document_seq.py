@@ -24,7 +24,7 @@ from openerp import models, fields
 class Document(models.Model):
     _inherit = 'myo.document'
 
-    # name = fields.Char('Code', select=1, required=False, readonly=False, default=False,
+    # code = fields.Char('Code', select=1, required=False, readonly=False, default=False,
     #                    help='Use "/" to get an automatic new Document Code.')
-    name = fields.Char('Code', select=1, required=False, readonly=False, default='/',
+    code = fields.Char('Code', select=1, required=False, readonly=False, default='/',
                        help='Use "/" to get an automatic new Document Code.')
