@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="myo_employee.Professor_Coordenador" model="hr.job">
+            <field name="name">Professor Coordenador</field>
+        </record>
+
+        <record id="myo_employee.Farmaceutico_Responsavel" model="hr.job">
+            <field name="name">Farmacêutico Responsável</field>
+        </record>
+
+        <record id="myo_employee.Consultor_de_TI" model="hr.job">
+            <field name="name">Consultor de TI</field>
+        </record>
+
+        <record id="myo_employee.Coordenador_Geral" model="hr.job">
+            <field name="name">Coordenador Geral</field>
+        </record>
+
+        <record id="myo_employee.Coordenador_de_Comunicacao" model="hr.job">
+            <field name="name">Coordenador de Comunicação</field>
+        </record>
+
+        <record id="myo_employee.Coordenador_de_Campo" model="hr.job">
+            <field name="name">Coordenador de Campo</field>
+        </record>
+
+        <record id="myo_employee.Coordenador_de_Analises" model="hr.job">
+            <field name="name">Coordenador de Análises</field>
+        </record>
+
+        <record id="myo_employee.Coordenador_de_Campanha" model="hr.job">
+            <field name="name">Coordenador de Campanha</field>
+        </record>
+
+        <record id="myo_employee.Jornadeiro_de_Campo" model="hr.job">
+            <field name="name">Jornadeiro de Campo</field>
+        </record>
+
+        <record id="myo_employee.Jornadeiro_de_Analises" model="hr.job">
+            <field name="name">Jornadeiro de Análises</field>
+        </record>
+
+        <record id="myo_employee.Jornadeiro_de_Campalise" model="hr.job">
+            <field name="name">Jornadeiro de Campálise</field>
+        </record>
+
+        <record id="myo_employee.Farmaceutico_Residente" model="hr.job">
+            <field name="name">Farmacêutico Residente</field>
+        </record>
+
+        <record id="myo_employee.Veterinario_Residente" model="hr.job">
+            <field name="name">Veterinário Residente</field>
+        </record>
+
+    </data>
+</openerp>

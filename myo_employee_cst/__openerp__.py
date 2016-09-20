@@ -31,6 +31,7 @@
     ],
     'data': [
         'data/hr_employee_seq.xml',
+        'data/hr_employee_data.xml',
     ],
     'demo': [],
     'test': [],
