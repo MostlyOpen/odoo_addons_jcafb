@@ -1,0 +1,175 @@
+TCR17:
+    model: survey.survey
+    title: 'JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAMES COPROPARASITOLÓGICOS, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    TCR17_01:
+        model: survey.page
+        title: 'Identificação do Termo de Consentimento'
+        description: ''
+
+        TCR17_01_01:
+            model: survey.question
+            question: 'Código do Termo de Consentimento (preencher somente após a validação do preenchimento):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Termo de Consentimento.'
+
+        TCR17_01_02:
+            model: survey.question
+            question: 'Data da Assinatura (dd-mm-yyyy):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da assinatura do Termo de Consentimento.'
+
+        TCR17_01_03:
+            model: survey.question
+            question: 'Código do Professor Responsável:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Professor Responsável que assinou o Termo de Consentimento.'
+
+        TCR17_01_04:
+            model: survey.question
+            question: 'Códigos do(s) Coletor(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos de quem colheu a assinatura do Termo.'
+
+    TCR17_02:
+        model: survey.page
+        title: 'Identificação do Indivíduo'
+        description: ''
+
+        TCR17_02_01:
+            model: survey.question
+            question: 'Nome do Indivíduo:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Indivíduo.'
+
+        TCR17_02_02:
+            model: survey.question
+            question: 'Código do Indivíduo:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Indivíduo.'
+
+        TCR17_02_03:
+            model: survey.question
+            question: 'Nome do Responsável Legal'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Responsável Legal.'
+
+        TCR17_02_04:
+            model: survey.question
+            question: 'Código do Responsável Legal'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Responsável Legal.'
+
+        TCR17_02_05:
+            model: survey.question
+            question: 'Quem assinou o Termo de Consentimento?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Informar quem assinou o Termo de Consentimento.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCR17_02_05_01:
+                model: survey.label
+                value: 'a) Indivíduo'
+
+            TCR17_02_05_02:
+                model: survey.label
+                value: 'b) Responsável Legal'
+
+    TCR17_03:
+        model: survey.page
+        title: 'Consentimentos'
+        description: ''
+
+        TCR17_03_01:
+            model: survey.question
+            question: '1) Questionário Socioeconômico'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCR17_03_01_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TCR17_03_01_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TCR17_03_02:
+            model: survey.question
+            question: '2) Exame coproparasitológico'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCR17_03_02_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TCR17_03_02_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TCR17_03_03:
+            model: survey.question
+            question: '3) Swab Anal'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCR17_03_03_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TCR17_03_03_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TCR17_03_04:
+            model: survey.question
+            question: '4) Exame de Anemia'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCR17_03_04_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TCR17_03_04_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+

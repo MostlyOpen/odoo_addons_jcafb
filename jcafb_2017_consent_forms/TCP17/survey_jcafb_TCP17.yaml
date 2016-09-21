@@ -1,0 +1,118 @@
+TCP17:
+    model: survey.survey
+    title: 'JCAFB 2017 - TERMO DE CONSENTIMENTO PARA A CAMPANHA DE DETECÇÃO DE DIABETES, HIPERTENSÃO ARTERIAL E HIPERCOLESTEROLEMIA'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    TCP17_01:
+        model: survey.page
+        title: 'Identificação do Termo de Consentimento'
+        description: ''
+
+        TCP17_01_01:
+            model: survey.question
+            question: 'Código do Termo de Consentimento (preencher somente após a validação do preenchimento):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Termo de Consentimento.'
+
+        TCP17_01_02:
+            model: survey.question
+            question: 'Data da Assinatura (dd-mm-yyyy):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da assinatura do Termo de Consentimento.'
+
+        TCP17_01_03:
+            model: survey.question
+            question: 'Código do Professor Responsável:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Professor Responsável que assinou o Termo de Consentimento.'
+
+        TCP17_01_04:
+            model: survey.question
+            question: 'Códigos do(s) Coletor(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos de quem colheu a assinatura do Termo.'
+
+    TCP17_02:
+        model: survey.page
+        title: 'Identificação do Indivíduo'
+        description: ''
+
+        TCP17_02_01:
+            model: survey.question
+            question: 'Nome do Indivíduo:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Indivíduo.'
+
+        TCP17_02_02:
+            model: survey.question
+            question: 'Código do Indivíduo:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Indivíduo.'
+
+        TCP17_02_03:
+            model: survey.question
+            question: 'Nome do Responsável Legal'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Responsável Legal.'
+
+        TCP17_02_04:
+            model: survey.question
+            question: 'Código do Responsável Legal'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Responsável Legal.'
+
+        TCP17_02_05:
+            model: survey.question
+            question: 'Quem assinou o Termo de Consentimento?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Informar quem assinou o Termo de Consentimento.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCP17_02_05_01:
+                model: survey.label
+                value: 'a) Indivíduo'
+
+            TCP17_02_05_02:
+                model: survey.label
+                value: 'b) Responsável Legal'
+
+    TCP17_03:
+        model: survey.page
+        title: 'Termos'
+        description: ''
+
+        TCP17_03_01:
+            model: survey.question
+            question: 'Consentimento'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TCP17_03_01_01:
+                model: survey.label
+                value: 'Sim, declaro que entendi o texto acima e concordo em participar da Campanha Gratuita para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia.'
+
+            TCP17_03_01_02:
+                model: survey.label
+                value: 'Não concordo em participar.'
+

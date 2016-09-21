@@ -1,0 +1,39 @@
+[TCP17] JCAFB 2017 - TERMO DE CONSENTIMENTO PARA A CAMPANHA DE DETECÇÃO DE DIABETES, HIPERTENSÃO ARTERIAL E HIPERCOLESTEROLEMIA
+    [TCP17_01] Identificação do Termo de Consentimento
+        [TCP17_01_01] Código do Termo de Consentimento (preencher somente após a validação do preenchimento):
+            (textbox)
+            ____________________________________
+        [TCP17_01_02] Data da Assinatura (dd-mm-yyyy):
+            (textbox)
+            ____________________________________
+        [TCP17_01_03] Código do Professor Responsável:
+            (textbox)
+            ____________________________________
+        [TCP17_01_04] Códigos do(s) Coletor(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [TCP17_02] Identificação do Indivíduo
+        [TCP17_02_01] Nome do Indivíduo:
+            (textbox)
+            ____________________________________
+        [TCP17_02_02] Código do Indivíduo:
+            (textbox)
+            ____________________________________
+        [TCP17_02_03] Nome do Responsável Legal
+            (textbox)
+            ____________________________________
+        [TCP17_02_04] Código do Responsável Legal
+            (textbox)
+            ____________________________________
+        [TCP17_02_05] Quem assinou o Termo de Consentimento?
+            (simple_choice)
+            a) Indivíduo
+            b) Responsável Legal
+    [TCP17_03] Termos
+        [TCP17_03_01] Consentimento
+            (simple_choice)
+            Sim, declaro que entendi o texto acima e concordo em participar da Campanha Gratuita para Detecção de Diabetes, Hipertensão Arterial e Hipercolesterolemia.
+            Não concordo em participar.
