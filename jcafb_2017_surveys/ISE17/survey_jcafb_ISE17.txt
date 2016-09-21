@@ -1,0 +1,333 @@
+[ISE17] JCAFB 2017 - Questionário Socioeconômico Individual (Idosos)
+    [ISE17_01] Identificação do Questionário
+        [ISE17_01_01] Código do Questionário (preencher somente após a validação das respostas):
+            (textbox)
+            ____________________________________
+        [ISE17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [ISE17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [ISE17_02] Identificação do Paciente/Entrevistado
+        [ISE17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [ISE17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
+        [ISE17_02_03] Nome da Família
+            (textbox)
+            ____________________________________
+        [ISE17_02_04] Código da Família
+            (textbox)
+            ____________________________________
+        [ISE17_02_05] Entrevistado
+            (simple_choice)
+            a) Paciente
+            b) Cuidador
+            c) Outro
+            Nome e, se a resposta for "Outro", especificar____________________________________
+    [ISE17_03] Aspectos Sociais
+        [ISE17_03_01] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?
+            (multiple_choice)
+            a) Não possui Cuidador
+            b) Filho
+            c) Cônjuge
+            d) Neto(a)
+            e) Irmão(ã)
+            f) Outro familiar
+            g) Não familiar (sem laços consanguíneos)
+            h) Não sabe
+            i) Não quis responder
+            j) Não se aplica
+            Se "Outro familiar", qual a relação de parentesco?____________________________________
+        [ISE17_03_02] Tempo de Escolaridade do cuidador
+            (simple_choice)
+            a) 0 anos
+            b) 1 a 3 anos
+            c) 4 a 11 anos
+            d) 12 a 22 anos
+            e) Mais que 22 anos
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+        [ISE17_03_03] O(A) Sr.(a) é:
+            (simple_choice)
+            a) Solteiro(a)
+            b) Casado(a) ou unido(a)
+            c) Viúvo(a)
+            d) Separado(a)
+            e) Divorciado(a)
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+        [ISE17_03_04] Quem mora com o Sr(a) na sua casa? (além do idoso)
+            (multiple_choice)
+            a) Ninguém. Moro sozinho.
+            b) Familiar - esposa 
+            c) Familiar(es) – Outro(s)
+            d) Amigo(s)
+            e) Outra resposta
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Especificar quando necessário____________________________________
+        [ISE17_03_05] O Sr(a) tem filhos?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [ISE17_03_06] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
+            (simple_choice)
+            a) É analfabeto
+            b) Não é analfabeto, mas não frequentou a escola
+            c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário
+            d) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio
+            e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto
+            f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo
+            g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)
+            h) Ensino Superior incompleto
+            i) Ensino Superior completo
+            j) Especialização
+            k) Pós-graduação (Mestrado/Doutorado)
+            l) Não sabe
+            m) Não quis responder
+            n) Não se aplica
+        [ISE17_03_07] O(A) Sr.(a) sabe ler e escrever um recado?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [ISE17_03_08] Qual destas opções o(a) descreve melhor:
+            (simple_choice)
+            a) Branco(a)
+            b) Negro(a)
+            c) Pardo(a)
+            d) Amarelo(a)
+            e) Indígena
+            f) Outro(a)
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+            Se "Outro", qual?____________________________________
+        [ISE17_03_09] Qual é a sua religião?
+            (simple_choice)
+            a) Católica Apostólica Romana
+            b) Evangélica
+            c) Espírita
+            d) Umbanda
+            e) Candomblé
+            f) Outra
+            g) Sem religião
+            h) Não sabe
+            i) Não quis responder
+            j) Não se aplica
+            Se "Outra", qual?____________________________________
+    [ISE17_04] Hábitos
+        [ISE17_04_01] O que costuma fazer no tempo livre?
+            (multiple_choice)
+            a) Caminha pela cidade
+            b) Pratica exercícios físicos
+            c) Faz trabalhos manuais
+            d) Sai para conversar com as pessoas
+            e) Fica dentro de casa descansando
+            f) Frequenta grupos de atividades
+            g) Cuida da casa
+            h) Outra atividade
+            i) Não sabe
+            j) Não quis responder
+            k) Não se aplica
+            Se "Outra atividade", qual?____________________________________
+        [ISE17_04_02] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?
+            (simple_choice)
+            a) Sim. Qual?
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Se realiza, qual?____________________________________
+        [ISE17_04_03] Com que frequência caminha ou pratica exercícios?
+            (simple_choice)
+            a) 1x por semana
+            b) 2x por semana
+            c) 3x por semana
+            d) 4x por semana
+            e) 5x por semana
+            f) 6x por semana
+            g) Todos os dias
+            h) Não caminha nem pratica exercícios físicos
+            i) Não sabe
+            j) Não quis responder
+            k) Não se aplica
+        [ISE17_04_04] O(A) Sr.(a) tem ou teve o hábito de fumar?
+            (simple_choice)
+            a) Nunca fumou
+            b) Fuma atualmente
+            c) Já fumou, mas não fuma atualmente
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [ISE17_04_05] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?
+            (simple_choice)
+            a) Não
+            b) Sim, esporadicamente (menos que 1 vez por mês)
+            c) Sim, 1 vez por mês
+            d) Sim, 1 vez por semana (ou em finais de semana)
+            e) Sim, todos os dias
+            f) Outra resposta
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+            Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).____________________________________
+    [ISE17_05] Saúde
+        [ISE17_05_01] Tem alguma dificuldade para:
+            (multiple_choice)
+            a) Falar
+            b) Engolir
+            c) Enxergar
+            d) Escutar
+            e) Movimentar-se
+            f) Urinar
+            g) Outras
+            h) Não tem dificuldades
+            i) Não sabe
+            j) Não quis responder
+            k) Não se aplica
+            Se "Outras", quais?____________________________________
+        [ISE17_05_02] O(A) Sr.(a) diria que sua saúde é:
+            (simple_choice)
+            a) Muito boa
+            b) Boa
+            c) Regular
+            d) Ruim
+            e) Muito ruim
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+        [ISE17_05_03] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é
+            (simple_choice)
+            a) Melhor
+            b) Igual
+            c) Pior
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+    [ISE17_06] Médico
+        [ISE17_06_01] Que motivo(s) o leva(m) a procurar atendimento médico?
+            (multiple_choice)
+            a) Somente quando está doente
+            b) Realizam tratamento
+            c) Exames de rotina
+            d) Ocorrência de acidente
+            e) Outros
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Se "Outros", quais?____________________________________
+        [ISE17_06_02] Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Se "Não", quantas vezes?____________________________________
+        [ISE17_06_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?
+            (simple_choice)
+            a) Nenhuma 
+            b) 1 a 2 vezes
+            c) 3 a 4 vezes
+            d) 1 vez a cada 2 meses
+            e) 1 vez por mês
+            f) Outra resposta
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+            Se a resposta for "Outra resposta", especificar____________________________________
+        [ISE17_06_04] O Sr(a). teve alguma queda depois que completou 60 anos?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Se "Sim", quantas vezes?____________________________________
+        [ISE17_06_05] Alguma vez um médico lhe disse que tem alguma doença?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Se "Sim", quais?____________________________________
+    [ISE17_07] Alimentação
+        [ISE17_07_01] Como o Sr(a) costuma consumir a carne?
+            (simple_choice)
+            a) Não consome carne
+            b) Bem passada
+            c) Mal passada / Crua
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+    [ISE17_08] Parasitoses
+        [ISE17_08_01] O Sr(a) já fez exame de fezes?
+            (multiple_choice)
+            a) Não
+            b) Sim, resultado negativo para verme
+            c) Sim, mas não sabe o resultado
+            d) Sim, resultado positivo para verme
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Se a resposta for "d", qual verme?____________________________________
+        [ISE17_08_02] Como descobriu que estava com a doença?
+            (multiple_choice)
+            a) Com resultado de exame de fezes
+            b) Saiu nas fezes
+            c) Foi no médico
+            d) Outros
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Se "Outros", quais?____________________________________
+        [ISE17_08_03] Já tomou vermífugo (lombrigueira)?
+            (simple_choice)
+            a) Não
+            b) Sim, há seis meses ou menos e "botou" verme
+            c) Sim, há seis meses ou menos, mas não "botou" verme
+            d) Sim, há mais de seis meses, e "botou" verme
+            e) Sim, há mais de seis meses, mas não "botou" verme
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+    [ISE17_09] Aspecto Econômico
+        [ISE17_09_01] O(A) Sr.(a) trabalha?
+            (simple_choice)
+            a) Não (e não é aposentado)
+            b) Não. É aposentado
+            c) Sim
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [ISE17_09_02] O(A) Sr.(a) trabalha (remunerado) atualmente?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [ISE17_09_03] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)?
+            (simple_choice)
+            a) Valor (colocar abaixo)
+            b) Não sabe
+            c) Não quis responder
+            d) Não se aplica
+            Colocar o valor (somente o número)____________________________________

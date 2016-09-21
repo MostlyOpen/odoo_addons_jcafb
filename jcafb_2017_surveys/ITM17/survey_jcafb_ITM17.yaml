@@ -1,0 +1,816 @@
+ITM17:
+    model: survey.survey
+    title: 'JCAFB 2017 - Interpretação das Tabelas de Medicamentos'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    ITM17_01:
+        model: survey.page
+        title: 'Identificação do Questionário'
+        description: ''
+
+        ITM17_01_01:
+            model: survey.question
+            question: 'Código do Questionário (preencher somente após a validação das respostas):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Questionário.'
+
+        ITM17_01_02:
+            model: survey.question
+            question: 'Data da Entrevista (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da entrevista.'
+
+        ITM17_01_03:
+            model: survey.question
+            question: 'Códigos do(s) Entrevistador(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos quem fez a entrevista.'
+
+    ITM17_02:
+        model: survey.page
+        title: 'Identificação do Paciente/Entrevistado'
+        description: ''
+
+        ITM17_02_01:
+            model: survey.question
+            question: 'Nome do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Paciente.'
+
+        ITM17_02_02:
+            model: survey.question
+            question: 'Código do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Paciente.'
+
+    ITM17_03:
+        model: survey.page
+        title: 'Medicamentos de USO CONTÍNUO'
+        description: ''
+
+        ITM17_03_01:
+            model: survey.question
+            question: 'Quantos medicamentos de USO CONTÍNUO o paciente está tomando atualmente?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_03_01_01:
+                model: survey.label
+                value: 'a) Nenhum'
+
+            ITM17_03_01_02:
+                model: survey.label
+                value: 'b) 1 a 3'
+
+            ITM17_03_01_03:
+                model: survey.label
+                value: 'c) 4 a 6'
+
+            ITM17_03_01_04:
+                model: survey.label
+                value: 'd) 7 a 10'
+
+            ITM17_03_01_05:
+                model: survey.label
+                value: 'e) 11 a 15'
+
+            ITM17_03_01_06:
+                model: survey.label
+                value: 'f) Mais que 15'
+
+            ITM17_03_01_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_03_01_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_03_01_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_02:
+            model: survey.question
+            question: 'RECEITAS VÁLIDAS: Dos medicamentos DE USO CONTÍNUO em uso atualmente, qual a porcentagem aproximada dos que possuem receita médica válida?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_03_02_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_02_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_02_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_02_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_02_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_02_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_03_02_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_03_02_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_03_02_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_03:
+            model: survey.question
+            question: 'Onde  A MAIORIA dos medicamentos de USO CONTÍNUO é adquirida?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se “Outra resposta”, especificar: '
+
+            ITM17_03_03_01:
+                model: survey.label
+                value: 'a) Farmácia'
+
+            ITM17_03_03_02:
+                model: survey.label
+                value: 'b) Posto'
+
+            ITM17_03_03_03:
+                model: survey.label
+                value: 'c) Outra resposta'
+
+            ITM17_03_03_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+        ITM17_03_04:
+            model: survey.question
+            question: 'CONSERVAÇÃO: Que porcentagem aproximada dos medicamentos DE USO CONTÍNUO o paciente guarda em local apropriado?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_03_04_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_04_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_04_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_04_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_04_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_04_06:
+                model: survey.label
+                value: 'f) 81 a 100%'
+
+            ITM17_03_04_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_03_04_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_03_04_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_05:
+            model: survey.question
+            question: 'INDICAÇÃO: Dos medicamentos DE USO CONTÍNUO em uso(com ou sem receita médica), de quantos o paciente tem conhecimento da indicação, isto é, sabe porque está tomando? (em % aproximada) ?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_03_05_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_05_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_05_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_05_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_05_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_05_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_03_05_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_03_05_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_03_05_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_06:
+            model: survey.question
+            question: 'Quantos dos medicamentos DE USO CONTÍNUO em uso atualmente são tomados/utilizados corretamente? (em % aproximada)'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for “h) Não determinado”, especificar:'
+
+            ITM17_03_06_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_06_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_06_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_06_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_06_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_06_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_03_06_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_03_06_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_03_06_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_07:
+            model: survey.question
+            question: 'Quantas vezes o paciente esqueceu de tomar UM MESMO MEDICAMENTO (DE USO CONTÍNUO) nos últimos 15 dias?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_03_07_01:
+                model: survey.label
+                value: 'a) 1 vez'
+
+            ITM17_03_07_02:
+                model: survey.label
+                value: 'b) 2 vezes'
+
+            ITM17_03_07_03:
+                model: survey.label
+                value: 'c) 3 vezes'
+
+            ITM17_03_07_04:
+                model: survey.label
+                value: 'd) 4 vezes'
+
+            ITM17_03_07_05:
+                model: survey.label
+                value: 'e) Mais que 4 vezes'
+
+            ITM17_03_07_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ITM17_03_07_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ITM17_03_07_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ITM17_03_08:
+            model: survey.question
+            question: 'TEMPO DE USO: Quantos dos medicamentos DE USO CONTÍNUO em uso (com ou sem receita médica) o paciente toma há mais de 1 ano? (em % aproximada)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_03_08_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_08_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_08_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_08_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_08_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_08_06:
+                model: survey.label
+                value: 'f) 81 a 100%'
+
+            ITM17_03_08_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_03_08_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_03_08_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_09:
+            model: survey.question
+            question: 'PRAZO DE VALIDADE: dos medicamentos DE USO CONTÍNUO em uso (com ou sem receita médica), quantos estão fora do prazo de validade? (em % aproximada)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_03_09_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_03_09_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_03_09_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_03_09_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_03_09_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_03_09_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_03_09_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_03_09_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_03_09_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_03_10:
+            model: survey.question
+            question: 'ADESÃO: Qual o grau de adesão do paciente aos tratamentos com os medicamentos de USO CONTÍNUO, isto é, até que ponto ele toma os medicamentos obedecendo fielmente à prescrição médica? (em % aproximada)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_03_10_01:
+                model: survey.label
+                value: 'a) Não adesão (em 0% dos casos)'
+
+            ITM17_03_10_02:
+                model: survey.label
+                value: 'b) Baixa adesão (em até 30% dos casos)'
+
+            ITM17_03_10_03:
+                model: survey.label
+                value: 'c) Média Adesão (em 31 a 70% dos casos)'
+
+            ITM17_03_10_04:
+                model: survey.label
+                value: 'd) d) Alta adesão (em 71 a 99% dos casos)'
+
+            ITM17_03_10_05:
+                model: survey.label
+                value: 'e) Adesão total (em 100% dos casos)'
+
+            ITM17_03_10_06:
+                model: survey.label
+                value: 'f) Não determinado. Por que?'
+
+            ITM17_03_10_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+    ITM17_04:
+        model: survey.page
+        title: 'Medicamentos de Uso NÃO Contínuo'
+        description: ''
+
+        ITM17_04_01:
+            model: survey.question
+            question: 'Quantos medicamentos de Uso NÃO Contínuo o paciente apresentou?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_04_01_01:
+                model: survey.label
+                value: 'a) Nenhum'
+
+            ITM17_04_01_02:
+                model: survey.label
+                value: 'b) 1 a 3'
+
+            ITM17_04_01_03:
+                model: survey.label
+                value: 'c) 4 a 6'
+
+            ITM17_04_01_04:
+                model: survey.label
+                value: 'd) 7 a 10'
+
+            ITM17_04_01_05:
+                model: survey.label
+                value: 'e) 11 a 15'
+
+            ITM17_04_01_06:
+                model: survey.label
+                value: 'f) Mais que 15'
+
+            ITM17_04_01_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_04_01_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_04_01_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_04_02:
+            model: survey.question
+            question: 'Onde  A MAIORIA dos medicamentos de Uso NÃO Contínuo é adquirida?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se “Outra resposta”, especificar: '
+
+            ITM17_04_02_01:
+                model: survey.label
+                value: 'a) Farmácia'
+
+            ITM17_04_02_02:
+                model: survey.label
+                value: 'b) Posto'
+
+            ITM17_04_02_03:
+                model: survey.label
+                value: 'c) Outra resposta'
+
+            ITM17_04_02_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+        ITM17_04_03:
+            model: survey.question
+            question: 'CONSERVAÇÃO: Oss medicamentos de Uso NÃO Contínuo ficam armazenados em local apropriado?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_04_03_01:
+                model: survey.label
+                value: 'a) Sim'
+
+            ITM17_04_03_02:
+                model: survey.label
+                value: 'b) Não'
+
+            ITM17_04_03_03:
+                model: survey.label
+                value: 'c) Alguns'
+
+            ITM17_04_03_04:
+                model: survey.label
+                value: 'd) A maioria'
+
+            ITM17_04_03_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_04_03_06:
+                model: survey.label
+                value: 'f) 81 a 100%'
+
+            ITM17_04_03_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_04_03_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_04_03_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_04_04:
+            model: survey.question
+            question: 'INDICAÇÃO: Dos medicamentos de Uso NÃO Contínuo, de quantos o paciente tem conhecimento da indicação, isto é, sabe para que servem? (em % aproximada) ?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_04_04_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_04_04_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_04_04_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_04_04_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_04_04_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_04_04_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_04_04_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_04_04_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_04_04_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_04_05:
+            model: survey.question
+            question: 'PRAZO DE VALIDADE: dos medicamentos de Uso NÃO Contínuo, quantos estão fora do prazo de validade? (em % aproximada)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "h) Não determinado", especificar'
+
+            ITM17_04_05_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_04_05_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_04_05_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_04_05_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_04_05_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_04_05_06:
+                model: survey.label
+                value: 'f) 81 a 99%'
+
+            ITM17_04_05_07:
+                model: survey.label
+                value: 'g) 100%'
+
+            ITM17_04_05_08:
+                model: survey.label
+                value: 'h) Não determinado. Por que?'
+
+            ITM17_04_05_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+    ITM17_05:
+        model: survey.page
+        title: 'Total de Medicamentos'
+        description: ''
+
+        ITM17_05_01:
+            model: survey.question
+            question: 'TOTAL DE MEDICAMENTOS: Quantos medicamentos, no total, o paciente apresentou?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_05_01_01:
+                model: survey.label
+                value: 'a) Nenhum'
+
+            ITM17_05_01_02:
+                model: survey.label
+                value: 'b) 1 a 3'
+
+            ITM17_05_01_03:
+                model: survey.label
+                value: 'c) 4 a 6'
+
+            ITM17_05_01_04:
+                model: survey.label
+                value: 'd) 7 a 10'
+
+            ITM17_05_01_05:
+                model: survey.label
+                value: 'e) 11 a 15'
+
+            ITM17_05_01_06:
+                model: survey.label
+                value: 'f) Mais que 15'
+
+            ITM17_05_01_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_05_01_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_05_01_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ITM17_05_02:
+            model: survey.question
+            question: 'MEDICAMENTOS RECOLHIDOS: Deste total, qual a porcentagem recolhida (independente do motivo)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ITM17_05_02_01:
+                model: survey.label
+                value: 'a) 0%'
+
+            ITM17_05_02_02:
+                model: survey.label
+                value: 'b) 1 a 20%'
+
+            ITM17_05_02_03:
+                model: survey.label
+                value: 'c) 21 a 40%'
+
+            ITM17_05_02_04:
+                model: survey.label
+                value: 'd) 41 a 60%'
+
+            ITM17_05_02_05:
+                model: survey.label
+                value: 'e) 61 a 80%'
+
+            ITM17_05_02_06:
+                model: survey.label
+                value: 'f) 81 a 100%'
+
+            ITM17_05_02_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ITM17_05_02_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ITM17_05_02_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+

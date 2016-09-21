@@ -1,0 +1,496 @@
+CSE17:
+    model: survey.survey
+    title: 'JCAFB 2017 - Questionário Socioeconômico Individual (Crianças)'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    CSE17_01:
+        model: survey.page
+        title: 'Identificação do Questionário'
+        description: ''
+
+        CSE17_01_01:
+            model: survey.question
+            question: 'Código do Questionário (preencher somente após a validação das respostas):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Questionário.'
+
+        CSE17_01_02:
+            model: survey.question
+            question: 'Data da Entrevista (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da entrevista.'
+
+        CSE17_01_03:
+            model: survey.question
+            question: 'Códigos do(s) Entrevistador(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos quem fez a entrevista.'
+
+    CSE17_02:
+        model: survey.page
+        title: 'Identificação da Criança/Entrevistado'
+        description: ''
+
+        CSE17_02_01:
+            model: survey.question
+            question: 'Nome da Criança:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome da Criança.'
+
+        CSE17_02_02:
+            model: survey.question
+            question: 'Código da Criança:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código da Criança.'
+
+        CSE17_02_03:
+            model: survey.question
+            question: 'Nome da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome da Família.'
+
+        CSE17_02_04:
+            model: survey.question
+            question: 'Código da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código da Família.'
+
+        CSE17_02_05:
+            model: survey.question
+            question: 'Entrevistado'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            comments_allowed: True
+            comments_message: 'Nome e grau de parentesco e, se a resposta for "Outro", especificar'
+
+            CSE17_02_05_01:
+                model: survey.label
+                value: 'a) Responsável'
+
+            CSE17_02_05_02:
+                model: survey.label
+                value: 'b) Cuidador'
+
+            CSE17_02_05_03:
+                model: survey.label
+                value: 'c) Outro (especificar)'
+
+    CSE17_03:
+        model: survey.page
+        title: 'Aspectos Sociais/Hábitos'
+        description: ''
+
+        CSE17_03_01:
+            model: survey.question
+            question: 'Onde a criança fica quando não está na escola?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outros", onde?'
+
+            CSE17_03_01_01:
+                model: survey.label
+                value: 'a) Creche'
+
+            CSE17_03_01_02:
+                model: survey.label
+                value: 'b) Projeto social (espaço amigo, etc...)'
+
+            CSE17_03_01_03:
+                model: survey.label
+                value: 'c) Casa de familiares'
+
+            CSE17_03_01_04:
+                model: survey.label
+                value: 'd) Em casa'
+
+            CSE17_03_01_05:
+                model: survey.label
+                value: 'e) Outros'
+
+            CSE17_03_01_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            CSE17_03_01_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            CSE17_03_01_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        CSE17_03_02:
+            model: survey.question
+            question: 'Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_03_02_01:
+                model: survey.label
+                value: 'a) 0 anos'
+
+            CSE17_03_02_02:
+                model: survey.label
+                value: 'b) 1 a 3 anos'
+
+            CSE17_03_02_03:
+                model: survey.label
+                value: 'c) 4 a 11 anos'
+
+            CSE17_03_02_04:
+                model: survey.label
+                value: 'd) 12 a 22 anos'
+
+            CSE17_03_02_05:
+                model: survey.label
+                value: 'e) Mais que 22 anos'
+
+            CSE17_03_02_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            CSE17_03_02_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            CSE17_03_02_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        CSE17_03_03:
+            model: survey.question
+            question: 'A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_03_03_01:
+                model: survey.label
+                value: 'a) Não'
+
+            CSE17_03_03_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            CSE17_03_03_03:
+                model: survey.label
+                value: 'c) Às vezes'
+
+            CSE17_03_03_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            CSE17_03_03_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            CSE17_03_03_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+        CSE17_03_04:
+            model: survey.question
+            question: 'Onde a criança costuma fazer cocô?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Complementação da resposta:'
+
+            CSE17_03_04_01:
+                model: survey.label
+                value: 'a) Vaso sanitário'
+
+            CSE17_03_04_02:
+                model: survey.label
+                value: 'b) Penico (se sim, onde joga o cocô?)'
+
+            CSE17_03_04_03:
+                model: survey.label
+                value: 'c) Fralda (se sim, onde joga a fralda suja?)'
+
+            CSE17_03_04_04:
+                model: survey.label
+                value: 'd) Outros (quintal, mato, etc). Onde?(a)'
+
+            CSE17_03_04_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            CSE17_03_04_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            CSE17_03_04_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+        CSE17_03_05:
+            model: survey.question
+            question: 'A criança tem algum dos seguintes hábitos:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_03_05_01:
+                model: survey.label
+                value: 'a) Lavar as mãos antes das refeições'
+
+            CSE17_03_05_02:
+                model: survey.label
+                value: 'b) Lavar as mãos após utilizar o banheiro'
+
+            CSE17_03_05_03:
+                model: survey.label
+                value: 'c) Andar calçada'
+
+            CSE17_03_05_04:
+                model: survey.label
+                value: 'd) Nenhum'
+
+            CSE17_03_05_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            CSE17_03_05_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            CSE17_03_05_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+    CSE17_04:
+        model: survey.page
+        title: 'Alimentação'
+        description: ''
+
+        CSE17_04_01:
+            model: survey.question
+            question: 'Como a criança costuma consumir a carne?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_04_01_01:
+                model: survey.label
+                value: 'a) Não consome carne'
+
+            CSE17_04_01_02:
+                model: survey.label
+                value: 'b) Bem passada'
+
+            CSE17_04_01_03:
+                model: survey.label
+                value: 'c) Mal passada / Crua'
+
+            CSE17_04_01_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            CSE17_04_01_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            CSE17_04_01_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+    CSE17_05:
+        model: survey.page
+        title: 'Medicamentos'
+        description: ''
+
+        CSE17_05_01:
+            model: survey.question
+            question: 'A criança tem acesso aos medicamentos?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_05_01_01:
+                model: survey.label
+                value: 'a) Sim, ela sabe onde estão guardados e os alcança quando quiser'
+
+            CSE17_05_01_02:
+                model: survey.label
+                value: 'b) Ela sabe onde estão, mas não tem acesso a eles'
+
+            CSE17_05_01_03:
+                model: survey.label
+                value: 'c) Não, estão escondidos em um local de difícil acesso'
+
+            CSE17_05_01_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            CSE17_05_01_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            CSE17_05_01_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+    CSE17_06:
+        model: survey.page
+        title: 'Parasitoses'
+        description: ''
+
+        CSE17_06_01:
+            model: survey.question
+            question: 'A criança já fez exame de fezes?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "d", qual verme?'
+
+            CSE17_06_01_01:
+                model: survey.label
+                value: 'a) Não'
+
+            CSE17_06_01_02:
+                model: survey.label
+                value: 'b) Sim, resultado negativo para verme'
+
+            CSE17_06_01_03:
+                model: survey.label
+                value: 'c) Sim, mas não sabe o resultado'
+
+            CSE17_06_01_04:
+                model: survey.label
+                value: 'd) Sim, resultado positivo para verme'
+
+            CSE17_06_01_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            CSE17_06_01_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            CSE17_06_01_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+        CSE17_06_02:
+            model: survey.question
+            question: 'Como descobriu que estava com a doença?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outros", quais?'
+
+            CSE17_06_02_01:
+                model: survey.label
+                value: 'a) Com resultado de exame de fezes'
+
+            CSE17_06_02_02:
+                model: survey.label
+                value: 'b) Saiu nas fezes'
+
+            CSE17_06_02_03:
+                model: survey.label
+                value: 'c) Foi no médico'
+
+            CSE17_06_02_04:
+                model: survey.label
+                value: 'd) Outros'
+
+            CSE17_06_02_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            CSE17_06_02_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            CSE17_06_02_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+        CSE17_06_03:
+            model: survey.question
+            question: 'A criança já tomou vermífugo (lombrigueira)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            CSE17_06_03_01:
+                model: survey.label
+                value: 'a) Não'
+
+            CSE17_06_03_02:
+                model: survey.label
+                value: 'b) Sim, há seis meses ou menos e "botou" verme'
+
+            CSE17_06_03_03:
+                model: survey.label
+                value: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
+
+            CSE17_06_03_04:
+                model: survey.label
+                value: 'd) Sim, há mais de seis meses, e "botou" verme'
+
+            CSE17_06_03_05:
+                model: survey.label
+                value: 'e) Sim, há mais de seis meses, mas não "botou" verme'
+
+            CSE17_06_03_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            CSE17_06_03_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            CSE17_06_03_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+

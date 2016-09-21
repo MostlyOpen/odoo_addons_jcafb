@@ -1,0 +1,131 @@
+[CSE17] JCAFB 2017 - Questionário Socioeconômico Individual (Crianças)
+    [CSE17_01] Identificação do Questionário
+        [CSE17_01_01] Código do Questionário (preencher somente após a validação das respostas):
+            (textbox)
+            ____________________________________
+        [CSE17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [CSE17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [CSE17_02] Identificação da Criança/Entrevistado
+        [CSE17_02_01] Nome da Criança:
+            (textbox)
+            ____________________________________
+        [CSE17_02_02] Código da Criança:
+            (textbox)
+            ____________________________________
+        [CSE17_02_03] Nome da Família
+            (textbox)
+            ____________________________________
+        [CSE17_02_04] Código da Família
+            (textbox)
+            ____________________________________
+        [CSE17_02_05] Entrevistado
+            (simple_choice)
+            a) Responsável
+            b) Cuidador
+            c) Outro (especificar)
+            Nome e grau de parentesco e, se a resposta for "Outro", especificar____________________________________
+    [CSE17_03] Aspectos Sociais/Hábitos
+        [CSE17_03_01] Onde a criança fica quando não está na escola?
+            (multiple_choice)
+            a) Creche
+            b) Projeto social (espaço amigo, etc...)
+            c) Casa de familiares
+            d) Em casa
+            e) Outros
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Se "Outros", onde?____________________________________
+        [CSE17_03_02] Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):
+            (simple_choice)
+            a) 0 anos
+            b) 1 a 3 anos
+            c) 4 a 11 anos
+            d) 12 a 22 anos
+            e) Mais que 22 anos
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+        [CSE17_03_03] A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Às vezes
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [CSE17_03_04] Onde a criança costuma fazer cocô?
+            (multiple_choice)
+            a) Vaso sanitário
+            b) Penico (se sim, onde joga o cocô?)
+            c) Fralda (se sim, onde joga a fralda suja?)
+            d) Outros (quintal, mato, etc). Onde?(a)
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Complementação da resposta:____________________________________
+        [CSE17_03_05] A criança tem algum dos seguintes hábitos:
+            (multiple_choice)
+            a) Lavar as mãos antes das refeições
+            b) Lavar as mãos após utilizar o banheiro
+            c) Andar calçada
+            d) Nenhum
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+    [CSE17_04] Alimentação
+        [CSE17_04_01] Como a criança costuma consumir a carne?
+            (simple_choice)
+            a) Não consome carne
+            b) Bem passada
+            c) Mal passada / Crua
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+    [CSE17_05] Medicamentos
+        [CSE17_05_01] A criança tem acesso aos medicamentos?
+            (simple_choice)
+            a) Sim, ela sabe onde estão guardados e os alcança quando quiser
+            b) Ela sabe onde estão, mas não tem acesso a eles
+            c) Não, estão escondidos em um local de difícil acesso
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+    [CSE17_06] Parasitoses
+        [CSE17_06_01] A criança já fez exame de fezes?
+            (multiple_choice)
+            a) Não
+            b) Sim, resultado negativo para verme
+            c) Sim, mas não sabe o resultado
+            d) Sim, resultado positivo para verme
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Se a resposta for "d", qual verme?____________________________________
+        [CSE17_06_02] Como descobriu que estava com a doença?
+            (multiple_choice)
+            a) Com resultado de exame de fezes
+            b) Saiu nas fezes
+            c) Foi no médico
+            d) Outros
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Se "Outros", quais?____________________________________
+        [CSE17_06_03] A criança já tomou vermífugo (lombrigueira)?
+            (simple_choice)
+            a) Não
+            b) Sim, há seis meses ou menos e "botou" verme
+            c) Sim, há seis meses ou menos, mas não "botou" verme
+            d) Sim, há mais de seis meses, e "botou" verme
+            e) Sim, há mais de seis meses, mas não "botou" verme
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica

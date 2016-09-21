@@ -1,0 +1,465 @@
+[QDH17] JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia
+    [QDH17_01] Identificação do Questionário
+        [QDH17_01_01] Código do Questionário (preencher somente após a validação das respostas):
+            (textbox)
+            ____________________________________
+        [QDH17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [QDH17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [QDH17_02] Identificação do Paciente/Entrevistado
+        [QDH17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [QDH17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
+        [QDH17_02_03] Nome da Família
+            (textbox)
+            ____________________________________
+        [QDH17_02_04] Código da Família
+            (textbox)
+            ____________________________________
+        [QDH17_02_05] Entrevistado
+            (simple_choice)
+            a) Responsável
+            b) Paciente
+            c) Cuidador
+            c) Outro
+            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:____________________________________
+    [QDH17_03] Geral
+        [QDH17_03_01] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
+            (simple_choice)
+            a) É analfabeto
+            b) Não é analfabeto, mas não frequentou a escola
+            c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário
+            d) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio
+            e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto
+            f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo
+            g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)
+            h) Ensino Superior incompleto
+            i) Ensino Superior completo
+            j) Especialização
+            k) Pós-graduação (Mestrado/Doutorado)
+            l) Não sabe
+            m) Não quis responder
+            n) Não se aplica
+        [QDH17_03_02] Tempo de Jejum
+            (simple_choice)
+            a) Menor que 8 hs
+            b) Entre 8 e 12 hs
+            c) Maior que 12 hs
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+            Observações:____________________________________
+    [QDH17_04] Medidas Antropométricas
+        [QDH17_04_01] Peso (kg):
+            (textbox)
+            ____________________________________
+        [QDH17_04_02] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_04_03] Altura (cm):
+            (textbox)
+            ____________________________________
+        [QDH17_04_04] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_04_05] IMC (kg/m²) (=Peso/(Altura x Altura)):
+            (textbox)
+            ____________________________________
+        [QDH17_04_06] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_04_07] Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)
+            (simple_choice)
+            a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)
+            b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)
+            c) Sobrepeso (Pré-obeso) (Adultos: 25,0 a 29,9; Idosos(M): 27,1 a 30,0/Idosos(F): 27,1 a 32,0)
+            d) Obesidade Grau I (Adultos: 30,0 a 34,9; Idosos(M): 30,1,1 a 35,0/Idosos(F): 32,1 a 37,0)
+            e) Obesidade Grau II (Adultos: 35,0 a 39,9; Idosos(M): 35,1 a 39,0/Idosos(F): 37,1 a 41,9)
+            f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)
+            g) Não interpretado (justificar em "Observações")
+            h) Não se aplica
+            Observações:____________________________________
+        [QDH17_04_08] Circunferência abdominal (cm):
+            (textbox)
+            ____________________________________
+        [QDH17_04_09] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_04_10] Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)
+            (simple_choice)
+            a) Normal (H:&#60;94 cm; M:&#60;80 cm)
+            b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)
+            c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))
+            d) Não interpretado (justificar em observações)
+            e) Não se aplica
+            Observações:____________________________________
+    [QDH17_05] Medidas da Pressão Arterial
+        [QDH17_05_01] Pressão arterial autom. (mmHg):
+            (textbox)
+            ____________________________________
+        [QDH17_05_02] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_05_03] Pressão arterial manual (mmHg) (se medida não realizada, escrever nd):
+            (textbox)
+            ____________________________________
+        [QDH17_05_04] Responsável pela medida (se medida não realizada, escrever nd):
+            (textbox)
+            ____________________________________
+        [QDH17_05_05] Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)
+            (simple_choice)
+            a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)
+            b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)
+            c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)
+            d) Não interpretado (justificar em "Observações")
+            e) Não se aplica
+            Observações:____________________________________
+    [QDH17_06] Glicemia e Colesterolemia
+        [QDH17_06_01] Glicemia (mg/dL):
+            (textbox)
+            ____________________________________
+        [QDH17_06_02] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QDH17_06_03] Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014))
+            (simple_choice)
+            a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)
+            b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-125 mg/dL)
+            c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )
+            d) Jejum INFERIOR a 8 hs: Normal (até 140 mg/dL)
+            e) Jejum INFERIOR a 8 hs: Aumentado (&#62;=140 mg/dL)
+            f) Não avaliado (justificar)
+            g) Não se aplica
+            Outras situações:____________________________________
+        [QDH17_06_04] Colesterol (mg/dL) (se medida não realizada, escrever nd):
+            (textbox)
+            ____________________________________
+        [QDH17_06_05] Responsável pela medida (se medida não realizada, escrever nd):
+            (textbox)
+            ____________________________________
+        [QDH17_06_06] Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)
+            (simple_choice)
+            a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL
+            b) Limítrofe:Acima de 20 anos:200–239 mg/dL;2-19 anos:150-179 mg/dL
+            c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL
+            d) Não interpretado (justificar em "Observações")
+            e) Não se aplica
+            Observações:____________________________________
+    [QDH17_07] Histórico de Doenças
+        [QDH17_07_01] Possui alguma dessas doenças: Doença de Chagas, Hepatite, Vírus HIV (AIDS)? (se possível, especificar)
+            (simple_choice)
+            a) Sim (especificar em "Observações", se possível)
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Observações:____________________________________
+    [QDH17_08] Histórico de DHC
+        [QDH17_08_01] Já realizou exame para diagnosticar DIABETES?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_02] Possui DIABETES?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+            Esta questão precisa ser respondida.____________________________________
+        [QDH17_08_03] Faz uso de medicamento para tratamento DIABETES?
+            (simple_choice)
+            a) Não
+            b) Hipoglicemiante
+            c) Insulina
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [QDH17_08_04] Fez uso hoje (de medicamento para DIABETES)?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_05] Teve DIABETES em alguma gestação?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_06] Já realizou exame para diagnosticar HIPERTENSÃO?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_07] Possui HIPERTENSÃO?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_08] Faz uso de medicamento para tratamento de HIPERTENSÃO?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_09] Fez uso hoje (do medicamento para HIPERTENSÃO)?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_10] Teve HIPERTENSÃO em alguma gestação?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_11] Já realizou exame para diagnosticar HIPERCOLESTEROLEMIA?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_12] Possui HIPERCOLESTEROLEMIA?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_13] Faz uso de medicamento para tratamento de HIPERCOLESTEROLEMIA?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_08_14] Fez uso hoje (do medicamento para HIPERCOLESTEROLEMIA)?
+            (simple_choice)
+            a) Sim
+            b) Não
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [QDH17_08_15] Teve HIPERCOLESTEROLEMIA em alguma gestação?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+    [QDH17_09] Histórico Familiar
+        [QDH17_09_01] Possui algum parente de sangue que sofre/sofreu de OBESIDADE?
+            (multiple_choice)
+            a) Não
+            b) Sim. Avós, tios ou primos
+            b) Sim. Pais, irmãos ou filhos
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_09_02] Possui algum parente de sangue que sofre/sofreu de DIABETES?
+            (multiple_choice)
+            a) Não
+            b) Sim. Avós, tios ou primos
+            b) Sim. Pais, irmãos ou filhos
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_09_03] Possui algum parente de sangue que sofre/sofreu de DOENÇAS DO CORAÇÃO?
+            (multiple_choice)
+            a) Não
+            b) Sim. Avós, tios ou primos
+            b) Sim. Pais, irmãos ou filhos
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_09_04] Possui algum parente de sangue que sofre/sofreu de PRESSÃO ALTA?
+            (multiple_choice)
+            a) Não
+            b) Sim. Avós, tios ou primos
+            b) Sim. Pais, irmãos ou filhos
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_09_05] Possui algum parente de sangue que sofre/sofreu de COLESTEROL ALTO?
+            (multiple_choice)
+            a) Não
+            b) Sim. Avós, tios ou primos
+            b) Sim. Pais, irmãos ou filhos
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+    [QDH17_10] Hábitos de Vida
+        [QDH17_10_01] Que motivo(s) o leva(m) a procurar atendimento médico?
+            (multiple_choice)
+            a) Somente quando está doente
+            b) Realizam tratamento
+            c) Exames de rotina
+            d) Ocorrência de acidente
+            e) Outros
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Se "Outros", quais?____________________________________
+        [QDH17_10_02] O(A) Sr.(a) tem ou teve o hábito de fumar?
+            (simple_choice)
+            a) Nunca fumou
+            b) Fuma atualmente
+            c) Já fumou, mas não fuma atualmente
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+            Esta questão precisa ser respondida.____________________________________
+        [QDH17_10_03] Alguém na casa fuma?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_10_04] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?
+            (simple_choice)
+            a) Não
+            b) Sim, esporadicamente (menos que 1 vez por mês)
+            c) Sim, 1 vez por mês
+            d) Sim, 1 vez por semana (ou em finais de semana)
+            e) Sim, todos os dias
+            f) Outra resposta
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+            Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).____________________________________
+        [QDH17_10_05] Nos últimos 30 dias, chegou a consumir 4 ou mais doses de bebida alcoólica em uma única ocasião? (4 doses seriam equivalentes a 4 latas de cerveja, 4 taças de vinho ou 4 doses de qualquer outra bebida alcoólica destilada)
+            (simple_choice)
+            a) Não
+            b) Sim, em um único dia no mês
+            c) Sim, em 2 dias
+            d) Sim, em 4 dias
+            e) Sim, em 6 dias
+            f) Sim, todos os dias
+            g) Outra resposta
+            h) Não sabe
+            i) Não quis responder
+            j) Não se aplica
+            Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).____________________________________
+        [QDH17_10_06] Pratica uma ou mais das atividades físicas abaixo?
+            (multiple_choice)
+            a) Não pratica nenhuma atividade
+            b) Atividades domésticas (faxina)
+            c) Atividades pesadas (lavoura/olaria)
+            d) Atividade específica com duração de 30 minutos ou mais (treina algum esporte, caminha, corre)
+            e) Outras
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Se "Outras", quais?____________________________________
+        [QDH17_10_07] Quantos dias por semana costuma praticar essa atividade?
+            (multiple_choice)
+            a) 1 a 2 dias por semana
+            b) 3 a 4 dias por semana
+            c) 5 a 6 dias por semana
+            d) Todos os dias
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+    [QDH17_11] Hábitos Alimentares
+        [QDH17_11_01] Você toma alguma das bebidas abaixo com açúcar?
+            (multiple_choice)
+            a) Café ou Leite
+            b) Suco
+            c) Chá
+            d) Outra (especificar)
+            e) Não sabe
+            f) Não quis responder
+            g) Não se aplica
+            Se "Outra", especificar____________________________________
+        [QDH17_11_02] Utiliza tempero pronto? (Knorr, Sazon, etc.)?
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_11_03] Costuma adicionar sal na comida, depois de pronta? (Tem saleiro na mesa?)
+            (simple_choice)
+            a) Sim
+            b) Não
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QDH17_11_04] Com que frequência consome fritura? (alimento submerso em óleo quente)?
+            (simple_choice)
+            a) Não consome
+            b) Esporadicamente (menos que 1 vez por semana)
+            c) 1 a 2x por semana
+            d) 3 a 4x por semana
+            e) 5 a 6x por semana
+            f) Todos os dias
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+        [QDH17_11_05] Consome carne vermelha com gordura?
+            (simple_choice)
+            a) Não consome carne vermelha
+            b) Retira o excesso de gordura
+            c) Consome com gordura
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+        [QDH17_11_06] Consome frango/galinha com pele?
+            (simple_choice)
+            a) Não consome frango/galinha
+            b) Retira a pele
+            c) Consome com pele
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
+    [QDH17_12] Hábitos Alimentares 2
+        [QDH17_12_01] Consome qual dos ítens abaixo e com que frequência na semana?
+            (matrix, simple)
+            [row]Frutas ou suco natural
+            [row]Salada crua
+            [row]Verduras e legumes cozidos
+            [row]Arroz, pão, massas, farinha
+            [row]Alimentos integrais (pão, macarrão ou arroz)
+            [row]Feijão
+            [row]Carne Vermelha
+            [row]Miúdos
+            [row]Embutidos
+            [row]Frango
+            [row]Peixe
+            [row]Leite integral, queijo amarelo
+            [row]Leite semi ou desnatado, queijo branco
+            [row]Bolacha recheada, salgadinho, miojo
+            [row]Margarina, manteiga, maionese
+            [row]Doces
+            [col]0 dias ou raramente
+            [col]1-2 dias
+            [col]3-4 dias
+            [col]5 ou mais dias
+            [col]Não quis responder
+            [col]Não sabe
+            [col]Não se aplica

@@ -1,0 +1,495 @@
+QAN17:
+    model: survey.survey
+    title: 'JCAFB 2017 - Questionário para detecção de Anemia'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    QAN17_01:
+        model: survey.page
+        title: 'Identificação do Questionário'
+        description: ''
+
+        QAN17_01_01:
+            model: survey.question
+            question: 'Código do Questionário (preencher somente após a validação das respostas):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Questionário.'
+
+        QAN17_01_02:
+            model: survey.question
+            question: 'Data da Entrevista (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da entrevista.'
+
+        QAN17_01_03:
+            model: survey.question
+            question: 'Códigos do(s) Entrevistador(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos quem fez a entrevista.'
+
+    QAN17_02:
+        model: survey.page
+        title: 'Identificação do Paciente/Entrevistado'
+        description: ''
+
+        QAN17_02_01:
+            model: survey.question
+            question: 'Nome do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Paciente.'
+
+        QAN17_02_02:
+            model: survey.question
+            question: 'Código do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Paciente.'
+
+        QAN17_02_03:
+            model: survey.question
+            question: 'Nome da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome da Família.'
+
+        QAN17_02_04:
+            model: survey.question
+            question: 'Código da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código da Família.'
+
+        QAN17_02_05:
+            model: survey.question
+            question: 'Entrevistado'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            comments_allowed: True
+            comments_message: 'Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:'
+
+            QAN17_02_05_01:
+                model: survey.label
+                value: 'a) Responsável'
+
+            QAN17_02_05_02:
+                model: survey.label
+                value: 'b) Paciente'
+
+            QAN17_02_05_03:
+                model: survey.label
+                value: 'c) Cuidador'
+
+            QAN17_02_05_04:
+                model: survey.label
+                value: 'd) Outro'
+
+    QAN17_03:
+        model: survey.page
+        title: 'Medidas de Peso e Altura'
+        description: ''
+
+        QAN17_03_01:
+            model: survey.question
+            question: 'Peso (kg):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o peso do paciente (kg).'
+
+        QAN17_03_02:
+            model: survey.question
+            question: 'Responsável pela medida:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o código do responsável pela medida do peso.'
+
+        QAN17_03_03:
+            model: survey.question
+            question: 'Altura (cm):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar a altura do paciente (cm).'
+
+        QAN17_03_04:
+            model: survey.question
+            question: 'Responsável pela medida:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o código do responsável pela medida da altura.'
+
+    QAN17_04:
+        model: survey.page
+        title: 'Dosagem de Hemoglobina'
+        description: ''
+
+        QAN17_04_01:
+            model: survey.question
+            question: 'Horário da coleta (hh:mm):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o horário em que foi feita a coleta.'
+
+        QAN17_04_02:
+            model: survey.question
+            question: 'Responsável pela coleta:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o código do responsável pela coleta.'
+
+        QAN17_04_03:
+            model: survey.question
+            question: 'Valor da Hemoglobina (g/dL):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o valor da hemoglobina (g/dL) do paciente.'
+
+        QAN17_04_04:
+            model: survey.question
+            question: 'Responsável pela dosagem:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o código do responsável pela análise.'
+
+        QAN17_04_05:
+            model: survey.question
+            question: 'Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Observações:'
+
+            QAN17_04_05_01:
+                model: survey.label
+                value: 'a) Normal'
+
+            QAN17_04_05_02:
+                model: survey.label
+                value: 'b) Abaixo do normal (anemia)'
+
+            QAN17_04_05_03:
+                model: survey.label
+                value: 'c) Acima do normal'
+
+    QAN17_05:
+        model: survey.page
+        title: 'Histórico'
+        description: ''
+
+        QAN17_05_01:
+            model: survey.question
+            question: 'Já realizou exame para diagnosticar Anemia?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            QAN17_05_01_01:
+                model: survey.label
+                value: 'a) Não'
+
+            QAN17_05_01_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            QAN17_05_01_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            QAN17_05_01_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            QAN17_05_01_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        QAN17_05_02:
+            model: survey.question
+            question: 'Já teve Anemia diagnosticada?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            QAN17_05_02_01:
+                model: survey.label
+                value: 'a) Não'
+
+            QAN17_05_02_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            QAN17_05_02_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            QAN17_05_02_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            QAN17_05_02_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        QAN17_05_03:
+            model: survey.question
+            question: 'Se sim, o que fez para curar?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outras medidas", especificar'
+
+            QAN17_05_03_01:
+                model: survey.label
+                value: 'a) Medicamentos'
+
+            QAN17_05_03_02:
+                model: survey.label
+                value: 'b) Alimentação adequada'
+
+            QAN17_05_03_03:
+                model: survey.label
+                value: 'c) Vitaminas'
+
+            QAN17_05_03_04:
+                model: survey.label
+                value: 'd) Outras medidas'
+
+            QAN17_05_03_05:
+                model: survey.label
+                value: 'e) Nada'
+
+            QAN17_05_03_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            QAN17_05_03_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            QAN17_05_03_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        QAN17_05_04:
+            model: survey.question
+            question: 'Ainda tem?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            QAN17_05_04_01:
+                model: survey.label
+                value: 'a) Não'
+
+            QAN17_05_04_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            QAN17_05_04_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            QAN17_05_04_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            QAN17_05_04_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        QAN17_05_05:
+            model: survey.question
+            question: 'Toma algum cuidado para evitar a Anemia?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outro", especificar'
+
+            QAN17_05_05_01:
+                model: survey.label
+                value: 'a) Consumo de feijão'
+
+            QAN17_05_05_02:
+                model: survey.label
+                value: 'b) Consumo de verduras verde-escuras'
+
+            QAN17_05_05_03:
+                model: survey.label
+                value: 'c) Consumo de frutas'
+
+            QAN17_05_05_04:
+                model: survey.label
+                value: 'd) Consumo de carne vermelha'
+
+            QAN17_05_05_05:
+                model: survey.label
+                value: 'e) Outro (especificar) '
+
+            QAN17_05_05_06:
+                model: survey.label
+                value: 'f) Não toma nenhum cuidado'
+
+            QAN17_05_05_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            QAN17_05_05_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            QAN17_05_05_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+    QAN17_06:
+        model: survey.page
+        title: 'Alimentação'
+        description: ''
+
+        QAN17_06_01:
+            model: survey.question
+            question: 'Alimentos que o paciente consome (Alimentos ricos em Ferro, B12 e ácido fólico)'
+            type: matrix
+            matrix_subtype: simple
+            constr_mandatory: True
+            constr_error_msg: 'Preencher os alimentos que o paciente consome.'
+
+            QAN17_06_01_01:
+                model: survey.label.col
+                value: '0 dias ou raramente'
+
+            QAN17_06_01_02:
+                model: survey.label.col
+                value: '1-2 dias'
+
+            QAN17_06_01_03:
+                model: survey.label.col
+                value: '3-4 dias'
+
+            QAN17_06_01_04:
+                model: survey.label.col
+                value: '5 ou mais dias'
+
+            QAN17_06_01_05:
+                model: survey.label.col
+                value: 'Não sabe'
+
+            QAN17_06_01_06:
+                model: survey.label.col
+                value: 'Não quis responder'
+
+            QAN17_06_01_07:
+                model: survey.label.col
+                value: 'Não se aplica'
+
+            QAN17_06_01_08:
+                model: survey.label.row
+                value: 'Feijão (leguminosas)'
+
+            QAN17_06_01_09:
+                model: survey.label.row
+                value: 'Fígado de boi'
+
+            QAN17_06_01_10:
+                model: survey.label.row
+                value: 'Carnes vermelhas'
+
+            QAN17_06_01_11:
+                model: survey.label.row
+                value: 'Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)'
+
+            QAN17_06_01_12:
+                model: survey.label.row
+                value: 'Carne branca (peixe, frango)'
+
+            QAN17_06_01_13:
+                model: survey.label.row
+                value: 'Miúdos (rim, coração)'
+
+        QAN17_06_02:
+            model: survey.question
+            question: 'Alimentos que o paciente consome (Alimentos que interferem na absorção de Ferro)'
+            type: matrix
+            matrix_subtype: simple
+            constr_mandatory: True
+            constr_error_msg: 'Preencher os alimentos que o paciente consome.'
+
+            QAN17_06_02_01:
+                model: survey.label.col
+                value: '0 dias ou raramente'
+
+            QAN17_06_02_02:
+                model: survey.label.col
+                value: '1-2 dias'
+
+            QAN17_06_02_03:
+                model: survey.label.col
+                value: '3-4 dias'
+
+            QAN17_06_02_04:
+                model: survey.label.col
+                value: '5 ou mais dias'
+
+            QAN17_06_02_05:
+                model: survey.label.col
+                value: 'Não sabe'
+
+            QAN17_06_02_06:
+                model: survey.label.col
+                value: 'Não quis responder'
+
+            QAN17_06_02_07:
+                model: survey.label.col
+                value: 'Não se aplica'
+
+            QAN17_06_02_08:
+                model: survey.label.row
+                value: 'Suco de limão, laranja, acerola, junto da refeição'
+
+            QAN17_06_02_09:
+                model: survey.label.row
+                value: 'Laranja, após a refeição'
+
+            QAN17_06_02_10:
+                model: survey.label.row
+                value: 'Leite e queijo (laticínios)'
+
+            QAN17_06_02_11:
+                model: survey.label.row
+                value: 'Espinafre'
+
+            QAN17_06_02_12:
+                model: survey.label.row
+                value: 'Café'
+
+            QAN17_06_02_13:
+                model: survey.label.row
+                value: 'Refrigerante a base de cola'
+

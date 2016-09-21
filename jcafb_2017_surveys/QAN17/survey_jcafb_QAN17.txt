@@ -1,0 +1,142 @@
+[QAN17] JCAFB 2017 - Questionário para detecção de Anemia
+    [QAN17_01] Identificação do Questionário
+        [QAN17_01_01] Código do Questionário (preencher somente após a validação das respostas):
+            (textbox)
+            ____________________________________
+        [QAN17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [QAN17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [QAN17_02] Identificação do Paciente/Entrevistado
+        [QAN17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [QAN17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
+        [QAN17_02_03] Nome da Família
+            (textbox)
+            ____________________________________
+        [QAN17_02_04] Código da Família
+            (textbox)
+            ____________________________________
+        [QAN17_02_05] Entrevistado
+            (simple_choice)
+            a) Responsável
+            b) Paciente
+            c) Cuidador
+            d) Outro
+            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:____________________________________
+    [QAN17_03] Medidas de Peso e Altura
+        [QAN17_03_01] Peso (kg):
+            (textbox)
+            ____________________________________
+        [QAN17_03_02] Responsável pela medida:
+            (textbox)
+            ____________________________________
+        [QAN17_03_03] Altura (cm):
+            (textbox)
+            ____________________________________
+        [QAN17_03_04] Responsável pela medida:
+            (textbox)
+            ____________________________________
+    [QAN17_04] Dosagem de Hemoglobina
+        [QAN17_04_01] Horário da coleta (hh:mm):
+            (textbox)
+            ____________________________________
+        [QAN17_04_02] Responsável pela coleta:
+            (textbox)
+            ____________________________________
+        [QAN17_04_03] Valor da Hemoglobina (g/dL):
+            (textbox)
+            ____________________________________
+        [QAN17_04_04] Responsável pela dosagem:
+            (textbox)
+            ____________________________________
+        [QAN17_04_05] Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)
+            (simple_choice)
+            a) Normal
+            b) Abaixo do normal (anemia)
+            c) Acima do normal
+            Observações:____________________________________
+    [QAN17_05] Histórico
+        [QAN17_05_01] Já realizou exame para diagnosticar Anemia?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QAN17_05_02] Já teve Anemia diagnosticada?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QAN17_05_03] Se sim, o que fez para curar?
+            (multiple_choice)
+            a) Medicamentos
+            b) Alimentação adequada
+            c) Vitaminas
+            d) Outras medidas
+            e) Nada
+            f) Não sabe
+            g) Não quis responder
+            h) Não se aplica
+            Se "Outras medidas", especificar____________________________________
+        [QAN17_05_04] Ainda tem?
+            (simple_choice)
+            a) Não
+            b) Sim
+            c) Não sabe
+            d) Não quis responder
+            e) Não se aplica
+        [QAN17_05_05] Toma algum cuidado para evitar a Anemia?
+            (multiple_choice)
+            a) Consumo de feijão
+            b) Consumo de verduras verde-escuras
+            c) Consumo de frutas
+            d) Consumo de carne vermelha
+            e) Outro (especificar) 
+            f) Não toma nenhum cuidado
+            g) Não sabe
+            h) Não quis responder
+            i) Não se aplica
+            Se "Outro", especificar____________________________________
+    [QAN17_06] Alimentação
+        [QAN17_06_01] Alimentos que o paciente consome (Alimentos ricos em Ferro, B12 e ácido fólico)
+            (matrix, simple)
+            [col]0 dias ou raramente
+            [col]1-2 dias
+            [col]3-4 dias
+            [col]5 ou mais dias
+            [col]Não sabe
+            [col]Não quis responder
+            [col]Não se aplica
+            [row]Feijão (leguminosas)
+            [row]Fígado de boi
+            [row]Carnes vermelhas
+            [row]Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)
+            [row]Carne branca (peixe, frango)
+            [row]Miúdos (rim, coração)
+        [QAN17_06_02] Alimentos que o paciente consome (Alimentos que interferem na absorção de Ferro)
+            (matrix, simple)
+            [col]0 dias ou raramente
+            [col]1-2 dias
+            [col]3-4 dias
+            [col]5 ou mais dias
+            [col]Não sabe
+            [col]Não quis responder
+            [col]Não se aplica
+            [row]Suco de limão, laranja, acerola, junto da refeição
+            [row]Laranja, após a refeição
+            [row]Leite e queijo (laticínios)
+            [row]Espinafre
+            [row]Café
+            [row]Refrigerante a base de cola

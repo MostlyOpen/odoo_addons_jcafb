@@ -1,0 +1,1314 @@
+ISE17:
+    model: survey.survey
+    title: 'JCAFB 2017 - Questionário Socioeconômico Individual (Idosos)'
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: ''
+    thank_you_message: 'Obrigado por sua participação.'
+
+    ISE17_01:
+        model: survey.page
+        title: 'Identificação do Questionário'
+        description: ''
+
+        ISE17_01_01:
+            model: survey.question
+            question: 'Código do Questionário (preencher somente após a validação das respostas):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Questionário.'
+
+        ISE17_01_02:
+            model: survey.question
+            question: 'Data da Entrevista (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da entrevista.'
+
+        ISE17_01_03:
+            model: survey.question
+            question: 'Códigos do(s) Entrevistador(es) (um em cada linha):'
+            type: free_text
+            constr_mandatory: True
+            constr_error_msg: 'Informar os Códigos quem fez a entrevista.'
+
+    ISE17_02:
+        model: survey.page
+        title: 'Identificação do Paciente/Entrevistado'
+        description: ''
+
+        ISE17_02_01:
+            model: survey.question
+            question: 'Nome do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Paciente.'
+
+        ISE17_02_02:
+            model: survey.question
+            question: 'Código do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Paciente.'
+
+        ISE17_02_03:
+            model: survey.question
+            question: 'Nome da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome da Família.'
+
+        ISE17_02_04:
+            model: survey.question
+            question: 'Código da Família'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código da Família.'
+
+        ISE17_02_05:
+            model: survey.question
+            question: 'Entrevistado'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            comments_allowed: True
+            comments_message: 'Nome e, se a resposta for "Outro", especificar'
+
+            ISE17_02_05_01:
+                model: survey.label
+                value: 'a) Paciente'
+
+            ISE17_02_05_02:
+                model: survey.label
+                value: 'b) Cuidador'
+
+            ISE17_02_05_03:
+                model: survey.label
+                value: 'c) Outro'
+
+    ISE17_03:
+        model: survey.page
+        title: 'Aspectos Sociais'
+        description: 'Aspectos Sociais'
+
+        ISE17_03_01:
+            model: survey.question
+            question: 'Qual a relação de parentesco do cuidador com o(a) Sr.(a)?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outro familiar", qual a relação de parentesco?'
+
+            ISE17_03_01_01:
+                model: survey.label
+                value: 'a) Não possui Cuidador'
+
+            ISE17_03_01_02:
+                model: survey.label
+                value: 'b) Filho'
+
+            ISE17_03_01_03:
+                model: survey.label
+                value: 'c) Cônjuge'
+
+            ISE17_03_01_04:
+                model: survey.label
+                value: 'd) Neto(a)'
+
+            ISE17_03_01_05:
+                model: survey.label
+                value: 'e) Irmão(ã)'
+
+            ISE17_03_01_06:
+                model: survey.label
+                value: 'f) Outro familiar'
+
+            ISE17_03_01_07:
+                model: survey.label
+                value: 'g) Não familiar (sem laços consanguíneos)'
+
+            ISE17_03_01_08:
+                model: survey.label
+                value: 'h) Não sabe'
+
+            ISE17_03_01_09:
+                model: survey.label
+                value: 'i) Não quis responder'
+
+            ISE17_03_01_10:
+                model: survey.label
+                value: 'j) Não se aplica'
+
+        ISE17_03_02:
+            model: survey.question
+            question: 'Tempo de Escolaridade do cuidador'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_03_02_01:
+                model: survey.label
+                value: 'a) 0 anos'
+
+            ISE17_03_02_02:
+                model: survey.label
+                value: 'b) 1 a 3 anos'
+
+            ISE17_03_02_03:
+                model: survey.label
+                value: 'c) 4 a 11 anos'
+
+            ISE17_03_02_04:
+                model: survey.label
+                value: 'd) 12 a 22 anos'
+
+            ISE17_03_02_05:
+                model: survey.label
+                value: 'e) Mais que 22 anos'
+
+            ISE17_03_02_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_03_02_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_03_02_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ISE17_03_03:
+            model: survey.question
+            question: 'O(A) Sr.(a) é:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_03_03_01:
+                model: survey.label
+                value: 'a) Solteiro(a)'
+
+            ISE17_03_03_02:
+                model: survey.label
+                value: 'b) Casado(a) ou unido(a)'
+
+            ISE17_03_03_03:
+                model: survey.label
+                value: 'c) Viúvo(a)'
+
+            ISE17_03_03_04:
+                model: survey.label
+                value: 'd) Separado(a)'
+
+            ISE17_03_03_05:
+                model: survey.label
+                value: 'e) Divorciado(a)'
+
+            ISE17_03_03_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_03_03_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_03_03_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ISE17_03_04:
+            model: survey.question
+            question: 'Quem mora com o Sr(a) na sua casa? (além do idoso)'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Especificar quando necessário'
+
+            ISE17_03_04_01:
+                model: survey.label
+                value: 'a) Ninguém. Moro sozinho.'
+
+            ISE17_03_04_02:
+                model: survey.label
+                value: 'b) Familiar - esposa '
+
+            ISE17_03_04_03:
+                model: survey.label
+                value: 'c) Familiar(es) – Outro(s)'
+
+            ISE17_03_04_04:
+                model: survey.label
+                value: 'd) Amigo(s)'
+
+            ISE17_03_04_05:
+                model: survey.label
+                value: 'e) Outra resposta'
+
+            ISE17_03_04_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_03_04_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_03_04_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ISE17_03_05:
+            model: survey.question
+            question: 'O Sr(a) tem filhos?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_03_05_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_03_05_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            ISE17_03_05_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_03_05_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_03_05_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_03_06:
+            model: survey.question
+            question: 'Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_03_06_01:
+                model: survey.label
+                value: 'a) É analfabeto'
+
+            ISE17_03_06_02:
+                model: survey.label
+                value: 'b) Não é analfabeto, mas não frequentou a escola'
+
+            ISE17_03_06_03:
+                model: survey.label
+                value: 'c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário'
+
+            ISE17_03_06_04:
+                model: survey.label
+                value: 'd) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio'
+
+            ISE17_03_06_05:
+                model: survey.label
+                value: 'e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto'
+
+            ISE17_03_06_06:
+                model: survey.label
+                value: 'f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo'
+
+            ISE17_03_06_07:
+                model: survey.label
+                value: 'g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)'
+
+            ISE17_03_06_08:
+                model: survey.label
+                value: 'h) Ensino Superior incompleto'
+
+            ISE17_03_06_09:
+                model: survey.label
+                value: 'i) Ensino Superior completo'
+
+            ISE17_03_06_10:
+                model: survey.label
+                value: 'j) Especialização'
+
+            ISE17_03_06_11:
+                model: survey.label
+                value: 'k) Pós-graduação (Mestrado/Doutorado)'
+
+            ISE17_03_06_12:
+                model: survey.label
+                value: 'l) Não sabe'
+
+            ISE17_03_06_13:
+                model: survey.label
+                value: 'm) Não quis responder'
+
+            ISE17_03_06_14:
+                model: survey.label
+                value: 'n) Não se aplica'
+
+        ISE17_03_07:
+            model: survey.question
+            question: 'O(A) Sr.(a) sabe ler e escrever um recado?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_03_07_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_03_07_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            ISE17_03_07_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_03_07_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_03_07_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_03_08:
+            model: survey.question
+            question: 'Qual destas opções o(a) descreve melhor:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outro", qual?'
+
+            ISE17_03_08_01:
+                model: survey.label
+                value: 'a) Branco(a)'
+
+            ISE17_03_08_02:
+                model: survey.label
+                value: 'b) Negro(a)'
+
+            ISE17_03_08_03:
+                model: survey.label
+                value: 'c) Pardo(a)'
+
+            ISE17_03_08_04:
+                model: survey.label
+                value: 'd) Amarelo(a)'
+
+            ISE17_03_08_05:
+                model: survey.label
+                value: 'e) Indígena'
+
+            ISE17_03_08_06:
+                model: survey.label
+                value: 'f) Outro(a)'
+
+            ISE17_03_08_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ISE17_03_08_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ISE17_03_08_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ISE17_03_09:
+            model: survey.question
+            question: 'Qual é a sua religião?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outra", qual?'
+
+            ISE17_03_09_01:
+                model: survey.label
+                value: 'a) Católica Apostólica Romana'
+
+            ISE17_03_09_02:
+                model: survey.label
+                value: 'b) Evangélica'
+
+            ISE17_03_09_03:
+                model: survey.label
+                value: 'c) Espírita'
+
+            ISE17_03_09_04:
+                model: survey.label
+                value: 'd) Umbanda'
+
+            ISE17_03_09_05:
+                model: survey.label
+                value: 'e) Candomblé'
+
+            ISE17_03_09_06:
+                model: survey.label
+                value: 'f) Outra'
+
+            ISE17_03_09_07:
+                model: survey.label
+                value: 'g) Sem religião'
+
+            ISE17_03_09_08:
+                model: survey.label
+                value: 'h) Não sabe'
+
+            ISE17_03_09_09:
+                model: survey.label
+                value: 'i) Não quis responder'
+
+            ISE17_03_09_10:
+                model: survey.label
+                value: 'j) Não se aplica'
+
+    ISE17_04:
+        model: survey.page
+        title: 'Hábitos'
+        description: 'Hábitos'
+
+        ISE17_04_01:
+            model: survey.question
+            question: 'O que costuma fazer no tempo livre?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outra atividade", qual?'
+
+            ISE17_04_01_01:
+                model: survey.label
+                value: 'a) Caminha pela cidade'
+
+            ISE17_04_01_02:
+                model: survey.label
+                value: 'b) Pratica exercícios físicos'
+
+            ISE17_04_01_03:
+                model: survey.label
+                value: 'c) Faz trabalhos manuais'
+
+            ISE17_04_01_04:
+                model: survey.label
+                value: 'd) Sai para conversar com as pessoas'
+
+            ISE17_04_01_05:
+                model: survey.label
+                value: 'e) Fica dentro de casa descansando'
+
+            ISE17_04_01_06:
+                model: survey.label
+                value: 'f) Frequenta grupos de atividades'
+
+            ISE17_04_01_07:
+                model: survey.label
+                value: 'g) Cuida da casa'
+
+            ISE17_04_01_08:
+                model: survey.label
+                value: 'h) Outra atividade'
+
+            ISE17_04_01_09:
+                model: survey.label
+                value: 'i) Não sabe'
+
+            ISE17_04_01_10:
+                model: survey.label
+                value: 'j) Não quis responder'
+
+            ISE17_04_01_11:
+                model: survey.label
+                value: 'k) Não se aplica'
+
+        ISE17_04_02:
+            model: survey.question
+            question: 'O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se realiza, qual?'
+
+            ISE17_04_02_01:
+                model: survey.label
+                value: 'a) Sim. Qual?'
+
+            ISE17_04_02_02:
+                model: survey.label
+                value: 'b) Não'
+
+            ISE17_04_02_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_04_02_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_04_02_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_04_03:
+            model: survey.question
+            question: 'Com que frequência caminha ou pratica exercícios?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_04_03_01:
+                model: survey.label
+                value: 'a) 1x por semana'
+
+            ISE17_04_03_02:
+                model: survey.label
+                value: 'b) 2x por semana'
+
+            ISE17_04_03_03:
+                model: survey.label
+                value: 'c) 3x por semana'
+
+            ISE17_04_03_04:
+                model: survey.label
+                value: 'd) 4x por semana'
+
+            ISE17_04_03_05:
+                model: survey.label
+                value: 'e) 5x por semana'
+
+            ISE17_04_03_06:
+                model: survey.label
+                value: 'f) 6x por semana'
+
+            ISE17_04_03_07:
+                model: survey.label
+                value: 'g) Todos os dias'
+
+            ISE17_04_03_08:
+                model: survey.label
+                value: 'h) Não caminha nem pratica exercícios físicos'
+
+            ISE17_04_03_09:
+                model: survey.label
+                value: 'i) Não sabe'
+
+            ISE17_04_03_10:
+                model: survey.label
+                value: 'j) Não quis responder'
+
+            ISE17_04_03_11:
+                model: survey.label
+                value: 'k) Não se aplica'
+
+        ISE17_04_04:
+            model: survey.question
+            question: 'O(A) Sr.(a) tem ou teve o hábito de fumar?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_04_04_01:
+                model: survey.label
+                value: 'a) Nunca fumou'
+
+            ISE17_04_04_02:
+                model: survey.label
+                value: 'b) Fuma atualmente'
+
+            ISE17_04_04_03:
+                model: survey.label
+                value: 'c) Já fumou, mas não fuma atualmente'
+
+            ISE17_04_04_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            ISE17_04_04_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            ISE17_04_04_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+        ISE17_04_05:
+            model: survey.question
+            question: 'O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for diferente de "Não", especificar o tipo de bebida e a quantidade. Se for "Outra resposta", colocar também a resposta dada, além do tipo de bebida e quantidade).'
+
+            ISE17_04_05_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_04_05_02:
+                model: survey.label
+                value: 'b) Sim, esporadicamente (menos que 1 vez por mês)'
+
+            ISE17_04_05_03:
+                model: survey.label
+                value: 'c) Sim, 1 vez por mês'
+
+            ISE17_04_05_04:
+                model: survey.label
+                value: 'd) Sim, 1 vez por semana (ou em finais de semana)'
+
+            ISE17_04_05_05:
+                model: survey.label
+                value: 'e) Sim, todos os dias'
+
+            ISE17_04_05_06:
+                model: survey.label
+                value: 'f) Outra resposta'
+
+            ISE17_04_05_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ISE17_04_05_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ISE17_04_05_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+    ISE17_05:
+        model: survey.page
+        title: 'Saúde'
+        description: 'Saúde'
+
+        ISE17_05_01:
+            model: survey.question
+            question: 'Tem alguma dificuldade para:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outras", quais?'
+
+            ISE17_05_01_01:
+                model: survey.label
+                value: 'a) Falar'
+
+            ISE17_05_01_02:
+                model: survey.label
+                value: 'b) Engolir'
+
+            ISE17_05_01_03:
+                model: survey.label
+                value: 'c) Enxergar'
+
+            ISE17_05_01_04:
+                model: survey.label
+                value: 'd) Escutar'
+
+            ISE17_05_01_05:
+                model: survey.label
+                value: 'e) Movimentar-se'
+
+            ISE17_05_01_06:
+                model: survey.label
+                value: 'f) Urinar'
+
+            ISE17_05_01_07:
+                model: survey.label
+                value: 'g) Outras'
+
+            ISE17_05_01_08:
+                model: survey.label
+                value: 'h) Não tem dificuldades'
+
+            ISE17_05_01_09:
+                model: survey.label
+                value: 'i) Não sabe'
+
+            ISE17_05_01_10:
+                model: survey.label
+                value: 'j) Não quis responder'
+
+            ISE17_05_01_11:
+                model: survey.label
+                value: 'k) Não se aplica'
+
+        ISE17_05_02:
+            model: survey.question
+            question: 'O(A) Sr.(a) diria que sua saúde é:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_05_02_01:
+                model: survey.label
+                value: 'a) Muito boa'
+
+            ISE17_05_02_02:
+                model: survey.label
+                value: 'b) Boa'
+
+            ISE17_05_02_03:
+                model: survey.label
+                value: 'c) Regular'
+
+            ISE17_05_02_04:
+                model: survey.label
+                value: 'd) Ruim'
+
+            ISE17_05_02_05:
+                model: survey.label
+                value: 'e) Muito ruim'
+
+            ISE17_05_02_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_05_02_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_05_02_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ISE17_05_03:
+            model: survey.question
+            question: 'Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_05_03_01:
+                model: survey.label
+                value: 'a) Melhor'
+
+            ISE17_05_03_02:
+                model: survey.label
+                value: 'b) Igual'
+
+            ISE17_05_03_03:
+                model: survey.label
+                value: 'c) Pior'
+
+            ISE17_05_03_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            ISE17_05_03_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            ISE17_05_03_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+    ISE17_06:
+        model: survey.page
+        title: 'Médico'
+        description: 'Médico'
+
+        ISE17_06_01:
+            model: survey.question
+            question: 'Que motivo(s) o leva(m) a procurar atendimento médico?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outros", quais?'
+
+            ISE17_06_01_01:
+                model: survey.label
+                value: 'a) Somente quando está doente'
+
+            ISE17_06_01_02:
+                model: survey.label
+                value: 'b) Realizam tratamento'
+
+            ISE17_06_01_03:
+                model: survey.label
+                value: 'c) Exames de rotina'
+
+            ISE17_06_01_04:
+                model: survey.label
+                value: 'd) Ocorrência de acidente'
+
+            ISE17_06_01_05:
+                model: survey.label
+                value: 'e) Outros'
+
+            ISE17_06_01_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_06_01_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_06_01_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+        ISE17_06_02:
+            model: survey.question
+            question: 'Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Não", quantas vezes?'
+
+            ISE17_06_02_01:
+                model: survey.label
+                value: 'a) Sim'
+
+            ISE17_06_02_02:
+                model: survey.label
+                value: 'b) Não'
+
+            ISE17_06_02_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_06_02_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_06_02_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_06_03:
+            model: survey.question
+            question: 'Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Outra resposta", especificar'
+
+            ISE17_06_03_01:
+                model: survey.label
+                value: 'a) Nenhuma '
+
+            ISE17_06_03_02:
+                model: survey.label
+                value: 'b) 1 a 2 vezes'
+
+            ISE17_06_03_03:
+                model: survey.label
+                value: 'c) 3 a 4 vezes'
+
+            ISE17_06_03_04:
+                model: survey.label
+                value: 'd) 1 vez a cada 2 meses'
+
+            ISE17_06_03_05:
+                model: survey.label
+                value: 'e) 1 vez por mês'
+
+            ISE17_06_03_06:
+                model: survey.label
+                value: 'f) Outra resposta'
+
+            ISE17_06_03_07:
+                model: survey.label
+                value: 'g) Não sabe'
+
+            ISE17_06_03_08:
+                model: survey.label
+                value: 'h) Não quis responder'
+
+            ISE17_06_03_09:
+                model: survey.label
+                value: 'i) Não se aplica'
+
+        ISE17_06_04:
+            model: survey.question
+            question: 'O Sr(a). teve alguma queda depois que completou 60 anos?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Sim", quantas vezes?'
+
+            ISE17_06_04_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_06_04_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            ISE17_06_04_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_06_04_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_06_04_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_06_05:
+            model: survey.question
+            question: 'Alguma vez um médico lhe disse que tem alguma doença?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Sim", quais?'
+
+            ISE17_06_05_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_06_05_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            ISE17_06_05_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_06_05_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_06_05_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+    ISE17_07:
+        model: survey.page
+        title: 'Alimentação'
+        description: 'Alimentação'
+
+        ISE17_07_01:
+            model: survey.question
+            question: 'Como o Sr(a) costuma consumir a carne?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_07_01_01:
+                model: survey.label
+                value: 'a) Não consome carne'
+
+            ISE17_07_01_02:
+                model: survey.label
+                value: 'b) Bem passada'
+
+            ISE17_07_01_03:
+                model: survey.label
+                value: 'c) Mal passada / Crua'
+
+            ISE17_07_01_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            ISE17_07_01_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            ISE17_07_01_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+    ISE17_08:
+        model: survey.page
+        title: 'Parasitoses'
+        description: 'Parasitoses'
+
+        ISE17_08_01:
+            model: survey.question
+            question: 'O Sr(a) já fez exame de fezes?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "d", qual verme?'
+
+            ISE17_08_01_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_08_01_02:
+                model: survey.label
+                value: 'b) Sim, resultado negativo para verme'
+
+            ISE17_08_01_03:
+                model: survey.label
+                value: 'c) Sim, mas não sabe o resultado'
+
+            ISE17_08_01_04:
+                model: survey.label
+                value: 'd) Sim, resultado positivo para verme'
+
+            ISE17_08_01_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            ISE17_08_01_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            ISE17_08_01_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+        ISE17_08_02:
+            model: survey.question
+            question: 'Como descobriu que estava com a doença?'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Se "Outros", quais?'
+
+            ISE17_08_02_01:
+                model: survey.label
+                value: 'a) Com resultado de exame de fezes'
+
+            ISE17_08_02_02:
+                model: survey.label
+                value: 'b) Saiu nas fezes'
+
+            ISE17_08_02_03:
+                model: survey.label
+                value: 'c) Foi no médico'
+
+            ISE17_08_02_04:
+                model: survey.label
+                value: 'd) Outros'
+
+            ISE17_08_02_05:
+                model: survey.label
+                value: 'e) Não sabe'
+
+            ISE17_08_02_06:
+                model: survey.label
+                value: 'f) Não quis responder'
+
+            ISE17_08_02_07:
+                model: survey.label
+                value: 'g) Não se aplica'
+
+        ISE17_08_03:
+            model: survey.question
+            question: 'Já tomou vermífugo (lombrigueira)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_08_03_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_08_03_02:
+                model: survey.label
+                value: 'b) Sim, há seis meses ou menos e "botou" verme'
+
+            ISE17_08_03_03:
+                model: survey.label
+                value: 'c) Sim, há seis meses ou menos, mas não "botou" verme'
+
+            ISE17_08_03_04:
+                model: survey.label
+                value: 'd) Sim, há mais de seis meses, e "botou" verme'
+
+            ISE17_08_03_05:
+                model: survey.label
+                value: 'e) Sim, há mais de seis meses, mas não "botou" verme'
+
+            ISE17_08_03_06:
+                model: survey.label
+                value: 'f) Não sabe'
+
+            ISE17_08_03_07:
+                model: survey.label
+                value: 'g) Não quis responder'
+
+            ISE17_08_03_08:
+                model: survey.label
+                value: 'h) Não se aplica'
+
+    ISE17_09:
+        model: survey.page
+        title: 'Aspecto Econômico'
+        description: 'Aspecto Econômico'
+
+        ISE17_09_01:
+            model: survey.question
+            question: 'O(A) Sr.(a) trabalha?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_09_01_01:
+                model: survey.label
+                value: 'a) Não (e não é aposentado)'
+
+            ISE17_09_01_02:
+                model: survey.label
+                value: 'b) Não. É aposentado'
+
+            ISE17_09_01_03:
+                model: survey.label
+                value: 'c) Sim'
+
+            ISE17_09_01_04:
+                model: survey.label
+                value: 'd) Não sabe'
+
+            ISE17_09_01_05:
+                model: survey.label
+                value: 'e) Não quis responder'
+
+            ISE17_09_01_06:
+                model: survey.label
+                value: 'f) Não se aplica'
+
+        ISE17_09_02:
+            model: survey.question
+            question: 'O(A) Sr.(a) trabalha (remunerado) atualmente?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            ISE17_09_02_01:
+                model: survey.label
+                value: 'a) Não'
+
+            ISE17_09_02_02:
+                model: survey.label
+                value: 'b) Sim'
+
+            ISE17_09_02_03:
+                model: survey.label
+                value: 'c) Não sabe'
+
+            ISE17_09_02_04:
+                model: survey.label
+                value: 'd) Não quis responder'
+
+            ISE17_09_02_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
+        ISE17_09_03:
+            model: survey.question
+            question: 'Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)?'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: True
+            comments_message: 'Colocar o valor (somente o número)'
+
+            ISE17_09_03_01:
+                model: survey.label
+                value: 'a) Valor (colocar abaixo)'
+
+            ISE17_09_03_02:
+                model: survey.label
+                value: 'b) Não sabe'
+
+            ISE17_09_03_03:
+                model: survey.label
+                value: 'c) Não quis responder'
+
+            ISE17_09_03_04:
+                model: survey.label
+                value: 'd) Não se aplica'
+
