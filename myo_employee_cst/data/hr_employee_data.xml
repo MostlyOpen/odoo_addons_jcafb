@@ -6,6 +6,10 @@
             <field name="name">Professor Coordenador</field>
         </record>
 
+        <record id="myo_employee.Coordenador_de_Base" model="hr.job">
+            <field name="name">Coordenador de Base</field>
+        </record>
+
         <record id="myo_employee.Farmaceutico_Responsavel" model="hr.job">
             <field name="name">Farmacêutico Responsável</field>
         </record>
