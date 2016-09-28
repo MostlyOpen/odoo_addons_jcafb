@@ -24,7 +24,7 @@ from openerp import models, fields
 class Community(models.Model):
     _inherit = 'myo.community'
 
-    # code = fields.Char('Code', select=1, required=False, readonly=False, default=False,
+    # code = fields.Char('Code', index=True, required=False, readonly=False, default=False,
     #                    help='Use "/" to get an automatic new Community Code.')
-    code = fields.Char('Code', select=1, required=False, readonly=False, default='/',
+    code = fields.Char('Code', index=True, required=False, readonly=False, default='/',
                        help='Use "/" to get an automatic new Community Code.')

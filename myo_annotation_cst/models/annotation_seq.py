@@ -24,7 +24,7 @@ from openerp import models, fields
 class Annotation(models.Model):
     _inherit = 'myo.annotation'
 
-    # code = fields.Char('Code', select=1, required=False, readonly=False, default=False,
+    # code = fields.Char('Code', index=True, required=False, readonly=False, default=False,
     #                    help='Use "/" to get an automatic new Annotation Code.')
-    code = fields.Char('Code', select=1, required=False, readonly=False, default='/',
+    code = fields.Char('Code', index=True, required=False, readonly=False, default='/',
                        help='Use "/" to get an automatic new Annotation Code.')
