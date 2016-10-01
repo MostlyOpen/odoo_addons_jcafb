@@ -25,5 +25,5 @@ class Tag(models.Model):
     _inherit = 'myo.tag'
 
     _defaults = {
-        'active_history': True,
+        'active_log': True,
     }
