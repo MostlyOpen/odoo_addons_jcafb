@@ -18,5 +18,20 @@
 #
 ###############################################################################
 
-from . import annotation_seq
-from . import annotation
+from openerp import models
+
+
+class AnnotationCategory(models.Model):
+    _inherit = 'myo.annotation.category'
+
+    _defaults = {
+        'active_log': True,
+    }
+
+
+class Annotation(models.Model):
+    _inherit = 'myo.annotation'
+
+    _defaults = {
+        'active_log': True,
+    }
