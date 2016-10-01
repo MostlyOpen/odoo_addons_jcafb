@@ -18,5 +18,20 @@
 #
 ###############################################################################
 
-from . import document
-from . import document_seq
+from openerp import models
+
+
+class DocumentCategory(models.Model):
+    _inherit = 'myo.document.category'
+
+    _defaults = {
+        'active_log': True,
+    }
+
+
+class Document(models.Model):
+    _inherit = 'myo.document'
+
+    _defaults = {
+        'active_log': True,
+    }
