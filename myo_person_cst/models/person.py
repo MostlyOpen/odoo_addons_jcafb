@@ -25,7 +25,7 @@ class PersonCategory(models.Model):
     _inherit = 'myo.person.category'
 
     _defaults = {
-        'active_history': True,
+        'active_log': True,
     }
 
 
@@ -33,5 +33,5 @@ class Person(models.Model):
     _inherit = 'myo.person'
 
     _defaults = {
-        'active_history': True,
+        'active_log': True,
     }
