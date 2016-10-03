@@ -18,5 +18,20 @@
 #
 ###############################################################################
 
-from . import community
-from . import community_seq
+from openerp import models
+
+
+class CommunityCategory(models.Model):
+    _inherit = 'myo.community.category'
+
+    _defaults = {
+        'active_log': True,
+    }
+
+
+class Community(models.Model):
+    _inherit = 'myo.community'
+
+    _defaults = {
+        'active_log': True,
+    }
