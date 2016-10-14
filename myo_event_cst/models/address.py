@@ -18,35 +18,32 @@
 #
 ###############################################################################
 
-{
-    'name': 'Event (customizations for CLVhealth-JCAFB Solution)',
-    'summary': 'Event Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '2.0.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'depends': [
-        'myo_event',
-        'myo_address',
-        'myo_person',
-        'myo_employee',
-    ],
-    'data': [
-        'security/ir.model.access.csv',
-        'views/address_view.xml',
-        'views/event_person_view.xml',
-        'views/event_employee_view.xml',
-        'data/event_seq.xml',
-        'views/event_menu_view.xml',
-    ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-    'css': [],
-}
+from openerp import api, fields, models
+
+
+class Address(models.Model):
+    _inherit = 'myo.address'
+
+    event_ids = fields.One2many(
+        'myo.event',
+        'address_id',
+        'Events'
+    )
+    count_events = fields.Integer(
+        'Number of Events',
+        compute='_compute_count_events'
+    )
+
+    @api.depends('event_ids')
+    def _compute_count_events(self):
+        for r in self:
+            r.count_events = len(r.event_ids)
+
+
+class Event(models.Model):
+    _inherit = 'myo.event'
+
+    address_id = fields.Many2one('myo.address', 'Address', ondelete='restrict')
+    event_phone = fields.Char('Phone', related='address_id.phone')
+    mobile_phone = fields.Char('Mobile', related='address_id.mobile')
+    event_email = fields.Char('Email', related='address_id.email')

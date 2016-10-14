@@ -20,3 +20,6 @@
 
 # from . import event
 from . import event_seq
+from . import address
+from . import event_person
+from . import event_employee

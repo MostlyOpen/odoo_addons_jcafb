@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Base/Base/Events/Persons -->
+        <menuitem name="Persons" id="menu_base_base_events_persons"
+            parent="myo_event.menu_base_base_events"
+            groups="myo_base.group_event_user"
+            sequence="30"
+            action="myo_event_cst.myo_event_person_action"/>
+        <!-- Base/Base/Events/Employees -->
+        <menuitem name="Employees" id="menu_base_base_events_employees"
+            parent="myo_event.menu_base_base_events"
+            groups="myo_base.group_event_user"
+            sequence="40"
+            action="myo_event_cst.myo_event_employee_action"/>
+
+
+    </data>
+</openerp>

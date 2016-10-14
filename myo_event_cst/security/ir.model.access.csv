@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_myo_event_person_event_user,myo.event.person,model_myo_event_person,myo_base.group_event_user,1,0,0,0
+access_myo_event_person_event_person_manager,myo.event.person,model_myo_event_person,myo_base.group_event_manager,1,1,1,0
+access_myo_event_person_smanager,myo.event.person,model_myo_event_person,myo_base.group_smanager,1,1,1,1
+
+access_myo_event_employee_event_user,myo.event.employee,model_myo_event_employee,myo_base.group_event_user,1,0,0,0
+access_myo_event_employee_event_employee_manager,myo.event.employee,model_myo_event_employee,myo_base.group_event_manager,1,1,1,0
+access_myo_event_employee_smanager,myo.event.employee,model_myo_event_employee,myo_base.group_smanager,1,1,1,1
