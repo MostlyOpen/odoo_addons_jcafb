@@ -58,5 +58,9 @@
             <field name="name">Veterinário Residente</field>
         </record>
 
+        <record id="myo_employee.Dupla_de_Campo" model="hr.job">
+            <field name="name">Dupla de Campo</field>
+        </record>
+
     </data>
 </openerp>
