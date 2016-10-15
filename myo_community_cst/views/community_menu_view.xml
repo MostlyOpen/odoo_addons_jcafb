@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Community/Community/Community/Addresses -->
+        <menuitem name="Addresses" id="menu_community_community_communities_addresses"
+            parent="myo_community.menu_community_community_communities"
+            groups="myo_base.group_community_user"
+            sequence="20"
+            action="myo_community_address_action"/>
+        <!-- Community/Community/Community/Persons -->
+        <menuitem name="Persons" id="menu_community_community_communities_persons"
+            parent="myo_community.menu_community_community_communities"
+            groups="myo_base.group_community_user"
+            sequence="30"
+            action="myo_community_person_action"/>
+        <!-- Community/Community/Community/Employees -->
+        <menuitem name="Employees" id="menu_community_community_communities_employees"
+            parent="myo_community.menu_community_community_communities"
+            groups="myo_base.group_community_user"
+            sequence="40"
+            action="myo_community_employee_action"/>
+
+    </data>
+</openerp>

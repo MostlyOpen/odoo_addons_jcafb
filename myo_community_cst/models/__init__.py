@@ -20,3 +20,6 @@
 
 from . import community
 from . import community_seq
+from . import community_person
+from . import community_employee
+from . import community_address

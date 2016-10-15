@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_myo_community_person_community_user,myo.community.person,model_myo_community_person,myo_base.group_community_user,1,0,0,0
+access_myo_community_person_community_manager,myo.community.person,model_myo_community_person,myo_base.group_community_manager,1,1,1,0
+access_myo_community_person_smanager,myo.community.person,model_myo_community_person,myo_base.group_smanager,1,1,1,1
+
+access_myo_community_address_community_user,myo.community.address,model_myo_community_address,myo_base.group_community_user,1,0,0,0
+access_myo_community_address_community_manager,myo.community.address,model_myo_community_address,myo_base.group_community_manager,1,1,1,0
+access_myo_community_address_smanager,myo.community.address,model_myo_community_address,myo_base.group_smanager,1,1,1,1
+
+access_myo_community_employee_community_user,myo.community.employee,model_myo_community_employee,myo_base.group_community_user,1,0,0,0
+access_myo_community_employee_community_manager,myo.community.employee,model_myo_community_employee,myo_base.group_community_manager,1,1,1,0
+access_myo_community_employee_smanager,myo.community.employee,model_myo_community_employee,myo_base.group_smanager,1,1,1,1

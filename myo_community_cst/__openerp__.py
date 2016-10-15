@@ -27,10 +27,18 @@
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'depends': [
+        'myo_address',
+        'myo_person',
         'myo_community',
+        'myo_employee',
     ],
     'data': [
+        'security/ir.model.access.csv',
         'data/community_seq.xml',
+        'views/community_address_view.xml',
+        'views/community_person_view.xml',
+        'views/community_employee_view.xml',
+        'views/community_menu_view.xml',
     ],
     'demo': [],
     'test': [],
