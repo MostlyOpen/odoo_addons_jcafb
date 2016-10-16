@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Base/Base/Documents/Addresses -->
+        <menuitem name="Addresses" id="menu_base_base_documents_addresses"
+            parent="myo_document.menu_base_base_documents"
+            groups="myo_base.group_document_user"
+            sequence="20"
+            action="myo_document_address_action"/>
+        <!-- Base/Base/Documents/Persons -->
+        <menuitem name="Persons" id="menu_base_base_documents_persons"
+            parent="myo_document.menu_base_base_documents"
+            groups="myo_base.group_document_user"
+            sequence="30"
+            action="myo_document_person_action"/>
+        <!-- Base/Base/Documents/Employees -->
+        <menuitem name="Employees" id="menu_base_base_documents_employees"
+            parent="myo_document.menu_base_base_documents"
+            groups="myo_base.group_document_user"
+            sequence="40"
+            action="myo_document_employee_action"/>
+
+    </data>
+</openerp>

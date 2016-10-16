@@ -21,20 +21,34 @@
 from openerp import fields, models
 
 
-class DocumentCategory(models.Model):
-    _inherit = 'myo.document.category'
+class DocumentAddress(models.Model):
+    _name = 'myo.document.address'
 
-    _defaults = {
-        'active_log': True,
-    }
+    document_id = fields.Many2one('myo.document', string='Document',
+                                  help='Document', required=False)
+    address_id = fields.Many2one('myo.address', string='Address')
+    role = fields.Many2one('myo.document.role', 'Role', required=False)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active',
+                            help="If unchecked, it will allow you to hide the document address without removing it.",
+                            default=1)
 
 
 class Document(models.Model):
     _inherit = 'myo.document'
 
-    survey_id = fields.Many2one('survey.survey', 'Survey Type', help="Survey Type")
-    survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+    address_ids = fields.One2many(
+        'myo.document.address',
+        'document_id',
+        'Addresses'
+    )
 
-    _defaults = {
-        'active_log': True,
-    }
+
+class Address(models.Model):
+    _inherit = 'myo.address'
+
+    document_address_ids = fields.One2many(
+        'myo.document.address',
+        'address_id',
+        'Document Addresses'
+    )

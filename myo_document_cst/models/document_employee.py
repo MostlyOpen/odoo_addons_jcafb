@@ -21,20 +21,34 @@
 from openerp import fields, models
 
 
-class DocumentCategory(models.Model):
-    _inherit = 'myo.document.category'
+class DocumentEmployee(models.Model):
+    _name = 'myo.document.employee'
 
-    _defaults = {
-        'active_log': True,
-    }
+    document_id = fields.Many2one('myo.document', string='Document',
+                                  help='Document', required=False)
+    employee_id = fields.Many2one('hr.employee', string='Employee')
+    role = fields.Many2one('myo.document.role', 'Role', required=False)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active',
+                            help="If unchecked, it will allow you to hide the document employee without removing it.",
+                            default=1)
 
 
 class Document(models.Model):
     _inherit = 'myo.document'
 
-    survey_id = fields.Many2one('survey.survey', 'Survey Type', help="Survey Type")
-    survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+    employee_ids = fields.One2many(
+        'myo.document.employee',
+        'document_id',
+        'Employees'
+    )
 
-    _defaults = {
-        'active_log': True,
-    }
+
+class Employee(models.Model):
+    _inherit = 'hr.employee'
+
+    document_employee_ids = fields.One2many(
+        'myo.document.employee',
+        'employee_id',
+        'Document Employees'
+    )
