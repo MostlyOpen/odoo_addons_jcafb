@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [ITM17] JCAFB 2017 - Interpretação das Tabelas de Medicamentos -->
+        <record model="survey.survey" id="ITM17">
+            <field name="title">[ITM17] JCAFB 2017 - Interpretação das Tabelas de Medicamentos</field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;[ITM17] &lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- [ITM17_01] Identificação do Questionário -->
+            <record model="survey.page" id="ITM17_01">
+                <field name="title">[ITM17_01] Identificação do Questionário</field>
+                <field name="survey_id" ref="ITM17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;[ITM17_01] &lt;/p&gt;</field>
+            </record>
+
+                <!-- [ITM17_01_01] Código do Questionário: -->
+                <record model="survey.question" id="ITM17_01_01">
+                    <field name="question">[ITM17_01_01] Código do Questionário:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="ITM17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
+                </record>
+
+                <!-- [ITM17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <record model="survey.question" id="ITM17_01_02">
+                    <field name="question">[ITM17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="ITM17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data da entrevista.</field>
+                </record>
+
+                <!-- [ITM17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha): -->
+                <record model="survey.question" id="ITM17_01_03">
+                    <field name="question">[ITM17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):</field>
+                    <field name="type">free_text</field>
+                    <field name="page_id" ref="ITM17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar os Códigos quem fez a entrevista.</field>
+                </record>
+
+            <!-- [ITM17_02] Identificação do Paciente/Entrevistado -->
+            <record model="survey.page" id="ITM17_02">
+                <field name="title">[ITM17_02] Identificação do Paciente/Entrevistado</field>
+                <field name="survey_id" ref="ITM17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;[ITM17_02] &lt;/p&gt;</field>
+            </record>
+
+                <!-- [ITM17_02_01] Nome do Paciente: -->
+                <record model="survey.question" id="ITM17_02_01">
+                    <field name="question">[ITM17_02_01] Nome do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="ITM17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
+                </record>
+
+                <!-- [ITM17_02_02] Código do Paciente: -->
+                <record model="survey.question" id="ITM17_02_02">
+                    <field name="question">[ITM17_02_02] Código do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="ITM17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
+                </record>
+
+    </data>
+</openerp>
