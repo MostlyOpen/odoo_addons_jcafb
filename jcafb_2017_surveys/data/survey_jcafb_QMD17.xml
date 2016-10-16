@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [QMD17] JCAFB 2017 - Questionário Medicamento -->
+        <record model="survey.survey" id="QMD17">
+            <field name="title">[QMD17] JCAFB 2017 - Questionário Medicamento</field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;[QMD17] &lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- [QMD17_01] Identificação do Questionário -->
+            <record model="survey.page" id="QMD17_01">
+                <field name="title">[QMD17_01] Identificação do Questionário</field>
+                <field name="survey_id" ref="QMD17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;[QMD17_01] &lt;/p&gt;</field>
+            </record>
+
+                <!-- [QMD17_01_01] Código do Questionário: -->
+                <record model="survey.question" id="QMD17_01_01">
+                    <field name="question">[QMD17_01_01] Código do Questionário:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
+                </record>
+
+                <!-- [QMD17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <record model="survey.question" id="QMD17_01_02">
+                    <field name="question">[QMD17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data da entrevista.</field>
+                </record>
+
+                <!-- [QMD17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha): -->
+                <record model="survey.question" id="QMD17_01_03">
+                    <field name="question">[QMD17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):</field>
+                    <field name="type">free_text</field>
+                    <field name="page_id" ref="QMD17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar os Códigos quem fez a entrevista.</field>
+                </record>
+
+            <!-- [QMD17_02] Identificação do Paciente/Entrevistado -->
+            <record model="survey.page" id="QMD17_02">
+                <field name="title">[QMD17_02] Identificação do Paciente/Entrevistado</field>
+                <field name="survey_id" ref="QMD17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;[QMD17_02] &lt;/p&gt;</field>
+            </record>
+
+                <!-- [QMD17_02_01] Nome do Paciente: -->
+                <record model="survey.question" id="QMD17_02_01">
+                    <field name="question">[QMD17_02_01] Nome do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
+                </record>
+
+                <!-- [QMD17_02_02] Código do Paciente: -->
+                <record model="survey.question" id="QMD17_02_02">
+                    <field name="question">[QMD17_02_02] Código do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
+                </record>
+
+                <!-- [QMD17_02_03] Nome do Endereço -->
+                <record model="survey.question" id="QMD17_02_03">
+                    <field name="question">[QMD17_02_03] Nome do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_02"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- [QMD17_02_04] Código do Endereço -->
+                <record model="survey.question" id="QMD17_02_04">
+                    <field name="question">[QMD17_02_04] Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QMD17_02"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- [QMD17_02_05] Entrevistado -->
+                <record model="survey.question" id="QMD17_02_05">
+                    <field name="question">[QMD17_02_05] Entrevistado</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QMD17_02"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco</field>
+                </record>
+
+                    <record model="survey.label" id="QMD17_02_05_01">
+                        <field name="value">a) Responsável</field>
+                        <field name="question_id" ref="QMD17_02_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QMD17_02_05_02">
+                        <field name="value">b) Paciente</field>
+                        <field name="question_id" ref="QMD17_02_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QMD17_02_05_03">
+                        <field name="value">c) Cuidador</field>
+                        <field name="question_id" ref="QMD17_02_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QMD17_02_05_04">
+                        <field name="value">d) Outro</field>
+                        <field name="question_id" ref="QMD17_02_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+    </data>
+</openerp>

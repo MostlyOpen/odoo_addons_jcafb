@@ -1,53 +1,50 @@
-# -*- encoding: utf-8 -*-
-################################################################################
-#                                                                              #
-# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol                  #
-#                                                                              #
-# This program is free software: you can redistribute it and/or modify         #
-# it under the terms of the GNU Affero General Public License as published by  #
-# the Free Software Foundation, either version 3 of the License, or            #
-# (at your option) any later version.                                          #
-#                                                                              #
-# This program is distributed in the hope that it will be useful,              #
-# but WITHOUT ANY WARRANTY; without even the implied warranty of               #
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                #
-# GNU Affero General Public License for more details.                          #
-#                                                                              #
-# You should have received a copy of the GNU Affero General Public License     #
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
-################################################################################
+# -*- coding: utf-8 -*-
+###############################################################################
+#
+# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+###############################################################################
 
 {
     'name': 'JCAF 2017 Surveys',
-    'version': '1.0',
+    'summary': 'This module will install all the JCAF 2017 Surveys.',
+    'version': '2.0.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
-    'description': '''
-This module will install all the JCAF 2017 surveys.
-    ''',
     'depends': [
-        'survey',
-        # 'clv_document',
-        # 'clv_patient',
-        # 'clv_family',
+        'myo_survey',
     ],
     'data': [
-        # 'survey_jcafb_2017_data.xml',
-        'FSE17/survey_jcafb_FSE17.xml',
-        'ISE17/survey_jcafb_ISE17.xml',
-        'CSE17/survey_jcafb_CSE17.xml',
-        'QMD17/survey_jcafb_QMD17.xml',
-        # 'LMD17/survey_jcafb_LMD17.xml',
-        'QAN17/survey_jcafb_QAN17.xml',
-        'QDH17/survey_jcafb_QDH17.xml',
-        'ITM17/survey_jcafb_ITM17.xml',
-        # 'clv_document_view.xml',
-        # 'clv_patient_view.xml',
-        # 'clv_family_view.xml',
+        'data/survey_jcafb_FSE17.xml',
+        'data/survey_jcafb_ISE17.xml',
+        'data/survey_jcafb_CSE17.xml',
+        'data/survey_jcafb_QMD17.xml',
+        'data/survey_jcafb_QAN17.xml',
+        'data/survey_jcafb_QDH17.xml',
+        'data/survey_jcafb_ITM17.xml',
     ],
+    'demo': [],
     'test': [],
+    'init_xml': [],
+    'test': [],
+    'update_xml': [],
     'installable': True,
+    'application': False,
     'active': False,
+    'css': [],
 }
