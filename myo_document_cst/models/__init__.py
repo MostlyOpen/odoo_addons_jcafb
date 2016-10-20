@@ -22,4 +22,4 @@ from . import document
 from . import document_seq
 from . import document_person
 from . import document_employee
-from . import document_address
+from . import address

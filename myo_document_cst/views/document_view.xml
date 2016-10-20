@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="myo_document.myo_document_view_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <label for="date_requested" position="before">
+                <label for="user_id" position="before">
                     <!--label for="survey_id" class="oe_edit_only"/-->
                     <label for="survey_id"/>
                     <h3>
@@ -20,6 +20,18 @@
                         <field name="survey_user_input_id" placeholder="Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
                     </h3>
                 </label>
+            </field>
+        </record>
+
+        <record id="myo_document_view_search_survey" model="ir.ui.view">
+            <field name="name">myo.document.search</field>
+            <field name="model">myo.document</field>
+            <field name="inherit_id" ref="myo_document.myo_document_view_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <group name="group_by" position="inside">
+                    <filter string="Survey Type" context="{'group_by': 'survey_id'}"/>
+                </group>
             </field>
         </record>
 

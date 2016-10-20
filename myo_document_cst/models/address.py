@@ -18,37 +18,32 @@
 #
 ###############################################################################
 
-from openerp import fields, models
-
-
-class DocumentAddress(models.Model):
-    _name = 'myo.document.address'
-
-    document_id = fields.Many2one('myo.document', string='Document',
-                                  help='Document', required=False)
-    address_id = fields.Many2one('myo.address', string='Address')
-    role = fields.Many2one('myo.document.role', 'Role', required=False)
-    notes = fields.Text(string='Notes')
-    active = fields.Boolean('Active',
-                            help="If unchecked, it will allow you to hide the document address without removing it.",
-                            default=1)
-
-
-class Document(models.Model):
-    _inherit = 'myo.document'
-
-    address_ids = fields.One2many(
-        'myo.document.address',
-        'document_id',
-        'Addresses'
-    )
+from openerp import api, fields, models
 
 
 class Address(models.Model):
     _inherit = 'myo.address'
 
-    document_address_ids = fields.One2many(
-        'myo.document.address',
+    document_ids = fields.One2many(
+        'myo.document',
         'address_id',
-        'Document Addresses'
+        'Documents'
     )
+    count_documents = fields.Integer(
+        'Number of Documents',
+        compute='_compute_count_documents'
+    )
+
+    @api.depends('document_ids')
+    def _compute_count_documents(self):
+        for r in self:
+            r.count_documents = len(r.document_ids)
+
+
+class Document(models.Model):
+    _inherit = 'myo.document'
+
+    address_id = fields.Many2one('myo.address', 'Address', ondelete='restrict')
+    document_phone = fields.Char('Phone', related='address_id.phone')
+    mobile_phone = fields.Char('Mobile', related='address_id.mobile')
+    document_email = fields.Char('Email', related='address_id.email')

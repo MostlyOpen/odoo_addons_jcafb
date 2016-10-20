@@ -36,10 +36,10 @@
     'data': [
         'security/ir.model.access.csv',
         'data/document_seq.xml',
-        'views/document_address_view.xml',
         'views/document_person_view.xml',
         'views/document_employee_view.xml',
         'views/document_view.xml',
+        'views/address_view.xml',
         'views/document_menu_view.xml',
     ],
     'demo': [],

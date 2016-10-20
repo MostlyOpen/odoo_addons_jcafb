@@ -4,10 +4,6 @@ access_myo_document_person_document_user,myo.document.person,model_myo_document_
 access_myo_document_person_document_manager,myo.document.person,model_myo_document_person,myo_base.group_document_manager,1,1,1,0
 access_myo_document_person_smanager,myo.document.person,model_myo_document_person,myo_base.group_smanager,1,1,1,1
 
-access_myo_document_address_document_user,myo.document.address,model_myo_document_address,myo_base.group_document_user,1,0,0,0
-access_myo_document_address_document_manager,myo.document.address,model_myo_document_address,myo_base.group_document_manager,1,1,1,0
-access_myo_document_address_smanager,myo.document.address,model_myo_document_address,myo_base.group_smanager,1,1,1,1
-
 access_myo_document_employee_document_user,myo.document.employee,model_myo_document_employee,myo_base.group_document_user,1,0,0,0
 access_myo_document_employee_document_manager,myo.document.employee,model_myo_document_employee,myo_base.group_document_manager,1,1,1,0
 access_myo_document_employee_smanager,myo.document.employee,model_myo_document_employee,myo_base.group_smanager,1,1,1,1
