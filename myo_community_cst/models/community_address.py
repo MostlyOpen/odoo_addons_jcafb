@@ -27,7 +27,7 @@ class CommunityAddress(models.Model):
     community_id = fields.Many2one('myo.community', string='Community',
                                    help='Community', required=False)
     address_id = fields.Many2one('myo.address', string='Address')
-    role = fields.Many2one('myo.community.member.role', 'Role', required=False)
+    role_id = fields.Many2one('myo.community.member.role', 'Role', required=False)
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the community address without removing it.",
