@@ -27,7 +27,7 @@ class EventEmployee(models.Model):
     event_id = fields.Many2one('myo.event', string='Event',
                                help='Event', required=False)
     employee_id = fields.Many2one('hr.employee', string='Employee')
-    role = fields.Many2one('myo.event.participant.role', 'Role', required=False)
+    role_id = fields.Many2one('myo.event.participant.role', 'Role', required=False)
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the event employee without removing it.",
