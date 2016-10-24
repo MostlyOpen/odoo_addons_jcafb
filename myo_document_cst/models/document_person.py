@@ -27,7 +27,7 @@ class DocumentPerson(models.Model):
     document_id = fields.Many2one('myo.document', string='Document',
                                   help='Document', required=False, ondelete='restrict')
     person_id = fields.Many2one('myo.person', string='Person', ondelete='restrict')
-    role = fields.Many2one('myo.document.role', 'Role', required=False)
+    role_id = fields.Many2one('myo.document.role', 'Role', required=False)
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the document person without removing it.",
