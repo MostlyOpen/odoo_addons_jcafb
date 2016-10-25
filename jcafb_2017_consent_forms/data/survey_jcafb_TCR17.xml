@@ -50,14 +50,14 @@
                     <field name="constr_error_msg">Preencher com o Código do Professor Responsável que assinou o Termo de Consentimento.</field>
                 </record>
 
-                <!-- [TCR17_01_04] Códigos do(s) Coletor(es) (um em cada linha): -->
+                <!-- [TCR17_01_04] Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="TCR17_01_04">
-                    <field name="question">[TCR17_01_04] Códigos do(s) Coletor(es) (um em cada linha):</field>
-                    <field name="type">free_text</field>
+                    <field name="question">[TCR17_01_04] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="type">textbox</field>
                     <field name="page_id" ref="TCR17_01"/>
                     <field name="sequence" eval="40"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Informar os Códigos de quem colheu a assinatura do Termo.</field>
+                    <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
             <!-- [TCR17_02] Identificação do Indivíduo -->
