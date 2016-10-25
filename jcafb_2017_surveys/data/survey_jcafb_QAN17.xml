@@ -40,14 +40,14 @@
                     <field name="constr_error_msg">Preencher com a data da entrevista.</field>
                 </record>
 
-                <!-- [QAN17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha): -->
+                <!-- [QAN17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="QAN17_01_03">
-                    <field name="question">[QAN17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):</field>
-                    <field name="type">free_text</field>
+                    <field name="question">[QAN17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_01"/>
                     <field name="sequence" eval="30"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Informar os Códigos quem fez a entrevista.</field>
+                    <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
             <!-- [QAN17_02] Identificação do Paciente/Entrevistado -->
