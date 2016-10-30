@@ -21,15 +21,15 @@
 from openerp import models, fields
 
 
-class LabTest(models.Model):
-    _inherit = 'myo.lab_test'
+class LabTestResult(models.Model):
+    _inherit = 'myo.lab_test.result'
 
     name = fields.Char(string='Code', required=False, default='/',
                        help='Use "/" to get an automatic new Lab Test Code.')
 
 
 class LabTestPatient(models.Model):
-    _inherit = 'myo.lab_test.patient'
+    _inherit = 'myo.lab_test.request'
 
     code = fields.Char(string='Code', required=False, default='/',
                        help='Use "/" to get an automatic new Lab Test Code.')
