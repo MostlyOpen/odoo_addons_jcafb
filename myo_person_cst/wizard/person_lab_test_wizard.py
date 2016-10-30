@@ -37,12 +37,12 @@ class PersonLabTestWizard(models.TransientModel):
         _logger.debug('Lab Test update on Persons %s',
                       self.person_ids.ids)
 
-        lab_test_patient_model = self.env['myo.lab_test.patient']
+        lab_test_patient_model = self.env['myo.lab_test.request']
 
         for person in self.person_ids:
             for lab_test_type in self.lab_test_type_ids:
                 values = {
-                    'name': lab_test_type.id,
+                    'lab_test_type_id': lab_test_type.id,
                     'patient_id': person.id,
                 }
                 lab_test_patient_model.create(values)
