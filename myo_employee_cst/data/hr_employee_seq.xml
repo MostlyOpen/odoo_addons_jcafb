@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="1">
 
-        <record id="myo_employee.myo_employee_seq" model="ir.sequence">
+        <record id="myo_employee.hr_employee_seq" model="ir.sequence">
             <field name="padding" eval="4"/>
             <field name="prefix">91</field>
             <field name="number_next">1</field>
