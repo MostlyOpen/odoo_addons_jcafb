@@ -1,0 +1,42 @@
+<openerp>
+  <data>
+
+    <record id="myo_address_mng_create_wizard_view_form" model="ir.ui.view">
+      <field name="name">myo.address.mng.create.wizard.form</field>
+      <field name="model">myo.address.mng.create.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_count_persons"
+                        string="Count"/-->
+                <button type="object" name="do_populate_persons"
+                        string="Get Selected"/>
+            </div>
+            <field name="person_mng_ids"/>
+            <!--field name="lab_test_type_ids"/-->
+            <group>
+                <!--group><field name="new_active"/></group-->
+            </group>
+            <footer>
+                <button type="object" name="do_create_address_mng"
+                    string="Create Address Management" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="myo_address_mng_create_wizard_action"
+        name="Create Address Management"
+        src_model="myo.person.mng"
+        res_model="myo.address.mng.create.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>
