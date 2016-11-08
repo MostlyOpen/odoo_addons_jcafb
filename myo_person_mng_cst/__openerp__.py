@@ -31,6 +31,7 @@
     ],
     'data': [
         'wizard/address_mng_create_wizard_view.xml',
+        'wizard/address_search_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

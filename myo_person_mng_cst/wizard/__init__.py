@@ -19,3 +19,4 @@
 ###############################################################################
 
 import address_mng_create_wizard
+import address_search_wizard
