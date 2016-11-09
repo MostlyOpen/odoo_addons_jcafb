@@ -1,0 +1,36 @@
+<openerp>
+  <data>
+
+    <record id="myo_person_create_wizard_view_form" model="ir.ui.view">
+      <field name="name">myo.person.create.wizard.form</field>
+      <field name="model">myo.person.create.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <button type="object" name="do_populate_persons"
+                        string="Get Selected"/>
+            </div>
+            <field name="person_mng_ids"/>
+            <footer>
+                <button type="object" name="do_create_person"
+                    string="Create Person" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="myo_person_create_wizard_action"
+        name="Create Person"
+        src_model="myo.person.mng"
+        res_model="myo.person.create.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>
