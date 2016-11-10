@@ -2,13 +2,13 @@
 <openerp>
     <data noupdate="0">
 
-        <!-- [TID17] JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAME DE URINA, COPROPARASITOLÓGICO, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO -->
+        <!-- [TID17]  -->
         <record model="survey.survey" id="TID17">
-            <field name="title">[TID17] JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAME DE URINA, COPROPARASITOLÓGICO, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO</field>
+            <field name="title">[TID17] </field>
             <field name="stage_id" ref="survey.stage_in_progress"/>
             <field name="auth_required" eval="False"/>
             <field name="users_can_go_back" eval="True"/>
-            <field name="description">&lt;p&gt;[TID17] &lt;/p&gt;</field>
+            <field name="description">&lt;p&gt;JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAME DE URINA, COPROPARASITOLÓGICO, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO&lt;/p&gt;</field>
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
@@ -17,7 +17,7 @@
                 <field name="title">[TID17_01] Identificação do Termo de Consentimento</field>
                 <field name="survey_id" ref="TID17"/>
                 <field name="sequence" eval="10"/>
-                <field name="description">&lt;p&gt;[TID17_01] &lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
                 <!-- [TID17_01_01] Código do Termo de Consentimento: -->
@@ -65,7 +65,7 @@
                 <field name="title">[TID17_02] Identificação do Indivíduo</field>
                 <field name="survey_id" ref="TID17"/>
                 <field name="sequence" eval="20"/>
-                <field name="description">&lt;p&gt;[TID17_02] &lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
                 <!-- [TID17_02_01] Nome do Indivíduo: -->
@@ -131,6 +131,118 @@
                     <record model="survey.label" id="TID17_02_05_02">
                         <field name="value">b) Responsável Legal</field>
                         <field name="question_id" ref="TID17_02_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+            <!-- [TID17_03] Consentimentos -->
+            <record model="survey.page" id="TID17_03">
+                <field name="title">[TID17_03] Consentimentos</field>
+                <field name="survey_id" ref="TID17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [TID17_03_01] 1) Questionário Socioeconômico -->
+                <record model="survey.question" id="TID17_03_01">
+                    <field name="question">[TID17_03_01] 1) Questionário Socioeconômico</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="TID17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="TID17_03_01_01">
+                        <field name="value">Concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="TID17_03_01_02">
+                        <field name="value">Não concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                <!-- [TID17_03_02] 2) Exame coproparasitológico de fezes -->
+                <record model="survey.question" id="TID17_03_02">
+                    <field name="question">[TID17_03_02] 2) Exame coproparasitológico de fezes</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="TID17_03"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="TID17_03_02_01">
+                        <field name="value">Concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="TID17_03_02_02">
+                        <field name="value">Não concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                <!-- [TID17_03_03] 3) Exame de urina -->
+                <record model="survey.question" id="TID17_03_03">
+                    <field name="question">[TID17_03_03] 3) Exame de urina</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="TID17_03"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="TID17_03_03_01">
+                        <field name="value">Concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="TID17_03_03_02">
+                        <field name="value">Não concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                <!-- [TID17_03_04] 4) Exame de anemia -->
+                <record model="survey.question" id="TID17_03_04">
+                    <field name="question">[TID17_03_04] 4) Exame de anemia</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="TID17_03"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="TID17_03_04_01">
+                        <field name="value">Concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="TID17_03_04_02">
+                        <field name="value">Não concordo em participar</field>
+                        <field name="question_id" ref="TID17_03_04"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
