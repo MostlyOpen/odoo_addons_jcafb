@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [QSF17]  -->
+        <record model="survey.survey" id="QSF17">
+            <field name="title">[QSF17] </field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;JCAFB 2017 - Questionário Socioeconômico Familiar (Crianças e Idosos)&lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- [QSF17_01] Identificação do Questionário -->
+            <record model="survey.page" id="QSF17_01">
+                <field name="title">[QSF17_01] Identificação do Questionário</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_01_01] Código do Questionário: -->
+                <record model="survey.question" id="QSF17_01_01">
+                    <field name="question">[QSF17_01_01] Código do Questionário:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
+                </record>
+
+                <!-- [QSF17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <record model="survey.question" id="QSF17_01_02">
+                    <field name="question">[QSF17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data da entrevista.</field>
+                </record>
+
+                <!-- [QSF17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
+                <record model="survey.question" id="QSF17_01_03">
+                    <field name="question">[QSF17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
+                </record>
+
+            <!-- [QSF17_02] Identificação do Endereço/Entrevistado -->
+            <record model="survey.page" id="QSF17_02">
+                <field name="title">[QSF17_02] Identificação do Endereço/Entrevistado</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_02_01] Nome do Endereço -->
+                <record model="survey.question" id="QSF17_02_01">
+                    <field name="question">[QSF17_02_01] Nome do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o(s) Paciente(s) reside(m).</field>
+                </record>
+
+                <!-- [QSF17_02_02] Código do Endereço -->
+                <record model="survey.question" id="QSF17_02_02">
+                    <field name="question">[QSF17_02_02] Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Endereço em que o(s) Paciente(s) reside(m).</field>
+                </record>
+
+                <!-- [QSF17_02_03] Entrevistado: -->
+                <record model="survey.question" id="QSF17_02_03">
+                    <field name="question">[QSF17_02_03] Entrevistado:</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_02"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se a resposta for "Outro", especificar o papel na residência:</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_02_03_01">
+                        <field name="value">a) Responsável pela(s) Criança(s) da casa</field>
+                        <field name="question_id" ref="QSF17_02_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_02_03_02">
+                        <field name="value">b) Paciente Idoso</field>
+                        <field name="question_id" ref="QSF17_02_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_02_03_03">
+                        <field name="value">c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa</field>
+                        <field name="question_id" ref="QSF17_02_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_02_03_04">
+                        <field name="value">d) Outro (especificar)</field>
+                        <field name="question_id" ref="QSF17_02_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+            <!-- [QSF17_03] Residência -->
+            <record model="survey.page" id="QSF17_03">
+                <field name="title">[QSF17_03] Residência</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_03_01] Como é o banheiro da casa? -->
+                <record model="survey.question" id="QSF17_03_01">
+                    <field name="question">[QSF17_03_01] Como é o banheiro da casa?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outro", especificar:</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_03_01_01">
+                        <field name="value">a) Banheiro com rede de esgoto</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_01_02">
+                        <field name="value">b) Banheiro que dá na fossa</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_01_03">
+                        <field name="value">c) Outro</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_01_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_01_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_01_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_03_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- [QSF17_03_02] A casa possui (preencher no caso de residência de idosos; se residência de crianças, escolher "Não se aplica"): -->
+                <record model="survey.question" id="QSF17_03_02">
+                    <field name="question">[QSF17_03_02] A casa possui (preencher no caso de residência de idosos; se residência de crianças, escolher "Não se aplica"):</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_03"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_03_02_01">
+                        <field name="value">a) Degraus/desníveis</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_02">
+                        <field name="value">b) Tapetes</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_03">
+                        <field name="value">c) Locais com piso escorregadio</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_04">
+                        <field name="value">d) Móveis ou objetos que dificultam a circulação</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_05">
+                        <field name="value">e) Armários ou prateleiras muito altas</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_06">
+                        <field name="value">f) Nenhuma das alternativas citadas</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_07">
+                        <field name="value">g) Não sabe</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_08">
+                        <field name="value">h) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_03_02_09">
+                        <field name="value">i) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_03_02"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+            <!-- [QSF17_04] Horta -->
+            <record model="survey.page" id="QSF17_04">
+                <field name="title">[QSF17_04] Horta</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="40"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_04_01] Plantam alguma coisa para consumo? (para vender, comer..) -->
+                <record model="survey.question" id="QSF17_04_01">
+                    <field name="question">[QSF17_04_01] Plantam alguma coisa para consumo? (para vender, comer..)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_04"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_04_01_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_04_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_01_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_04_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_01_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_04_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_01_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_04_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_04_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_04_02] Usam adubo? -->
+                <record model="survey.question" id="QSF17_04_02">
+                    <field name="question">[QSF17_04_02] Usam adubo?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_04"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_04_02_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_02">
+                        <field name="value">b) Sim, adubo orgânico com esterco</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_03">
+                        <field name="value">c) Sim, adubo orgânico sem esterco</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_04">
+                        <field name="value">d) Sim, adubo comprado</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_05">
+                        <field name="value">e) Não sabe</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_06">
+                        <field name="value">f) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_02_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_04_02"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- [QSF17_04_03] Qual fonte de água é utilizada para irrigar a horta? -->
+                <record model="survey.question" id="QSF17_04_03">
+                    <field name="question">[QSF17_04_03] Qual fonte de água é utilizada para irrigar a horta?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_04"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outras", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_04_03_01">
+                        <field name="value">a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSF17_04_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_03_02">
+                        <field name="value">b) Outras (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSF17_04_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_03_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_04_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_03_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_04_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_04_03_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_04_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- [QSF17_05] Água -->
+            <record model="survey.page" id="QSF17_05">
+                <field name="title">[QSF17_05] Água</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="50"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_05_01] De onde vem a água da casa? -->
+                <record model="survey.question" id="QSF17_05_01">
+                    <field name="question">[QSF17_05_01] De onde vem a água da casa?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_05"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_05_01_01">
+                        <field name="value">a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSF17_05_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_01_02">
+                        <field name="value">b) Outros (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSF17_05_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_01_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_05_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_01_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_05_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_05_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_05_02] Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ? -->
+                <record model="survey.question" id="QSF17_05_02">
+                    <field name="question">[QSF17_05_02] Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_05"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_05_02_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_05_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_02_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_05_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_02_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_05_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_02_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_05_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_02_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_05_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_05_03] Na falta de água, onde é obtida? -->
+                <record model="survey.question" id="QSF17_05_03">
+                    <field name="question">[QSF17_05_03] Na falta de água, onde é obtida?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_05"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_05_03_01">
+                        <field name="value">a) Reservatório da prefeitura</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_03_02">
+                        <field name="value">b) Outros (Poço, lagoa, córrego, cisterna, etc).</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_03_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_03_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_03_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_05_04] Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção) -->
+                <record model="survey.question" id="QSF17_05_04">
+                    <field name="question">[QSF17_05_04] Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção)</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_05"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_05_04_01">
+                        <field name="value">a) Filtração</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_02">
+                        <field name="value">b) Fervura</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_03">
+                        <field name="value">c) Hipoclorito</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_04">
+                        <field name="value">d) Nenhum</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_05">
+                        <field name="value">e) Outros</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_06">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_07">
+                        <field name="value">g) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_04_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_05_04"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+            <!-- [QSF17_06] Alimentação / Animais -->
+            <record model="survey.page" id="QSF17_06">
+                <field name="title">[QSF17_06] Alimentação / Animais</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="60"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_06_01] Criam animais de estimação? -->
+                <record model="survey.question" id="QSF17_06_01">
+                    <field name="question">[QSF17_06_01] Criam animais de estimação?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_01_01">
+                        <field name="value">a) Não criam</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_02">
+                        <field name="value">b) Galinha</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_03">
+                        <field name="value">c) Porco</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_04">
+                        <field name="value">d) Boi, vaca ou bezerro</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_05">
+                        <field name="value">e) Gato</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_06">
+                        <field name="value">f) Cachorro </field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_07">
+                        <field name="value">g) Outros</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_08">
+                        <field name="value">h) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_09">
+                        <field name="value">i) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_01_10">
+                        <field name="value">j) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_01"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                <!-- [QSF17_06_02] Como são criados? -->
+                <record model="survey.question" id="QSF17_06_02">
+                    <field name="question">[QSF17_06_02] Como são criados?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_02_01">
+                        <field name="value">a) Soltos (ou seja, vão pra rua, ou fora de cercados e chiqueiros)</field>
+                        <field name="question_id" ref="QSF17_06_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_02_02">
+                        <field name="value">b) Presos</field>
+                        <field name="question_id" ref="QSF17_06_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_02_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_02_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_02_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_06_03] Criam animais para a alimentação? -->
+                <record model="survey.question" id="QSF17_06_03">
+                    <field name="question">[QSF17_06_03] Criam animais para a alimentação?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_03_01">
+                        <field name="value">a) Não criam</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_02">
+                        <field name="value">b) Galinha</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_03">
+                        <field name="value">c) Porco</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_04">
+                        <field name="value">d) Boi, vaca ou bezerro</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_05">
+                        <field name="value">e) Coelho</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_06">
+                        <field name="value">f) Outros</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_07">
+                        <field name="value">g) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_08">
+                        <field name="value">h) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_03_09">
+                        <field name="value">i) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_03"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                <!-- [QSF17_06_04] Como são criados? -->
+                <record model="survey.question" id="QSF17_06_04">
+                    <field name="question">[QSF17_06_04] Como são criados?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_04_01">
+                        <field name="value">a) Soltos (ou seja, vão pra rua, ou fora de cercados e chiqueiros)</field>
+                        <field name="question_id" ref="QSF17_06_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_04_02">
+                        <field name="value">b) Presos</field>
+                        <field name="question_id" ref="QSF17_06_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_04_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_04_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_04_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_06_05] Costumam consumir carne proveniente de: (pode-se marcar mais de uma opção) -->
+                <record model="survey.question" id="QSF17_06_05">
+                    <field name="question">[QSF17_06_05] Costumam consumir carne proveniente de: (pode-se marcar mais de uma opção)</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_05_01">
+                        <field name="value">a) Não consomem carne</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_02">
+                        <field name="value">b) Criação própria</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_03">
+                        <field name="value">c) Mercado/açougue</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_04">
+                        <field name="value">d) Criador de confiança</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_05">
+                        <field name="value">e) Outros</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_06">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_07">
+                        <field name="value">g) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_05_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_05"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <!-- [QSF17_06_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam: -->
+                <record model="survey.question" id="QSF17_06_06">
+                    <field name="question">[QSF17_06_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_06"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_06_06_01">
+                        <field name="value">a) Lavar em água corrente</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_02">
+                        <field name="value">b) Colocar de molho em água</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_03">
+                        <field name="value">c) Colocar de molho em água+vinagre</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_04">
+                        <field name="value">d) Colocar de molho em água+água sanitária/hipoclorito</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_05">
+                        <field name="value">e) Nenhum </field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_06">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_07">
+                        <field name="value">g) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_06_06_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_06_06"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+            <!-- [QSF17_07] Medicamentos (geral familiar) -->
+            <record model="survey.page" id="QSF17_07">
+                <field name="title">[QSF17_07] Medicamentos (geral familiar)</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="70"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_07_01] Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)            -->
+                <record model="survey.question" id="QSF17_07_01">
+                    <field name="question">[QSF17_07_01] Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           </field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Sim", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_01_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_07_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_01_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_07_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_01_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_01_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_07_02] Possuem remédios na residência? -->
+                <record model="survey.question" id="QSF17_07_02">
+                    <field name="question">[QSF17_07_02] Possuem remédios na residência?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_02_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_07_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_02_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_07_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_02_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_02_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_02_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_07_03] De que modo adquirem os medicamentos que utilizam? -->
+                <record model="survey.question" id="QSF17_07_03">
+                    <field name="question">[QSF17_07_03] De que modo adquirem os medicamentos que utilizam?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outro", especificar</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_03_01">
+                        <field name="value">a) Farmácia</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_03_02">
+                        <field name="value">b) Posto</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_03_03">
+                        <field name="value">c) Outro (especificar)</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_03_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_03_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_03_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- [QSF17_07_04] Onde guardam os remédios? -->
+                <record model="survey.question" id="QSF17_07_04">
+                    <field name="question">[QSF17_07_04] Onde guardam os remédios?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", onde?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_04_01">
+                        <field name="value">a) Na cozinha</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_02">
+                        <field name="value">b) No banheiro</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_03">
+                        <field name="value">c) No quarto</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_04">
+                        <field name="value">d) Outros</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_05">
+                        <field name="value">e) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_06">
+                        <field name="value">f) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_04_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_04"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- [QSF17_07_05] Como descartam os medicamentos? -->
+                <record model="survey.question" id="QSF17_07_05">
+                    <field name="question">[QSF17_07_05] Como descartam os medicamentos?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_05_01">
+                        <field name="value">a) Não descartam</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_02">
+                        <field name="value">b) Descarte inadequado (lixo, pia, etc)</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_03">
+                        <field name="value">c) Não sobram medicamentos</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_04">
+                        <field name="value">d) Plantas ou terra</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_05">
+                        <field name="value">e) Devolvem no Posto de Saúde</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_06">
+                        <field name="value">f) Dão para algum conhecido </field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_07">
+                        <field name="value">g) Outros</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_08">
+                        <field name="value">h) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_09">
+                        <field name="value">i) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_05_10">
+                        <field name="value">j) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_05"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                <!-- [QSF17_07_06] O que utilizam quando alguém tem diarreia? -->
+                <record model="survey.question" id="QSF17_07_06">
+                    <field name="question">[QSF17_07_06] O que utilizam quando alguém tem diarreia?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_06_01">
+                        <field name="value">a) Nada. Esperam passar</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_02">
+                        <field name="value">b) Soro caseiro</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_03">
+                        <field name="value">c) Soro pronto</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_04">
+                        <field name="value">d) Outros</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_05">
+                        <field name="value">e) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_06">
+                        <field name="value">f) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_06_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_06"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- [QSF17_07_07] Conhecem o soro caseiro? -->
+                <record model="survey.question" id="QSF17_07_07">
+                    <field name="question">[QSF17_07_07] Conhecem o soro caseiro?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_07_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_07_07"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_07_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_07_07"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_07_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_07"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_07_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_07"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_07_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_07"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- [QSF17_07_08] Sabem como preparar? -->
+                <record model="survey.question" id="QSF17_07_08">
+                    <field name="question">[QSF17_07_08] Sabem como preparar?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_07"/>
+                    <field name="sequence" eval="80"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_07_08_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_07_08"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_08_02">
+                        <field name="value">b) Sim</field>
+                        <field name="question_id" ref="QSF17_07_08"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_08_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QSF17_07_08"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_08_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_07_08"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_07_08_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_07_08"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- [QSF17_08] Parasitoses -->
+            <record model="survey.page" id="QSF17_08">
+                <field name="title">[QSF17_08] Parasitoses</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="80"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_08_01] Conhecem algum verme (parasitose)? -->
+                <record model="survey.question" id="QSF17_08_01">
+                    <field name="question">[QSF17_08_01] Conhecem algum verme (parasitose)?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_08"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message">Se "Outro", qual?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_08_01_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_02">
+                        <field name="value">b) Barriga d água, "xistose" (Esquistossomose)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_03">
+                        <field name="value">c) "Bicha", "lombriga" (Ascaridíase)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_04">
+                        <field name="value">d) "Amarelão" (Ancilostomose)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_05">
+                        <field name="value">e) "Solitária" (Teníase)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_06">
+                        <field name="value">f) "Ameba"(Amebíase/Giardíase)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_07">
+                        <field name="value">g) Coceira (Enterobíase)</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_08">
+                        <field name="value">g) Outros</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_09">
+                        <field name="value">h) Não sabe</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_10">
+                        <field name="value">i) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_01_11">
+                        <field name="value">j) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_08_01"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                <!-- [QSF17_08_02] Sabem como se prevenir de pegar vermes? -->
+                <record model="survey.question" id="QSF17_08_02">
+                    <field name="question">[QSF17_08_02] Sabem como se prevenir de pegar vermes?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_08"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_08_02_01">
+                        <field name="value">a) Andar calçado</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_02">
+                        <field name="value">b) Lavar as mãos</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_03">
+                        <field name="value">c) Lavar os alimentos</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_04">
+                        <field name="value">d) Não</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_05">
+                        <field name="value">e) Não sabe responder</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_06">
+                        <field name="value">f) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_02_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_08_02"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- [QSF17_08_03] Alguém na casa já pegou verme? Qual? -->
+                <record model="survey.question" id="QSF17_08_03">
+                    <field name="question">[QSF17_08_03] Alguém na casa já pegou verme? Qual?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QSF17_08"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message">Se "Outro", qual?</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_08_03_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_02">
+                        <field name="value">b) Sim, mas não sabe qual verme</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_03">
+                        <field name="value">c) "Solitária" (Teníase)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_04">
+                        <field name="value">d) "Ameba" (Amebíase)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_05">
+                        <field name="value">e) "Giárdia" (Giardíase)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_06">
+                        <field name="value">f) Coceira (Enterobíase)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_07">
+                        <field name="value">g) "Amarelão" (Ancilostomose)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_08">
+                        <field name="value">h) "Bicha", "lombriga" (Ascaridíase)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_09">
+                        <field name="value">i) Barriga d água, "xistose" (Esquistossomose)</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_10">
+                        <field name="value">j) Outro</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_11">
+                        <field name="value">k) Não sabe</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_12">
+                        <field name="value">l) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_08_03_13">
+                        <field name="value">m) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_08_03"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+            <!-- [QSF17_09] Aspecto Econômico -->
+            <record model="survey.page" id="QSF17_09">
+                <field name="title">[QSF17_09] Aspecto Econômico</field>
+                <field name="survey_id" ref="QSF17"/>
+                <field name="sequence" eval="90"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- [QSF17_09_01] Qual o valor do rendimento mensal familiar aproximado? -->
+                <record model="survey.question" id="QSF17_09_01">
+                    <field name="question">[QSF17_09_01] Qual o valor do rendimento mensal familiar aproximado?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QSF17_09"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Colocar o valor (somente o número)</field>
+                </record>
+
+                    <record model="survey.label" id="QSF17_09_01_01">
+                        <field name="value">a) Valor (colocar abaixo)</field>
+                        <field name="question_id" ref="QSF17_09_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_09_01_02">
+                        <field name="value">b) Não sabe</field>
+                        <field name="question_id" ref="QSF17_09_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_09_01_03">
+                        <field name="value">c) Não quis responder</field>
+                        <field name="question_id" ref="QSF17_09_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_09_01_04">
+                        <field name="value">d) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_09_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+    </data>
+</openerp>

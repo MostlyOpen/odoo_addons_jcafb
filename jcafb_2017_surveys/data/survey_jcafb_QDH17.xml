@@ -2,13 +2,13 @@
 <openerp>
     <data noupdate="0">
 
-        <!-- [QDH17] JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia -->
+        <!-- [QDH17]  -->
         <record model="survey.survey" id="QDH17">
-            <field name="title">[QDH17] JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia</field>
+            <field name="title">[QDH17] </field>
             <field name="stage_id" ref="survey.stage_in_progress"/>
             <field name="auth_required" eval="False"/>
             <field name="users_can_go_back" eval="True"/>
-            <field name="description">&lt;p&gt;[QDH17] &lt;/p&gt;</field>
+            <field name="description">&lt;p&gt;JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia&lt;/p&gt;</field>
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
@@ -17,7 +17,7 @@
                 <field name="title">[QDH17_01] Identificação do Questionário</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="10"/>
-                <field name="description">&lt;p&gt;[QDH17_01] &lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
                 <!-- [QDH17_01_01] Código do Questionário: -->
@@ -55,7 +55,7 @@
                 <field name="title">[QDH17_02] Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="20"/>
-                <field name="description">&lt;p&gt;[QDH17_02] &lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
                 <!-- [QDH17_02_01] Nome do Paciente: -->
