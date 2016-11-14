@@ -12,17 +12,17 @@
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
-            <!-- [QDH17_01] Identificação do Questionário -->
+            <!-- 1. Identificação do Questionário -->
             <record model="survey.page" id="QDH17_01">
-                <field name="title">[QDH17_01] Identificação do Questionário</field>
+                <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="10"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QDH17_01_01] Código do Questionário: -->
+                <!-- 1.1. Código do Questionário: -->
                 <record model="survey.question" id="QDH17_01_01">
-                    <field name="question">[QDH17_01_01] Código do Questionário:</field>
+                    <field name="question">1.1. Código do Questionário:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_01"/>
                     <field name="sequence" eval="10"/>
@@ -30,9 +30,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
                 </record>
 
-                <!-- [QDH17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <!-- 1.2. Data da Entrevista (dd-mm-aaaa): -->
                 <record model="survey.question" id="QDH17_01_02">
-                    <field name="question">[QDH17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="question">1.2. Data da Entrevista (dd-mm-aaaa):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_01"/>
                     <field name="sequence" eval="20"/>
@@ -40,9 +40,9 @@
                     <field name="constr_error_msg">Preencher com a data da entrevista.</field>
                 </record>
 
-                <!-- [QDH17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
+                <!-- 1.3. Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="QDH17_01_03">
-                    <field name="question">[QDH17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="question">1.3. Códigos do(s) Entrevistador(es) (separados por ","):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_01"/>
                     <field name="sequence" eval="30"/>
@@ -50,17 +50,17 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
-            <!-- [QDH17_02] Identificação do Paciente/Entrevistado -->
+            <!-- 2. Identificação do Paciente/Entrevistado -->
             <record model="survey.page" id="QDH17_02">
-                <field name="title">[QDH17_02] Identificação do Paciente/Entrevistado</field>
+                <field name="title">2. Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="20"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QDH17_02_01] Nome do Paciente: -->
+                <!-- 2.1. Nome do Paciente: -->
                 <record model="survey.question" id="QDH17_02_01">
-                    <field name="question">[QDH17_02_01] Nome do Paciente:</field>
+                    <field name="question">2.1. Nome do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="10"/>
@@ -68,9 +68,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
                 </record>
 
-                <!-- [QDH17_02_02] Código do Paciente: -->
+                <!-- 2.2. Código do Paciente: -->
                 <record model="survey.question" id="QDH17_02_02">
-                    <field name="question">[QDH17_02_02] Código do Paciente:</field>
+                    <field name="question">2.2. Código do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="20"/>
@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- [QDH17_02_03] Nome do Endereço -->
+                <!-- 2.3. Nome do Endereço -->
                 <record model="survey.question" id="QDH17_02_03">
-                    <field name="question">[QDH17_02_03] Nome do Endereço</field>
+                    <field name="question">2.3. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QDH17_02_04] Código do Endereço -->
+                <!-- 2.4. Código do Endereço -->
                 <record model="survey.question" id="QDH17_02_04">
-                    <field name="question">[QDH17_02_04] Código do Endereço</field>
+                    <field name="question">2.4. Código do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QDH17_02_05] Entrevistado -->
+                <!-- 2.5. Entrevistado -->
                 <record model="survey.question" id="QDH17_02_05">
-                    <field name="question">[QDH17_02_05] Entrevistado</field>
+                    <field name="question">2.5. Entrevistado</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="50"/>
@@ -134,6 +134,1827 @@
                         <field name="value">c) Outro</field>
                         <field name="question_id" ref="QDH17_02_05"/>
                         <field name="sequence" eval="40"/>
+                    </record>
+
+            <!-- 3. Geral -->
+            <record model="survey.page" id="QDH17_03">
+                <field name="title">3. Geral</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 3.1. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?") -->
+                <record model="survey.question" id="QDH17_03_01">
+                    <field name="question">3.1. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_03_01_01">
+                        <field name="value">a) É analfabeto</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_02">
+                        <field name="value">b) Não é analfabeto, mas não frequentou a escola</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_03">
+                        <field name="value">c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_04">
+                        <field name="value">d) Ensino Fundamental completo = 1º grau completo = antigos Primário + Ginásio</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_05">
+                        <field name="value">e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_06">
+                        <field name="value">f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_07">
+                        <field name="value">g) Ensino Superior incompleto</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_08">
+                        <field name="value">h) Ensino Superior completo</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_09">
+                        <field name="value">i) Especialização</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_10">
+                        <field name="value">j) Pós-graduação (Mestrado/Doutorado)</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_11">
+                        <field name="value">k) Não sabe</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_12">
+                        <field name="value">l) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_01_13">
+                        <field name="value">m) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_03_01"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                <!-- 3.2. Tempo de Jejum -->
+                <record model="survey.question" id="QDH17_03_02">
+                    <field name="question">3.2. Tempo de Jejum</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_03"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_03_02_01">
+                        <field name="value">a) Menor que 8 hs</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_02_02">
+                        <field name="value">b) Entre 8 e 12 hs</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_02_03">
+                        <field name="value">c) Maior que 12 hs</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_02_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_02_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_03_02_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_03_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+            <!-- 4. Medidas Antropométricas -->
+            <record model="survey.page" id="QDH17_04">
+                <field name="title">4. Medidas Antropométricas</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="40"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 4.1. Peso (kg): -->
+                <record model="survey.question" id="QDH17_04_01">
+                    <field name="question">4.1. Peso (kg):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o peso do paciente (kg).</field>
+                </record>
+
+                <!-- 4.2. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_04_02">
+                    <field name="question">4.2. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do peso.</field>
+                </record>
+
+                <!-- 4.3. Altura (cm): -->
+                <record model="survey.question" id="QDH17_04_03">
+                    <field name="question">4.3. Altura (cm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar a altura do paciente (cm).</field>
+                </record>
+
+                <!-- 4.4. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_04_04">
+                    <field name="question">4.4. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da altura.</field>
+                </record>
+
+                <!-- 4.5. IMC (kg/m²) (=Peso/(Altura x Altura)): -->
+                <record model="survey.question" id="QDH17_04_05">
+                    <field name="question">4.5. IMC (kg/m²) (=Peso/(Altura x Altura)):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor do IMC  do paciente (kg/m²).</field>
+                </record>
+
+                <!-- 4.6. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_04_06">
+                    <field name="question">4.6. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do IMC.</field>
+                </record>
+
+                <!-- 4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos) -->
+                <record model="survey.question" id="QDH17_04_07">
+                    <field name="question">4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_04_07_01">
+                        <field name="value">a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_02">
+                        <field name="value">b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_03">
+                        <field name="value">c) Sobrepeso (Pré-obeso) (Adultos: 25,0 a 29,9; Idosos(M): 27,1 a 30,0/Idosos(F): 27,1 a 32,0)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_04">
+                        <field name="value">d) Obesidade Grau I (Adultos: 30,0 a 34,9; Idosos(M): 30,1,1 a 35,0/Idosos(F): 32,1 a 37,0)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_05">
+                        <field name="value">e) Obesidade Grau II (Adultos: 35,0 a 39,9; Idosos(M): 35,1 a 39,0/Idosos(F): 37,1 a 41,9)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_06">
+                        <field name="value">f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_07">
+                        <field name="value">g) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_07_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_04_07"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <!-- 4.8. Circunferência abdominal (cm): -->
+                <record model="survey.question" id="QDH17_04_08">
+                    <field name="question">4.8. Circunferência abdominal (cm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="80"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar a circunferência abdominal do paciente (cm).</field>
+                </record>
+
+                <!-- 4.9. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_04_09">
+                    <field name="question">4.9. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="90"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da circunferência abdominal.</field>
+                </record>
+
+                <!-- 4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos) -->
+                <record model="survey.question" id="QDH17_04_10">
+                    <field name="question">4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_04"/>
+                    <field name="sequence" eval="100"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Responder</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_04_10_01">
+                        <field name="value">a) Normal (H:&#60;94 cm; M:&#60;80 cm)</field>
+                        <field name="question_id" ref="QDH17_04_10"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_10_02">
+                        <field name="value">b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)</field>
+                        <field name="question_id" ref="QDH17_04_10"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_10_03">
+                        <field name="value">c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))</field>
+                        <field name="question_id" ref="QDH17_04_10"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_10_04">
+                        <field name="value">d) Não interpretado (justificar em observações)</field>
+                        <field name="question_id" ref="QDH17_04_10"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_04_10_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_04_10"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 5. Medidas da Pressão Arterial -->
+            <record model="survey.page" id="QDH17_05">
+                <field name="title">5. Medidas da Pressão Arterial</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="50"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 5.1. Pressão arterial autom. (mmHg): -->
+                <record model="survey.question" id="QDH17_05_01">
+                    <field name="question">5.1. Pressão arterial autom. (mmHg):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_05"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da pressão arterial autom. do paciente (mmHg).</field>
+                </record>
+
+                <!-- 5.2. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_05_02">
+                    <field name="question">5.2. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_05"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial autom.</field>
+                </record>
+
+                <!-- 5.3. Pressão arterial manual (mmHg) (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="QDH17_05_03">
+                    <field name="question">5.3. Pressão arterial manual (mmHg) (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_05"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da pressão arterial manual do paciente (mmHg).</field>
+                </record>
+
+                <!-- 5.4. Responsável pela medida (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="QDH17_05_04">
+                    <field name="question">5.4. Responsável pela medida (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_05"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial manual.</field>
+                </record>
+
+                <!-- 5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010) -->
+                <record model="survey.question" id="QDH17_05_05">
+                    <field name="question">5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_05"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_05_05_01">
+                        <field name="value">a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)</field>
+                        <field name="question_id" ref="QDH17_05_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_05_05_02">
+                        <field name="value">b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)</field>
+                        <field name="question_id" ref="QDH17_05_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_05_05_03">
+                        <field name="value">c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)</field>
+                        <field name="question_id" ref="QDH17_05_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_05_05_04">
+                        <field name="value">d) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="QDH17_05_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_05_05_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_05_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 6. Glicemia e Colesterolemia -->
+            <record model="survey.page" id="QDH17_06">
+                <field name="title">6. Glicemia e Colesterolemia</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="60"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 6.1. Glicemia (mg/dL): -->
+                <record model="survey.question" id="QDH17_06_01">
+                    <field name="question">6.1. Glicemia (mg/dL):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da glicemia  do paciente (mg/dL).</field>
+                </record>
+
+                <!-- 6.2. Responsável pela medida: -->
+                <record model="survey.question" id="QDH17_06_02">
+                    <field name="question">6.2. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da glicemia.</field>
+                </record>
+
+                <!-- 6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014)) -->
+                <record model="survey.question" id="QDH17_06_03">
+                    <field name="question">6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014))</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Outras situações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_06_03_01">
+                        <field name="value">a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_02">
+                        <field name="value">b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-125 mg/dL)</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_03">
+                        <field name="value">c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_04">
+                        <field name="value">d) Jejum INFERIOR a 8 hs: Normal (até 140 mg/dL)</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_05">
+                        <field name="value">e) Jejum INFERIOR a 8 hs: Aumentado (&#62;=140 mg/dL)</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_06">
+                        <field name="value">f) Não avaliado (justificar)</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_03_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_06_03"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- 6.4. Colesterol (mg/dL) (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="QDH17_06_04">
+                    <field name="question">6.4. Colesterol (mg/dL) (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor do colesterol  do paciente (mg/dL).</field>
+                </record>
+
+                <!-- 6.5. Responsável pela medida (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="QDH17_06_05">
+                    <field name="question">6.5. Responsável pela medida (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do colesterol.</field>
+                </record>
+
+                <!-- 6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013) -->
+                <record model="survey.question" id="QDH17_06_06">
+                    <field name="question">6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_06"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_06_06_01">
+                        <field name="value">a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL</field>
+                        <field name="question_id" ref="QDH17_06_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_06_02">
+                        <field name="value">b) Limítrofe:Acima de 20 anos:200–239 mg/dL;2-19 anos:150-169 mg/dL</field>
+                        <field name="question_id" ref="QDH17_06_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_06_03">
+                        <field name="value">c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL</field>
+                        <field name="question_id" ref="QDH17_06_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_06_04">
+                        <field name="value">d) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="QDH17_06_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_06_06_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_06_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 7. Histórico de DHC -->
+            <record model="survey.page" id="QDH17_07">
+                <field name="title">7. Histórico de DHC</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="70"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 7.1. Possui DIABETES? -->
+                <record model="survey.question" id="QDH17_07_01">
+                    <field name="question">7.1. Possui DIABETES?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Error Message.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_01_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_01_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_01_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_01_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.2. Faz uso de medicamento para tratamento de DIABETES? -->
+                <record model="survey.question" id="QDH17_07_02">
+                    <field name="question">7.2. Faz uso de medicamento para tratamento de DIABETES?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_02_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_02_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_02_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_02_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_02_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.3. Fez uso hoje (de medicamento para DIABETES)? -->
+                <record model="survey.question" id="QDH17_07_03">
+                    <field name="question">7.3. Fez uso hoje (de medicamento para DIABETES)?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_03_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_03_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_03_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_03_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_03_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.4. Teve DIABETES em alguma gestação? -->
+                <record model="survey.question" id="QDH17_07_04">
+                    <field name="question">7.4. Teve DIABETES em alguma gestação?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_04_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_04_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_04_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_04_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_04_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.5. Possui HIPERTENSÃO? -->
+                <record model="survey.question" id="QDH17_07_05">
+                    <field name="question">7.5. Possui HIPERTENSÃO?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_05_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_05_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_05_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_05_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_05_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.6. Faz uso de medicamento para tratamento de HIPERTENSÃO? -->
+                <record model="survey.question" id="QDH17_07_06">
+                    <field name="question">7.6. Faz uso de medicamento para tratamento de HIPERTENSÃO?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_06_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_06_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_06_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_06_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_06_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.7. Fez uso hoje (do medicamento para HIPERTENSÃO)? -->
+                <record model="survey.question" id="QDH17_07_07">
+                    <field name="question">7.7. Fez uso hoje (do medicamento para HIPERTENSÃO)?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_07_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_07"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_07_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_07"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_07_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_07"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_07_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_07"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_07_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_07"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.8. Possui HIPERCOLESTEROLEMIA? -->
+                <record model="survey.question" id="QDH17_07_08">
+                    <field name="question">7.8. Possui HIPERCOLESTEROLEMIA?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="80"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_08_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_08"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_08_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_08"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_08_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_08"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_08_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_08"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_08_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_08"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.9. Faz uso de medicamento para tratamento de HIPERCOLESTEROLEMIA? -->
+                <record model="survey.question" id="QDH17_07_09">
+                    <field name="question">7.9. Faz uso de medicamento para tratamento de HIPERCOLESTEROLEMIA?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="90"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_09_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_09"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_09_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_09"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_09_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_09"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_09_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_09"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_09_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_09"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 7.10. Fez uso hoje (do medicamento para HIPERCOLESTEROLEMIA)? -->
+                <record model="survey.question" id="QDH17_07_10">
+                    <field name="question">7.10. Fez uso hoje (do medicamento para HIPERCOLESTEROLEMIA)?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_07"/>
+                    <field name="sequence" eval="100"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_07_10_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_07_10"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_10_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_07_10"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_10_03">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QDH17_07_10"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_10_04">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_07_10"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_07_10_05">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_07_10"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 8. Histórico Familiar -->
+            <record model="survey.page" id="QDH17_08">
+                <field name="title">8. Histórico Familiar</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="80"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 8.1. Possui algum parente de sangue que sofre/sofreu de OBESIDADE? -->
+                <record model="survey.question" id="QDH17_08_01">
+                    <field name="question">8.1. Possui algum parente de sangue que sofre/sofreu de OBESIDADE?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_08"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_08_01_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_01_02">
+                        <field name="value">b) Sim. Avós, tios ou primos</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_01_03">
+                        <field name="value">b) Sim. Pais, irmãos ou filhos</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_01_04">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_01_05">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_01_06">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_08_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 8.2. Possui algum parente de sangue que sofre/sofreu de DIABETES? -->
+                <record model="survey.question" id="QDH17_08_02">
+                    <field name="question">8.2. Possui algum parente de sangue que sofre/sofreu de DIABETES?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_08"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_08_02_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_02_02">
+                        <field name="value">b) Sim. Avós, tios ou primos</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_02_03">
+                        <field name="value">b) Sim. Pais, irmãos ou filhos</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_02_04">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_02_05">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_02_06">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_08_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 8.3. Possui algum parente de sangue que sofre/sofreu de DOENÇAS DO CORAÇÃO? -->
+                <record model="survey.question" id="QDH17_08_03">
+                    <field name="question">8.3. Possui algum parente de sangue que sofre/sofreu de DOENÇAS DO CORAÇÃO?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_08"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_08_03_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_03_02">
+                        <field name="value">b) Sim. Avós, tios ou primos</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_03_03">
+                        <field name="value">b) Sim. Pais, irmãos ou filhos</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_03_04">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_03_05">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_03_06">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_08_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 8.4. Possui algum parente de sangue que sofre/sofreu de PRESSÃO ALTA? -->
+                <record model="survey.question" id="QDH17_08_04">
+                    <field name="question">8.4. Possui algum parente de sangue que sofre/sofreu de PRESSÃO ALTA?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_08"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_08_04_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_04_02">
+                        <field name="value">b) Sim. Avós, tios ou primos</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_04_03">
+                        <field name="value">b) Sim. Pais, irmãos ou filhos</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_04_04">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_04_05">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_04_06">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_08_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 8.5. Possui algum parente de sangue que sofre/sofreu de COLESTEROL ALTO? -->
+                <record model="survey.question" id="QDH17_08_05">
+                    <field name="question">8.5. Possui algum parente de sangue que sofre/sofreu de COLESTEROL ALTO?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_08"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_08_05_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_05_02">
+                        <field name="value">b) Sim. Avós, tios ou primos</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_05_03">
+                        <field name="value">b) Sim. Pais, irmãos ou filhos</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_05_04">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_05_05">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_08_05_06">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_08_05"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+            <!-- 9. Hábitos de Vida -->
+            <record model="survey.page" id="QDH17_09">
+                <field name="title">9. Hábitos de Vida</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="90"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 9.1. Que motivo(s) o leva(m) a procurar atendimento médico? -->
+                <record model="survey.question" id="QDH17_09_01">
+                    <field name="question">9.1. Que motivo(s) o leva(m) a procurar atendimento médico?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outros", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_01_01">
+                        <field name="value">a) Quando tem qualquer problema de saúde</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_02">
+                        <field name="value">b) Somente quando tem problema grave de saúde</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_03">
+                        <field name="value">c) Acompanhamento médico/ realização de exames de rotina</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_04">
+                        <field name="value">d) Ocorrência de acidente</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_05">
+                        <field name="value">e) Outros</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_06">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_07">
+                        <field name="value">g) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_01_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_01"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <!-- 9.2. O(A) Sr.(a) tem ou teve o hábito de fumar? -->
+                <record model="survey.question" id="QDH17_09_02">
+                    <field name="question">9.2. O(A) Sr.(a) tem ou teve o hábito de fumar?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Error Message.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Esta questão precisa ser respondida.</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_02_01">
+                        <field name="value">a) Nunca fumou</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_02_02">
+                        <field name="value">b) Fuma atualmente</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_02_03">
+                        <field name="value">c) Já fumou, mas não fuma atualmente</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_02_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_02_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_02_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 9.3. Alguém na casa fuma? -->
+                <record model="survey.question" id="QDH17_09_03">
+                    <field name="question">9.3. Alguém na casa fuma?</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_03_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_09_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_03_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_09_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_03_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_03_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_03_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 9.4. Tem o hábito de tomar bebidas alcoólicas? (1dose seria equivalente a 1 lata de cerveja, 1 taça de  vinho ou 1 dose de qualquer outra bebida alcoólica destilada). -->
+                <record model="survey.question" id="QDH17_09_04">
+                    <field name="question">9.4. Tem o hábito de tomar bebidas alcoólicas? (1dose seria equivalente a 1 lata de cerveja, 1 taça de  vinho ou 1 dose de qualquer outra bebida alcoólica destilada).</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_04_01">
+                        <field name="value">a) Não</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_04_02">
+                        <field name="value">b) Sim, mais de 7 doses em uma semana</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_04_03">
+                        <field name="value">c) Sim, menos de 7 doses em uma semana</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_04_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_04_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_04_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                <!-- 9.5. Pratica uma ou mais das atividades físicas abaixo? -->
+                <record model="survey.question" id="QDH17_09_05">
+                    <field name="question">9.5. Pratica uma ou mais das atividades físicas abaixo?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outras", quais?</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_05_01">
+                        <field name="value">a) Não pratica nenhuma atividade</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_02">
+                        <field name="value">b) Atividades domésticas (faxina)</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_03">
+                        <field name="value">c) Atividades pesadas (lavoura/olaria)</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_04">
+                        <field name="value">d) Atividade específica com duração de 30 minutos ou mais (treina algum esporte, caminha, corre)</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_05">
+                        <field name="value">e) Outras</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_06">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_07">
+                        <field name="value">g) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_05_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_05"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <!-- 9.6. Quantos dias por semana costuma praticar essa atividade? -->
+                <record model="survey.question" id="QDH17_09_06">
+                    <field name="question">9.6. Quantos dias por semana costuma praticar essa atividade?</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="QDH17_09"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_09_06_01">
+                        <field name="value">a) 1 a 2 dias por semana</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_02">
+                        <field name="value">b) 3 a 4 dias por semana</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_03">
+                        <field name="value">c) 5 a 6 dias por semana</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_04">
+                        <field name="value">d) Todos os dias</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_05">
+                        <field name="value">e) Não sabe</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_06">
+                        <field name="value">f) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_09_06_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_09_06"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+            <!-- 10. Hábitos Alimentares -->
+            <record model="survey.page" id="QDH17_10">
+                <field name="title">10. Hábitos Alimentares</field>
+                <field name="survey_id" ref="QDH17"/>
+                <field name="sequence" eval="100"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 10.1. Costuma adicionar sal na comida, depois de pronta? (Tem saleiro na mesa?) -->
+                <record model="survey.question" id="QDH17_10_01">
+                    <field name="question">10.1. Costuma adicionar sal na comida, depois de pronta? (Tem saleiro na mesa?)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="QDH17_10"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">False</field>
+                    <field name="comments_message"></field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_10_01_01">
+                        <field name="value">a) Sim</field>
+                        <field name="question_id" ref="QDH17_10_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_01_02">
+                        <field name="value">b) Não</field>
+                        <field name="question_id" ref="QDH17_10_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_01_03">
+                        <field name="value">c) Não sabe</field>
+                        <field name="question_id" ref="QDH17_10_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_01_04">
+                        <field name="value">d) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_10_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_10_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 10.2. Consome qual dos ítens abaixo e com que frequência na semana? -->
+                <record model="survey.question" id="QDH17_10_02">
+                    <field name="question">10.2. Consome qual dos ítens abaixo e com que frequência na semana?</field>
+                    <field name="type">matrix</field>
+                    <field name="matrix_subtype">simple</field>
+                    <field name="page_id" ref="QDH17_10"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher os alimentos que o paciente consome.</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_10_02_01">
+                        <field name="value">10.2.1. Frutas ou suco natural</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_02">
+                        <field name="value">10.2.2. Salada crua</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_03">
+                        <field name="value">10.2.3. Verduras e legumes cozidos</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_04">
+                        <field name="value">10.2.4. Arroz, pão, massas, farinha</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_05">
+                        <field name="value">10.2.5. Alimentos integrais (pão, macarrão ou arroz)</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_06">
+                        <field name="value">10.2.6. Feijão</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_07">
+                        <field name="value">10.2.7. Carne Vermelha</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_08">
+                        <field name="value">10.2.8. Miúdos</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_09">
+                        <field name="value">10.2.9. Embutidos</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_10">
+                        <field name="value">10.2.10. Frango</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_11">
+                        <field name="value">10.2.11. Peixe</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_12">
+                        <field name="value">10.2.12. Leite integral, queijo amarelo</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_13">
+                        <field name="value">10.2.13. Leite semi ou desnatado, queijo branco</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_14">
+                        <field name="value">10.2.14. Bolacha recheada, salgadinho, miojo</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_15">
+                        <field name="value">10.2.15. Margarina, manteiga, maionese</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_16">
+                        <field name="value">10.2.16. Refrigerante, suco de saquinho</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="160"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_17">
+                        <field name="value">10.2.17. Doces</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="170"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_18">
+                        <field name="value">a) 0 dias ou raramente</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="180"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_19">
+                        <field name="value">b) 1-2 dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="190"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_20">
+                        <field name="value">c) 3-4 dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="200"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_21">
+                        <field name="value">d) 5 ou mais dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="210"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_22">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="220"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_23">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="230"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_24">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="240"/>
                     </record>
 
     </data>

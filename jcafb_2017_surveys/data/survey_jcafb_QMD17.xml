@@ -12,17 +12,17 @@
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
-            <!-- [QMD17_01] Identificação do Questionário -->
+            <!-- 1. Identificação do Questionário -->
             <record model="survey.page" id="QMD17_01">
-                <field name="title">[QMD17_01] Identificação do Questionário</field>
+                <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QMD17"/>
                 <field name="sequence" eval="10"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QMD17_01_01] Código do Questionário: -->
+                <!-- 1.1. Código do Questionário: -->
                 <record model="survey.question" id="QMD17_01_01">
-                    <field name="question">[QMD17_01_01] Código do Questionário:</field>
+                    <field name="question">1.1. Código do Questionário:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_01"/>
                     <field name="sequence" eval="10"/>
@@ -30,9 +30,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
                 </record>
 
-                <!-- [QMD17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <!-- 1.2. Data da Entrevista (dd-mm-aaaa): -->
                 <record model="survey.question" id="QMD17_01_02">
-                    <field name="question">[QMD17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="question">1.2. Data da Entrevista (dd-mm-aaaa):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_01"/>
                     <field name="sequence" eval="20"/>
@@ -40,9 +40,9 @@
                     <field name="constr_error_msg">Preencher com a data da entrevista.</field>
                 </record>
 
-                <!-- [QMD17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
+                <!-- 1.3. Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="QMD17_01_03">
-                    <field name="question">[QMD17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="question">1.3. Códigos do(s) Entrevistador(es) (separados por ","):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_01"/>
                     <field name="sequence" eval="30"/>
@@ -50,17 +50,17 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
-            <!-- [QMD17_02] Identificação do Paciente/Entrevistado -->
+            <!-- 2. Identificação do Paciente/Entrevistado -->
             <record model="survey.page" id="QMD17_02">
-                <field name="title">[QMD17_02] Identificação do Paciente/Entrevistado</field>
+                <field name="title">2. Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QMD17"/>
                 <field name="sequence" eval="20"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QMD17_02_01] Nome do Paciente: -->
+                <!-- 2.1. Nome do Paciente: -->
                 <record model="survey.question" id="QMD17_02_01">
-                    <field name="question">[QMD17_02_01] Nome do Paciente:</field>
+                    <field name="question">2.1. Nome do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_02"/>
                     <field name="sequence" eval="10"/>
@@ -68,9 +68,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
                 </record>
 
-                <!-- [QMD17_02_02] Código do Paciente: -->
+                <!-- 2.2. Código do Paciente: -->
                 <record model="survey.question" id="QMD17_02_02">
-                    <field name="question">[QMD17_02_02] Código do Paciente:</field>
+                    <field name="question">2.2. Código do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_02"/>
                     <field name="sequence" eval="20"/>
@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- [QMD17_02_03] Nome do Endereço -->
+                <!-- 2.3. Nome do Endereço -->
                 <record model="survey.question" id="QMD17_02_03">
-                    <field name="question">[QMD17_02_03] Nome do Endereço</field>
+                    <field name="question">2.3. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QMD17_02_04] Código do Endereço -->
+                <!-- 2.4. Código do Endereço -->
                 <record model="survey.question" id="QMD17_02_04">
-                    <field name="question">[QMD17_02_04] Código do Endereço</field>
+                    <field name="question">2.4. Código do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QMD17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QMD17_02_05] Entrevistado -->
+                <!-- 2.5. Entrevistado -->
                 <record model="survey.question" id="QMD17_02_05">
-                    <field name="question">[QMD17_02_05] Entrevistado</field>
+                    <field name="question">2.5. Entrevistado</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_02"/>
                     <field name="sequence" eval="50"/>
@@ -136,17 +136,17 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-            <!-- [QMD17_03] Questionário -->
+            <!-- 3. Questionário -->
             <record model="survey.page" id="QMD17_03">
-                <field name="title">[QMD17_03] Questionário</field>
+                <field name="title">3. Questionário</field>
                 <field name="survey_id" ref="QMD17"/>
                 <field name="sequence" eval="30"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QMD17_03_01] Quem administra os medicamentos do(a) Sr.(a)? -->
+                <!-- 3.1. Quem administra os medicamentos do(a) Sr.(a)? -->
                 <record model="survey.question" id="QMD17_03_01">
-                    <field name="question">[QMD17_03_01] Quem administra os medicamentos do(a) Sr.(a)?</field>
+                    <field name="question">3.1. Quem administra os medicamentos do(a) Sr.(a)?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QMD17_03"/>
                     <field name="sequence" eval="10"/>
@@ -199,9 +199,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QMD17_03_02] O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)? -->
+                <!-- 3.2. O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)? -->
                 <record model="survey.question" id="QMD17_03_02">
-                    <field name="question">[QMD17_03_02] O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?</field>
+                    <field name="question">3.2. O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_03"/>
                     <field name="sequence" eval="20"/>
@@ -243,9 +243,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QMD17_03_03] De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)? -->
+                <!-- 3.3. De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)? -->
                 <record model="survey.question" id="QMD17_03_03">
-                    <field name="question">[QMD17_03_03] De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?</field>
+                    <field name="question">3.3. De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QMD17_03"/>
                     <field name="sequence" eval="30"/>
@@ -316,9 +316,9 @@
                         <field name="sequence" eval="100"/>
                     </record>
 
-                <!-- [QMD17_03_04] Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa) -->
+                <!-- 3.4. Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa) -->
                 <record model="survey.question" id="QMD17_03_04">
-                    <field name="question">[QMD17_03_04] Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa)</field>
+                    <field name="question">3.4. Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa)</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QMD17_03"/>
                     <field name="sequence" eval="40"/>
@@ -377,9 +377,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QMD17_03_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias? -->
+                <!-- 3.5. O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias? -->
                 <record model="survey.question" id="QMD17_03_05">
-                    <field name="question">[QMD17_03_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?</field>
+                    <field name="question">3.5. O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_03"/>
                     <field name="sequence" eval="50"/>
@@ -421,17 +421,17 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-            <!-- [QMD17_04] Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa) -->
+            <!-- 4. Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa) -->
             <record model="survey.page" id="QMD17_04">
-                <field name="title">[QMD17_04] Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa)</field>
+                <field name="title">4. Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa)</field>
                 <field name="survey_id" ref="QMD17"/>
                 <field name="sequence" eval="40"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QMD17_04_01] Você, alguma vez, se esquece de tomar o seu remédio? -->
+                <!-- 4.1. Você, alguma vez, se esquece de tomar o seu remédio? -->
                 <record model="survey.question" id="QMD17_04_01">
-                    <field name="question">[QMD17_04_01] Você, alguma vez, se esquece de tomar o seu remédio?</field>
+                    <field name="question">4.1. Você, alguma vez, se esquece de tomar o seu remédio?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_04"/>
                     <field name="sequence" eval="10"/>
@@ -467,9 +467,15 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- [QMD17_04_02] Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio? -->
+                    <record model="survey.label" id="QMD17_04_01_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QMD17_04_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 4.2. Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio? -->
                 <record model="survey.question" id="QMD17_04_02">
-                    <field name="question">[QMD17_04_02] Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?</field>
+                    <field name="question">4.2. Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_04"/>
                     <field name="sequence" eval="20"/>
@@ -505,9 +511,15 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- [QMD17_04_03] Quando você se sente bem, alguma vez, você deixa de tomar seu remédio? -->
+                    <record model="survey.label" id="QMD17_04_02_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QMD17_04_02"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 4.3. Quando você se sente bem, alguma vez, você deixa de tomar seu remédio? -->
                 <record model="survey.question" id="QMD17_04_03">
-                    <field name="question">[QMD17_04_03] Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?</field>
+                    <field name="question">4.3. Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_04"/>
                     <field name="sequence" eval="30"/>
@@ -543,9 +555,15 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- [QMD17_04_04] Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo? -->
+                    <record model="survey.label" id="QMD17_04_03_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QMD17_04_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                <!-- 4.4. Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo? -->
                 <record model="survey.question" id="QMD17_04_04">
-                    <field name="question">[QMD17_04_04] Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?</field>
+                    <field name="question">4.4. Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QMD17_04"/>
                     <field name="sequence" eval="40"/>
@@ -581,9 +599,15 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-            <!-- [QMD17_05] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver -->
+                    <record model="survey.label" id="QMD17_04_04_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="QMD17_04_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 5. Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver -->
             <record model="survey.page" id="QMD17_05">
-                <field name="title">[QMD17_05] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver</field>
+                <field name="title">5. Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver</field>
                 <field name="survey_id" ref="QMD17"/>
                 <field name="sequence" eval="50"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>

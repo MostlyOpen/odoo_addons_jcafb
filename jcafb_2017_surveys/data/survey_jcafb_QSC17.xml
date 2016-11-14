@@ -12,17 +12,17 @@
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
-            <!-- [QSC17_01] Identificação do Questionário -->
+            <!-- 1. Identificação do Questionário -->
             <record model="survey.page" id="QSC17_01">
-                <field name="title">[QSC17_01] Identificação do Questionário</field>
+                <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="10"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_01_01] Código do Questionário: -->
+                <!-- 1.1. Código do Questionário: -->
                 <record model="survey.question" id="QSC17_01_01">
-                    <field name="question">[QSC17_01_01] Código do Questionário:</field>
+                    <field name="question">1.1. Código do Questionário:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_01"/>
                     <field name="sequence" eval="10"/>
@@ -30,9 +30,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
                 </record>
 
-                <!-- [QSC17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <!-- 1.2. Data da Entrevista (dd-mm-aaaa): -->
                 <record model="survey.question" id="QSC17_01_02">
-                    <field name="question">[QSC17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="question">1.2. Data da Entrevista (dd-mm-aaaa):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_01"/>
                     <field name="sequence" eval="20"/>
@@ -40,9 +40,9 @@
                     <field name="constr_error_msg">Preencher com a data da entrevista.</field>
                 </record>
 
-                <!-- [QSC17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
+                <!-- 1.3. Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="QSC17_01_03">
-                    <field name="question">[QSC17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="question">1.3. Códigos do(s) Entrevistador(es) (separados por ","):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_01"/>
                     <field name="sequence" eval="30"/>
@@ -50,17 +50,17 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
-            <!-- [QSC17_02] Identificação da Criança/Entrevistado -->
+            <!-- 2. Identificação da Criança/Entrevistado -->
             <record model="survey.page" id="QSC17_02">
-                <field name="title">[QSC17_02] Identificação da Criança/Entrevistado</field>
+                <field name="title">2. Identificação da Criança/Entrevistado</field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="20"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_02_01] Nome da Criança: -->
+                <!-- 2.1. Nome da Criança: -->
                 <record model="survey.question" id="QSC17_02_01">
-                    <field name="question">[QSC17_02_01] Nome da Criança:</field>
+                    <field name="question">2.1. Nome da Criança:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="10"/>
@@ -68,9 +68,9 @@
                     <field name="constr_error_msg">Preencher com o Nome da Criança.</field>
                 </record>
 
-                <!-- [QSC17_02_02] Código da Criança: -->
+                <!-- 2.2. Código da Criança: -->
                 <record model="survey.question" id="QSC17_02_02">
-                    <field name="question">[QSC17_02_02] Código da Criança:</field>
+                    <field name="question">2.2. Código da Criança:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="20"/>
@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código da Criança.</field>
                 </record>
 
-                <!-- [QSC17_02_03] Nome do Endereço -->
+                <!-- 2.3. Nome do Endereço -->
                 <record model="survey.question" id="QSC17_02_03">
-                    <field name="question">[QSC17_02_03] Nome do Endereço</field>
+                    <field name="question">2.3. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que a Criança reside.</field>
                 </record>
 
-                <!-- [QSC17_02_04] Código do Endereço -->
+                <!-- 2.4. Código do Endereço -->
                 <record model="survey.question" id="QSC17_02_04">
-                    <field name="question">[QSC17_02_04] Código do Endereço</field>
+                    <field name="question">2.4. Código do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que a Criança reside.</field>
                 </record>
 
-                <!-- [QSC17_02_05] Entrevistado -->
+                <!-- 2.5. Entrevistado -->
                 <record model="survey.question" id="QSC17_02_05">
-                    <field name="question">[QSC17_02_05] Entrevistado</field>
+                    <field name="question">2.5. Entrevistado</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="50"/>
@@ -130,17 +130,17 @@
                         <field name="sequence" eval="30"/>
                     </record>
 
-            <!-- [QSC17_03] Aspectos Sociais/Hábitos -->
+            <!-- 3. Aspectos Sociais/Hábitos -->
             <record model="survey.page" id="QSC17_03">
-                <field name="title">[QSC17_03] Aspectos Sociais/Hábitos</field>
+                <field name="title">3. Aspectos Sociais/Hábitos</field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="30"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_03_01] Onde a criança fica quando não está na escola? -->
+                <!-- 3.1. Onde a criança fica quando não está na escola? -->
                 <record model="survey.question" id="QSC17_03_01">
-                    <field name="question">[QSC17_03_01] Onde a criança fica quando não está na escola?</field>
+                    <field name="question">3.1. Onde a criança fica quando não está na escola?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSC17_03"/>
                     <field name="sequence" eval="10"/>
@@ -199,9 +199,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSC17_03_02] Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola): -->
+                <!-- 3.2. Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola): -->
                 <record model="survey.question" id="QSC17_03_02">
-                    <field name="question">[QSC17_03_02] Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):</field>
+                    <field name="question">3.2. Tempo de Escolaridade da pessoa que fica mais tempo com a criança (fora da escola):</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_03"/>
                     <field name="sequence" eval="20"/>
@@ -261,9 +261,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSC17_03_03] A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc? -->
+                <!-- 3.3. A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc? -->
                 <record model="survey.question" id="QSC17_03_03">
-                    <field name="question">[QSC17_03_03] A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?</field>
+                    <field name="question">3.3. A criança costuma brincar fora de casa, em ambientes com terra, grama, areia, etc?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_03"/>
                     <field name="sequence" eval="30"/>
@@ -311,9 +311,9 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-                <!-- [QSC17_03_04] Onde a criança costuma fazer cocô? -->
+                <!-- 3.4. Onde a criança costuma fazer cocô? -->
                 <record model="survey.question" id="QSC17_03_04">
-                    <field name="question">[QSC17_03_04] Onde a criança costuma fazer cocô?</field>
+                    <field name="question">3.4. Onde a criança costuma fazer cocô?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSC17_03"/>
                     <field name="sequence" eval="40"/>
@@ -366,9 +366,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSC17_03_05] A criança tem algum dos seguintes hábitos: -->
+                <!-- 3.5. A criança tem algum dos seguintes hábitos: -->
                 <record model="survey.question" id="QSC17_03_05">
-                    <field name="question">[QSC17_03_05] A criança tem algum dos seguintes hábitos:</field>
+                    <field name="question">3.5. A criança tem algum dos seguintes hábitos:</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSC17_03"/>
                     <field name="sequence" eval="50"/>
@@ -421,17 +421,17 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-            <!-- [QSC17_04] Alimentação -->
+            <!-- 4. Alimentação -->
             <record model="survey.page" id="QSC17_04">
-                <field name="title">[QSC17_04] Alimentação</field>
+                <field name="title">4. Alimentação</field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="40"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_04_01] Como a criança costuma consumir a carne? -->
+                <!-- 4.1. Como a criança costuma consumir a carne? -->
                 <record model="survey.question" id="QSC17_04_01">
-                    <field name="question">[QSC17_04_01] Como a criança costuma consumir a carne?</field>
+                    <field name="question">4.1. Como a criança costuma consumir a carne?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_04"/>
                     <field name="sequence" eval="10"/>
@@ -479,17 +479,17 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-            <!-- [QSC17_05] Medicamentos e Saúde  -->
+            <!-- 5. Medicamentos e Saúde  -->
             <record model="survey.page" id="QSC17_05">
-                <field name="title">[QSC17_05] Medicamentos e Saúde </field>
+                <field name="title">5. Medicamentos e Saúde </field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="50"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_05_01] A criança tem alguma doença? -->
+                <!-- 5.1. A criança tem alguma doença? -->
                 <record model="survey.question" id="QSC17_05_01">
-                    <field name="question">[QSC17_05_01] A criança tem alguma doença?</field>
+                    <field name="question">5.1. A criança tem alguma doença?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_05"/>
                     <field name="sequence" eval="10"/>
@@ -531,9 +531,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSC17_05_02] A criança tem acesso aos medicamentos? -->
+                <!-- 5.2. A criança tem acesso aos medicamentos? -->
                 <record model="survey.question" id="QSC17_05_02">
-                    <field name="question">[QSC17_05_02] A criança tem acesso aos medicamentos?</field>
+                    <field name="question">5.2. A criança tem acesso aos medicamentos?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_05"/>
                     <field name="sequence" eval="20"/>
@@ -581,17 +581,17 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-            <!-- [QSC17_06] Parasitoses -->
+            <!-- 6. Parasitoses -->
             <record model="survey.page" id="QSC17_06">
-                <field name="title">[QSC17_06] Parasitoses</field>
+                <field name="title">6. Parasitoses</field>
                 <field name="survey_id" ref="QSC17"/>
                 <field name="sequence" eval="60"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSC17_06_01] A criança já fez exame de fezes? -->
+                <!-- 6.1. A criança já fez exame de fezes? -->
                 <record model="survey.question" id="QSC17_06_01">
-                    <field name="question">[QSC17_06_01] A criança já fez exame de fezes?</field>
+                    <field name="question">6.1. A criança já fez exame de fezes?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSC17_06"/>
                     <field name="sequence" eval="10"/>
@@ -644,9 +644,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSC17_06_02] Como descobriu que estava com a doença? -->
+                <!-- 6.2. Como descobriu que estava com a doença? -->
                 <record model="survey.question" id="QSC17_06_02">
-                    <field name="question">[QSC17_06_02] Como descobriu que estava com a doença?</field>
+                    <field name="question">6.2. Como descobriu que estava com a doença?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSC17_06"/>
                     <field name="sequence" eval="20"/>
@@ -699,9 +699,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSC17_06_03] A criança já tomou vermífugo (lombrigueira)? -->
+                <!-- 6.3. A criança já tomou vermífugo (lombrigueira)? -->
                 <record model="survey.question" id="QSC17_06_03">
-                    <field name="question">[QSC17_06_03] A criança já tomou vermífugo (lombrigueira)?</field>
+                    <field name="question">6.3. A criança já tomou vermífugo (lombrigueira)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_06"/>
                     <field name="sequence" eval="30"/>

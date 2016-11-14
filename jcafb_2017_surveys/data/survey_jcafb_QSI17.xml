@@ -12,17 +12,17 @@
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
-            <!-- [QSI17_01] Identificação do Questionário -->
+            <!-- 1. Identificação do Questionário -->
             <record model="survey.page" id="QSI17_01">
-                <field name="title">[QSI17_01] Identificação do Questionário</field>
+                <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="10"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_01_01] Código do Questionário: -->
+                <!-- 1.1. Código do Questionário: -->
                 <record model="survey.question" id="QSI17_01_01">
-                    <field name="question">[QSI17_01_01] Código do Questionário:</field>
+                    <field name="question">1.1. Código do Questionário:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_01"/>
                     <field name="sequence" eval="10"/>
@@ -30,9 +30,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
                 </record>
 
-                <!-- [QSI17_01_02] Data da Entrevista (dd-mm-aaaa): -->
+                <!-- 1.2. Data da Entrevista (dd-mm-aaaa): -->
                 <record model="survey.question" id="QSI17_01_02">
-                    <field name="question">[QSI17_01_02] Data da Entrevista (dd-mm-aaaa):</field>
+                    <field name="question">1.2. Data da Entrevista (dd-mm-aaaa):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_01"/>
                     <field name="sequence" eval="20"/>
@@ -40,9 +40,9 @@
                     <field name="constr_error_msg">Preencher com a data da entrevista.</field>
                 </record>
 
-                <!-- [QSI17_01_03] Códigos do(s) Entrevistador(es) (separados por ","): -->
+                <!-- 1.3. Códigos do(s) Entrevistador(es) (separados por ","): -->
                 <record model="survey.question" id="QSI17_01_03">
-                    <field name="question">[QSI17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):</field>
+                    <field name="question">1.3. Códigos do(s) Entrevistador(es) (separados por ","):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_01"/>
                     <field name="sequence" eval="30"/>
@@ -50,17 +50,17 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
-            <!-- [QSI17_02] Identificação do Paciente/Entrevistado -->
+            <!-- 2. Identificação do Paciente/Entrevistado -->
             <record model="survey.page" id="QSI17_02">
-                <field name="title">[QSI17_02] Identificação do Paciente/Entrevistado</field>
+                <field name="title">2. Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="20"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_02_01] Nome do Paciente: -->
+                <!-- 2.1. Nome do Paciente: -->
                 <record model="survey.question" id="QSI17_02_01">
-                    <field name="question">[QSI17_02_01] Nome do Paciente:</field>
+                    <field name="question">2.1. Nome do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="10"/>
@@ -68,9 +68,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
                 </record>
 
-                <!-- [QSI17_02_02] Código do Paciente: -->
+                <!-- 2.2. Código do Paciente: -->
                 <record model="survey.question" id="QSI17_02_02">
-                    <field name="question">[QSI17_02_02] Código do Paciente:</field>
+                    <field name="question">2.2. Código do Paciente:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="20"/>
@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- [QSI17_02_03] Nome do Endereço -->
+                <!-- 2.3. Nome do Endereço -->
                 <record model="survey.question" id="QSI17_02_03">
-                    <field name="question">[QSI17_02_03] Nome do Endereço</field>
+                    <field name="question">2.3. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QSI17_02_04] Código do Endereço -->
+                <!-- 2.4. Código do Endereço -->
                 <record model="survey.question" id="QSI17_02_04">
-                    <field name="question">[QSI17_02_04] Código do Endereço</field>
+                    <field name="question">2.4. Código do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- [QSI17_02_05] Entrevistado -->
+                <!-- 2.5. Entrevistado -->
                 <record model="survey.question" id="QSI17_02_05">
-                    <field name="question">[QSI17_02_05] Entrevistado</field>
+                    <field name="question">2.5. Entrevistado</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="50"/>
@@ -130,17 +130,17 @@
                         <field name="sequence" eval="30"/>
                     </record>
 
-            <!-- [QSI17_03] Aspectos Sociais -->
+            <!-- 3. Aspectos Sociais -->
             <record model="survey.page" id="QSI17_03">
-                <field name="title">[QSI17_03] Aspectos Sociais</field>
+                <field name="title">3. Aspectos Sociais</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="30"/>
                 <field name="description">&lt;p&gt;Aspectos Sociais&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_03_01] Qual a relação de parentesco do cuidador com o(a) Sr.(a)? -->
+                <!-- 3.1. Qual a relação de parentesco do cuidador com o(a) Sr.(a)? -->
                 <record model="survey.question" id="QSI17_03_01">
-                    <field name="question">[QSI17_03_01] Qual a relação de parentesco do cuidador com o(a) Sr.(a)?</field>
+                    <field name="question">3.1. Qual a relação de parentesco do cuidador com o(a) Sr.(a)?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="10"/>
@@ -211,9 +211,9 @@
                         <field name="sequence" eval="100"/>
                     </record>
 
-                <!-- [QSI17_03_02] Tempo de Escolaridade do cuidador -->
+                <!-- 3.2. Tempo de Escolaridade do cuidador -->
                 <record model="survey.question" id="QSI17_03_02">
-                    <field name="question">[QSI17_03_02] Tempo de Escolaridade do cuidador</field>
+                    <field name="question">3.2. Tempo de Escolaridade do cuidador</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="20"/>
@@ -273,9 +273,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSI17_03_03] O(A) Sr.(a) é: -->
+                <!-- 3.3. O(A) Sr.(a) é: -->
                 <record model="survey.question" id="QSI17_03_03">
-                    <field name="question">[QSI17_03_03] O(A) Sr.(a) é:</field>
+                    <field name="question">3.3. O(A) Sr.(a) é:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="30"/>
@@ -335,9 +335,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSI17_03_04] Quem mora com o Sr(a) na sua casa? (além do idoso) -->
+                <!-- 3.4. Quem mora com o Sr(a) na sua casa? (além do idoso) -->
                 <record model="survey.question" id="QSI17_03_04">
-                    <field name="question">[QSI17_03_04] Quem mora com o Sr(a) na sua casa? (além do idoso)</field>
+                    <field name="question">3.4. Quem mora com o Sr(a) na sua casa? (além do idoso)</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="40"/>
@@ -396,9 +396,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSI17_03_05] O Sr(a) tem filhos? -->
+                <!-- 3.5. O Sr(a) tem filhos? -->
                 <record model="survey.question" id="QSI17_03_05">
-                    <field name="question">[QSI17_03_05] O Sr(a) tem filhos?</field>
+                    <field name="question">3.5. O Sr(a) tem filhos?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="50"/>
@@ -440,9 +440,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSI17_03_06] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?") -->
+                <!-- 3.6. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?") -->
                 <record model="survey.question" id="QSI17_03_06">
-                    <field name="question">[QSI17_03_06] Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")</field>
+                    <field name="question">3.6. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="60"/>
@@ -538,9 +538,9 @@
                         <field name="sequence" eval="140"/>
                     </record>
 
-                <!-- [QSI17_03_07] O(A) Sr.(a) sabe ler e escrever um recado? -->
+                <!-- 3.7. O(A) Sr.(a) sabe ler e escrever um recado? -->
                 <record model="survey.question" id="QSI17_03_07">
-                    <field name="question">[QSI17_03_07] O(A) Sr.(a) sabe ler e escrever um recado?</field>
+                    <field name="question">3.7. O(A) Sr.(a) sabe ler e escrever um recado?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="70"/>
@@ -582,9 +582,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSI17_03_08] Qual destas opções o(a) descreve melhor: -->
+                <!-- 3.8. Qual destas opções o(a) descreve melhor: -->
                 <record model="survey.question" id="QSI17_03_08">
-                    <field name="question">[QSI17_03_08] Qual destas opções o(a) descreve melhor:</field>
+                    <field name="question">3.8. Qual destas opções o(a) descreve melhor:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_03"/>
                     <field name="sequence" eval="80"/>
@@ -650,17 +650,17 @@
                         <field name="sequence" eval="90"/>
                     </record>
 
-            <!-- [QSI17_04] Hábitos -->
+            <!-- 4. Hábitos -->
             <record model="survey.page" id="QSI17_04">
-                <field name="title">[QSI17_04] Hábitos</field>
+                <field name="title">4. Hábitos</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="40"/>
                 <field name="description">&lt;p&gt;Hábitos&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_04_01] O que costuma fazer no tempo livre? -->
+                <!-- 4.1. O que costuma fazer no tempo livre? -->
                 <record model="survey.question" id="QSI17_04_01">
-                    <field name="question">[QSI17_04_01] O que costuma fazer no tempo livre?</field>
+                    <field name="question">4.1. O que costuma fazer no tempo livre?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_04"/>
                     <field name="sequence" eval="10"/>
@@ -737,9 +737,9 @@
                         <field name="sequence" eval="110"/>
                     </record>
 
-                <!-- [QSI17_04_02] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada? -->
+                <!-- 4.2. O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada? -->
                 <record model="survey.question" id="QSI17_04_02">
-                    <field name="question">[QSI17_04_02] O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?</field>
+                    <field name="question">4.2. O(A) Sr.(a) realiza alguma atividade ou ocupação que não seja remunerada?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_04"/>
                     <field name="sequence" eval="20"/>
@@ -781,9 +781,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSI17_04_03] Com que frequência caminha ou pratica exercícios? -->
+                <!-- 4.3. Com que frequência caminha ou pratica exercícios? -->
                 <record model="survey.question" id="QSI17_04_03">
-                    <field name="question">[QSI17_04_03] Com que frequência caminha ou pratica exercícios?</field>
+                    <field name="question">4.3. Com que frequência caminha ou pratica exercícios?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_04"/>
                     <field name="sequence" eval="30"/>
@@ -861,9 +861,9 @@
                         <field name="sequence" eval="110"/>
                     </record>
 
-                <!-- [QSI17_04_04] O(A) Sr.(a) tem ou teve o hábito de fumar? -->
+                <!-- 4.4. O(A) Sr.(a) tem ou teve o hábito de fumar? -->
                 <record model="survey.question" id="QSI17_04_04">
-                    <field name="question">[QSI17_04_04] O(A) Sr.(a) tem ou teve o hábito de fumar?</field>
+                    <field name="question">4.4. O(A) Sr.(a) tem ou teve o hábito de fumar?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_04"/>
                     <field name="sequence" eval="40"/>
@@ -911,9 +911,9 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-                <!-- [QSI17_04_05] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas? -->
+                <!-- 4.5. O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas? -->
                 <record model="survey.question" id="QSI17_04_05">
-                    <field name="question">[QSI17_04_05] O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?</field>
+                    <field name="question">4.5. O(A) Sr. (a) tem o hábito de tomar bebidas alcoólicas?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_04"/>
                     <field name="sequence" eval="50"/>
@@ -979,17 +979,17 @@
                         <field name="sequence" eval="90"/>
                     </record>
 
-            <!-- [QSI17_05] Saúde -->
+            <!-- 5. Saúde -->
             <record model="survey.page" id="QSI17_05">
-                <field name="title">[QSI17_05] Saúde</field>
+                <field name="title">5. Saúde</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="50"/>
                 <field name="description">&lt;p&gt;Saúde&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_05_01] Tem alguma dificuldade para: -->
+                <!-- 5.1. Tem alguma dificuldade para: -->
                 <record model="survey.question" id="QSI17_05_01">
-                    <field name="question">[QSI17_05_01] Tem alguma dificuldade para:</field>
+                    <field name="question">5.1. Tem alguma dificuldade para:</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_05"/>
                     <field name="sequence" eval="10"/>
@@ -1066,9 +1066,9 @@
                         <field name="sequence" eval="110"/>
                     </record>
 
-                <!-- [QSI17_05_02] O(A) Sr.(a) diria que sua saúde é: -->
+                <!-- 5.2. O(A) Sr.(a) diria que sua saúde é: -->
                 <record model="survey.question" id="QSI17_05_02">
-                    <field name="question">[QSI17_05_02] O(A) Sr.(a) diria que sua saúde é:</field>
+                    <field name="question">5.2. O(A) Sr.(a) diria que sua saúde é:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_05"/>
                     <field name="sequence" eval="20"/>
@@ -1128,9 +1128,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSI17_05_03] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é -->
+                <!-- 5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é -->
                 <record model="survey.question" id="QSI17_05_03">
-                    <field name="question">[QSI17_05_03] Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é</field>
+                    <field name="question">5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_05"/>
                     <field name="sequence" eval="30"/>
@@ -1178,17 +1178,17 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-            <!-- [QSI17_06] Médico -->
+            <!-- 6. Médico -->
             <record model="survey.page" id="QSI17_06">
-                <field name="title">[QSI17_06] Médico</field>
+                <field name="title">6. Médico</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="60"/>
                 <field name="description">&lt;p&gt;Médico&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_06_01] Que motivo(s) o leva(m) a procurar atendimento médico? -->
+                <!-- 6.1. Que motivo(s) o leva(m) a procurar atendimento médico? -->
                 <record model="survey.question" id="QSI17_06_01">
-                    <field name="question">[QSI17_06_01] Que motivo(s) o leva(m) a procurar atendimento médico?</field>
+                    <field name="question">6.1. Que motivo(s) o leva(m) a procurar atendimento médico?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_06"/>
                     <field name="sequence" eval="10"/>
@@ -1247,9 +1247,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- [QSI17_06_02] Nos últimos 12 meses, visitou o médico frequentemente (todo mês)? -->
+                <!-- 6.2. Nos últimos 12 meses, visitou o médico frequentemente (todo mês)? -->
                 <record model="survey.question" id="QSI17_06_02">
-                    <field name="question">[QSI17_06_02] Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?</field>
+                    <field name="question">6.2. Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_06"/>
                     <field name="sequence" eval="20"/>
@@ -1291,9 +1291,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSI17_06_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado? -->
+                <!-- 6.3. Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado? -->
                 <record model="survey.question" id="QSI17_06_03">
-                    <field name="question">[QSI17_06_03] Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?</field>
+                    <field name="question">6.3. Nos últimos 12 meses, quantas vezes o(a) Sr.(a) esteve internado?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_06"/>
                     <field name="sequence" eval="30"/>
@@ -1359,9 +1359,9 @@
                         <field name="sequence" eval="90"/>
                     </record>
 
-                <!-- [QSI17_06_04] O Sr(a). teve alguma queda depois que completou 60 anos? -->
+                <!-- 6.4. O Sr(a). teve alguma queda depois que completou 60 anos? -->
                 <record model="survey.question" id="QSI17_06_04">
-                    <field name="question">[QSI17_06_04] O Sr(a). teve alguma queda depois que completou 60 anos?</field>
+                    <field name="question">6.4. O Sr(a). teve alguma queda depois que completou 60 anos?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_06"/>
                     <field name="sequence" eval="40"/>
@@ -1403,9 +1403,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- [QSI17_06_05] Alguma vez um médico lhe disse que tem alguma doença? -->
+                <!-- 6.5. Alguma vez um médico lhe disse que tem alguma doença? -->
                 <record model="survey.question" id="QSI17_06_05">
-                    <field name="question">[QSI17_06_05] Alguma vez um médico lhe disse que tem alguma doença?</field>
+                    <field name="question">6.5. Alguma vez um médico lhe disse que tem alguma doença?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_06"/>
                     <field name="sequence" eval="50"/>
@@ -1447,17 +1447,17 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-            <!-- [QSI17_07] Alimentação -->
+            <!-- 7. Alimentação -->
             <record model="survey.page" id="QSI17_07">
-                <field name="title">[QSI17_07] Alimentação</field>
+                <field name="title">7. Alimentação</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="70"/>
                 <field name="description">&lt;p&gt;Alimentação&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_07_01] Como o Sr(a) costuma consumir a carne? -->
+                <!-- 7.1. Como o Sr(a) costuma consumir a carne? -->
                 <record model="survey.question" id="QSI17_07_01">
-                    <field name="question">[QSI17_07_01] Como o Sr(a) costuma consumir a carne?</field>
+                    <field name="question">7.1. Como o Sr(a) costuma consumir a carne?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_07"/>
                     <field name="sequence" eval="10"/>
@@ -1505,17 +1505,17 @@
                         <field name="sequence" eval="60"/>
                     </record>
 
-            <!-- [QSI17_08] Parasitoses -->
+            <!-- 8. Parasitoses -->
             <record model="survey.page" id="QSI17_08">
-                <field name="title">[QSI17_08] Parasitoses</field>
+                <field name="title">8. Parasitoses</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="80"/>
                 <field name="description">&lt;p&gt;Parasitoses&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_08_01] O Sr(a) já fez exame de fezes? -->
+                <!-- 8.1. O Sr(a) já fez exame de fezes? -->
                 <record model="survey.question" id="QSI17_08_01">
-                    <field name="question">[QSI17_08_01] O Sr(a) já fez exame de fezes?</field>
+                    <field name="question">8.1. O Sr(a) já fez exame de fezes?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_08"/>
                     <field name="sequence" eval="10"/>
@@ -1568,9 +1568,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSI17_08_02] Como descobriu que estava com a doença? -->
+                <!-- 8.2. Como descobriu que estava com a doença? -->
                 <record model="survey.question" id="QSI17_08_02">
-                    <field name="question">[QSI17_08_02] Como descobriu que estava com a doença?</field>
+                    <field name="question">8.2. Como descobriu que estava com a doença?</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QSI17_08"/>
                     <field name="sequence" eval="20"/>
@@ -1623,9 +1623,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSI17_08_03] Já tomou vermífugo (lombrigueira)? -->
+                <!-- 8.3. Já tomou vermífugo (lombrigueira)? -->
                 <record model="survey.question" id="QSI17_08_03">
-                    <field name="question">[QSI17_08_03] Já tomou vermífugo (lombrigueira)?</field>
+                    <field name="question">8.3. Já tomou vermífugo (lombrigueira)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_08"/>
                     <field name="sequence" eval="30"/>
@@ -1697,17 +1697,17 @@
                         <field name="sequence" eval="100"/>
                     </record>
 
-            <!-- [QSI17_09] Aspecto Econômico -->
+            <!-- 9. Aspecto Econômico -->
             <record model="survey.page" id="QSI17_09">
-                <field name="title">[QSI17_09] Aspecto Econômico</field>
+                <field name="title">9. Aspecto Econômico</field>
                 <field name="survey_id" ref="QSI17"/>
                 <field name="sequence" eval="90"/>
                 <field name="description">&lt;p&gt;Aspecto Econômico&lt;/p&gt;</field>
             </record>
 
-                <!-- [QSI17_09_01] O(A) Sr.(a) trabalha? -->
+                <!-- 9.1. O(A) Sr.(a) trabalha? -->
                 <record model="survey.question" id="QSI17_09_01">
-                    <field name="question">[QSI17_09_01] O(A) Sr.(a) trabalha?</field>
+                    <field name="question">9.1. O(A) Sr.(a) trabalha?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_09"/>
                     <field name="sequence" eval="10"/>
@@ -1761,9 +1761,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- [QSI17_09_02] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)? -->
+                <!-- 9.2. Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)? -->
                 <record model="survey.question" id="QSI17_09_02">
-                    <field name="question">[QSI17_09_02] Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)?</field>
+                    <field name="question">9.2. Qual o valor do(s) seu(s) rendimento(s) mensal(ais) aproximado(s) (independente do rendimento familiar)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_09"/>
                     <field name="sequence" eval="20"/>
