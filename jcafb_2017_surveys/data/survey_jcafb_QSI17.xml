@@ -2,9 +2,9 @@
 <openerp>
     <data noupdate="0">
 
-        <!-- [QSI17]  -->
+        <!-- [QSI17] -->
         <record model="survey.survey" id="QSI17">
-            <field name="title">[QSI17] </field>
+            <field name="title">[QSI17]</field>
             <field name="stage_id" ref="survey.stage_in_progress"/>
             <field name="auth_required" eval="False"/>
             <field name="users_can_go_back" eval="True"/>
