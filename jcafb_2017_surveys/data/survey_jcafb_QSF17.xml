@@ -89,7 +89,7 @@
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Se a resposta for "Outro", especificar o papel na residência:</field>
+                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
                 </record>
 
                     <record model="survey.label" id="QSF17_02_03_01">
@@ -111,10 +111,30 @@
                     </record>
 
                     <record model="survey.label" id="QSF17_02_03_04">
-                        <field name="value">d) Outro (especificar)</field>
+                        <field name="value">d) Outro</field>
                         <field name="question_id" ref="QSF17_02_03"/>
                         <field name="sequence" eval="40"/>
                     </record>
+
+                <!-- 2.4. Nome do Entrevistado -->
+                <record model="survey.question" id="QSF17_02_04">
+                    <field name="question">2.4. Nome do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_02"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
+                </record>
+
+                <!-- 2.5. Código do Entrevistado -->
+                <record model="survey.question" id="QSF17_02_05">
+                    <field name="question">2.5. Código do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSF17_02"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
+                </record>
 
             <!-- 3. Residência -->
             <record model="survey.page" id="QSF17_03">

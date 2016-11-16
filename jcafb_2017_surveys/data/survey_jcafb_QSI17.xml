@@ -109,7 +109,7 @@
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Nome e, se a resposta for "Outro", especificar</field>
+                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
                 </record>
 
                     <record model="survey.label" id="QSI17_02_05_01">
@@ -129,6 +129,26 @@
                         <field name="question_id" ref="QSI17_02_05"/>
                         <field name="sequence" eval="30"/>
                     </record>
+
+                <!-- 2.6. Nome do Entrevistado -->
+                <record model="survey.question" id="QSI17_02_06">
+                    <field name="question">2.6. Nome do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSI17_02"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
+                </record>
+
+                <!-- 2.7. Código do Entrevistado -->
+                <record model="survey.question" id="QSI17_02_07">
+                    <field name="question">2.7. Código do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QSI17_02"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
+                </record>
 
             <!-- 3. Aspectos Sociais -->
             <record model="survey.page" id="QSI17_03">

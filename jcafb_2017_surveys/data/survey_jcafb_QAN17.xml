@@ -109,7 +109,7 @@
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:</field>
+                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
                 </record>
 
                     <record model="survey.label" id="QAN17_02_05_01">
@@ -135,6 +135,26 @@
                         <field name="question_id" ref="QAN17_02_05"/>
                         <field name="sequence" eval="40"/>
                     </record>
+
+                <!-- 2.6. Nome do Entrevistado -->
+                <record model="survey.question" id="QAN17_02_06">
+                    <field name="question">2.6. Nome do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QAN17_02"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
+                </record>
+
+                <!-- 2.7. Código do Entrevistado -->
+                <record model="survey.question" id="QAN17_02_07">
+                    <field name="question">2.7. Código do Entrevistado</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QAN17_02"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
+                </record>
 
             <!-- 3. Medidas de Peso e Altura -->
             <record model="survey.page" id="QAN17_03">
