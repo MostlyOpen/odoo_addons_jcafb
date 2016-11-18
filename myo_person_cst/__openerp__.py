@@ -30,6 +30,7 @@
         'myo_person_l10n_br',
     ],
     'data': [
+        'views/person_view.xml',
         'data/person_seq.xml',
         'wizard/person_lab_test_wizard_view.xml',
     ],
