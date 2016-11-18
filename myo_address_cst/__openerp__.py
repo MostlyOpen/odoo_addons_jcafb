@@ -30,6 +30,7 @@
         'myo_address_l10n_br',
     ],
     'data': [
+        'views/address_view.xml',
         'data/address_seq.xml',
     ],
     'demo': [],
