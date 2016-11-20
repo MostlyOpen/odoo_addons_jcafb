@@ -44,6 +44,7 @@ class Document(models.Model):
     _inherit = 'myo.document'
 
     address_id = fields.Many2one('myo.address', 'Address', ondelete='restrict')
+    address_code = fields.Char('Address Code', related='address_id.code', readonly=True)
     document_phone = fields.Char('Phone', related='address_id.phone')
     mobile_phone = fields.Char('Mobile', related='address_id.mobile')
     document_email = fields.Char('Email', related='address_id.email')
