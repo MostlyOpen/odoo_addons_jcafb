@@ -18,5 +18,4 @@
 #
 ###############################################################################
 
-from . import models
-from . import wizard
+import community_member_wizard

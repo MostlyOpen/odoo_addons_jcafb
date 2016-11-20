@@ -39,6 +39,7 @@
         'views/community_person_view.xml',
         'views/community_employee_view.xml',
         'views/community_menu_view.xml',
+        'wizard/community_member_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
