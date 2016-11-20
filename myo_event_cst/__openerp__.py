@@ -39,6 +39,7 @@
         'views/event_employee_view.xml',
         'data/event_seq.xml',
         'views/event_menu_view.xml',
+        'wizard/event_participant_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
