@@ -18,4 +18,5 @@
 #
 ###############################################################################
 
+import person_document_wizard
 import person_lab_test_wizard
