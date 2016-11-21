@@ -98,18 +98,18 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Entrevistado -->
+                <!-- 2.5. Relação do Entrevistado com o Paciente -->
                 <record model="survey.question" id="QDH17_02_05">
-                    <field name="question">2.5. Entrevistado</field>
+                    <field name="question">2.5. Relação do Entrevistado com o Paciente</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="50"/>
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="constr_error_msg">Informar a relação do Entrevistado com o Paciente.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
+                    <field name="comments_message">Se "Outra", especificar a relação do Entrevistado com o Paciente:</field>
                 </record>
 
                     <record model="survey.label" id="QDH17_02_05_01">
@@ -131,7 +131,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_02_05_04">
-                        <field name="value">c) Outro</field>
+                        <field name="value">c) Outra</field>
                         <field name="question_id" ref="QDH17_02_05"/>
                         <field name="sequence" eval="40"/>
                     </record>
@@ -324,9 +324,9 @@
                     <field name="constr_error_msg">Informar o peso do paciente (kg).</field>
                 </record>
 
-                <!-- 4.2. Responsável pela medida: -->
+                <!-- 4.2. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QDH17_04_02">
-                    <field name="question">4.2. Responsável pela medida:</field>
+                    <field name="question">4.2. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="20"/>
@@ -344,9 +344,9 @@
                     <field name="constr_error_msg">Informar a altura do paciente (cm).</field>
                 </record>
 
-                <!-- 4.4. Responsável pela medida: -->
+                <!-- 4.4. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QDH17_04_04">
-                    <field name="question">4.4. Responsável pela medida:</field>
+                    <field name="question">4.4. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="40"/>
@@ -389,7 +389,7 @@
                 </record>
 
                     <record model="survey.label" id="QDH17_04_07_01">
-                        <field name="value">a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)</field>
+                        <field name="value">a) Baixo peso (Adultos:menor que 18,5; Idosos (M e F): menor que 21,9)</field>
                         <field name="question_id" ref="QDH17_04_07"/>
                         <field name="sequence" eval="10"/>
                     </record>
@@ -419,7 +419,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_04_07_06">
-                        <field name="value">f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)</field>
+                        <field name="value">f) Obesidade Grau III (Adultos:maior ou igual a 40,0; Idosos(M):maior ou igual a 40,0/Idosos(F):maior ou igual a 42,0)</field>
                         <field name="question_id" ref="QDH17_04_07"/>
                         <field name="sequence" eval="60"/>
                     </record>
@@ -446,9 +446,9 @@
                     <field name="constr_error_msg">Informar a circunferência abdominal do paciente (cm).</field>
                 </record>
 
-                <!-- 4.9. Responsável pela medida: -->
+                <!-- 4.9. Cpodigo do Responsável pela medida: -->
                 <record model="survey.question" id="QDH17_04_09">
-                    <field name="question">4.9. Responsável pela medida:</field>
+                    <field name="question">4.9. Cpodigo do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="90"/>
@@ -471,19 +471,19 @@
                 </record>
 
                     <record model="survey.label" id="QDH17_04_10_01">
-                        <field name="value">a) Normal (H:&#60;94 cm; M:&#60;80 cm)</field>
+                        <field name="value">a) Normal (H:menor que 94 cm; M:menor que 80 cm)</field>
                         <field name="question_id" ref="QDH17_04_10"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_04_10_02">
-                        <field name="value">b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)</field>
+                        <field name="value">b) Risco aumentado (H:maior ou igual a 94 cm; M:maior ou igual a 80 cm)</field>
                         <field name="question_id" ref="QDH17_04_10"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_04_10_03">
-                        <field name="value">c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))</field>
+                        <field name="value">c) Risco aumentado substancialmente (H:maior ou igual a 102 cm; M:maior ou igual a 88 cm))</field>
                         <field name="question_id" ref="QDH17_04_10"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -518,9 +518,9 @@
                     <field name="constr_error_msg">Informar o valor da pressão arterial autom. do paciente (mmHg).</field>
                 </record>
 
-                <!-- 5.2. Responsável pela medida: -->
+                <!-- 5.2. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QDH17_05_02">
-                    <field name="question">5.2. Responsável pela medida:</field>
+                    <field name="question">5.2. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_05"/>
                     <field name="sequence" eval="20"/>
@@ -538,9 +538,9 @@
                     <field name="constr_error_msg">Informar o valor da pressão arterial manual do paciente (mmHg).</field>
                 </record>
 
-                <!-- 5.4. Responsável pela medida (se medida não realizada, escrever nd): -->
+                <!-- 5.4. Código do Responsável pela medida (se medida não realizada, escrever nd): -->
                 <record model="survey.question" id="QDH17_05_04">
-                    <field name="question">5.4. Responsável pela medida (se medida não realizada, escrever nd):</field>
+                    <field name="question">5.4. Código do Responsável pela medida (se medida não realizada, escrever nd):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_05"/>
                     <field name="sequence" eval="40"/>
@@ -563,7 +563,7 @@
                 </record>
 
                     <record model="survey.label" id="QDH17_05_05_01">
-                        <field name="value">a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)</field>
+                        <field name="value">a) Normal (PAS menor que 130 mmHg e PAD menor que 85 mmHg)</field>
                         <field name="question_id" ref="QDH17_05_05"/>
                         <field name="sequence" eval="10"/>
                     </record>
@@ -575,7 +575,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_05_05_03">
-                        <field name="value">c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)</field>
+                        <field name="value">c) Alta (PAS:maior ou igual a 140 mmHg e PAD:maior ou igual a 90 mmHg)</field>
                         <field name="question_id" ref="QDH17_05_05"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -610,9 +610,9 @@
                     <field name="constr_error_msg">Informar o valor da glicemia  do paciente (mg/dL).</field>
                 </record>
 
-                <!-- 6.2. Responsável pela medida: -->
+                <!-- 6.2. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QDH17_06_02">
-                    <field name="question">6.2. Responsável pela medida:</field>
+                    <field name="question">6.2. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_06"/>
                     <field name="sequence" eval="20"/>
@@ -635,7 +635,7 @@
                 </record>
 
                     <record model="survey.label" id="QDH17_06_03_01">
-                        <field name="value">a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)</field>
+                        <field name="value">a) Normal para jejum de 8-12 hs(menor ou igual a 99 mg/dL)</field>
                         <field name="question_id" ref="QDH17_06_03"/>
                         <field name="sequence" eval="10"/>
                     </record>
@@ -647,7 +647,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_06_03_03">
-                        <field name="value">c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )</field>
+                        <field name="value">c) Diabetes - para jejum de 8-12 hs (maior que 126 mg/dL, )</field>
                         <field name="question_id" ref="QDH17_06_03"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -659,7 +659,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_06_03_05">
-                        <field name="value">e) Jejum INFERIOR a 8 hs: Aumentado (&#62;=140 mg/dL)</field>
+                        <field name="value">e) Jejum INFERIOR a 8 hs: Aumentado (maior ou igual a 140 mg/dL)</field>
                         <field name="question_id" ref="QDH17_06_03"/>
                         <field name="sequence" eval="50"/>
                     </record>
@@ -711,7 +711,7 @@
                 </record>
 
                     <record model="survey.label" id="QDH17_06_06_01">
-                        <field name="value">a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL</field>
+                        <field name="value">a) Desejável:Acima de 20 anos:menor que 200 mg/dL;2-19 anos:menor que 150 mg/dL</field>
                         <field name="question_id" ref="QDH17_06_06"/>
                         <field name="sequence" eval="10"/>
                     </record>
@@ -723,7 +723,7 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_06_06_03">
-                        <field name="value">c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL</field>
+                        <field name="value">c) Elevado: Acima de 20 anos:maior ou igual a 240 mg/dL;2-19 anos:maior ou igual a 170 mg/dL</field>
                         <field name="question_id" ref="QDH17_06_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
@@ -757,9 +757,9 @@
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Error Message.</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Esta questão precisa ser respondida.</field>
+                    <field name="comments_message"></field>
                 </record>
 
                     <record model="survey.label" id="QDH17_07_01_01">
@@ -1519,9 +1519,9 @@
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Error Message.</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Esta questão precisa ser respondida.</field>
+                    <field name="comments_message">Se respondeu alternativa C, parou de fumar há quanto tempo?</field>
                 </record>
 
                     <record model="survey.label" id="QDH17_09_02_01">
@@ -1870,111 +1870,141 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_07">
-                        <field name="value">10.2.7. Carne Vermelha</field>
+                        <field name="value">10.2.7. Carne Vermelha com gordura</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="70"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_08">
-                        <field name="value">10.2.8. Miúdos</field>
+                        <field name="value">10.2.8. Carne vermelha sem gordura</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="80"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_09">
-                        <field name="value">10.2.9. Embutidos</field>
+                        <field name="value">10.2.9. Miúdos</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="90"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_10">
-                        <field name="value">10.2.10. Frango</field>
+                        <field name="value">10.2.10. Embutidos</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="100"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_11">
-                        <field name="value">10.2.11. Peixe</field>
+                        <field name="value">10.2.11.  Frango com pele</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="110"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_12">
-                        <field name="value">10.2.12. Leite integral, queijo amarelo</field>
+                        <field name="value">10.2.12. Frango sem pele</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="120"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_13">
-                        <field name="value">10.2.13. Leite semi ou desnatado, queijo branco</field>
+                        <field name="value">10.2.13. Peixe</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="130"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_14">
-                        <field name="value">10.2.14. Bolacha recheada, salgadinho, miojo</field>
+                        <field name="value">10.2.14. Leite integral, queijo amarelo</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="140"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_15">
-                        <field name="value">10.2.15. Margarina, manteiga, maionese</field>
+                        <field name="value">10.2.15. Leite semi ou desnatado, queijo branco</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="150"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_16">
-                        <field name="value">10.2.16. Refrigerante, suco de saquinho</field>
+                        <field name="value">10.2.16. Bolacha recheada, salgadinho, miojo</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="160"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_17">
-                        <field name="value">10.2.17. Doces</field>
+                        <field name="value">10.2.17. Frituras (alimento submerso em óleo quente)</field>
                         <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="170"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_18">
-                        <field name="value">a) 0 dias ou raramente</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="value">10.2.18.  Margarina, manteiga, maionese</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="180"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_19">
-                        <field name="value">b) 1-2 dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="value">10.2.19. Bebida com açúcar (café, leite, suco, chá, etc)</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="190"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_20">
-                        <field name="value">c) 3-4 dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="value">10.2.20.  Refrigerante, suco de saquinho</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="200"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_21">
-                        <field name="value">d) 5 ou mais dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="value">10.2.21. Doces</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="210"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_22">
-                        <field name="value">e) Não quis responder</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="value">10.2.22. Tempero pronto (knorr, sazon)</field>
+                        <field name="question_id_2" ref="QDH17_10_02"/>
                         <field name="sequence" eval="220"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_23">
-                        <field name="value">f) Não sabe</field>
+                        <field name="value">a) 0 dias ou raramente</field>
                         <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="230"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_24">
-                        <field name="value">g) Não se aplica</field>
+                        <field name="value">b) 1-2 dias</field>
                         <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="240"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_25">
+                        <field name="value">c) 3-4 dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="250"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_26">
+                        <field name="value">d) 5 ou mais dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="260"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_27">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="270"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_28">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="280"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_02_29">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
+                        <field name="sequence" eval="290"/>
                     </record>
 
     </data>

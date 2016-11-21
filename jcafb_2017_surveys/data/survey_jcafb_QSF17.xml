@@ -78,18 +78,18 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o(s) Paciente(s) reside(m).</field>
                 </record>
 
-                <!-- 2.3. Entrevistado: -->
+                <!-- 2.3. Relação do Entrevistado com o(s) Paciente(s) -->
                 <record model="survey.question" id="QSF17_02_03">
-                    <field name="question">2.3. Entrevistado:</field>
+                    <field name="question">2.3. Relação do Entrevistado com o(s) Paciente(s)</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="30"/>
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="constr_error_msg">Informar a relação do Entrevistado com o(s) Paciente(s).</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
+                    <field name="comments_message">Se "Outra", especificar a relação do Entrevistado com o(s) Paciente(s):</field>
                 </record>
 
                     <record model="survey.label" id="QSF17_02_03_01">
@@ -111,7 +111,7 @@
                     </record>
 
                     <record model="survey.label" id="QSF17_02_03_04">
-                        <field name="value">d) Outro</field>
+                        <field name="value">d) Outra</field>
                         <field name="question_id" ref="QSF17_02_03"/>
                         <field name="sequence" eval="40"/>
                     </record>
@@ -345,7 +345,7 @@
                     </record>
 
                     <record model="survey.label" id="QSF17_04_02_04">
-                        <field name="value">d) Sim, adubo comprado</field>
+                        <field name="value">d) Sim, adubo industrializado</field>
                         <field name="question_id" ref="QSF17_04_02"/>
                         <field name="sequence" eval="40"/>
                     </record>
@@ -532,21 +532,27 @@
                     </record>
 
                     <record model="survey.label" id="QSF17_05_03_03">
-                        <field name="value">c) Não sabe</field>
+                        <field name="value">c) Não falta água</field>
                         <field name="question_id" ref="QSF17_05_03"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
                     <record model="survey.label" id="QSF17_05_03_04">
-                        <field name="value">d) Não quis responder</field>
+                        <field name="value">d) Não sabe</field>
                         <field name="question_id" ref="QSF17_05_03"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
                     <record model="survey.label" id="QSF17_05_03_05">
-                        <field name="value">e) Não se aplica</field>
+                        <field name="value">e) Não quis responder</field>
                         <field name="question_id" ref="QSF17_05_03"/>
                         <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QSF17_05_03_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="QSF17_05_03"/>
+                        <field name="sequence" eval="60"/>
                     </record>
 
                 <!-- 5.4. Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção) -->
@@ -974,9 +980,9 @@
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 7.1. Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)            -->
+                <!-- 7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)            -->
                 <record model="survey.question" id="QSF17_07_01">
-                    <field name="question">7.1. Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           </field>
+                    <field name="question">7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           </field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSF17_07"/>
                     <field name="sequence" eval="10"/>
@@ -1399,8 +1405,8 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">False</field>
-                    <field name="comments_message">Se "Outro", qual?</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outro", especificar:</field>
                 </record>
 
                     <record model="survey.label" id="QSF17_08_01_01">
@@ -1446,7 +1452,7 @@
                     </record>
 
                     <record model="survey.label" id="QSF17_08_01_08">
-                        <field name="value">g) Outros</field>
+                        <field name="value">g) Outro</field>
                         <field name="question_id" ref="QSF17_08_01"/>
                         <field name="sequence" eval="80"/>
                     </record>
@@ -1533,8 +1539,8 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">False</field>
-                    <field name="comments_message">Se "Outro", qual?</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se "Outro", especificar:</field>
                 </record>
 
                     <record model="survey.label" id="QSF17_08_03_01">

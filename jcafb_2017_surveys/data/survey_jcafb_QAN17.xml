@@ -98,18 +98,18 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Entrevistado -->
+                <!-- 2.5. Relação do Entrevistado com o Paciente -->
                 <record model="survey.question" id="QAN17_02_05">
-                    <field name="question">2.5. Entrevistado</field>
+                    <field name="question">2.5. Relação do Entrevistado com o Paciente</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="50"/>
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Informar quem respondeu ao questionário.</field>
+                    <field name="constr_error_msg">Informar a relação do Entrevistado com o Paciente.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:</field>
+                    <field name="comments_message">Se "Outra", especificar a relação do Entrevistado com o Paciente:</field>
                 </record>
 
                     <record model="survey.label" id="QAN17_02_05_01">
@@ -131,7 +131,7 @@
                     </record>
 
                     <record model="survey.label" id="QAN17_02_05_04">
-                        <field name="value">d) Outro</field>
+                        <field name="value">d) Outra</field>
                         <field name="question_id" ref="QAN17_02_05"/>
                         <field name="sequence" eval="40"/>
                     </record>
@@ -174,9 +174,9 @@
                     <field name="constr_error_msg">Informar o peso do paciente (kg).</field>
                 </record>
 
-                <!-- 3.2. Responsável pela medida: -->
+                <!-- 3.2. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QAN17_03_02">
-                    <field name="question">3.2. Responsável pela medida:</field>
+                    <field name="question">3.2. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_03"/>
                     <field name="sequence" eval="20"/>
@@ -194,9 +194,9 @@
                     <field name="constr_error_msg">Informar a altura do paciente (cm).</field>
                 </record>
 
-                <!-- 3.4. Responsável pela medida: -->
+                <!-- 3.4. Código do Responsável pela medida: -->
                 <record model="survey.question" id="QAN17_03_04">
-                    <field name="question">3.4. Responsável pela medida:</field>
+                    <field name="question">3.4. Código do Responsável pela medida:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_03"/>
                     <field name="sequence" eval="40"/>
@@ -222,9 +222,9 @@
                     <field name="constr_error_msg">Informar o horário em que foi feita a coleta.</field>
                 </record>
 
-                <!-- 4.2. Responsável pela coleta: -->
+                <!-- 4.2. Código do Responsável pela coleta: -->
                 <record model="survey.question" id="QAN17_04_02">
-                    <field name="question">4.2. Responsável pela coleta:</field>
+                    <field name="question">4.2. Código do Responsável pela coleta:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_04"/>
                     <field name="sequence" eval="20"/>
@@ -242,9 +242,9 @@
                     <field name="constr_error_msg">Informar o valor da hemoglobina (g/dL) do paciente.</field>
                 </record>
 
-                <!-- 4.4. Responsável pela dosagem: -->
+                <!-- 4.4. Código do Responsável pela dosagem: -->
                 <record model="survey.question" id="QAN17_04_04">
-                    <field name="question">4.4. Responsável pela dosagem:</field>
+                    <field name="question">4.4. Código do Responsável pela dosagem:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_04"/>
                     <field name="sequence" eval="40"/>
