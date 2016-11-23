@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [EPI17] -->
+        <record model="survey.survey" id="EPI17">
+            <field name="title">[EPI17]</field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;JCAFB 2017 - Laboratório - Parasitologia (Idoso)&lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- 1. Identificação do Paciente -->
+            <record model="survey.page" id="EPI17_01">
+                <field name="title">1. Identificação do Paciente</field>
+                <field name="survey_id" ref="EPI17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 1.1. Código do Paciente: -->
+                <record model="survey.question" id="EPI17_01_01">
+                    <field name="question">1.1. Código do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
+                </record>
+
+                <!-- 1.2. Nome do Paciente: -->
+                <record model="survey.question" id="EPI17_01_02">
+                    <field name="question">1.2. Nome do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
+                </record>
+
+                <!-- 1.3. Código do Endereço: -->
+                <record model="survey.question" id="EPI17_01_03">
+                    <field name="question">1.3. Código do Endereço:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 1.4. Nome do Endereço -->
+                <record model="survey.question" id="EPI17_01_04">
+                    <field name="question">1.4. Nome do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_01"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 1.5. Procedência do Paciente -->
+                <record model="survey.question" id="EPI17_01_05">
+                    <field name="question">1.5. Procedência do Paciente</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EPI17_01"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Escolher uma alternativa.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se a resposta for "Extra" especificar, se necessário:</field>
+                </record>
+
+                    <record model="survey.label" id="EPI17_01_05_01">
+                        <field name="value">a) Criança do Projeto</field>
+                        <field name="question_id" ref="EPI17_01_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_01_05_02">
+                        <field name="value">b) Idoso(a) do Projeto</field>
+                        <field name="question_id" ref="EPI17_01_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_01_05_03">
+                        <field name="value">c) Extra</field>
+                        <field name="question_id" ref="EPI17_01_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+            <!-- 2. Exame Coproparasitológico -->
+            <record model="survey.page" id="EPI17_02">
+                <field name="title">2. Exame Coproparasitológico</field>
+                <field name="survey_id" ref="EPI17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 2.1. Código do Exame: -->
+                <record model="survey.question" id="EPI17_02_01">
+                    <field name="question">2.1. Código do Exame:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Exame.</field>
+                </record>
+
+                <!-- 2.2. Data de Entrada do Material (dd-mm-aaaa): -->
+                <record model="survey.question" id="EPI17_02_02">
+                    <field name="question">2.2. Data de Entrada do Material (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data de Entrada do Material.</field>
+                </record>
+
+                <!-- 2.3. Data de Saída do Resultado (dd-mm-aaaa): -->
+                <record model="survey.question" id="EPI17_02_03">
+                    <field name="question">2.3. Data de Saída do Resultado (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data de Saída do Resultado.</field>
+                </record>
+
+                <!-- 2.4. Resultado: -->
+                <record model="survey.question" id="EPI17_02_04">
+                    <field name="question">2.4. Resultado:</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Escolher uma alternativa</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se a resposta for "Outro", especificar:</field>
+                </record>
+
+                    <record model="survey.label" id="EPI17_02_04_01">
+                        <field name="value">a) NÃO REALIZADO</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_02">
+                        <field name="value">b) NEGATIVO</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_03">
+                        <field name="value">c) Cistos de Endolimax nana</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_04">
+                        <field name="value">d) Cistos de Entamoeba coli</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_05">
+                        <field name="value">e) Cistos de Entamoeba histolytica</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_06">
+                        <field name="value">f) Cistos de Giardia lamblia</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_07">
+                        <field name="value">g) Cistos de Iodamoeba butschlii</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_08">
+                        <field name="value">h) Cistos de Chilomastix mesnil</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_09">
+                        <field name="value">i) Oocistos de Isospora belli</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_10">
+                        <field name="value">j) Ovos de Ascaris lumbricoides</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_11">
+                        <field name="value">k) Ovos de Ancilostomídeo</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_12">
+                        <field name="value">l) Ovos de Trichuris trichiura</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_13">
+                        <field name="value">m) Ovos de Taenia sp</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_14">
+                        <field name="value">n) Ovos de Hymenolepis nana</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_15">
+                        <field name="value">o) Ovos de Schistosoma mansoni</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_16">
+                        <field name="value">p) Ovos de Enterobius vermicularis</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="160"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_17">
+                        <field name="value">q) Larvas de Strongyloides stercoralis</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="170"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_04_18">
+                        <field name="value">r) Outro</field>
+                        <field name="question_id" ref="EPI17_02_04"/>
+                        <field name="sequence" eval="180"/>
+                    </record>
+
+                <!-- 2.5. Método de Ritchie - Código do Examinador -->
+                <record model="survey.question" id="EPI17_02_05">
+                    <field name="question">2.5. Método de Ritchie - Código do Examinador</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Examinador</field>
+                </record>
+
+                <!-- 2.6. Método de Ritchie - Nome do Examinador -->
+                <record model="survey.question" id="EPI17_02_06">
+                    <field name="question">2.6. Método de Ritchie - Nome do Examinador</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Examinador</field>
+                </record>
+
+                <!-- 2.7. Método de Ritchie - Resultado: -->
+                <record model="survey.question" id="EPI17_02_07">
+                    <field name="question">2.7. Método de Ritchie - Resultado:</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Escolher uma alternativa</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se a resposta for "Outro", especificar:</field>
+                </record>
+
+                    <record model="survey.label" id="EPI17_02_07_01">
+                        <field name="value">a) NÃO REALIZADO</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_02">
+                        <field name="value">b) NEGATIVO</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_03">
+                        <field name="value">c) Cistos de Endolimax nana</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_04">
+                        <field name="value">d) Cistos de Entamoeba coli</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_05">
+                        <field name="value">e) Cistos de Entamoeba histolytica</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_06">
+                        <field name="value">f) Cistos de Giardia lamblia</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_07">
+                        <field name="value">g) Cistos de Iodamoeba butschlii</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_08">
+                        <field name="value">h) Cistos de Chilomastix mesnil</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_09">
+                        <field name="value">i) Oocistos de Isospora belli</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_10">
+                        <field name="value">j) Ovos de Ascaris lumbricoides</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_11">
+                        <field name="value">k) Ovos de Ancilostomídeo</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_12">
+                        <field name="value">l) Ovos de Trichuris trichiura</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_13">
+                        <field name="value">m) Ovos de Taenia sp</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_14">
+                        <field name="value">n) Ovos de Hymenolepis nana</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_15">
+                        <field name="value">o) Ovos de Schistosoma mansoni</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_16">
+                        <field name="value">p) Ovos de Enterobius vermicularis</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="160"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_17">
+                        <field name="value">q) Larvas de Strongyloides stercoralis</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="170"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_07_18">
+                        <field name="value">r) Outro</field>
+                        <field name="question_id" ref="EPI17_02_07"/>
+                        <field name="sequence" eval="180"/>
+                    </record>
+
+                <!-- 2.8. Método de Hoffmann - Código do Examinador -->
+                <record model="survey.question" id="EPI17_02_08">
+                    <field name="question">2.8. Método de Hoffmann - Código do Examinador</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="80"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Examinador</field>
+                </record>
+
+                <!-- 2.9. Método de Hoffmann - Nome do Examinador -->
+                <record model="survey.question" id="EPI17_02_09">
+                    <field name="question">2.9. Método de Hoffmann - Nome do Examinador</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="90"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Examinador</field>
+                </record>
+
+                <!-- 2.10. Método de Hoffmann - Resultado: -->
+                <record model="survey.question" id="EPI17_02_10">
+                    <field name="question">2.10. Método de Hoffmann - Resultado:</field>
+                    <field name="type">multiple_choice</field>
+                    <field name="page_id" ref="EPI17_02"/>
+                    <field name="sequence" eval="100"/>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Escolher uma alternativa</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Se a resposta for "Outro", especificar:</field>
+                </record>
+
+                    <record model="survey.label" id="EPI17_02_10_01">
+                        <field name="value">a) NÃO REALIZADO</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_02">
+                        <field name="value">b) NEGATIVO</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_03">
+                        <field name="value">c) Cistos de Endolimax nana</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_04">
+                        <field name="value">d) Cistos de Entamoeba coli</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_05">
+                        <field name="value">e) Cistos de Entamoeba histolytica</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_06">
+                        <field name="value">f) Cistos de Giardia lamblia</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_07">
+                        <field name="value">g) Cistos de Iodamoeba butschlii</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_08">
+                        <field name="value">h) Cistos de Chilomastix mesnil</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_09">
+                        <field name="value">i) Oocistos de Isospora belli</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_10">
+                        <field name="value">j) Ovos de Ascaris lumbricoides</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_11">
+                        <field name="value">k) Ovos de Ancilostomídeo</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_12">
+                        <field name="value">l) Ovos de Trichuris trichiura</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_13">
+                        <field name="value">m) Ovos de Taenia sp</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="130"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_14">
+                        <field name="value">n) Ovos de Hymenolepis nana</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="140"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_15">
+                        <field name="value">o) Ovos de Schistosoma mansoni</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_16">
+                        <field name="value">p) Ovos de Enterobius vermicularis</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="160"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_17">
+                        <field name="value">q) Larvas de Strongyloides stercoralis</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="170"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_02_10_18">
+                        <field name="value">r) Outro</field>
+                        <field name="question_id" ref="EPI17_02_10"/>
+                        <field name="sequence" eval="180"/>
+                    </record>
+
+            <!-- 3. Farmacêutico Responsável -->
+            <record model="survey.page" id="EPI17_03">
+                <field name="title">3. Farmacêutico Responsável</field>
+                <field name="survey_id" ref="EPI17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 3.1. Código do Farmacêutico Responsável -->
+                <record model="survey.question" id="EPI17_03_01">
+                    <field name="question">3.1. Código do Farmacêutico Responsável</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Farmacêutico Responsável</field>
+                </record>
+
+                <!-- 3.2. Nome do Farmacêutico Responsável -->
+                <record model="survey.question" id="EPI17_03_02">
+                    <field name="question">3.2. Nome do Farmacêutico Responsável</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EPI17_03"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Farmacêutico Responsável</field>
+                </record>
+
+            <!-- 4. Levantamento Protoparasitológico -->
+            <record model="survey.page" id="EPI17_04">
+                <field name="title">4. Levantamento Protoparasitológico</field>
+                <field name="survey_id" ref="EPI17"/>
+                <field name="sequence" eval="40"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 4.1. Realizado somente o Protoparasitológico: -->
+                <record model="survey.question" id="EPI17_04_01">
+                    <field name="question">4.1. Realizado somente o Protoparasitológico:</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EPI17_04"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Escolher uma alternativa</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Obs:</field>
+                </record>
+
+                    <record model="survey.label" id="EPI17_04_01_01">
+                        <field name="value">a) Resultado negativo</field>
+                        <field name="question_id" ref="EPI17_04_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EPI17_04_01_02">
+                        <field name="value">b) Resultado positivo</field>
+                        <field name="question_id" ref="EPI17_04_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+    </data>
+</openerp>

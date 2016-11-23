@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [EDH17] -->
+        <record model="survey.survey" id="EDH17">
+            <field name="title">[EDH17]</field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;JCAFB 2017 - Exames - Diabetes, Hipertensão Arterial e Hipercolesterolemia&lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- 1. Identificação do Exame -->
+            <record model="survey.page" id="EDH17_01">
+                <field name="title">1. Identificação do Exame</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 1.1. Código do Exame: -->
+                <record model="survey.question" id="EDH17_01_01">
+                    <field name="question">1.1. Código do Exame:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Exame.</field>
+                </record>
+
+                <!-- 1.2. Data do Exame (dd-mm-aaaa): -->
+                <record model="survey.question" id="EDH17_01_02">
+                    <field name="question">1.2. Data do Exame (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data do exame.</field>
+                </record>
+
+                <!-- 1.3. Códigos do Transcritor: -->
+                <record model="survey.question" id="EDH17_01_03">
+                    <field name="question">1.3. Códigos do Transcritor:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o Código do transcritor.</field>
+                </record>
+
+            <!-- 2. Identificação do Paciente -->
+            <record model="survey.page" id="EDH17_02">
+                <field name="title">2. Identificação do Paciente</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 2.1. Nome do Paciente: -->
+                <record model="survey.question" id="EDH17_02_01">
+                    <field name="question">2.1. Nome do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
+                </record>
+
+                <!-- 2.2. Código do Paciente: -->
+                <record model="survey.question" id="EDH17_02_02">
+                    <field name="question">2.2. Código do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
+                </record>
+
+                <!-- 2.3. Nome do Endereço -->
+                <record model="survey.question" id="EDH17_02_03">
+                    <field name="question">2.3. Nome do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_02"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 2.4. Código do Endereço -->
+                <record model="survey.question" id="EDH17_02_04">
+                    <field name="question">2.4. Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_02"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
+                </record>
+
+            <!-- 3. Geral -->
+            <record model="survey.page" id="EDH17_03">
+                <field name="title">3. Geral</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 3.1. Tempo de Jejum -->
+                <record model="survey.question" id="EDH17_03_01">
+                    <field name="question">3.1. Tempo de Jejum</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_03_01_01">
+                        <field name="value">a) Menor que 8 hs</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_03_01_02">
+                        <field name="value">b) Entre 8 e 12 hs</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_03_01_03">
+                        <field name="value">c) Maior que 12 hs</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_03_01_04">
+                        <field name="value">d) Não sabe</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_03_01_05">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_03_01_06">
+                        <field name="value">f) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_03_01"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+            <!-- 4. Medidas Antropométricas -->
+            <record model="survey.page" id="EDH17_04">
+                <field name="title">4. Medidas Antropométricas</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="40"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 4.1. Peso (kg): -->
+                <record model="survey.question" id="EDH17_04_01">
+                    <field name="question">4.1. Peso (kg):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o peso do paciente (kg).</field>
+                </record>
+
+                <!-- 4.2. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_04_02">
+                    <field name="question">4.2. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do peso.</field>
+                </record>
+
+                <!-- 4.3. Altura (cm): -->
+                <record model="survey.question" id="EDH17_04_03">
+                    <field name="question">4.3. Altura (cm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar a altura do paciente (cm).</field>
+                </record>
+
+                <!-- 4.4. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_04_04">
+                    <field name="question">4.4. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da altura.</field>
+                </record>
+
+                <!-- 4.5. IMC (kg/m²) (=Peso/(Altura x Altura)): -->
+                <record model="survey.question" id="EDH17_04_05">
+                    <field name="question">4.5. IMC (kg/m²) (=Peso/(Altura x Altura)):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor do IMC  do paciente (kg/m²).</field>
+                </record>
+
+                <!-- 4.6. Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_04_06">
+                    <field name="question">4.6. Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do IMC.</field>
+                </record>
+
+                <!-- 4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos) -->
+                <record model="survey.question" id="EDH17_04_07">
+                    <field name="question">4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="70"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_04_07_01">
+                        <field name="value">a) Baixo peso (Adultos:menor que 18,5; Idosos (M e F): menor que 21,9)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_02">
+                        <field name="value">b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_03">
+                        <field name="value">c) Sobrepeso (Pré-obeso) (Adultos: 25,0 a 29,9; Idosos(M): 27,1 a 30,0/Idosos(F): 27,1 a 32,0)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_04">
+                        <field name="value">d) Obesidade Grau I (Adultos: 30,0 a 34,9; Idosos(M): 30,1,1 a 35,0/Idosos(F): 32,1 a 37,0)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_05">
+                        <field name="value">e) Obesidade Grau II (Adultos: 35,0 a 39,9; Idosos(M): 35,1 a 39,0/Idosos(F): 37,1 a 41,9)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_06">
+                        <field name="value">f) Obesidade Grau III (Adultos:maior ou igual a 40,0; Idosos(M):maior ou igual a 40,0/Idosos(F):maior ou igual a 42,0)</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_07">
+                        <field name="value">g) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_07_08">
+                        <field name="value">h) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_04_07"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                <!-- 4.8. Circunferência abdominal (cm): -->
+                <record model="survey.question" id="EDH17_04_08">
+                    <field name="question">4.8. Circunferência abdominal (cm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="80"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar a circunferência abdominal do paciente (cm).</field>
+                </record>
+
+                <!-- 4.9. Cpodigo do Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_04_09">
+                    <field name="question">4.9. Cpodigo do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="90"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da circunferência abdominal.</field>
+                </record>
+
+                <!-- 4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos) -->
+                <record model="survey.question" id="EDH17_04_10">
+                    <field name="question">4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_04"/>
+                    <field name="sequence" eval="100"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Responder</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_04_10_01">
+                        <field name="value">a) Normal (H:menor que 94 cm; M:menor que 80 cm)</field>
+                        <field name="question_id" ref="EDH17_04_10"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_10_02">
+                        <field name="value">b) Risco aumentado (H:maior ou igual a 94 cm; M:maior ou igual a 80 cm)</field>
+                        <field name="question_id" ref="EDH17_04_10"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_10_03">
+                        <field name="value">c) Risco aumentado substancialmente (H:maior ou igual a 102 cm; M:maior ou igual a 88 cm))</field>
+                        <field name="question_id" ref="EDH17_04_10"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_10_04">
+                        <field name="value">d) Não interpretado (justificar em observações)</field>
+                        <field name="question_id" ref="EDH17_04_10"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_04_10_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_04_10"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 5. Medidas da Pressão Arterial -->
+            <record model="survey.page" id="EDH17_05">
+                <field name="title">5. Medidas da Pressão Arterial</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="50"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 5.1. Pressão arterial autom. (mmHg): -->
+                <record model="survey.question" id="EDH17_05_01">
+                    <field name="question">5.1. Pressão arterial autom. (mmHg):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_05"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da pressão arterial autom. do paciente (mmHg).</field>
+                </record>
+
+                <!-- 5.2. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_05_02">
+                    <field name="question">5.2. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_05"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial autom.</field>
+                </record>
+
+                <!-- 5.3. Pressão arterial manual (mmHg) (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="EDH17_05_03">
+                    <field name="question">5.3. Pressão arterial manual (mmHg) (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_05"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da pressão arterial manual do paciente (mmHg).</field>
+                </record>
+
+                <!-- 5.4. Código do Responsável pela medida (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="EDH17_05_04">
+                    <field name="question">5.4. Código do Responsável pela medida (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_05"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial manual.</field>
+                </record>
+
+                <!-- 5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010) -->
+                <record model="survey.question" id="EDH17_05_05">
+                    <field name="question">5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_05"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_05_05_01">
+                        <field name="value">a) Normal (PAS menor que 130 mmHg e PAD menor que 85 mmHg)</field>
+                        <field name="question_id" ref="EDH17_05_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_05_05_02">
+                        <field name="value">b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)</field>
+                        <field name="question_id" ref="EDH17_05_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_05_05_03">
+                        <field name="value">c) Alta (PAS:maior ou igual a 140 mmHg e PAD:maior ou igual a 90 mmHg)</field>
+                        <field name="question_id" ref="EDH17_05_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_05_05_04">
+                        <field name="value">d) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="EDH17_05_05"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_05_05_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_05_05"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+            <!-- 6. Glicemia e Colesterolemia -->
+            <record model="survey.page" id="EDH17_06">
+                <field name="title">6. Glicemia e Colesterolemia</field>
+                <field name="survey_id" ref="EDH17"/>
+                <field name="sequence" eval="60"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 6.1. Glicemia (mg/dL): -->
+                <record model="survey.question" id="EDH17_06_01">
+                    <field name="question">6.1. Glicemia (mg/dL):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da glicemia  do paciente (mg/dL).</field>
+                </record>
+
+                <!-- 6.2. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EDH17_06_02">
+                    <field name="question">6.2. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da glicemia.</field>
+                </record>
+
+                <!-- 6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014)) -->
+                <record model="survey.question" id="EDH17_06_03">
+                    <field name="question">6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014))</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Outras situações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_06_03_01">
+                        <field name="value">a) Normal para jejum de 8-12 hs(menor ou igual a 99 mg/dL)</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_02">
+                        <field name="value">b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-125 mg/dL)</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_03">
+                        <field name="value">c) Diabetes - para jejum de 8-12 hs (maior que 126 mg/dL, )</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_04">
+                        <field name="value">d) Jejum INFERIOR a 8 hs: Normal (até 140 mg/dL)</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_05">
+                        <field name="value">e) Jejum INFERIOR a 8 hs: Aumentado (maior ou igual a 140 mg/dL)</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_06">
+                        <field name="value">f) Não avaliado (justificar)</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_03_07">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_06_03"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                <!-- 6.4. Colesterol (mg/dL) (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="EDH17_06_04">
+                    <field name="question">6.4. Colesterol (mg/dL) (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor do colesterol  do paciente (mg/dL).</field>
+                </record>
+
+                <!-- 6.5. Responsável pela medida (se medida não realizada, escrever nd): -->
+                <record model="survey.question" id="EDH17_06_05">
+                    <field name="question">6.5. Responsável pela medida (se medida não realizada, escrever nd):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do colesterol.</field>
+                </record>
+
+                <!-- 6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013) -->
+                <record model="survey.question" id="EDH17_06_06">
+                    <field name="question">6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EDH17_06"/>
+                    <field name="sequence" eval="60"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EDH17_06_06_01">
+                        <field name="value">a) Desejável:Acima de 20 anos:menor que 200 mg/dL;2-19 anos:menor que 150 mg/dL</field>
+                        <field name="question_id" ref="EDH17_06_06"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_06_02">
+                        <field name="value">b) Limítrofe:Acima de 20 anos:200–239 mg/dL;2-19 anos:150-169 mg/dL</field>
+                        <field name="question_id" ref="EDH17_06_06"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_06_03">
+                        <field name="value">c) Elevado: Acima de 20 anos:maior ou igual a 240 mg/dL;2-19 anos:maior ou igual a 170 mg/dL</field>
+                        <field name="question_id" ref="EDH17_06_06"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_06_04">
+                        <field name="value">d) Não interpretado (justificar em "Observações")</field>
+                        <field name="question_id" ref="EDH17_06_06"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="EDH17_06_06_05">
+                        <field name="value">e) Não se aplica</field>
+                        <field name="question_id" ref="EDH17_06_06"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+    </data>
+</openerp>

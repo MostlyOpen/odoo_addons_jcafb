@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- [EAN17] -->
+        <record model="survey.survey" id="EAN17">
+            <field name="title">[EAN17]</field>
+            <field name="stage_id" ref="survey.stage_in_progress"/>
+            <field name="auth_required" eval="False"/>
+            <field name="users_can_go_back" eval="True"/>
+            <field name="description">&lt;p&gt;JCAFB 2017 - Exames para detecção de Anemia&lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
+        </record>
+
+            <!-- 1. Identificação do Exame -->
+            <record model="survey.page" id="EAN17_01">
+                <field name="title">1. Identificação do Exame</field>
+                <field name="survey_id" ref="EAN17"/>
+                <field name="sequence" eval="10"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 1.1. Código do Exame: -->
+                <record model="survey.question" id="EAN17_01_01">
+                    <field name="question">1.1. Código do Exame:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_01"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Exame.</field>
+                </record>
+
+                <!-- 1.2. Data do Exame (dd-mm-aaaa): -->
+                <record model="survey.question" id="EAN17_01_02">
+                    <field name="question">1.2. Data do Exame (dd-mm-aaaa):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_01"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com a data do exame.</field>
+                </record>
+
+                <!-- 1.3. Códigos do Transcritor: -->
+                <record model="survey.question" id="EAN17_01_03">
+                    <field name="question">1.3. Códigos do Transcritor:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_01"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o Código do transcritor.</field>
+                </record>
+
+            <!-- 2. Identificação do Paciente -->
+            <record model="survey.page" id="EAN17_02">
+                <field name="title">2. Identificação do Paciente</field>
+                <field name="survey_id" ref="EAN17"/>
+                <field name="sequence" eval="20"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 2.1. Nome do Paciente: -->
+                <record model="survey.question" id="EAN17_02_01">
+                    <field name="question">2.1. Nome do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_02"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
+                </record>
+
+                <!-- 2.2. Código do Paciente: -->
+                <record model="survey.question" id="EAN17_02_02">
+                    <field name="question">2.2. Código do Paciente:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_02"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
+                </record>
+
+                <!-- 2.3. Nome do Endereço -->
+                <record model="survey.question" id="EAN17_02_03">
+                    <field name="question">2.3. Nome do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_02"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 2.4. Código do Endereço -->
+                <record model="survey.question" id="EAN17_02_04">
+                    <field name="question">2.4. Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_02"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
+                </record>
+
+            <!-- 3. Medidas de Peso e Altura -->
+            <record model="survey.page" id="EAN17_03">
+                <field name="title">3. Medidas de Peso e Altura</field>
+                <field name="survey_id" ref="EAN17"/>
+                <field name="sequence" eval="30"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 3.1. Peso (kg): -->
+                <record model="survey.question" id="EAN17_03_01">
+                    <field name="question">3.1. Peso (kg):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_03"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o peso do paciente (kg).</field>
+                </record>
+
+                <!-- 3.2. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EAN17_03_02">
+                    <field name="question">3.2. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_03"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida do peso.</field>
+                </record>
+
+                <!-- 3.3. Altura (cm): -->
+                <record model="survey.question" id="EAN17_03_03">
+                    <field name="question">3.3. Altura (cm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_03"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar a altura do paciente (cm).</field>
+                </record>
+
+                <!-- 3.4. Código do Responsável pela medida: -->
+                <record model="survey.question" id="EAN17_03_04">
+                    <field name="question">3.4. Código do Responsável pela medida:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_03"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela medida da altura.</field>
+                </record>
+
+            <!-- 4. Dosagem de Hemoglobina -->
+            <record model="survey.page" id="EAN17_04">
+                <field name="title">4. Dosagem de Hemoglobina</field>
+                <field name="survey_id" ref="EAN17"/>
+                <field name="sequence" eval="40"/>
+                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+            </record>
+
+                <!-- 4.1. Horário da coleta (hh:mm): -->
+                <record model="survey.question" id="EAN17_04_01">
+                    <field name="question">4.1. Horário da coleta (hh:mm):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_04"/>
+                    <field name="sequence" eval="10"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o horário em que foi feita a coleta.</field>
+                </record>
+
+                <!-- 4.2. Código do Responsável pela coleta: -->
+                <record model="survey.question" id="EAN17_04_02">
+                    <field name="question">4.2. Código do Responsável pela coleta:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_04"/>
+                    <field name="sequence" eval="20"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela coleta.</field>
+                </record>
+
+                <!-- 4.3. Valor da Hemoglobina (g/dL): -->
+                <record model="survey.question" id="EAN17_04_03">
+                    <field name="question">4.3. Valor da Hemoglobina (g/dL):</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_04"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o valor da hemoglobina (g/dL) do paciente.</field>
+                </record>
+
+                <!-- 4.4. Código do Responsável pela dosagem: -->
+                <record model="survey.question" id="EAN17_04_04">
+                    <field name="question">4.4. Código do Responsável pela dosagem:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_04"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o código do responsável pela análise.</field>
+                </record>
+
+                <!-- 4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009) -->
+                <record model="survey.question" id="EAN17_04_05">
+                    <field name="question">4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)</field>
+                    <field name="type">simple_choice</field>
+                    <field name="page_id" ref="EAN17_04"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="display_mode">columns</field>
+                    <field name="column_nb">12</field>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
+                    <field name="comments_allowed">True</field>
+                    <field name="comments_message">Observações:</field>
+                </record>
+
+                    <record model="survey.label" id="EAN17_04_05_01">
+                        <field name="value">a) Normal</field>
+                        <field name="question_id" ref="EAN17_04_05"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="EAN17_04_05_02">
+                        <field name="value">b) Abaixo do normal (anemia)</field>
+                        <field name="question_id" ref="EAN17_04_05"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="EAN17_04_05_03">
+                        <field name="value">c) Acima do normal</field>
+                        <field name="question_id" ref="EAN17_04_05"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+    </data>
+</openerp>
