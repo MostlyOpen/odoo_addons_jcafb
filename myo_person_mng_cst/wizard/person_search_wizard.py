@@ -27,24 +27,19 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class PersonCreateWizard(models.TransientModel):
-    _name = 'myo.person.create.wizard'
+class PersonSearchWizard(models.TransientModel):
+    _name = 'myo.person.search.wizard'
 
     person_mng_ids = fields.Many2many('myo.person.mng', string='Persons')
 
     @api.multi
-    def do_create_person(self):
+    def do_search_person(self):
         self.ensure_one()
-        _logger.debug('Person create from Person Management %s',
-                      self.person_mng_ids.ids)
 
         person_model = self.env['myo.person']
-        person_address_model = self.env['myo.person.address']
 
         rownum = 0
         duplicated = 0
-        imported = 0
-        not_imported = 0
         for person_mng_reg in self.person_mng_ids:
             rownum += 1
 
@@ -62,7 +57,8 @@ class PersonCreateWizard(models.TransientModel):
                     values = {
                         "person_id": person_search.id,
                         # "code": person_search.code,
-                        "state": 'canceled',
+                        # "state": 'canceled',
+                        "address_id": person_search.address_id.id,
                     }
                     person_mng_reg.write(values)
 
@@ -74,50 +70,9 @@ class PersonCreateWizard(models.TransientModel):
 
                     duplicated += 1
 
-                else:
-
-                    tag_ids = []
-                    for tag_id in person_mng_reg.tag_ids:
-                        tag_ids = tag_ids + [(4, tag_id.id)]
-
-                    code = '/'
-                    if person_mng_reg.code is not False:
-                        code = person_mng_reg.code
-
-                    values = {
-                        'name': person_mng_reg.name,
-                        'code': code,
-                        'gender': person_mng_reg.gender,
-                        'birthday': person_mng_reg.birthday,
-                        'estimated_age': person_mng_reg.estimated_age,
-                        'tag_ids': tag_ids,
-                        "address_id": person_mng_reg.address_id.id,
-                    }
-                    person_reg_new = person_model.create(values)
-
-                    values = {
-                        'person_id': person_reg_new.id,
-                        "address_id": person_mng_reg.address_id.id,
-                    }
-                    person_address_model.create(values)
-
-                    values = {
-                        "person_id": person_reg_new.id,
-                        "code": person_reg_new.code,
-                        "state": 'done',
-                    }
-                    person_mng_reg.write(values)
-
-                    imported += 1
-
-            else:
-                not_imported += 1
-
         print()
         print('--> rownum: ', rownum)
         print('--> duplicated: ', duplicated)
-        print('--> imported: ', imported)
-        print('--> not_imported: ', not_imported)
         print()
 
         return True
