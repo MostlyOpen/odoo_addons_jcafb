@@ -17,7 +17,7 @@
                 <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QSF17"/>
                 <field name="sequence" eval="10"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 1.1. Código do Questionário: -->
@@ -55,7 +55,7 @@
                 <field name="title">2. Identificação do Endereço/Entrevistado</field>
                 <field name="survey_id" ref="QSF17"/>
                 <field name="sequence" eval="20"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 2.1. Nome do Endereço -->

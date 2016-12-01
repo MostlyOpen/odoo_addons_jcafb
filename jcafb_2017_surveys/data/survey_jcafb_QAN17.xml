@@ -17,7 +17,7 @@
                 <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QAN17"/>
                 <field name="sequence" eval="10"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 1.1. Código do Questionário: -->
@@ -50,12 +50,22 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
+                <!-- 1.4. Código da Requisição de Exames: -->
+                <record model="survey.question" id="QAN17_01_04">
+                    <field name="question">1.4. Código da Requisição de Exames:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QAN17_01"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Código da Requisição de Exames associada a este questionário.</field>
+                </record>
+
             <!-- 2. Identificação do Paciente/Entrevistado -->
             <record model="survey.page" id="QAN17_02">
                 <field name="title">2. Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QAN17"/>
                 <field name="sequence" eval="20"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 2.1. Nome do Paciente: -->
@@ -78,32 +88,42 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- 2.3. Nome do Endereço -->
+                <!-- 2.3. Idade do Paciente em 31/01/2017 -->
                 <record model="survey.question" id="QAN17_02_03">
-                    <field name="question">2.3. Nome do Endereço</field>
+                    <field name="question">2.3. Idade do Paciente em 31/01/2017</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="30"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                    <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Código do Endereço -->
+                <!-- 2.4. Nome do Endereço -->
                 <record model="survey.question" id="QAN17_02_04">
-                    <field name="question">2.4. Código do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="40"/>
                     <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 2.5. Código do Endereço -->
+                <record model="survey.question" id="QAN17_02_05">
+                    <field name="question">2.5. Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QAN17_02"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Relação do Entrevistado com o Paciente -->
-                <record model="survey.question" id="QAN17_02_05">
-                    <field name="question">2.5. Relação do Entrevistado com o Paciente</field>
+                <!-- 2.6. Relação do Entrevistado com o Paciente -->
+                <record model="survey.question" id="QAN17_02_06">
+                    <field name="question">2.6. Relação do Entrevistado com o Paciente</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QAN17_02"/>
-                    <field name="sequence" eval="50"/>
+                    <field name="sequence" eval="60"/>
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
@@ -112,46 +132,46 @@
                     <field name="comments_message">Se "Outra", especificar a relação do Entrevistado com o Paciente:</field>
                 </record>
 
-                    <record model="survey.label" id="QAN17_02_05_01">
+                    <record model="survey.label" id="QAN17_02_06_01">
                         <field name="value">a) Responsável</field>
-                        <field name="question_id" ref="QAN17_02_05"/>
+                        <field name="question_id" ref="QAN17_02_06"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="survey.label" id="QAN17_02_05_02">
+                    <record model="survey.label" id="QAN17_02_06_02">
                         <field name="value">b) Paciente</field>
-                        <field name="question_id" ref="QAN17_02_05"/>
+                        <field name="question_id" ref="QAN17_02_06"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="survey.label" id="QAN17_02_05_03">
+                    <record model="survey.label" id="QAN17_02_06_03">
                         <field name="value">c) Cuidador</field>
-                        <field name="question_id" ref="QAN17_02_05"/>
+                        <field name="question_id" ref="QAN17_02_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
-                    <record model="survey.label" id="QAN17_02_05_04">
+                    <record model="survey.label" id="QAN17_02_06_04">
                         <field name="value">d) Outra</field>
-                        <field name="question_id" ref="QAN17_02_05"/>
+                        <field name="question_id" ref="QAN17_02_06"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 2.6. Nome do Entrevistado -->
-                <record model="survey.question" id="QAN17_02_06">
-                    <field name="question">2.6. Nome do Entrevistado</field>
+                <!-- 2.7. Nome do Entrevistado -->
+                <record model="survey.question" id="QAN17_02_07">
+                    <field name="question">2.7. Nome do Entrevistado</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
-                    <field name="sequence" eval="60"/>
+                    <field name="sequence" eval="70"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.7. Código do Entrevistado -->
-                <record model="survey.question" id="QAN17_02_07">
-                    <field name="question">2.7. Código do Entrevistado</field>
+                <!-- 2.8. Código do Entrevistado -->
+                <record model="survey.question" id="QAN17_02_08">
+                    <field name="question">2.8. Código do Entrevistado</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
-                    <field name="sequence" eval="70"/>
+                    <field name="sequence" eval="80"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
                 </record>

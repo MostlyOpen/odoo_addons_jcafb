@@ -17,7 +17,7 @@
                 <field name="title">1. Identificação do Questionário</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="10"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 1.1. Código do Questionário: -->
@@ -50,12 +50,22 @@
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
+                <!-- 1.4. Código da Requisição de Exames: -->
+                <record model="survey.question" id="QDH17_01_04">
+                    <field name="question">1.4. Código da Requisição de Exames:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_01"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Código da Requisição de Exames associadaa este questionário.</field>
+                </record>
+
             <!-- 2. Identificação do Paciente/Entrevistado -->
             <record model="survey.page" id="QDH17_02">
                 <field name="title">2. Identificação do Paciente/Entrevistado</field>
                 <field name="survey_id" ref="QDH17"/>
                 <field name="sequence" eval="20"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
+                <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.&lt;/p&gt;</field>
             </record>
 
                 <!-- 2.1. Nome do Paciente: -->
@@ -78,32 +88,42 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- 2.3. Nome do Endereço -->
+                <!-- 2.3. Idade do Paciente em 31/01/2017 -->
                 <record model="survey.question" id="QDH17_02_03">
-                    <field name="question">2.3. Nome do Endereço</field>
+                    <field name="question">2.3. Idade do Paciente em 31/01/2017</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="30"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                    <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Código do Endereço -->
+                <!-- 2.4. Nome do Endereço -->
                 <record model="survey.question" id="QDH17_02_04">
-                    <field name="question">2.4. Código do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="40"/>
                     <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 2.5. Código do Endereço -->
+                <record model="survey.question" id="QDH17_02_05">
+                    <field name="question">2.5. Código do Endereço</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="QDH17_02"/>
+                    <field name="sequence" eval="50"/>
+                    <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Relação do Entrevistado com o Paciente -->
-                <record model="survey.question" id="QDH17_02_05">
-                    <field name="question">2.5. Relação do Entrevistado com o Paciente</field>
+                <!-- 2.6. Relação do Entrevistado com o Paciente -->
+                <record model="survey.question" id="QDH17_02_06">
+                    <field name="question">2.6. Relação do Entrevistado com o Paciente</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QDH17_02"/>
-                    <field name="sequence" eval="50"/>
+                    <field name="sequence" eval="60"/>
                     <field name="display_mode">columns</field>
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
@@ -112,46 +132,46 @@
                     <field name="comments_message">Se "Outra", especificar a relação do Entrevistado com o Paciente:</field>
                 </record>
 
-                    <record model="survey.label" id="QDH17_02_05_01">
+                    <record model="survey.label" id="QDH17_02_06_01">
                         <field name="value">a) Responsável</field>
-                        <field name="question_id" ref="QDH17_02_05"/>
+                        <field name="question_id" ref="QDH17_02_06"/>
                         <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_02_05_02">
+                    <record model="survey.label" id="QDH17_02_06_02">
                         <field name="value">b) Paciente</field>
-                        <field name="question_id" ref="QDH17_02_05"/>
+                        <field name="question_id" ref="QDH17_02_06"/>
                         <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_02_05_03">
+                    <record model="survey.label" id="QDH17_02_06_03">
                         <field name="value">c) Cuidador</field>
-                        <field name="question_id" ref="QDH17_02_05"/>
+                        <field name="question_id" ref="QDH17_02_06"/>
                         <field name="sequence" eval="30"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_02_05_04">
+                    <record model="survey.label" id="QDH17_02_06_04">
                         <field name="value">c) Outra</field>
-                        <field name="question_id" ref="QDH17_02_05"/>
+                        <field name="question_id" ref="QDH17_02_06"/>
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 2.6. Nome do Entrevistado -->
-                <record model="survey.question" id="QDH17_02_06">
-                    <field name="question">2.6. Nome do Entrevistado</field>
+                <!-- 2.7. Nome do Entrevistado -->
+                <record model="survey.question" id="QDH17_02_07">
+                    <field name="question">2.7. Nome do Entrevistado</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
-                    <field name="sequence" eval="60"/>
+                    <field name="sequence" eval="70"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.7. Código do Entrevistado -->
-                <record model="survey.question" id="QDH17_02_07">
-                    <field name="question">2.7. Código do Entrevistado</field>
+                <!-- 2.8. Código do Entrevistado -->
+                <record model="survey.question" id="QDH17_02_08">
+                    <field name="question">2.8. Código do Entrevistado</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
-                    <field name="sequence" eval="70"/>
+                    <field name="sequence" eval="80"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
                 </record>
@@ -1822,9 +1842,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- 10.2. Consome qual dos ítens abaixo e com que frequência na semana? -->
+                <!-- 10.2. Consome qual dos ítens abaixo e com que frequência na semana? (1) -->
                 <record model="survey.question" id="QDH17_10_02">
-                    <field name="question">10.2. Consome qual dos ítens abaixo e com que frequência na semana?</field>
+                    <field name="question">10.2. Consome qual dos ítens abaixo e com que frequência na semana? (1)</field>
                     <field name="type">matrix</field>
                     <field name="matrix_subtype">simple</field>
                     <field name="page_id" ref="QDH17_10"/>
@@ -1882,129 +1902,235 @@
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_09">
-                        <field name="value">10.2.9. Miúdos</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">a) 0 dias ou raramente</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="90"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_10">
-                        <field name="value">10.2.10. Embutidos</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">b) 1-2 dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="100"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_11">
-                        <field name="value">10.2.11.  Frango com pele</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">c) 3-4 dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="110"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_12">
-                        <field name="value">10.2.12. Frango sem pele</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">d) 5 ou mais dias</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="120"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_13">
-                        <field name="value">10.2.13. Peixe</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="130"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_14">
-                        <field name="value">10.2.14. Leite integral, queijo amarelo</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="140"/>
                     </record>
 
                     <record model="survey.label" id="QDH17_10_02_15">
-                        <field name="value">10.2.15. Leite semi ou desnatado, queijo branco</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_10_02"/>
                         <field name="sequence" eval="150"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_16">
-                        <field name="value">10.2.16. Bolacha recheada, salgadinho, miojo</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="160"/>
+                <!-- 10.3. Consome qual dos ítens abaixo e com que frequência na semana? (2) -->
+                <record model="survey.question" id="QDH17_10_03">
+                    <field name="question">10.3. Consome qual dos ítens abaixo e com que frequência na semana? (2)</field>
+                    <field name="type">matrix</field>
+                    <field name="matrix_subtype">simple</field>
+                    <field name="page_id" ref="QDH17_10"/>
+                    <field name="sequence" eval="30"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher os alimentos que o paciente consome.</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_10_03_01">
+                        <field name="value">10.3.1. Miúdos</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="10"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_17">
-                        <field name="value">10.2.17. Frituras (alimento submerso em óleo quente)</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="170"/>
+                    <record model="survey.label" id="QDH17_10_03_02">
+                        <field name="value">10.3.2. Embutidos</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="20"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_18">
-                        <field name="value">10.2.18.  Margarina, manteiga, maionese</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="180"/>
+                    <record model="survey.label" id="QDH17_10_03_03">
+                        <field name="value">10.3.3.  Frango com pele</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="30"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_19">
-                        <field name="value">10.2.19. Bebida com açúcar (café, leite, suco, chá, etc)</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="190"/>
+                    <record model="survey.label" id="QDH17_10_03_04">
+                        <field name="value">10.3.4. Frango sem pele</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="40"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_20">
-                        <field name="value">10.2.20.  Refrigerante, suco de saquinho</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="200"/>
+                    <record model="survey.label" id="QDH17_10_03_05">
+                        <field name="value">10.3.5. Peixe</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="50"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_21">
-                        <field name="value">10.2.21. Doces</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="210"/>
+                    <record model="survey.label" id="QDH17_10_03_06">
+                        <field name="value">10.3.6. Leite integral, queijo amarelo</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="60"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_22">
-                        <field name="value">10.2.22. Tempero pronto (knorr, sazon)</field>
-                        <field name="question_id_2" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="220"/>
+                    <record model="survey.label" id="QDH17_10_03_07">
+                        <field name="value">10.3.7. Leite semi ou desnatado, queijo branco</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="70"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_23">
+                    <record model="survey.label" id="QDH17_10_03_08">
+                        <field name="value">10.3.8. Bolacha recheada, salgadinho, miojo</field>
+                        <field name="question_id_2" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_03_09">
                         <field name="value">a) 0 dias ou raramente</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="230"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="90"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_24">
+                    <record model="survey.label" id="QDH17_10_03_10">
                         <field name="value">b) 1-2 dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="240"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="100"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_25">
+                    <record model="survey.label" id="QDH17_10_03_11">
                         <field name="value">c) 3-4 dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="250"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="110"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_26">
+                    <record model="survey.label" id="QDH17_10_03_12">
                         <field name="value">d) 5 ou mais dias</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="260"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="120"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_27">
+                    <record model="survey.label" id="QDH17_10_03_13">
                         <field name="value">e) Não quis responder</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="270"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="130"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_28">
+                    <record model="survey.label" id="QDH17_10_03_14">
                         <field name="value">f) Não sabe</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="280"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="140"/>
                     </record>
 
-                    <record model="survey.label" id="QDH17_10_02_29">
+                    <record model="survey.label" id="QDH17_10_03_15">
                         <field name="value">g) Não se aplica</field>
-                        <field name="question_id" ref="QDH17_10_02"/>
-                        <field name="sequence" eval="290"/>
+                        <field name="question_id" ref="QDH17_10_03"/>
+                        <field name="sequence" eval="150"/>
+                    </record>
+
+                <!-- 10.4. Consome qual dos ítens abaixo e com que frequência na semana? (3) -->
+                <record model="survey.question" id="QDH17_10_04">
+                    <field name="question">10.4. Consome qual dos ítens abaixo e com que frequência na semana? (3)</field>
+                    <field name="type">matrix</field>
+                    <field name="matrix_subtype">simple</field>
+                    <field name="page_id" ref="QDH17_10"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher os alimentos que o paciente consome.</field>
+                </record>
+
+                    <record model="survey.label" id="QDH17_10_04_01">
+                        <field name="value">10.4.1. Frituras (alimento submerso em óleo quente)</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="10"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_02">
+                        <field name="value">10.4.2.  Margarina, manteiga, maionese</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="20"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_03">
+                        <field name="value">10.4.3. Bebida com açúcar (café, leite, suco, chá, etc)</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="30"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_04">
+                        <field name="value">10.4.4.  Refrigerante, suco de saquinho</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="40"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_05">
+                        <field name="value">10.4.5. Doces</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="50"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_06">
+                        <field name="value">10.4.6. Tempero pronto (knorr, sazon)</field>
+                        <field name="question_id_2" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="60"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_07">
+                        <field name="value">a) 0 dias ou raramente</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="70"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_08">
+                        <field name="value">b) 1-2 dias</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="80"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_09">
+                        <field name="value">c) 3-4 dias</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="90"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_10">
+                        <field name="value">d) 5 ou mais dias</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="100"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_11">
+                        <field name="value">e) Não quis responder</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="110"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_12">
+                        <field name="value">f) Não sabe</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="120"/>
+                    </record>
+
+                    <record model="survey.label" id="QDH17_10_04_13">
+                        <field name="value">g) Não se aplica</field>
+                        <field name="question_id" ref="QDH17_10_04"/>
+                        <field name="sequence" eval="130"/>
                     </record>
 
     </data>
