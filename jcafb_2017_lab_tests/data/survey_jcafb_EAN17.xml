@@ -12,42 +12,52 @@
             <field name="thank_you_message">&lt;p&gt;Obrigado por sua participação.&lt;/p&gt;</field>
         </record>
 
-            <!-- 1. Identificação do Exame -->
+            <!-- 1. Identificação do Questionário para transcrição dos resultados dos exames -->
             <record model="survey.page" id="EAN17_01">
-                <field name="title">1. Identificação do Exame</field>
+                <field name="title">1. Identificação do Questionário para transcrição dos resultados dos exames</field>
                 <field name="survey_id" ref="EAN17"/>
                 <field name="sequence" eval="10"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 1.1. Código do Exame: -->
+                <!-- 1.1. Código do Questionário: -->
                 <record model="survey.question" id="EAN17_01_01">
-                    <field name="question">1.1. Código do Exame:</field>
+                    <field name="question">1.1. Código do Questionário:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EAN17_01"/>
                     <field name="sequence" eval="10"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Código do Exame.</field>
+                    <field name="constr_error_msg">Preencher com o Código do Questionário.</field>
                 </record>
 
-                <!-- 1.2. Data do Exame (dd-mm-aaaa): -->
+                <!-- 1.2. Data da transcrição (dd-mm-aaaa): -->
                 <record model="survey.question" id="EAN17_01_02">
-                    <field name="question">1.2. Data do Exame (dd-mm-aaaa):</field>
+                    <field name="question">1.2. Data da transcrição (dd-mm-aaaa):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EAN17_01"/>
                     <field name="sequence" eval="20"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com a data do exame.</field>
+                    <field name="constr_error_msg">Preencher com a data da transcrição do exame.</field>
                 </record>
 
-                <!-- 1.3. Códigos do Transcritor: -->
+                <!-- 1.3. Código do Transcritor: -->
                 <record model="survey.question" id="EAN17_01_03">
-                    <field name="question">1.3. Códigos do Transcritor:</field>
+                    <field name="question">1.3. Código do Transcritor:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EAN17_01"/>
                     <field name="sequence" eval="30"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Informar o Código do transcritor.</field>
+                </record>
+
+                <!-- 1.4. Código da Requisição dos Exames: -->
+                <record model="survey.question" id="EAN17_01_04">
+                    <field name="question">1.4. Código da Requisição dos Exames:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_01"/>
+                    <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Informar o Código da Requisição dos Exames.</field>
                 </record>
 
             <!-- 2. Identificação do Paciente -->
@@ -78,22 +88,32 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- 2.3. Nome do Endereço -->
+                <!-- 2.3. Idade do Paciente em 31/01/2017: -->
                 <record model="survey.question" id="EAN17_02_03">
-                    <field name="question">2.3. Nome do Endereço</field>
+                    <field name="question">2.3. Idade do Paciente em 31/01/2017:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EAN17_02"/>
                     <field name="sequence" eval="30"/>
                     <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                    <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Código do Endereço -->
+                <!-- 2.4. Nome do Endereço: -->
                 <record model="survey.question" id="EAN17_02_04">
-                    <field name="question">2.4. Código do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EAN17_02"/>
                     <field name="sequence" eval="40"/>
+                    <field name="constr_mandatory">True</field>
+                    <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
+                </record>
+
+                <!-- 2.5. Código do Endereço: -->
+                <record model="survey.question" id="EAN17_02_05">
+                    <field name="question">2.5. Código do Endereço:</field>
+                    <field name="type">textbox</field>
+                    <field name="page_id" ref="EAN17_02"/>
+                    <field name="sequence" eval="50"/>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
@@ -194,9 +214,9 @@
                     <field name="constr_error_msg">Informar o código do responsável pela análise.</field>
                 </record>
 
-                <!-- 4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009) -->
+                <!-- 4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009): -->
                 <record model="survey.question" id="EAN17_04_05">
-                    <field name="question">4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)</field>
+                    <field name="question">4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009):</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EAN17_04"/>
                     <field name="sequence" eval="50"/>
