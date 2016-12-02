@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- 2.3. Idade do Paciente em 31/01/2017 -->
+                <!-- 2.3. Idade do Paciente em 31/01/2017: -->
                 <record model="survey.question" id="QSI17_02_03">
-                    <field name="question">2.3. Idade do Paciente em 31/01/2017</field>
+                    <field name="question">2.3. Idade do Paciente em 31/01/2017:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Nome do Endereço -->
+                <!-- 2.4. Nome do Endereço: -->
                 <record model="survey.question" id="QSI17_02_04">
-                    <field name="question">2.4. Nome do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Código do Endereço -->
+                <!-- 2.5. Código do Endereço: -->
                 <record model="survey.question" id="QSI17_02_05">
-                    <field name="question">2.5. Código do Endereço</field>
+                    <field name="question">2.5. Código do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="50"/>
@@ -108,9 +108,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.6. Relação do Entrevistado com o Paciente -->
+                <!-- 2.6. Relação do Entrevistado com o Paciente: -->
                 <record model="survey.question" id="QSI17_02_06">
-                    <field name="question">2.6. Relação do Entrevistado com o Paciente</field>
+                    <field name="question">2.6. Relação do Entrevistado com o Paciente:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="60"/>
@@ -140,9 +140,9 @@
                         <field name="sequence" eval="30"/>
                     </record>
 
-                <!-- 2.7. Nome do Entrevistado -->
+                <!-- 2.7. Nome do Entrevistado: -->
                 <record model="survey.question" id="QSI17_02_07">
-                    <field name="question">2.7. Nome do Entrevistado</field>
+                    <field name="question">2.7. Nome do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="70"/>
@@ -150,9 +150,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.8. Código do Entrevistado -->
+                <!-- 2.8. Código do Entrevistado: -->
                 <record model="survey.question" id="QSI17_02_08">
-                    <field name="question">2.8. Código do Entrevistado</field>
+                    <field name="question">2.8. Código do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSI17_02"/>
                     <field name="sequence" eval="80"/>
@@ -1194,9 +1194,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- 5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é -->
+                <!-- 5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é: -->
                 <record model="survey.question" id="QSI17_05_03">
-                    <field name="question">5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é</field>
+                    <field name="question">5.3. Comparando sua saúde de hoje com a de 12 meses atrás, o(a) Sr.(a) diria que agora a sua saúde é:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSI17_05"/>
                     <field name="sequence" eval="30"/>

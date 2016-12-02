@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
                 </record>
 
-                <!-- 2.3. Idade do Paciente em 31/01/2017 -->
+                <!-- 2.3. Idade do Paciente em 31/01/2017: -->
                 <record model="survey.question" id="QAN17_02_03">
-                    <field name="question">2.3. Idade do Paciente em 31/01/2017</field>
+                    <field name="question">2.3. Idade do Paciente em 31/01/2017:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="30"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Nome do Endereço -->
+                <!-- 2.4. Nome do Endereço: -->
                 <record model="survey.question" id="QAN17_02_04">
-                    <field name="question">2.4. Nome do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="40"/>
@@ -108,9 +108,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.5. Código do Endereço -->
+                <!-- 2.5. Código do Endereço: -->
                 <record model="survey.question" id="QAN17_02_05">
-                    <field name="question">2.5. Código do Endereço</field>
+                    <field name="question">2.5. Código do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="50"/>
@@ -118,9 +118,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
-                <!-- 2.6. Relação do Entrevistado com o Paciente -->
+                <!-- 2.6. Relação do Entrevistado com o Paciente: -->
                 <record model="survey.question" id="QAN17_02_06">
-                    <field name="question">2.6. Relação do Entrevistado com o Paciente</field>
+                    <field name="question">2.6. Relação do Entrevistado com o Paciente:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="60"/>
@@ -156,9 +156,9 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 2.7. Nome do Entrevistado -->
+                <!-- 2.7. Nome do Entrevistado: -->
                 <record model="survey.question" id="QAN17_02_07">
-                    <field name="question">2.7. Nome do Entrevistado</field>
+                    <field name="question">2.7. Nome do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="70"/>
@@ -166,9 +166,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.8. Código do Entrevistado -->
+                <!-- 2.8. Código do Entrevistado: -->
                 <record model="survey.question" id="QAN17_02_08">
-                    <field name="question">2.8. Código do Entrevistado</field>
+                    <field name="question">2.8. Código do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QAN17_02"/>
                     <field name="sequence" eval="80"/>
@@ -272,9 +272,9 @@
                     <field name="constr_error_msg">Informar o código do responsável pela análise.</field>
                 </record>
 
-                <!-- 4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009) -->
+                <!-- 4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009): -->
                 <record model="survey.question" id="QAN17_04_05">
-                    <field name="question">4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)</field>
+                    <field name="question">4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009):</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QAN17_04"/>
                     <field name="sequence" eval="50"/>
@@ -400,9 +400,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- 5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Senão, a resposta é “e) Não se aplica”)? -->
+                <!-- 5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Se não, a resposta é “e) Não se aplica”)? -->
                 <record model="survey.question" id="QAN17_05_03">
-                    <field name="question">5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Senão, a resposta é “e) Não se aplica”)?</field>
+                    <field name="question">5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Se não, a resposta é “e) Não se aplica”)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QAN17_05"/>
                     <field name="sequence" eval="30"/>
@@ -505,9 +505,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- 5.5. Você sabe quais cuidados tomar para evitar a anemia (Apenas para marcar o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução) -->
+                <!-- 5.5. Você sabe quais cuidados tomar para evitar a anemia? (Marcar apenas o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução) -->
                 <record model="survey.question" id="QAN17_05_05">
-                    <field name="question">5.5. Você sabe quais cuidados tomar para evitar a anemia (Apenas para marcar o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução)</field>
+                    <field name="question">5.5. Você sabe quais cuidados tomar para evitar a anemia? (Marcar apenas o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução)</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="QAN17_05"/>
                     <field name="sequence" eval="50"/>
@@ -580,9 +580,9 @@
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico) -->
+                <!-- 6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico): -->
                 <record model="survey.question" id="QAN17_06_01">
-                    <field name="question">6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)</field>
+                    <field name="question">6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico):</field>
                     <field name="type">matrix</field>
                     <field name="matrix_subtype">simple</field>
                     <field name="page_id" ref="QAN17_06"/>

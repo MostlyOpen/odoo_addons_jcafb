@@ -58,9 +58,9 @@
                 <field name="description">&lt;p&gt;As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.&lt;/p&gt;</field>
             </record>
 
-                <!-- 2.1. Nome do Endereço -->
+                <!-- 2.1. Nome do Endereço: -->
                 <record model="survey.question" id="QSF17_02_01">
-                    <field name="question">2.1. Nome do Endereço</field>
+                    <field name="question">2.1. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="10"/>
@@ -68,9 +68,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o(s) Paciente(s) reside(m).</field>
                 </record>
 
-                <!-- 2.2. Código do Endereço -->
+                <!-- 2.2. Código do Endereço: -->
                 <record model="survey.question" id="QSF17_02_02">
-                    <field name="question">2.2. Código do Endereço</field>
+                    <field name="question">2.2. Código do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="20"/>
@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o(s) Paciente(s) reside(m).</field>
                 </record>
 
-                <!-- 2.3. Relação do Entrevistado com o(s) Paciente(s) -->
+                <!-- 2.3. Relação do Entrevistado com o(s) Paciente(s): -->
                 <record model="survey.question" id="QSF17_02_03">
-                    <field name="question">2.3. Relação do Entrevistado com o(s) Paciente(s)</field>
+                    <field name="question">2.3. Relação do Entrevistado com o(s) Paciente(s):</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="30"/>
@@ -116,9 +116,9 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 2.4. Nome do Entrevistado -->
+                <!-- 2.4. Nome do Entrevistado: -->
                 <record model="survey.question" id="QSF17_02_04">
-                    <field name="question">2.4. Nome do Entrevistado</field>
+                    <field name="question">2.4. Nome do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="40"/>
@@ -126,9 +126,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.5. Código do Entrevistado -->
+                <!-- 2.5. Código do Entrevistado: -->
                 <record model="survey.question" id="QSF17_02_05">
-                    <field name="question">2.5. Código do Entrevistado</field>
+                    <field name="question">2.5. Código do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSF17_02"/>
                     <field name="sequence" eval="50"/>
@@ -462,9 +462,9 @@
                         <field name="sequence" eval="50"/>
                     </record>
 
-                <!-- 5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ? -->
+                <!-- 5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)? -->
                 <record model="survey.question" id="QSF17_05_02">
-                    <field name="question">5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?</field>
+                    <field name="question">5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSF17_05"/>
                     <field name="sequence" eval="20"/>
@@ -980,9 +980,9 @@
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)            -->
+                <!-- 7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita) -->
                 <record model="survey.question" id="QSF17_07_01">
-                    <field name="question">7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           </field>
+                    <field name="question">7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSF17_07"/>
                     <field name="sequence" eval="10"/>

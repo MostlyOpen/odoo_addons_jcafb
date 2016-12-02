@@ -78,9 +78,9 @@
                     <field name="constr_error_msg">Preencher com o Código da Criança.</field>
                 </record>
 
-                <!-- 2.3. Idade da Criança em 31/01/2017 -->
+                <!-- 2.3. Idade da Criança em 31/01/2017: -->
                 <record model="survey.question" id="QSC17_02_03">
-                    <field name="question">2.3. Idade da Criança em 31/01/2017</field>
+                    <field name="question">2.3. Idade da Criança em 31/01/2017:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="30"/>
@@ -88,9 +88,9 @@
                     <field name="constr_error_msg">Preencher com Idade da Criança em 31/01/2017 (data de referência)</field>
                 </record>
 
-                <!-- 2.4. Nome do Endereço -->
+                <!-- 2.4. Nome do Endereço: -->
                 <record model="survey.question" id="QSC17_02_04">
-                    <field name="question">2.4. Nome do Endereço</field>
+                    <field name="question">2.4. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="40"/>
@@ -98,9 +98,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que a Criança reside.</field>
                 </record>
 
-                <!-- 2.5. Código do Endereço -->
+                <!-- 2.5. Código do Endereço: -->
                 <record model="survey.question" id="QSC17_02_05">
-                    <field name="question">2.5. Código do Endereço</field>
+                    <field name="question">2.5. Código do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="50"/>
@@ -108,9 +108,9 @@
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que a Criança reside.</field>
                 </record>
 
-                <!-- 2.6. Relação do Entrevistado com a Criança -->
+                <!-- 2.6. Relação do Entrevistado com a Criança: -->
                 <record model="survey.question" id="QSC17_02_06">
-                    <field name="question">2.6. Relação do Entrevistado com a Criança</field>
+                    <field name="question">2.6. Relação do Entrevistado com a Criança:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="60"/>
@@ -140,9 +140,9 @@
                         <field name="sequence" eval="30"/>
                     </record>
 
-                <!-- 2.7. Nome do Entrevistado -->
+                <!-- 2.7. Nome do Entrevistado: -->
                 <record model="survey.question" id="QSC17_02_07">
-                    <field name="question">2.7. Nome do Entrevistado</field>
+                    <field name="question">2.7. Nome do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="70"/>
@@ -150,9 +150,9 @@
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
-                <!-- 2.8. Código do Entrevistado -->
+                <!-- 2.8. Código do Entrevistado: -->
                 <record model="survey.question" id="QSC17_02_08">
-                    <field name="question">2.8. Código do Entrevistado</field>
+                    <field name="question">2.8. Código do Entrevistado:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QSC17_02"/>
                     <field name="sequence" eval="80"/>
@@ -563,7 +563,7 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">False</field>
+                    <field name="comments_allowed">True</field>
                     <field name="comments_message">Se sim, qual(ais)?</field>
                 </record>
 
@@ -720,7 +720,7 @@
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
                     <field name="comments_allowed">True</field>
-                    <field name="comments_message">Se "Outros", quais?</field>
+                    <field name="comments_message">Se "Outro", quais?</field>
                 </record>
 
                     <record model="survey.label" id="QSC17_06_02_01">
@@ -742,7 +742,7 @@
                     </record>
 
                     <record model="survey.label" id="QSC17_06_02_04">
-                        <field name="value">d) Outros</field>
+                        <field name="value">d) Outro</field>
                         <field name="question_id" ref="QSC17_06_02"/>
                         <field name="sequence" eval="40"/>
                     </record>

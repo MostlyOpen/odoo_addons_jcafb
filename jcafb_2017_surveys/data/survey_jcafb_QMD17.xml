@@ -469,7 +469,7 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">True</field>
+                    <field name="comments_allowed">False</field>
                     <field name="comments_message"></field>
                 </record>
 
@@ -513,7 +513,7 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">True</field>
+                    <field name="comments_allowed">False</field>
                     <field name="comments_message"></field>
                 </record>
 
@@ -557,7 +557,7 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">True</field>
+                    <field name="comments_allowed">False</field>
                     <field name="comments_message"></field>
                 </record>
 
@@ -601,7 +601,7 @@
                     <field name="column_nb">12</field>
                     <field name="constr_mandatory">True</field>
                     <field name="constr_error_msg">Esta questão precisa ser respondida.</field>
-                    <field name="comments_allowed">True</field>
+                    <field name="comments_allowed">False</field>
                     <field name="comments_message"></field>
                 </record>
 
