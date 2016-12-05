@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!--data noupdate="1"-->
+	<data noupdate="0">
+	
+		<record id="myo_lab_test_EPC17" model="myo.lab_test.type">
+			<field name="code" eval="&quot;&quot;&quot;EPC17&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia (Criança)&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_criterion_EPC17_exame_coproparasitologico" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="100"/>
+			<field name="name" eval="&quot;&quot;&quot;Exame Coproparasitológico&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_data_entrada_material" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="101"/>
+			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material (dd-mm-aaaa)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_data_saida_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="102"/>
+			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado (dd-mm-aaaa)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_coprop_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="103"/>
+			<field name="name" eval="&quot;&quot;&quot;Resultado&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_coprop_resultado_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="104"/>
+			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_coprop_ritchie_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="105"/>
+			<field name="name" eval="&quot;&quot;&quot;Método de Ritchie - Resultado&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_coprop_ritchie_resultado_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="106"/>
+			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
+		</record>
+		<record id="myo_lab_test_criterion_EPC17_coprop_hoffmann_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="107"/>
+			<field name="name" eval="&quot;&quot;&quot;Método de Hoffmann - Resultado&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPC17_coprop_hoffmann_resultado_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
+			<field name="sequence" eval="108"/>
+			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
+		</record>
+	
+	</data>
+</openerp>

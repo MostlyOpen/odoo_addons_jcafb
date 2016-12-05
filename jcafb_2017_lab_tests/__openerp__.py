@@ -28,6 +28,7 @@
     'website': 'http://clvsol.com',
     'depends': [
         'myo_survey',
+        'myo_lab_test_cst',
     ],
     'data': [
         'data/survey_jcafb_EAN17.xml',
@@ -35,6 +36,11 @@
         'data/survey_jcafb_EPC17.xml',
         'data/survey_jcafb_EPI17.xml',
         'data/survey_jcafb_EUR17.xml',
+        'data/lab_test_EAN17_data.xml',
+        'data/lab_test_EDH17_data.xml',
+        'data/lab_test_EPC17_data.xml',
+        'data/lab_test_EPI17_data.xml',
+        'data/lab_test_EUR17_data.xml',
     ],
     'demo': [],
     'test': [],

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!--data noupdate="1"-->
+	<data noupdate="0">
+	
+		<record id="myo_lab_test_EAN17" model="myo.lab_test.type">
+			<field name="code" eval="&quot;&quot;&quot;EAN17&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Exames para detecção de Anemia&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_criterion_EAN17_peso_altura" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="100"/>
+			<field name="name" eval="&quot;&quot;&quot;Medidas de Peso e Altura&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_peso" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="101"/>
+			<field name="name" eval="&quot;&quot;&quot;Peso&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_kg"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_altura" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="102"/>
+			<field name="name" eval="&quot;&quot;&quot;Altura&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_cm"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_dosagem_hemoglobina" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="200"/>
+			<field name="name" eval="&quot;&quot;&quot;Dosagem de Hemoglobina&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_valor_hemoglobina" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="201"/>
+			<field name="name" eval="&quot;&quot;&quot;Valor da Hemoglobina&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_g_dL"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_interpretacao_hemoglobina" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="202"/>
+			<field name="name" eval="&quot;&quot;&quot;Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EAN17_hemoglobina_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
+			<field name="sequence" eval="203"/>
+			<field name="name" eval="&quot;&quot;&quot;Observações&quot;&quot;&quot;"/>
+		</record>
+	
+	</data>
+</openerp>

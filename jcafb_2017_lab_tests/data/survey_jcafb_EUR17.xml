@@ -110,7 +110,7 @@
 
                 <!-- 2.5. Nome do Endereço: -->
                 <record model="survey.question" id="EUR17_02_05">
-                    <field name="question">2.5. Nome do Endereço:</field>
+                    <field name="question">2.4. Nome do Endereço:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_02"/>
                     <field name="sequence" eval="50"/>
@@ -120,7 +120,7 @@
 
                 <!-- 2.6. Procedência do Paciente: -->
                 <record model="survey.question" id="EUR17_02_06">
-                    <field name="question">2.6. Procedência do Paciente:</field>
+                    <field name="question">2.5. Procedência do Paciente:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_02"/>
                     <field name="sequence" eval="60"/>
@@ -188,45 +188,17 @@
                     <field name="constr_error_msg">Preencher com a data de Saída do Resultado.</field>
                 </record>
 
-            <!-- 4. Identificação do Paciente -->
-            <record model="survey.page" id="EUR17_04">
-                <field name="title">4. Identificação do Paciente</field>
-                <field name="survey_id" ref="EUR17"/>
-                <field name="sequence" eval="40"/>
-                <field name="description">&lt;p&gt;&lt;/p&gt;</field>
-            </record>
-
-                <!-- 4.1. Código do Paciente: -->
-                <record model="survey.question" id="EUR17_04_01">
-                    <field name="question">4.1. Código do Paciente:</field>
-                    <field name="type">textbox</field>
-                    <field name="page_id" ref="EUR17_04"/>
-                    <field name="sequence" eval="10"/>
-                    <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Código do Paciente.</field>
-                </record>
-
-                <!-- 4.2. Nome do Paciente: -->
-                <record model="survey.question" id="EUR17_04_02">
-                    <field name="question">4.2. Nome do Paciente:</field>
-                    <field name="type">textbox</field>
-                    <field name="page_id" ref="EUR17_04"/>
-                    <field name="sequence" eval="20"/>
-                    <field name="constr_mandatory">True</field>
-                    <field name="constr_error_msg">Preencher com o Nome do Paciente.</field>
-                </record>
-
-            <!-- 5. Examinadores -->
+            <!-- 4. Examinadores -->
             <record model="survey.page" id="EUR17_05">
-                <field name="title">5. Examinadores</field>
+                <field name="title">4. Examinadores</field>
                 <field name="survey_id" ref="EUR17"/>
                 <field name="sequence" eval="50"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 5.1. Código(s) do(s) Realizador(es) do Exame Físico: -->
+                <!-- 4.1. Código(s) do(s) Realizador(es) do Exame Físico: -->
                 <record model="survey.question" id="EUR17_05_01">
-                    <field name="question">5.1. Código(s) do(s) Realizador(es) do Exame Físico:</field>
+                    <field name="question">4.1. Código(s) do(s) Realizador(es) do Exame Físico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="10"/>
@@ -234,9 +206,9 @@
                     <field name="constr_error_msg">Preencher com o(s) Código(s) do(s) Realizador(es) do Exame Físico, separados por vírgula.</field>
                 </record>
 
-                <!-- 5.2. Nome(s) do(s) Realizador(es) do Exame Físico: -->
+                <!-- 4.2. Nome(s) do(s) Realizador(es) do Exame Físico: -->
                 <record model="survey.question" id="EUR17_05_02">
-                    <field name="question">5.2. Nome(s) do(s) Realizador(es) do Exame Físico:</field>
+                    <field name="question">4.2. Nome(s) do(s) Realizador(es) do Exame Físico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="20"/>
@@ -244,9 +216,9 @@
                     <field name="constr_error_msg">Preencher com o(s) Nome(s) do(s) Realizador(es) do Exame Físico, separados por vírgula.</field>
                 </record>
 
-                <!-- 5.3. Código(s) do(s) Realizador(es) do Exame Químico: -->
+                <!-- 4.3. Código(s) do(s) Realizador(es) do Exame Químico: -->
                 <record model="survey.question" id="EUR17_05_03">
-                    <field name="question">5.3. Código(s) do(s) Realizador(es) do Exame Químico:</field>
+                    <field name="question">4.3. Código(s) do(s) Realizador(es) do Exame Químico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="30"/>
@@ -254,9 +226,9 @@
                     <field name="constr_error_msg">Preencher com o(s) Código(s) do(s) Realizador(es) do Exame Químico, separados por vírgula.</field>
                 </record>
 
-                <!-- 5.4. Nome(s) do(s) Realizador(es) do Exame Químico: -->
+                <!-- 4.4. Nome(s) do(s) Realizador(es) do Exame Químico: -->
                 <record model="survey.question" id="EUR17_05_04">
-                    <field name="question">5.4. Nome(s) do(s) Realizador(es) do Exame Químico:</field>
+                    <field name="question">4.4. Nome(s) do(s) Realizador(es) do Exame Químico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="40"/>
@@ -264,9 +236,9 @@
                     <field name="constr_error_msg">Preencher com o(s) Nome(s) do(s) Realizador(es) do Exame Químico, separados por vírgula.</field>
                 </record>
 
-                <!-- 5.5. Código(s) do(s) Realizador(es) do Exame Microscópico: -->
+                <!-- 4.5. Código(s) do(s) Realizador(es) do Exame Microscópico: -->
                 <record model="survey.question" id="EUR17_05_05">
-                    <field name="question">5.5. Código(s) do(s) Realizador(es) do Exame Microscópico:</field>
+                    <field name="question">4.4. Código(s) do(s) Realizador(es) do Exame Microscópico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="50"/>
@@ -274,9 +246,9 @@
                     <field name="constr_error_msg">Preencher com o(s) Código(s) do(s) Realizador(es) do Exame Microscópico, separados por vírgula.</field>
                 </record>
 
-                <!-- 5.6. Nome(s) do(s) Realizador(es) do Exame Microscópico: -->
+                <!-- 4.6. Nome(s) do(s) Realizador(es) do Exame Microscópico: -->
                 <record model="survey.question" id="EUR17_05_06">
-                    <field name="question">5.6. Nome(s) do(s) Realizador(es) do Exame Microscópico:</field>
+                    <field name="question">4.5. Nome(s) do(s) Realizador(es) do Exame Microscópico:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_05"/>
                     <field name="sequence" eval="60"/>
@@ -284,17 +256,17 @@
                     <field name="constr_error_msg">Preencher com o(s) Nome(s) do(s) Realizador(es) do Exame Microscópico, separados por vírgula.</field>
                 </record>
 
-            <!-- 6. Resultados do Exame Físico -->
+            <!-- 5. Resultados do Exame Físico -->
             <record model="survey.page" id="EUR17_06">
-                <field name="title">6. Resultados do Exame Físico</field>
+                <field name="title">5. Resultados do Exame Físico</field>
                 <field name="survey_id" ref="EUR17"/>
                 <field name="sequence" eval="60"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 6.1. Volume: -->
+                <!-- 5.1. Volume: -->
                 <record model="survey.question" id="EUR17_06_01">
-                    <field name="question">6.1. Volume:</field>
+                    <field name="question">5.1. Volume:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_06"/>
                     <field name="sequence" eval="10"/>
@@ -302,9 +274,9 @@
                     <field name="constr_error_msg">Preencher com o Volume de material enviado (em número, sem casas decimais).</field>
                 </record>
 
-                <!-- 6.2. Densidade: -->
+                <!-- 5.2. Densidade: -->
                 <record model="survey.question" id="EUR17_06_02">
-                    <field name="question">6.2. Densidade:</field>
+                    <field name="question">5.2. Densidade:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_06"/>
                     <field name="sequence" eval="20"/>
@@ -312,9 +284,9 @@
                     <field name="constr_error_msg">Preencher com a Densidade de material enviado (no formato X,XXX).</field>
                 </record>
 
-                <!-- 6.3. Aspecto: -->
+                <!-- 5.3. Aspecto: -->
                 <record model="survey.question" id="EUR17_06_03">
-                    <field name="question">6.3. Aspecto:</field>
+                    <field name="question">5.3. Aspecto:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_06"/>
                     <field name="sequence" eval="30"/>
@@ -344,9 +316,9 @@
                         <field name="sequence" eval="30"/>
                     </record>
 
-                <!-- 6.4. Cor: -->
+                <!-- 5.4. Cor: -->
                 <record model="survey.question" id="EUR17_06_04">
-                    <field name="question">6.4. Cor:</field>
+                    <field name="question">5.4. Cor:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_06"/>
                     <field name="sequence" eval="40"/>
@@ -430,9 +402,9 @@
                         <field name="sequence" eval="120"/>
                     </record>
 
-                <!-- 6.5. Odor: -->
+                <!-- 5.5. Odor: -->
                 <record model="survey.question" id="EUR17_06_05">
-                    <field name="question">6.5. Odor:</field>
+                    <field name="question">5.4. Odor:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_06"/>
                     <field name="sequence" eval="50"/>
@@ -456,17 +428,17 @@
                         <field name="sequence" eval="20"/>
                     </record>
 
-            <!-- 7. Resultados do Exame Químico -->
+            <!-- 6. Resultados do Exame Químico -->
             <record model="survey.page" id="EUR17_07">
-                <field name="title">7. Resultados do Exame Químico</field>
+                <field name="title">6. Resultados do Exame Químico</field>
                 <field name="survey_id" ref="EUR17"/>
                 <field name="sequence" eval="70"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 7.1. pH: -->
+                <!-- 6.1. pH: -->
                 <record model="survey.question" id="EUR17_07_01">
-                    <field name="question">7.1. pH:</field>
+                    <field name="question">6.1. pH:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="10"/>
@@ -526,9 +498,9 @@
                         <field name="sequence" eval="80"/>
                     </record>
 
-                <!-- 7.2. Proteínas: -->
+                <!-- 6.2. Proteínas: -->
                 <record model="survey.question" id="EUR17_07_02">
-                    <field name="question">7.2. Proteínas:</field>
+                    <field name="question">6.2. Proteínas:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="20"/>
@@ -582,9 +554,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.3. Glicose: -->
+                <!-- 6.3. Glicose: -->
                 <record model="survey.question" id="EUR17_07_03">
-                    <field name="question">7.3. Glicose:</field>
+                    <field name="question">6.3. Glicose:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="30"/>
@@ -638,9 +610,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.4. Cetona: -->
+                <!-- 6.4. Cetona: -->
                 <record model="survey.question" id="EUR17_07_04">
-                    <field name="question">7.4. Cetona:</field>
+                    <field name="question">6.4. Cetona:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="40"/>
@@ -694,9 +666,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.5. Pigmentos biliares: -->
+                <!-- 6.5. Pigmentos biliares: -->
                 <record model="survey.question" id="EUR17_07_05">
-                    <field name="question">7.5. Pigmentos biliares:</field>
+                    <field name="question">6.4. Pigmentos biliares:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="50"/>
@@ -750,9 +722,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.6. Sangue: -->
+                <!-- 6.6. Sangue: -->
                 <record model="survey.question" id="EUR17_07_06">
-                    <field name="question">7.6. Sangue:</field>
+                    <field name="question">6.5. Sangue:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="60"/>
@@ -806,9 +778,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.7. Urobilinogênio: -->
+                <!-- 6.7. Urobilinogênio: -->
                 <record model="survey.question" id="EUR17_07_07">
-                    <field name="question">7.7. Urobilinogênio:</field>
+                    <field name="question">6.6. Urobilinogênio:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="70"/>
@@ -862,9 +834,9 @@
                         <field name="sequence" eval="70"/>
                     </record>
 
-                <!-- 7.8. Nitrito: -->
+                <!-- 6.8. Nitrito: -->
                 <record model="survey.question" id="EUR17_07_08">
-                    <field name="question">7.8. Nitrito:</field>
+                    <field name="question">6.7. Nitrito:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_07"/>
                     <field name="sequence" eval="80"/>
@@ -888,17 +860,17 @@
                         <field name="sequence" eval="20"/>
                     </record>
 
-            <!-- 8. Resultados do Exame Microscópico -->
+            <!-- 7. Resultados do Exame Microscópico -->
             <record model="survey.page" id="EUR17_08">
-                <field name="title">8. Resultados do Exame Microscópico</field>
+                <field name="title">7. Resultados do Exame Microscópico</field>
                 <field name="survey_id" ref="EUR17"/>
                 <field name="sequence" eval="80"/>
                 <field name="description">&lt;p&gt;&lt;/p&gt;</field>
             </record>
 
-                <!-- 8.1. Células: -->
+                <!-- 7.1. Células: -->
                 <record model="survey.question" id="EUR17_08_01">
-                    <field name="question">8.1. Células:</field>
+                    <field name="question">7.1. Células:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="10"/>
@@ -934,9 +906,9 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 8.2. Muco: -->
+                <!-- 7.2. Muco: -->
                 <record model="survey.question" id="EUR17_08_02">
-                    <field name="question">8.2. Muco:</field>
+                    <field name="question">7.2. Muco:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="20"/>
@@ -972,9 +944,9 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 8.3. Cristais: -->
+                <!-- 7.3. Cristais: -->
                 <record model="survey.question" id="EUR17_08_03">
-                    <field name="question">8.3. Cristais:</field>
+                    <field name="question">7.3. Cristais:</field>
                     <field name="type">multiple_choice</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="30"/>
@@ -1009,9 +981,9 @@
                         <field name="sequence" eval="40"/>
                     </record>
 
-                <!-- 8.4. Leucócitos (nº/mL): -->
+                <!-- 7.4. Leucócitos (nº/mL): -->
                 <record model="survey.question" id="EUR17_08_04">
-                    <field name="question">8.4. Leucócitos (nº/mL):</field>
+                    <field name="question">7.4. Leucócitos (nº/mL):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="40"/>
@@ -1019,9 +991,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de leucócitos/mL, no formato de número, com ponto separando os milhares</field>
                 </record>
 
-                <!-- 8.5. Hemácias (nº/mL): -->
+                <!-- 7.5. Hemácias (nº/mL): -->
                 <record model="survey.question" id="EUR17_08_05">
-                    <field name="question">8.5. Hemácias (nº/mL):</field>
+                    <field name="question">7.4. Hemácias (nº/mL):</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="50"/>
@@ -1029,9 +1001,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de hemácias/mL, no formato de número, com ponto separando os milhares</field>
                 </record>
 
-                <!-- 8.6. Cilindros: -->
+                <!-- 7.6. Cilindros: -->
                 <record model="survey.question" id="EUR17_08_06">
-                    <field name="question">8.6. Cilindros:</field>
+                    <field name="question">7.5. Cilindros:</field>
                     <field name="type">simple_choice</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="60"/>
@@ -1055,9 +1027,9 @@
                         <field name="sequence" eval="20"/>
                     </record>
 
-                <!-- 8.7. Se presentes, cilindros hialinos em nº/mL: -->
+                <!-- 7.7. Se presentes, cilindros hialinos em nº/mL: -->
                 <record model="survey.question" id="EUR17_08_07">
-                    <field name="question">8.7. Se presentes, cilindros hialinos em nº/mL:</field>
+                    <field name="question">7.6. Se presentes, cilindros hialinos em nº/mL:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="70"/>
@@ -1065,9 +1037,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de cilindros hialinos/mL (no formato de número, com ponto separando os milhares)</field>
                 </record>
 
-                <!-- 8.8. Se presentes, cilindros granulosos em nº/mL: -->
+                <!-- 7.8. Se presentes, cilindros granulosos em nº/mL: -->
                 <record model="survey.question" id="EUR17_08_08">
-                    <field name="question">8.8. Se presentes, cilindros granulosos em nº/mL:</field>
+                    <field name="question">7.7. Se presentes, cilindros granulosos em nº/mL:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="80"/>
@@ -1075,9 +1047,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de cilindros granulosos/mL (no formato de número, com ponto separando os milhares)</field>
                 </record>
 
-                <!-- 8.9. Se presentes, cilindros leucocitários em nº/mL: -->
+                <!-- 7.9. Se presentes, cilindros leucocitários em nº/mL: -->
                 <record model="survey.question" id="EUR17_08_09">
-                    <field name="question">8.9. Se presentes, cilindros leucocitários em nº/mL:</field>
+                    <field name="question">7.9. Se presentes, cilindros leucocitários em nº/mL:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="90"/>
@@ -1085,9 +1057,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de cilindros leucocitários/mL (no formato de número, com ponto separando os milhares)</field>
                 </record>
 
-                <!-- 8.10. Se presentes, cilindros hemáticos em nº/mL: -->
+                <!-- 7.10. Se presentes, cilindros hemáticos em nº/mL: -->
                 <record model="survey.question" id="EUR17_08_10">
-                    <field name="question">8.10. Se presentes, cilindros hemáticos em nº/mL:</field>
+                    <field name="question">7.10. Se presentes, cilindros hemáticos em nº/mL:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="100"/>
@@ -1095,9 +1067,9 @@
                     <field name="constr_error_msg">Colocar o número encontrado de cilindros hemáticos/mL (no formato de número, com ponto separando os milhares)</field>
                 </record>
 
-                <!-- 8.11. Se presentes, outros tipos de cilindros em nº/mL: -->
+                <!-- 7.11. Se presentes, outros tipos de cilindros em nº/mL: -->
                 <record model="survey.question" id="EUR17_08_11">
-                    <field name="question">8.11. Se presentes, outros tipos de cilindros em nº/mL:</field>
+                    <field name="question">7.11. Se presentes, outros tipos de cilindros em nº/mL:</field>
                     <field name="type">textbox</field>
                     <field name="page_id" ref="EUR17_08"/>
                     <field name="sequence" eval="110"/>

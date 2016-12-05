@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!--data noupdate="1"-->
+	<data noupdate="0">
+	
+		<record id="myo_lab_test_EUR17" model="myo.lab_test.type">
+			<field name="code" eval="&quot;&quot;&quot;EUR17&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Urinálise&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_criterion_EUR17_exame_urina_I" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="100"/>
+			<field name="name" eval="&quot;&quot;&quot;Urina Tipo I&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_data_entrada_material" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="101"/>
+			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material (dd-mm-aaaa)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_data_saida_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="102"/>
+			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado (dd-mm-aaaa)&quot;&quot;&quot;"/>
+		</record>
+	
+	</data>
+</openerp>
