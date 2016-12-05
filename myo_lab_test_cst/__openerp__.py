@@ -31,6 +31,7 @@
     ],
     'data': [
         'data/lab_test_seq.xml',
+        'data/lab_test_unit_data.xml',
     ],
     'demo': [],
     'test': [],

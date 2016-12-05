@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!--data noupdate="1"-->
+	<data noupdate="0">
+	
+		<record id="myo_lab_test_unit_kg" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;kg&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;kg&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_cm" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;cm&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;cm&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_g_dL" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;g/dL&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;g/dL&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_kg_m2" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;kg/m²&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;kg/m²&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_mmHg" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;mmHg&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;mmHg&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_mgdL" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;mg/dL&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;mg/dL&quot;&quot;&quot;"/>
+		</record>
+	 
+		<!--record id="myo_lab_test_unit_millionscc0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;mcc&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;Millions/cc&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_ul0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;10^6/uL&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;10^6/uL&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;%&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;%&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_fl0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;fl&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;fl&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_pg0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;pg&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;pg&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_ul1" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;10^3/uL&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;10^3/uL&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_mmhr0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;mm/hr&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;mm/hr&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_mgdl0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;mg/dl&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;mg/dl&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_ul2" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;U/L&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;U/L&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_hpf0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;/hpf&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;/hpf&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_iul0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;IU/l&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;IU/l&quot;&quot;&quot;" name="name"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_miul0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;mIU/l&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;mIU/l&quot;&quot;&quot;" name="name"/>
+		</record>
+
+		<record id="myo_lab_test_unit_ngml0" model="myo.lab_test.unit">
+			<field eval="&quot;&quot;&quot;ng/ml&quot;&quot;&quot;" name="code"/>
+			<field eval="&quot;&quot;&quot;ng/ml&quot;&quot;&quot;" name="name"/>
+		</record-->
+		
+	</data>
+</openerp>
