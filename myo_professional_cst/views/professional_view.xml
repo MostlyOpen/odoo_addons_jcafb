@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_professional_view_form_cst" model="ir.ui.view">
+            <field name="name">myo.professional.form</field>
+            <field name="model">myo.professional</field>
+            <field name="inherit_id" ref="myo_professional.myo_professional_view_form"/>
+            <field name="priority" eval="40"/>
+            <field name="arch" type="xml">
+                <label for="user_id" position="before">
+                    <label for="employee_id"/>
+                    <h3>
+                        <field name="employee_id" placeholder="Related Employee..."/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+    </data>
+</openerp>
