@@ -20,3 +20,4 @@
 
 from . import person
 from . import person_seq
+from . import person_direct_mail
