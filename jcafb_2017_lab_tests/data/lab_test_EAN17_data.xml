@@ -17,6 +17,7 @@
 		<record id="myo_lab_test_criterion_EAN17_peso" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
 			<field name="sequence" eval="101"/>
+			<field name="code">EAN-01-01</field>
 			<field name="name" eval="&quot;&quot;&quot;Peso&quot;&quot;&quot;"/>
 			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_kg"/>
 		</record>
@@ -24,6 +25,7 @@
 		<record id="myo_lab_test_criterion_EAN17_altura" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
 			<field name="sequence" eval="102"/>
+			<field name="code">EAN-01-02</field>
 			<field name="name" eval="&quot;&quot;&quot;Altura&quot;&quot;&quot;"/>
 			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_cm"/>
 		</record>
@@ -37,6 +39,7 @@
 		<record id="myo_lab_test_criterion_EAN17_valor_hemoglobina" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
 			<field name="sequence" eval="201"/>
+			<field name="code">EAN-02-01</field>
 			<field name="name" eval="&quot;&quot;&quot;Valor da Hemoglobina&quot;&quot;&quot;"/>
 			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_g_dL"/>
 		</record>
@@ -44,12 +47,14 @@
 		<record id="myo_lab_test_criterion_EAN17_interpretacao_hemoglobina" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
 			<field name="sequence" eval="202"/>
+			<field name="code">EAN-02-02</field>
 			<field name="name" eval="&quot;&quot;&quot;Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EAN17_hemoglobina_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EAN17"/>
 			<field name="sequence" eval="203"/>
+			<field name="code">EAN-02-03</field>
 			<field name="name" eval="&quot;&quot;&quot;Observações&quot;&quot;&quot;"/>
 		</record>
 	

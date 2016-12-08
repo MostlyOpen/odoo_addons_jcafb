@@ -14,50 +14,81 @@
 			<field name="name" eval="&quot;&quot;&quot;Exame Coproparasitológico&quot;&quot;&quot;"/>
 		</record>
 	
-		<record id="myo_lab_test_criterion_EPI17_data_entrada_material" model="myo.lab_test.criterion">
+		<record id="myo_lab_test_criterion_EPI17_coprop_data_entrada_material" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
 			<field name="sequence" eval="101"/>
-			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material (dd-mm-aaaa)&quot;&quot;&quot;"/>
+			<field name="code">EPI-01-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
 		</record>
 	
-		<record id="myo_lab_test_criterion_EPI17_data_saida_resultado" model="myo.lab_test.criterion">
+		<record id="myo_lab_test_criterion_EPI17_coprop_data_saida_resultado" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
 			<field name="sequence" eval="102"/>
-			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado (dd-mm-aaaa)&quot;&quot;&quot;"/>
+			<field name="code">EPI-01-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_resultado" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
 			<field name="sequence" eval="103"/>
+			<field name="code">EPI-01-03</field>
 			<field name="name" eval="&quot;&quot;&quot;Resultado&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_resultado_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
 			<field name="sequence" eval="104"/>
+			<field name="code">EPI-01-04</field>
 			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPI17_coprop_resultado_metodologias" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
+			<field name="sequence" eval="105"/>
+			<field name="code">EPI-01-05</field>
+			<field name="name" eval="&quot;&quot;&quot;Medtodologia(s) Empregada(s)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EPI17_coprop_ritchie" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
+			<field name="sequence" eval="200"/>
+			<field name="name" eval="&quot;&quot;&quot;Método de Ritchie&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_ritchie_resultado" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
-			<field name="sequence" eval="105"/>
-			<field name="name" eval="&quot;&quot;&quot;Método de Ritchie - Resultado&quot;&quot;&quot;"/>
+			<field name="sequence" eval="201"/>
+			<field name="code">EPI-02-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Resultado&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_ritchie_resultado_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
-			<field name="sequence" eval="106"/>
+			<field name="sequence" eval="202"/>
+			<field name="code">EPI-02-02</field>
 			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
 		</record>
+
+		<record id="myo_lab_test_criterion_EPI17_coprop_hoffmann" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
+			<field name="sequence" eval="300"/>
+			<field name="name" eval="&quot;&quot;&quot;Método de Hoffmann&quot;&quot;&quot;"/>
+		</record>
+	
 		<record id="myo_lab_test_criterion_EPI17_coprop_hoffmann_resultado" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
-			<field name="sequence" eval="107"/>
-			<field name="name" eval="&quot;&quot;&quot;Método de Hoffmann - Resultado&quot;&quot;&quot;"/>
+			<field name="sequence" eval="301"/>
+			<field name="code">EPI-03-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Resultado&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_hoffmann_resultado_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
-			<field name="sequence" eval="108"/>
+			<field name="sequence" eval="302"/>
+			<field name="code">EPI-03-02</field>
 			<field name="name" eval="&quot;&quot;&quot;Se 'Outro', especificar&quot;&quot;&quot;"/>
 		</record>
 	

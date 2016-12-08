@@ -17,13 +17,246 @@
 		<record id="myo_lab_test_criterion_EUR17_data_entrada_material" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
 			<field name="sequence" eval="101"/>
-			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material (dd-mm-aaaa)&quot;&quot;&quot;"/>
+			<field name="code">EUR-01-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EUR17_data_saida_resultado" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
 			<field name="sequence" eval="102"/>
-			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado (dd-mm-aaaa)&quot;&quot;&quot;"/>
+			<field name="code">EUR-01-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Data de Saída do Resultado&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_exame_fisico" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="200"/>
+			<field name="name" eval="&quot;&quot;&quot;Exame Físico&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_volume" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="201"/>
+			<field name="code">EUR-02-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Volume&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_ml"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_densidade" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="202"/>
+			<field name="code">EUR-02-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Densidade&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;1,0050- 1,030&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_aspecto" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="203"/>
+			<field name="code">EUR-02-03</field>
+			<field name="name" eval="&quot;&quot;&quot;Aspecto&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Límpido, Ligeiramente turvo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cor" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="204"/>
+			<field name="code">EUR-02-04</field>
+			<field name="name" eval="&quot;&quot;&quot;Cor&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Amarelo claro, Amarelo citrino, Amarelo ouro&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cor" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="205"/>
+			<field name="code">EUR-02-05</field>
+			<field name="name" eval="&quot;&quot;&quot;Odor&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Sui generis&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_exame_quimico" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="300"/>
+			<field name="name" eval="&quot;&quot;&quot;Exame Químico (Tiras Reagentes)&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_ph" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="301"/>
+			<field name="code">EUR-03-01</field>
+			<field name="name" eval="&quot;&quot;&quot;pH&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;4,7 - 7,8&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_proteinas" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="302"/>
+			<field name="code">EUR-03-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Proteínas&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_glicose" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="303"/>
+			<field name="code">EUR-03-03</field>
+			<field name="name" eval="&quot;&quot;&quot;Glicose&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cetona" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="304"/>
+			<field name="code">EUR-03-04</field>
+			<field name="name" eval="&quot;&quot;&quot;Cetona&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_pigmentos_biliares" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="305"/>
+			<field name="code">EUR-03-05</field>
+			<field name="name" eval="&quot;&quot;&quot;Pigmentos biliares&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_sangue" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="306"/>
+			<field name="code">EUR-03-06</field>
+			<field name="name" eval="&quot;&quot;&quot;Sangue&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_urobilinogenio" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="307"/>
+			<field name="code">EUR-03-07</field>
+			<field name="name" eval="&quot;&quot;&quot;Urobilinogênio&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Normal = Positivo até diluição 1/20&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_nitrito" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="308"/>
+			<field name="code">EUR-03-08</field>
+			<field name="name" eval="&quot;&quot;&quot;Nitrito&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_exame_microscopico" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="400"/>
+			<field name="name" eval="&quot;&quot;&quot;Exame Microscópico&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_celulas_epiteliais" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="401"/>
+			<field name="code">EUR-04-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Células Epiteliais&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_muco" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="402"/>
+			<field name="code">EUR-04-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Muco&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Raros filamentos, Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cristais" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="403"/>
+			<field name="code">EUR-04-03</field>
+			<field name="name" eval="&quot;&quot;&quot;Cristais&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes, Raros de Oxalato de Cálcio, Raros de Urato, Fosfato Amorfo&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_leucocitos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="404"/>
+			<field name="code">EUR-04-04</field>
+			<field name="name" eval="&quot;&quot;&quot;Leucócitos&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Até 10.000/mL&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_hemacias" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="405"/>
+			<field name="code">EUR-04-05</field>
+			<field name="name" eval="&quot;&quot;&quot;Hemácias&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Até 10.000/mL&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="406"/>
+			<field name="code">EUR-04-06</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_hialinos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="407"/>
+			<field name="code">EUR-04-07</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros Hialinos&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Até 1.000/mL&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_granulosos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="408"/>
+			<field name="code">EUR-04-08</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros Granulosos&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_leucocitarios" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="409"/>
+			<field name="code">EUR-04-09</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros Leucocitários&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_hematicos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="410"/>
+			<field name="code">EUR-04-10</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros Hemáticos&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_outros_tipos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="411"/>
+			<field name="code">EUR-04-11</field>
+			<field name="name" eval="&quot;&quot;&quot;Outros tipos de Cilindros&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="412"/>
+			<field name="name" eval="&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Obs.: Leveduras / Trichomonas sp: Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="501"/>
+			<field name="code">EUR-05-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Observações&quot;&quot;&quot;"/>
 		</record>
 	
 	</data>
