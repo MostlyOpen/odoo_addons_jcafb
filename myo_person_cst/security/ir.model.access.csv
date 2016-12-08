@@ -3,3 +3,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_myo_person_direct_mail_person_user,myo.person.direct_mail,model_myo_person_direct_mail,myo_base.group_person_user,1,0,0,0
 access_myo_person_direct_mail_person_manager,myo.person.direct_mail,model_myo_person_direct_mail,myo_base.group_person_manager,1,1,1,0
 access_myo_person_direct_mail_smanager,myo.person.direct_mail,model_myo_person_direct_mail,myo_base.group_smanager,1,1,1,1
+
+access_myo_person_export_person_user,myo.person.export,model_myo_person_export,myo_base.group_person_user,1,0,0,0
+access_myo_person_export_person_manager,myo.person.export,model_myo_person_export,myo_base.group_person_manager,1,1,1,0
+access_myo_person_export_smanager,myo.person.export,model_myo_person_export,myo_base.group_smanager,1,1,1,1

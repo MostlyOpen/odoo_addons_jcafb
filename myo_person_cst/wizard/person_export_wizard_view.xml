@@ -1,9 +1,9 @@
 <openerp>
   <data>
 
-    <record id="myo_person_direct_mail_wizard_view_form" model="ir.ui.view">
-      <field name="name">myo_person_direct_mail_wizard_view_form</field>
-      <field name="model">myo.person.direct_mail.wizard</field>
+    <record id="myo_person_export_wizard_view_form" model="ir.ui.view">
+      <field name="name">myo_person_export_wizard_view_form</field>
+      <field name="model">myo.person.export.wizard</field>
       <field name="arch" type="xml">
 
         <form>
@@ -11,14 +11,14 @@
                 <!--button type="object" name="do_count_persons"
                         string="Count"/-->
                 <button type="object" name="do_populate_marked_persons"
-                        string="Get Marked"/>
+                        string="Get Marked Persons"/>
                 <button type="object" name="do_populate_selected_persons"
-                        string="Get Selected"/>
+                        string="Get All Persons"/>
             </div>
             <field name="person_ids"/>
             <group>
                 <group>
-                    <!--field name="date_direct_mail"/-->
+                    <!--field name="date_export"/-->
                 </group>
             </group>
             <footer>
@@ -36,10 +36,10 @@
     </record>
 
     <!-- More button Action -->
-    <act_window id="action_myo_person_direct_mail_wizard"
-        name="Direct Mail"
+    <act_window id="action_myo_person_export_wizard"
+        name="Person Export"
         src_model="myo.person"
-        res_model="myo.person.direct_mail.wizard"
+        res_model="myo.person.export.wizard"
         view_mode="form, tree"
         key2="client_action_multi"
         target="new"/>

@@ -21,3 +21,4 @@
 import person_document_wizard
 import person_lab_test_wizard
 import person_direct_mail_wizard
+import person_export_wizard

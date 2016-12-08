@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Community/Community/Persons -->
+            <!-- Community/Community/Persons/Persons Export -->
+            <menuitem name="Export" id="menu_community_community_persons_export"
+                parent="myo_person.menu_community_community_persons"
+                groups="myo_base.group_person_user"
+                sequence="30"
+                action="myo_person_cst.myo_person_export_actions"/>
+
+    </data>
+</openerp>

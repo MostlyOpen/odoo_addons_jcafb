@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_person_export_view_form" model="ir.ui.view">
+            <field name="name">myo.person.export.form</field>
+            <field name="model">myo.person.export</field>
+            <field name="arch" type="xml">
+                <form string="Persons Export" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h2>
+                                <field name="name" placeholder="Name..." readonly="True"/>
+                            </h2>
+                            <label for="code" class="oe_edit_only"/>
+                            <h1>
+                                <field name="code" default_focus="1" placeholder="Code..." readonly="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="birthday"/>
+                                <field name="age"/>
+                                <field name="estimated_age"/>
+                                <field name="date_reference"/>
+                                <field name="age_reference"/>
+                                <field name="gender"/>
+                                <field name="categories"/>
+                                <field name="state"/>
+                                <field name="responsible_name"/>
+                                <field name="responsible_code"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="address_name"/>
+                                <field name="address_code"/>
+                                <field name="address_categories"/>
+                                <field name="street"/>
+                                <field name="number"/>
+                                <field name="street2"/>
+                                <field name="district"/>
+                                <field name="l10n_br_city"/>
+                                <field name="country_state"/>
+                                <field name="country"/>
+                                <field name="zip_code"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="mobile"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_person_export_view_tree" model="ir.ui.view">
+            <field name="name">myo.person.export.tree</field>
+            <field name="model">myo.person.export</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Persons Export">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="age"/>
+                        <field name="age_reference"/>
+                        <field name="estimated_age"/>
+                        <field name="categories"/>
+                        <field name="state"/>
+                        <field name="responsible_name"/>
+                        <field name="address_name"/>
+                        <field name="address_code"/>
+                        <field name="address_categories"/>
+                        <field name="district"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_person_export_view_search" model="ir.ui.view">
+            <field name="name">myo.person.export.search</field>
+            <field name="model">myo.person.export</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Persons Export">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="age"/>
+                    <field name="age_reference"/>
+                    <field name="estimated_age"/>
+                    <field name="categories"/>
+                    <field name="state"/>
+                    <field name="responsible_name"/>
+                    <field name="address_name"/>
+                    <field name="address_code"/>
+                    <field name="address_categories"/>
+                    <field name="district"/>
+                    <newline/>
+                    <!--filter name="not_active" string="Not Active" domain="[('active','=',False)]"/-->
+                    <group expand="0" string="Group By...">
+                        <filter string="Age" domain="[]" context="{'group_by':'age'}"/>
+                        <filter string="Reference Age" domain="[]" context="{'group_by':'age_reference'}"/>
+                        <filter string="Estimated Age" domain="[]" context="{'group_by':'estimated_age'}"/>
+                        <filter string="Address" domain="[]" context="{'group_by':'address_name'}"/>
+                        <filter string="District" domain="[]" context="{'group_by':'district'}"/>
+                        <filter string="Responsible Name" domain="[]" context="{'group_by':'responsible_name'}"/>
+                        <filter string="Categories" domain="[]" context="{'group_by':'categories'}"/>
+                        <filter string="Address Categories" domain="[]" context="{'group_by':'address_categories'}"/>
+                        <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="myo_person_export_actions" model="ir.actions.act_window">
+            <field name="name">Persons Export</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.person.export</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="myo_person_export_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new person direct mail.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

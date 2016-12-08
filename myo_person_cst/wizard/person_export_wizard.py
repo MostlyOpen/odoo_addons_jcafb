@@ -25,8 +25,8 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class PersonDirectMailWizard(models.TransientModel):
-    _name = 'myo.person.direct_mail.wizard'
+class PersonExportWizard(models.TransientModel):
+    _name = 'myo.person.export.wizard'
 
     person_ids = fields.Many2many('myo.person', string='Persons')
 
@@ -34,10 +34,10 @@ class PersonDirectMailWizard(models.TransientModel):
     def do_delete_all(self):
         self.ensure_one()
 
-        person_direct_mail_model = self.env['myo.person.direct_mail']
+        person_export_model = self.env['myo.person.export']
 
-        all_person_direct_mail = person_direct_mail_model.search([])
-        all_person_direct_mail.unlink()
+        all_person_export = person_export_model.search([])
+        all_person_export.unlink()
 
         return self.do_reopen_form()
 
@@ -45,7 +45,10 @@ class PersonDirectMailWizard(models.TransientModel):
     def do_update(self):
         self.ensure_one()
 
-        person_direct_mail_model = self.env['myo.person.direct_mail']
+        person_export_model = self.env['myo.person.export']
+
+        all_person_export = person_export_model.search([])
+        all_person_export.unlink()
 
         for person_reg in self.person_ids:
 
@@ -115,7 +118,7 @@ class PersonDirectMailWizard(models.TransientModel):
                 'phone': phone,
                 'mobile': mobile,
             }
-            person_direct_mail_model.create(values)
+            person_export_model.create(values)
 
         return True
 
@@ -141,7 +144,7 @@ class PersonDirectMailWizard(models.TransientModel):
     def do_populate_selected_persons(self):
         self.ensure_one()
         Person = self.env['myo.person']
-        all_selected_persons = Person.search([('state', '=', 'selected'), ])
+        all_selected_persons = Person.search([])
         self.person_ids = all_selected_persons
         # reopen wizard form on same wizard record
         return self.do_reopen_form()
