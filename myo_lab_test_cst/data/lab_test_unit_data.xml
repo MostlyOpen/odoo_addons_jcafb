@@ -3,6 +3,11 @@
 	<!--data noupdate="1"-->
 	<data noupdate="0">
 	
+		<record id="myo_lab_test_unit_dd_mm_aaaa" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;(dd-mm-aaa)&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;(dd-mm-aaa)&quot;&quot;&quot;"/>
+		</record>
+	 
 		<record id="myo_lab_test_unit_kg" model="myo.lab_test.unit">
 			<field name="name" eval="&quot;&quot;&quot;kg&quot;&quot;&quot;"/>
 			<field name="code" eval="&quot;&quot;&quot;kg&quot;&quot;&quot;"/>
@@ -31,6 +36,16 @@
 		<record id="myo_lab_test_unit_mgdL" model="myo.lab_test.unit">
 			<field name="name" eval="&quot;&quot;&quot;mg/dL&quot;&quot;&quot;"/>
 			<field name="code" eval="&quot;&quot;&quot;mg/dL&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_ml" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;mL&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;mL&quot;&quot;&quot;"/>
+		</record>
+	 
+		<record id="myo_lab_test_unit_no_ml" model="myo.lab_test.unit">
+			<field name="name" eval="&quot;&quot;&quot;nº/mL&quot;&quot;&quot;"/>
+			<field name="code" eval="&quot;&quot;&quot;nº/mL&quot;&quot;&quot;"/>
 		</record>
 	 
 		<!--record id="myo_lab_test_unit_millionscc0" model="myo.lab_test.unit">
