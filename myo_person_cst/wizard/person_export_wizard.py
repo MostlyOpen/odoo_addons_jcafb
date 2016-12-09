@@ -47,9 +47,6 @@ class PersonExportWizard(models.TransientModel):
 
         person_export_model = self.env['myo.person.export']
 
-        all_person_export = person_export_model.search([])
-        all_person_export.unlink()
-
         for person_reg in self.person_ids:
 
             name = person_reg.name
