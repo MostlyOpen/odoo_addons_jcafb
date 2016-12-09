@@ -18,30 +18,5 @@
 #
 ###############################################################################
 
-{
-    'name': 'Address (customizations for CLVhealth-JCAFB Solution)',
-    'summary': 'Address Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '2.0.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'depends': [
-        'myo_address_l10n_br',
-    ],
-    'data': [
-        'views/address_view.xml',
-        'data/address_seq.xml',
-        'wizard/address_document_wizard_view.xml',
-        'wizard/address_responsible_wizard_view.xml',
-    ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-    'css': [],
-}
+import address_document_wizard
+import address_responsible_wizard
