@@ -13,6 +13,8 @@
                             <field name="community_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="employee_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="role_id" default_focus="1" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
                         </group>
                         <label for="notes" class="oe_edit_only"/>
                         <field name="notes" placeholder="Notes..."/>
@@ -37,6 +39,8 @@
                     <field name="community_id"/>
                     <field name="employee_id"/>
                     <field name="role_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -51,6 +55,8 @@
                     <field name="community_id"/>
                     <field name="employee_id"/>
                     <field name="role_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Community" domain="[]" context="{'group_by':'community_id'}"/>
@@ -105,20 +111,6 @@
                 </page>
             </field>
         </record>
-
-        <!--record id="myo_employee_view_form_community_employee" model="ir.ui.view">
-            <field name="name">myo.employee.form</field>
-            <field name="model">myo.employee</field>
-            <field name="inherit_id" ref="myo_employee.myo_employee_view_form"/>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <page name="settings" position="before">
-                    <page string="Employee Roles (Community)">
-                        <field name="community_employee_ids" colspan="4" nolabel="1"/>
-                    </page>
-                </page>
-            </field>
-        </record-->
 
     </data>
 </openerp>

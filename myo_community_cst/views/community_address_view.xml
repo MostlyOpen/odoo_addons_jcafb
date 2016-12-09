@@ -13,6 +13,8 @@
                             <field name="community_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="address_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="role_id" default_focus="1" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
                         </group>
                         <label for="notes" class="oe_edit_only"/>
                         <field name="notes" placeholder="Notes..."/>
@@ -37,6 +39,8 @@
                     <field name="community_id"/>
                     <field name="address_id"/>
                     <field name="role_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -51,6 +55,8 @@
                     <field name="community_id"/>
                     <field name="address_id"/>
                     <field name="role_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Community" domain="[]" context="{'group_by':'community_id'}"/>

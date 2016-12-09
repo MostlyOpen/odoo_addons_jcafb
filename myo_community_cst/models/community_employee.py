@@ -18,6 +18,8 @@
 #
 ###############################################################################
 
+from datetime import *
+
 from openerp import fields, models
 
 
@@ -28,10 +30,15 @@ class CommunityEmployee(models.Model):
                                    help='Community', required=False)
     employee_id = fields.Many2one('hr.employee', string='Employee')
     role_id = fields.Many2one('myo.community.member.role', 'Role', required=False)
+    sign_in_date = fields.Date('Sign in date', required=False,
+                               default=lambda *a: datetime.now().strftime('%Y-%m-%d'))
+    sign_out_date = fields.Date("Sign out date", required=False)
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the community employee without removing it.",
                             default=1)
+
+    _order = "sign_in_date desc"
 
 
 class Community(models.Model):
