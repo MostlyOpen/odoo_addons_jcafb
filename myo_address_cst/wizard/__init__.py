@@ -20,3 +20,4 @@
 
 import address_document_wizard
 import address_responsible_wizard
+import address_event_wizard

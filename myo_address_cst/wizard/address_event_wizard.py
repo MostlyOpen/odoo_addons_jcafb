@@ -25,46 +25,45 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class AddressDocumentWizard(models.TransientModel):
-    _name = 'myo.address.document.wizard'
+class AddressEventWizard(models.TransientModel):
+    _name = 'myo.address.event.wizard'
 
     address_ids = fields.Many2many('myo.address', string='Addresses')
-    survey_ids = fields.Many2many('survey.survey', string='Surveys')
-    # date_document = fields.Datetime('Document Date')
-    date_foreseen = fields.Datetime(string='Foreseen Date')
-    date_deadline = fields.Date(string='Deadline')
+    name = fields.Char(string='Event Title')
+    description = fields.Html(string='Description')
+    planned_hours = fields.Float(
+        string='Planned Hours',
+        help='Estimated time (in hours) to do the event.'
+    )
+    date_foreseen = fields.Datetime(string='Foreseen Date', index=True, copy=False)
+    date_deadline = fields.Date(string='Deadline', index=True, copy=False)
 
     @api.multi
-    def do_active_update(self):
+    def do_update(self):
         self.ensure_one()
 
-        document_model = self.env['myo.document']
-        document_person_model = self.env['myo.document.person']
+        event_model = self.env['myo.event']
 
         for address_reg in self.address_ids:
-            for survey_reg in self.survey_ids:
-                name = survey_reg.title
-                if address_reg.user_id is not False:
-                    user_id = address_reg.user_id.id
-                address_id = address_reg.id
-                values = {
-                    'name': name,
-                    'user_id': user_id,
-                    # 'date_document': self.date_document,
-                    'date_foreseen': self.date_foreseen,
-                    'date_deadline': self.date_deadline,
-                    'survey_id': survey_reg.id,
-                    'address_id': address_id,
-                }
-                document_id = document_model.create(values)
-
-                for person_reg in address_reg.person_ids:
-                    if person_reg.state == 'selected':
-                        values = {
-                            'document_id': document_id.id,
-                            'person_id': person_reg.id,
-                        }
-                        document_person_model.create(values)
+            name = self.name
+            description = self.description
+            planned_hours = self.planned_hours
+            date_foreseen = self.date_foreseen
+            date_deadline = self.date_deadline
+            address_id = address_reg.id
+            user_id = False
+            if address_reg.user_id is not False:
+                user_id = address_reg.user_id.id
+            values = {
+                'name': name,
+                'description': description,
+                'planned_hours': planned_hours,
+                'date_foreseen': date_foreseen,
+                'date_deadline': date_deadline,
+                'address_id': address_id,
+                'user_id': user_id,
+            }
+            event_model.create(values)
 
         return True
 

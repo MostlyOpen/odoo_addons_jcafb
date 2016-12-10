@@ -34,6 +34,7 @@
         'data/address_seq.xml',
         'wizard/address_document_wizard_view.xml',
         'wizard/address_responsible_wizard_view.xml',
+        'wizard/address_event_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

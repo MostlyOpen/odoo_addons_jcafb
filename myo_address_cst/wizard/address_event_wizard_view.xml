@@ -1,27 +1,28 @@
 <openerp>
   <data>
 
-    <record id="view_form_myo_address_document_wizard" model="ir.ui.view">
-      <field name="name">view_form_myo_address_document_wizard</field>
-      <field name="model">myo.address.document.wizard</field>
+    <record id="myo_address_event_wizard_view_form" model="ir.ui.view">
+      <field name="name">myo_address_event_wizard_view_form</field>
+      <field name="model">myo.address.event.wizard</field>
       <field name="arch" type="xml">
 
         <form>
             <div class="oe_right">
                 <button type="object" name="do_populate_marked_addresses"
-                        string="Get Marked"/>
+                        string="Get Marked Addresses"/>
             </div>
             <field name="address_ids"/>
-            <field name="survey_ids"/>
             <group>
                 <group>
-                    <!--field name="date_document"/-->
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="planned_hours"/>
                     <field name="date_foreseen"/>
                     <field name="date_deadline"/>
                 </group>
             </group>
             <footer>
-                <button type="object" name="do_active_update"
+                <button type="object" name="do_update"
                     string="Update" class="oe_highlight"
                     />
                 <button special="cancel" string="Cancel"/>
@@ -32,10 +33,10 @@
     </record>
 
     <!-- More button Action -->
-    <act_window id="action_myo_address_document_wizard"
-        name="Set Address Documents"
+    <act_window id="action_myo_address_event_wizard"
+        name="Set Address Event"
         src_model="myo.address"
-        res_model="myo.address.document.wizard"
+        res_model="myo.address.event.wizard"
         view_mode="form, tree"
         key2="client_action_multi"
         target="new"/>
