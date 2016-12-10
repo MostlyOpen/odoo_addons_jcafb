@@ -39,22 +39,31 @@ class PersonDocumentWizard(models.TransientModel):
         self.ensure_one()
 
         document_model = self.env['myo.document']
+        document_person_model = self.env['myo.document.person']
 
         for person_reg in self.person_ids:
             for survey_reg in self.survey_ids:
                 name = survey_reg.title
-                user_id = person_reg.user_id
+                if person_reg.user_id is not False:
+                    user_id = person_reg.user_id.id
+                person_id = person_reg.id
                 address_id = person_reg.address_id.id
                 values = {
                     'name': name,
                     'user_id': user_id,
-                    'date_document': self.date_document,
+                    # 'date_document': self.date_document,
                     'date_foreseen': self.date_foreseen,
                     'date_deadline': self.date_deadline,
                     'survey_id': survey_reg.id,
                     'address_id': address_id,
                 }
-                # document_id = document_model.create(values)
+                document_id = document_model.create(values).id
+
+                values = {
+                    'document_id': document_id,
+                    'person_id': person_id,
+                }
+                document_person_model.create(values)
 
         return True
 
@@ -70,7 +79,7 @@ class PersonDocumentWizard(models.TransientModel):
             'target': 'new'}
 
     @api.multi
-    def do_populate_persons(self):
+    def do_populate_marked_persons(self):
         self.ensure_one()
         self.person_ids = self._context.get('active_ids')
         # reopen wizard form on same wizard record
