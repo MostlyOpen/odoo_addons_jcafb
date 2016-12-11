@@ -29,6 +29,7 @@ class AddressEventWizard(models.TransientModel):
     _name = 'myo.address.event.wizard'
 
     address_ids = fields.Many2many('myo.address', string='Addresses')
+    category_id = fields.Many2one('myo.event.category', string='Category')
     name = fields.Char(string='Event Title')
     description = fields.Html(string='Description')
     planned_hours = fields.Float(
@@ -63,7 +64,14 @@ class AddressEventWizard(models.TransientModel):
                 'address_id': address_id,
                 'user_id': user_id,
             }
-            event_model.create(values)
+            new_event = event_model.create(values)
+
+            if self.category_id is not False:
+
+                values = {
+                    'category_ids': [(4, self.category_id.id)],
+                }
+                new_event.write(values)
 
         return True
 
