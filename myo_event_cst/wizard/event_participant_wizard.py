@@ -33,7 +33,7 @@ class EventParticipantWizard(models.TransientModel):
     event_ids = fields.Many2many('myo.event', string='Events')
 
     @api.multi
-    def do_active_update(self):
+    def do_participant_update(self):
         self.ensure_one()
 
         hr_department_model = self.env['hr.department']
@@ -43,35 +43,32 @@ class EventParticipantWizard(models.TransientModel):
         event_person_model = self.env['myo.event.person']
 
         for event_reg in self.event_ids:
-            print()
-            print('>>>>>', event_reg.name, event_reg.address_id.name)
 
-            user_id = event_reg.address_id.user_id.id
-            user_name = event_reg.address_id.user_id.name
+            if event_reg.address_id.user_id is not False:
+                user_id = event_reg.address_id.user_id.id
+                user_name = event_reg.address_id.user_id.name
 
-            event_reg.user_id = user_id
+                event_reg.user_id = user_id
 
-            hr_department_search = hr_department_model.search([('name', '=', user_name), ])
-            department_id = hr_department_search.id
+                hr_department_search = hr_department_model.search([('name', '=', user_name), ])
+                department_id = hr_department_search.id
 
-            hr_employee_search = hr_employee_model.search([('department_id', '=', department_id), ])
+                hr_employee_search = hr_employee_model.search([('department_id', '=', department_id), ])
 
-            for employee_reg in hr_employee_search:
-                print('>>>>>>>>>>', employee_reg.name.encode("utf-8"))
+                for employee_reg in hr_employee_search:
 
-                event_employee_search = event_employee_model.search([
-                    ('event_id', '=', event_reg.id),
-                    ('employee_id', '=', employee_reg.id),
-                ])
-                print('>>>>>>>>>>>>>>>', event_employee_search.id)
+                    event_employee_search = event_employee_model.search([
+                        ('event_id', '=', event_reg.id),
+                        ('employee_id', '=', employee_reg.id),
+                    ])
 
-                if event_employee_search.id is False:
-                    values = {
-                        'event_id': event_reg.id,
-                        'employee_id': employee_reg.id,
-                        # 'role': False
-                    }
-                    event_employee_model.create(values)
+                    if event_employee_search.id is False:
+                        values = {
+                            'event_id': event_reg.id,
+                            'employee_id': employee_reg.id,
+                            # 'role': False
+                        }
+                        event_employee_model.create(values)
 
             person_search = person_model.search([
                 ('address_id', '=', event_reg.address_id.id),
@@ -79,13 +76,11 @@ class EventParticipantWizard(models.TransientModel):
             ])
 
             for person_reg in person_search:
-                print('>>>>>>>>>>', person_reg.name.encode("utf-8"))
 
                 event_person_search = event_person_model.search([
                     ('event_id', '=', event_reg.id),
                     ('person_id', '=', person_reg.id),
                 ])
-                print('>>>>>>>>>>>>>>>', event_person_search.id)
 
                 if event_person_search.id is False:
                     values = {
@@ -109,7 +104,7 @@ class EventParticipantWizard(models.TransientModel):
             'target': 'new'}
 
     @api.multi
-    def do_populate_events(self):
+    def do_populate_marked_events(self):
         self.ensure_one()
         self.event_ids = self._context.get('active_ids')
         # reopen wizard form on same wizard record

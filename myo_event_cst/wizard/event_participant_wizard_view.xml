@@ -10,8 +10,8 @@
             <div class="oe_right">
                 <!--button type="object" name="do_count_events"
                         string="Count"/-->
-                <button type="object" name="do_populate_events"
-                        string="Get Selected"/>
+                <button type="object" name="do_populate_marked_events"
+                        string="Get Marked Events"/>
             </div>
             <field name="event_ids"/>
             <group>
@@ -20,7 +20,7 @@
                 </group>
             </group>
             <footer>
-                <button type="object" name="do_active_update"
+                <button type="object" name="do_participant_update"
                     string="Update" class="oe_highlight"
                     />
                 <button special="cancel" string="Cancel"/>
