@@ -10,8 +10,8 @@
             <div class="oe_right">
                 <!--button type="object" name="do_count_persons"
                         string="Count"/-->
-                <button type="object" name="do_populate_persons"
-                        string="Get Selected"/>
+                <button type="object" name="do_populate_marked_persons"
+                        string="Get Marked"/>
             </div>
             <field name="person_ids"/>
             <field name="lab_test_type_ids"/>

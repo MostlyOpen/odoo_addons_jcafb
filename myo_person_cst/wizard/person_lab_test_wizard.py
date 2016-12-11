@@ -61,7 +61,7 @@ class PersonLabTestWizard(models.TransientModel):
             'target': 'new'}
 
     @api.multi
-    def do_populate_persons(self):
+    def do_populate_marked_persons(self):
         self.ensure_one()
         self.person_ids = self._context.get('active_ids')
         # reopen wizard form on same wizard record
