@@ -31,6 +31,7 @@ class AddressDocumentWizard(models.TransientModel):
     address_ids = fields.Many2many('myo.address', string='Addresses')
     survey_ids = fields.Many2many('survey.survey', string='Surveys')
     # date_document = fields.Datetime('Document Date')
+    category_id = fields.Many2one('myo.document.category', string='Category')
     date_foreseen = fields.Datetime(string='Foreseen Date')
     date_deadline = fields.Date(string='Deadline')
 
@@ -56,12 +57,19 @@ class AddressDocumentWizard(models.TransientModel):
                     'survey_id': survey_reg.id,
                     'address_id': address_id,
                 }
-                document_id = document_model.create(values)
+                new_document = document_model.create(values)
+
+                if self.category_id is not False:
+
+                    values = {
+                        'category_ids': [(4, self.category_id.id)],
+                    }
+                    new_document.write(values)
 
                 for person_reg in address_reg.person_ids:
                     if person_reg.state == 'selected':
                         values = {
-                            'document_id': document_id.id,
+                            'document_id': new_document.id,
                             'person_id': person_reg.id,
                         }
                         document_person_model.create(values)

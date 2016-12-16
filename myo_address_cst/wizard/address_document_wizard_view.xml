@@ -9,12 +9,13 @@
         <form>
             <div class="oe_right">
                 <button type="object" name="do_populate_marked_addresses"
-                        string="Get Marked"/>
+                        string="Get Marked Addresses"/>
             </div>
             <field name="address_ids"/>
             <field name="survey_ids"/>
             <group>
                 <group>
+                    <field name="category_id"/>
                     <!--field name="date_document"/-->
                     <field name="date_foreseen"/>
                     <field name="date_deadline"/>

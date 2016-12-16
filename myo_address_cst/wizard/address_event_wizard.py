@@ -44,6 +44,7 @@ class AddressEventWizard(models.TransientModel):
         self.ensure_one()
 
         event_model = self.env['myo.event']
+        event_person_model = self.env['myo.event.person']
 
         for address_reg in self.address_ids:
             name = self.name
@@ -72,6 +73,14 @@ class AddressEventWizard(models.TransientModel):
                     'category_ids': [(4, self.category_id.id)],
                 }
                 new_event.write(values)
+
+                for person_reg in address_reg.person_ids:
+                    if person_reg.state == 'selected':
+                        values = {
+                            'event_id': new_event.id,
+                            'person_id': person_reg.id,
+                        }
+                        event_person_model.create(values)
 
         return True
 
