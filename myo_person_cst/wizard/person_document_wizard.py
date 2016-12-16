@@ -30,6 +30,7 @@ class PersonDocumentWizard(models.TransientModel):
 
     person_ids = fields.Many2many('myo.person', string='Persons')
     survey_ids = fields.Many2many('survey.survey', string='Surveys')
+    category_id = fields.Many2one('myo.document.category', string='Category')
     date_document = fields.Datetime('Document Date')
     date_foreseen = fields.Datetime(string='Foreseen Date')
     date_deadline = fields.Date(string='Deadline')
@@ -57,10 +58,17 @@ class PersonDocumentWizard(models.TransientModel):
                     'survey_id': survey_reg.id,
                     'address_id': address_id,
                 }
-                document_id = document_model.create(values).id
+                new_document = document_model.create(values)
+
+                if self.category_id is not False:
+
+                    values = {
+                        'category_ids': [(4, self.category_id.id)],
+                    }
+                    new_document.write(values)
 
                 values = {
-                    'document_id': document_id,
+                    'document_id': new_document.id,
                     'person_id': person_id,
                 }
                 document_person_model.create(values)
