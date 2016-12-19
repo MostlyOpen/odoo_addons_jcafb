@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_summary_person_event_view_form" model="ir.ui.view">
+            <field name="name">myo.summary.person.event.form</field>
+            <field name="model">myo.summary.person.event</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Person Events" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="summary_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="person_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="event_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="event_state"/>
+                        </group>
+                        <notebook>
+                            <page string="Settings" groups="myo_base.group_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_summary_person_event_view_tree" model="ir.ui.view">
+            <field name="name">myo.summary.person.event.tree</field>
+            <field name="model">myo.summary.person.event</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Person Events">
+                    <field name="summary_id" invisible="True"/>
+                    <field name="person_id" invisible="True"/>
+                    <field name="event_id"/>
+                    <field name="event_state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_summary_person_event_view_search" model="ir.ui.view">
+            <field name="name">myo.summary.person.event.search</field>
+            <field name="model">myo.summary.person.event</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Person Events">
+                    <field name="summary_id"/>
+                    <field name="person_id"/>
+                    <field name="event_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Summary" domain="[]" context="{'group_by':'summary_id'}"/>
+                        <filter string="Person" domain="[]" context="{'group_by':'person_id'}"/>
+                        <filter string="Event" domain="[]" context="{'group_by':'event_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="myo_summary_view_form_summary_person_event" model="ir.ui.view">
+            <field name="name">myo.summary.form</field>
+            <field name="model">myo.summary</field>
+            <field name="inherit_id" ref="myo_summary.myo_summary_view_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <group name="group_bottom" position="inside">
+                    <field name="summary_person_event_ids" colspan="4" nolabel="1" attrs="{'invisible':[('is_person_summary', '!=', True)]}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

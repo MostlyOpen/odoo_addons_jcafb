@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_summary_view_form_summary" model="ir.ui.view">
+            <field name="name">myo.summary.form</field>
+            <field name="model">myo.summary</field>
+            <field name="inherit_id" ref="myo_summary.myo_summary_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <!--label for="user_id" position="before">
+                    <label for="address_id"/>
+                    <h3>
+                        <field name="address_id" placeholder="Address..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
+                    <label for="person_id" attrs="{'invisible':[('is_person_summary', '!=', True)]}"/>
+                    <h3>
+                        <field name="person_id" placeholder="Person..." options="{'no_open': False, 'no_create': True}" attrs="{'invisible':[('is_person_summary', '!=', True)]}"/>
+                    </h3>
+                </label-->
+                <group name="group_title_left" position="inside">
+                    <field name="address_id" placeholder="Address..." context="{'show_address_only': 1}" options='{"always_reload": True, "highlight_first_line": True, "no_open": False, "no_create": True}'/>
+                    <field name="address_category_ids" widget="many2many_tags" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="person_id" placeholder="Person..." options="{'no_open': False, 'no_create': True}" attrs="{'invisible':[('is_person_summary', '!=', True)]}"/>
+                    <field name="person_category_ids" widget="many2many_tags" attrs="{'invisible':[('is_person_summary', '!=', True)]}" options="{'no_open': False, 'no_create': True}"/>
+                </group>
+                <group name="group_title_right" position="inside">
+                    <field name="is_address_summary"/>
+                    <field name="is_person_summary"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="myo_summary_view_tree_summary" model="ir.ui.view">
+            <field name="name">myo.summary.tree</field>
+            <field name="model">myo.summary</field>
+            <field name="inherit_id" ref="myo_summary.myo_summary_view_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="before">
+                    <field name="address_id"/>
+                    <field name="person_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="myo_summary_view_search_summary" model="ir.ui.view">
+            <field name="name">myo.summary.search</field>
+            <field name="model">myo.summary</field>
+            <field name="inherit_id" ref="myo_summary.myo_summary_view_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="before">
+                    <field name="address_id"/>
+                    <field name="address_code"/>
+                    <field name="person_id"/>
+                    <field name="person_code"/>
+                </field>
+                <group name="group_by" position="before">
+                    <filter name="filter_is_address_summary" string="Is Address Summary" domain="[('is_address_summary','=',True)]"/>
+                    <filter name="filter_is_person_summary" string="Is Person Summary" domain="[('is_person_summary','=',True)]"/>
+                </group>
+                <group name="group_by" position="inside">
+                    <filter string="Address" context="{'group_by': 'address_id'}"/>
+                    <filter string="Person" context="{'group_by': 'person_id'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

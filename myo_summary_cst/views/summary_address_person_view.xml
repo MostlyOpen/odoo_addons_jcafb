@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_summary_address_person_view_form" model="ir.ui.view">
+            <field name="name">myo.summary.address.person.form</field>
+            <field name="model">myo.summary.address.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Address Persons" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="summary_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="address_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="person_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="person_category_ids" widget="many2many_tags" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="role_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="sign_in_date"/>
+                            <field name="sign_out_date"/>
+                    <field name="person_state"/>
+                        </group>
+                        <notebook>
+                            <page string="Settings" groups="myo_base.group_manager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_summary_address_person_view_tree" model="ir.ui.view">
+            <field name="name">myo.summary.address.person.tree</field>
+            <field name="model">myo.summary.address.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Address Persons">
+                    <field name="summary_id" invisible="True"/>
+                    <field name="address_id" invisible="True"/>
+                    <field name="person_id"/>
+                    <field name="person_category_ids"/>
+                    <field name="role_id"/>
+                    <field name="sign_in_date"/>
+                    <field name="sign_out_date"/>
+                    <field name="person_state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_summary_address_person_view_search" model="ir.ui.view">
+            <field name="name">myo.summary.address.person.search</field>
+            <field name="model">myo.summary.address.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Address Persons">
+                    <field name="summary_id"/>
+                    <field name="address_id"/>
+                    <field name="person_id"/>
+                    <field name="person_category_ids"/>
+                    <field name="role_id"/>
+                    <field name="person_state"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Summary" domain="[]" context="{'group_by':'summary_id'}"/>
+                        <filter string="Address" domain="[]" context="{'group_by':'address_id'}"/>
+                        <filter string="Event" domain="[]" context="{'group_by':'person_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="myo_summary_view_form_summary_address_person" model="ir.ui.view">
+            <field name="name">myo.summary.form</field>
+            <field name="model">myo.summary</field>
+            <field name="inherit_id" ref="myo_summary.myo_summary_view_form"/>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <group name="group_bottom" position="inside">
+                    <field name="summary_address_person_ids" colspan="4" nolabel="1" attrs="{'invisible':[('is_address_summary', '!=', True)]}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

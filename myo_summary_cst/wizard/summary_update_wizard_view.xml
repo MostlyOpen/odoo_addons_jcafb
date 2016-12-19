@@ -1,0 +1,45 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_summary_update_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_summary_update_wizard</field>
+      <field name="model">myo.summary.update.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_count_summaries"
+                        string="Count"/-->
+                <button type="object" name="do_populate_marked_summaries"
+                        string="Get Marked Summaries"/>
+            </div>
+            <field name="summary_ids"/>
+            <!--field name="survey_ids"/-->
+            <group>
+                <group>
+                    <!--field name="category_id"/-->
+                    <!--field name="date_update"/-->
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_active_update"
+                    string="Update" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_summary_update_wizard"
+        name="Update Summaries"
+        src_model="myo.summary"
+        res_model="myo.summary.update.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>
