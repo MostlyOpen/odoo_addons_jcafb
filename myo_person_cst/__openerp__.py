@@ -41,6 +41,7 @@
         'wizard/person_lab_test_wizard_view.xml',
         'wizard/person_direct_mail_wizard_view.xml',
         'wizard/person_export_wizard_view.xml',
+        'wizard/person_summary_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
