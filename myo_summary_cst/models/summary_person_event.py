@@ -27,6 +27,7 @@ class SummaryPersonEvent(models.Model):
     summary_id = fields.Many2one('myo.summary', string='Summary')
     person_id = fields.Many2one('myo.person', string='Person')
     event_id = fields.Many2one('myo.event', string='Event')
+    event_category_ids = fields.Many2many(string='Event Categories', related='event_id.category_ids', store=False)
     event_state = fields.Selection('Event Status', related='event_id.state', store=False)
     active = fields.Boolean(
         'Active',

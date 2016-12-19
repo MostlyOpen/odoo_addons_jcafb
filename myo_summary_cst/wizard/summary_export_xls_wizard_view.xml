@@ -1,0 +1,45 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_summary_export_xls_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_summary_export_xls_wizard</field>
+      <field name="model">myo.summary.export_xls.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_count_summaries"
+                        string="Count"/-->
+                <button type="object" name="do_populate_marked_summaries"
+                        string="Get Marked Summaries"/>
+            </div>
+            <field name="summary_ids"/>
+            <!--field name="survey_ids"/-->
+            <group>
+                <group>
+                    <!--field name="category_id"/-->
+                    <!--field name="date_export_xls"/-->
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_active_export_xls"
+                    string="Export XLS" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_summary_export_xls_wizard"
+        name="Export XLS"
+        src_model="myo.summary"
+        res_model="myo.summary.export_xls.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>

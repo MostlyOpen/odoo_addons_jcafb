@@ -13,6 +13,7 @@
                             <field name="summary_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="address_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="event_id" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="event_category_ids" widget="many2many_tags" options="{'no_open': False, 'no_create': True}"/>
                             <field name="event_state"/>
                         </group>
                         <notebook>
@@ -36,6 +37,7 @@
                     <field name="summary_id" invisible="True"/>
                     <field name="address_id" invisible="True"/>
                     <field name="event_id"/>
+                    <field name="event_category_ids"/>
                     <field name="event_state"/>
                 </tree>
             </field>
@@ -50,6 +52,7 @@
                     <field name="summary_id"/>
                     <field name="address_id"/>
                     <field name="event_id"/>
+                    <field name="event_category_ids"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Summary" domain="[]" context="{'group_by':'summary_id'}"/>

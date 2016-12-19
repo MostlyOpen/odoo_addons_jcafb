@@ -19,3 +19,4 @@
 ###############################################################################
 
 import summary_update_wizard
+import summary_export_xls_wizard

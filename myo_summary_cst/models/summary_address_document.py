@@ -28,6 +28,11 @@ class SummaryAddressDocument(models.Model):
     address_id = fields.Many2one('myo.address', string='Address')
     person_id = fields.Many2one('myo.person', string='Person')
     document_id = fields.Many2one('myo.document', string='Document')
+    document_category_ids = fields.Many2many(
+        tring='Document Categories',
+        related='document_id.category_ids',
+        store=False
+    )
     document_state = fields.Selection('Document Status', related='document_id.state', store=False)
     active = fields.Boolean(
         'Active',
