@@ -1,0 +1,41 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_summary_responsible_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_summary_responsible_wizard</field>
+      <field name="model">myo.summary.responsible.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <button type="object" name="do_populate_marked_summaries"
+                        string="Get Marked Summaries"/>
+            </div>
+            <field name="summary_ids" options="{'no_open': False, 'no_create': True}"/>
+            <group>
+                <group>
+                    <field name="new_user_id" options="{'no_open': False, 'no_create': True}"/>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_update_responsible"
+                    string="Update Responsible" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_summary_responsible_wizard"
+        name="Update Responsible"
+        src_model="myo.summary"
+        res_model="myo.summary.responsible.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>

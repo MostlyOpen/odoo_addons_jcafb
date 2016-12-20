@@ -48,6 +48,7 @@
         'views/summary_person_lab_test_request_view.xml',
         'wizard/summary_update_wizard_view.xml',
         'wizard/summary_export_xls_wizard_view.xml',
+        'wizard/summary_responsible_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

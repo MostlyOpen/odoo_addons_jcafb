@@ -36,6 +36,8 @@ class Summary(models.Model):
         related='address_id.category_ids',
         store=False
     )
+    address_category_names = fields.Char('Address Categories', related='address_id.category_ids.name', store=True)
+    address_district = fields.Char('Address District', related='address_id.district', store=True)
     is_person_summary = fields.Boolean(
         'Is Person Summary',
         help="If checked, the Summary is for a Person.",
@@ -48,6 +50,7 @@ class Summary(models.Model):
         related='person_id.category_ids',
         store=False
     )
+    person_category_names = fields.Char('Person Categories', related='person_id.category_ids.name', store=True)
 
     _defaults = {
         'active_log': True,
