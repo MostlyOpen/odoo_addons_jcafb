@@ -32,6 +32,8 @@ class EventPerson(models.Model):
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the event person without removing it.",
                             default=1)
+    event_state = fields.Selection('Event Status', related='event_id.state', store=True)
+    person_state = fields.Selection('Person Status', related='person_id.state', store=True)
 
 
 class Event(models.Model):
