@@ -49,6 +49,7 @@
         'wizard/summary_update_wizard_view.xml',
         'wizard/summary_export_xls_wizard_view.xml',
         'wizard/summary_responsible_wizard_view.xml',
+        'wizard/summary_cancel_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
