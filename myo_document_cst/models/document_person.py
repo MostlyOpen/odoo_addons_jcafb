@@ -32,6 +32,8 @@ class DocumentPerson(models.Model):
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the document person without removing it.",
                             default=1)
+    document_state = fields.Selection('Document Status', related='document_id.state', store=True)
+    person_state = fields.Selection('Person Status', related='person_id.state', store=True)
 
 
 class Document(models.Model):

@@ -13,6 +13,8 @@
                             <field name="document_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="person_id" options="{'no_open': False, 'no_create': True}"/>
                             <field name="role_id" default_focus="1" options="{'no_open': False, 'no_create': True}"/>
+                            <field name="document_state" string="Document Status"/>
+                            <field name="person_state" string="Person Status"/>
                         </group>
                         <label for="notes" class="oe_edit_only"/>
                         <field name="notes" placeholder="Notes..."/>
@@ -38,6 +40,8 @@
                     <field name="person_id"/>
                     <field name="role_id"/>
                     <field name="notes"/>
+                    <field name="document_state" string="Document Status"/>
+                    <field name="person_state" string="Person Status"/>
                 </tree>
             </field>
         </record>
@@ -51,11 +55,15 @@
                     <field name="document_id"/>
                     <field name="person_id"/>
                     <field name="role_id"/>
+                    <field name="document_state"/>
+                    <field name="person_state"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Document" domain="[]" context="{'group_by':'document_id'}"/>
                         <filter string="Person" domain="[]" context="{'group_by':'person_id'}"/>
                         <filter string="Person Role" domain="[]" context="{'group_by':'role_id'}"/>
+                        <filter string="Document Status" context="{'group_by': 'document_state'}"/>
+                        <filter string="Person Status" context="{'group_by': 'person_state'}"/>
                     </group>
                 </search>
             </field>
