@@ -18,29 +18,4 @@
 #
 ###############################################################################
 
-{
-    'name': 'Lab Test (customizations for CLVhealth-JCAFB Solution)',
-    'summary': 'Lab Test Module customizations for CLVhealth-JCAFB Solution.',
-    'version': '2.0.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'depends': [
-        'myo_lab_test',
-    ],
-    'data': [
-        'data/lab_test_seq.xml',
-        'data/lab_test_unit_data.xml',
-        'wizard/lab_test_edit_wizard_view.xml',
-    ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-    'css': [],
-}
+import lab_test_edit_wizard

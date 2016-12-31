@@ -1,0 +1,62 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_person_summary_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_person_summary_wizard</field>
+      <field name="model">myo.lab_test.edit.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_populate_marked_persons"
+                        string="Get Marked Persons"/-->
+            </div>
+            <field name="lab_test_code"/>
+            <field name="lab_test_type_id"/>
+            <field name="patient_id"/>
+            <group>
+                <group attrs="{'invisible':[('is_EAN', '=', False)]}">
+                    <field name="is_EAN" invisible="True"/>
+                    <field name="EAN_peso"/>
+                    <field name="EAN_peso_resp"/>
+                    <field name="EAN_altura"/>
+                    <field name="EAN_altura_resp"/>
+                    <field name="EAN_hemoglobina_coleta_horario"/>
+                    <field name="EAN_hemoglobina_coleta_resp"/>
+                    <field name="EAN_hemoglobina_valor"/>
+                    <field name="EAN_hemoglobina_valor_resp"/>
+                    <field name="EAN_hemoglobina_interpretacao"/>
+                    <field name="EAN_obs"/>
+                </group>
+                <group attrs="{'invisible':[('is_EPC', '=', False)]}">
+                    <field name="is_EPC" invisible="True"/>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_result_update"
+                    string="Update" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <!--act_window id="action_myo_person_summary_wizard"
+        name="Edit Lab Test Result"
+        src_model="myo.lab_test.result"
+        res_model="myo.lab_test.edit.wizard"
+        view_mode="form"
+        key2="client_action_multi"
+        target="new"/-->
+    <act_window id="action_myo_person_summary_wizard"
+        name="Edit Lab Test Result"
+        src_model="myo.lab_test.result"
+        res_model="myo.lab_test.edit.wizard"
+        view_mode="form"
+        target="new"/>
+
+  </data>
+</openerp>
