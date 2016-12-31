@@ -71,6 +71,39 @@ class SummaryResponsibleWizard(models.TransientModel):
 
                     pass
 
+        else:
+
+            for summary_reg in self.summary_ids:
+
+                if summary_reg.is_address_summary and \
+                   summary_reg.user_id is not False:
+
+                    new_user_id = summary_reg.user_id
+
+                    summary_reg.address_id.user_id = new_user_id
+
+                    for address_person_reg in summary_reg.summary_address_person_ids:
+                        if address_person_reg.person_id.state == 'selected':
+                            address_person_reg.person_id.user_id = new_user_id
+
+                    for address_event_reg in summary_reg.summary_address_event_ids:
+                        address_event_reg.event_id.user_id = new_user_id
+
+                    for address_document_reg in summary_reg.summary_address_document_ids:
+                        address_document_reg.document_id.user_id = new_user_id
+
+                    summary_search = summary_model.search([
+                        ('is_person_summary', '=', True),
+                        ('address_id', '=', summary_reg.address_id.id),
+                    ])
+                    for summary_reg_2 in summary_search:
+                        if summary_reg_2.person_id.state == 'selected':
+                            summary_reg_2.user_id = new_user_id
+
+                if summary_reg.is_person_summary:
+
+                    pass
+
             return True
 
         # reopen wizard form on same wizard record
