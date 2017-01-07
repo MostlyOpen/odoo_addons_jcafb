@@ -30,9 +30,13 @@
         'myo_lab_test',
     ],
     'data': [
+        'security/ir.model.access.csv',
         'data/lab_test_seq.xml',
         'data/lab_test_unit_data.xml',
+        'views/lab_test_request_direct_mail_view.xml',
+        'views/lab_test_request_direct_mail_menu_view.xml',
         'wizard/lab_test_edit_wizard_view.xml',
+        'wizard/lab_test_request_direct_mail_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

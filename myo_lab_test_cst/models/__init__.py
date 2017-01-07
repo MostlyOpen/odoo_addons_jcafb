@@ -19,3 +19,4 @@
 ###############################################################################
 
 from . import lab_test_seq
+from . import lab_test_request_direct_mail

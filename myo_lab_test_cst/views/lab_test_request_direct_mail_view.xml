@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_lab_test_request_direct_mail_view_form" model="ir.ui.view">
+            <field name="name">myo.lab_test.request.direct_mail.form</field>
+            <field name="model">myo.lab_test.request.direct_mail</field>
+            <field name="arch" type="xml">
+                <form string="Direct Mail" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h2>
+                                <field name="name" placeholder="Lab Test Code..." readonly="True"/>
+                            </h2>
+                            <label for="lab_test_type" class="oe_edit_only"/>
+                            <h1>
+                                <field name="lab_test_type" default_focus="1" placeholder="Lab Test Type..." readonly="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="person_responsible"/>
+                                <field name="person_name"/>
+                                <field name="person_initials"/>
+                                <field name="person_code"/>
+                                <field name="person_categories"/>
+                                <field name="person_reference_age"/>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_request_direct_mail_view_tree" model="ir.ui.view">
+            <field name="name">myo.lab_test.request.direct_mail.tree</field>
+            <field name="model">myo.lab_test.request.direct_mail</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Direct Mail">
+                    <field name="name"/>
+                    <field name="lab_test_type"/>
+                    <field name="person_responsible"/>
+                    <field name="person_name"/>
+                    <field name="person_initials"/>
+                    <field name="person_code"/>
+                    <field name="person_categories"/>
+                    <field name="person_reference_age"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_request_direct_mail_view_search" model="ir.ui.view">
+            <field name="name">myo.lab_test.request.direct_mail.search</field>
+            <field name="model">myo.lab_test.request.direct_mail</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Direct Mail">
+                    <field name="name"/>
+                    <field name="lab_test_type"/>
+                    <field name="person_responsible"/>
+                    <field name="person_name"/>
+                    <field name="person_initials"/>
+                    <field name="person_code"/>
+                    <field name="person_categories"/>
+                    <field name="person_reference_age"/>
+                    <newline/>
+                    <!--filter name="not_active" string="Not Active" domain="[('active','=',False)]"/-->
+                    <group expand="0" string="Group By...">
+                        <filter string="Lab Test Type" domain="[]" context="{'group_by':'lab_test_type'}"/>
+                        <filter string="Reference Age" domain="[]" context="{'group_by':'person_reference_age'}"/>
+                        <filter string="Person Responsible" domain="[]" context="{'group_by':'person_responsible'}"/>
+                        <filter string="Person" domain="[]" context="{'group_by':'person_name'}"/>
+                        <filter string="Person Category" domain="[]" context="{'group_by':'person_categories'}"/>
+                        <!--filter string="Status" domain="[]" context="{'group_by':'state'}"/-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="myo_lab_test_request_direct_mail_actions" model="ir.actions.act_window">
+            <field name="name">Direct Mail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.lab_test.request.direct_mail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="myo_lab_test_request_direct_mail_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new lab test request direct mail.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

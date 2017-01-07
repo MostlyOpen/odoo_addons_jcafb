@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Health/Health/Lab Test/Requests -->
+            <!-- Health/Health/Lab Test/Requests/Direct Mail -->
+            <menuitem name="Direct Mail" id="menu_health_health_lab_test_requests_direct_mail"
+                parent="myo_lab_test.menu_health_health_lab_test_requests"
+                groups="myo_base.group_person_user"
+                sequence="20"
+                action="myo_lab_test_cst.myo_lab_test_request_direct_mail_actions"/>
+
+    </data>
+</openerp>

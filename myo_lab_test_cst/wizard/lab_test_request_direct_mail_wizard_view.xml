@@ -1,0 +1,45 @@
+<openerp>
+  <data>
+
+    <record id="myo_lab_test_request_direct_mail_wizard_view_form" model="ir.ui.view">
+      <field name="name">myo_lab_test_request_direct_mail_wizard_view_form</field>
+      <field name="model">myo.lab_test.request.direct_mail.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_populate_marked_lab_test_requests"
+                        string="Get Marked"/-->
+                <!--button type="object" name="do_populate_selected_lab_test_requests"
+                        string="Get Selected"/-->
+            </div>
+            <field name="lab_test_request_ids"/>
+            <group>
+                <group>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_delete_all"
+                    string="Delete All"
+                    />
+                <button type="object" name="do_update"
+                    string="Update" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_lab_test_request_direct_mail_wizard"
+        name="Direct Mail"
+        src_model="myo.lab_test.request"
+        res_model="myo.lab_test.request.direct_mail.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>

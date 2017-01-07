@@ -18,5 +18,18 @@
 #
 ###############################################################################
 
-import lab_test_edit_wizard
-import lab_test_request_direct_mail_wizard
+from openerp import fields, models
+
+
+class LabTestRequestDirectMail(models.Model):
+    _name = 'myo.lab_test.request.direct_mail'
+    _log_access = False
+
+    name = fields.Char('Lab Test Code')
+    lab_test_type = fields.Char('Lab Test Type')
+    person_responsible = fields.Char('Person Responsible')
+    person_name = fields.Char('Person Name')
+    person_initials = fields.Char('Person Initials')
+    person_code = fields.Char('Person Code')
+    person_categories = fields.Char('Person Categories')
+    person_reference_age = fields.Char('Person Reference Age')
