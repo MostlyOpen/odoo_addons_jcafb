@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!--data noupdate="1"-->
+	<data noupdate="0">
+	
+		<record id="myo_lab_test_ESA17" model="myo.lab_test.type">
+			<field name="code" eval="&quot;&quot;&quot;ESA17&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia&quot;&quot;&quot;"/>
+
+		<record id="myo_lab_test_criterion_ESA17_exame_swab_anal" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="100"/>
+			<field name="name" eval="&quot;&quot;&quot;Pesquisa de Enterobius vermicularis&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_ESA17_swab_anal_data_entrada_material" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="401"/>
+			<field name="code">ESA-01-01</field>
+			<field name="name" eval="&quot;&quot;&quot;Data de Entrada do Material&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_ESA17_swab_anal_data_liberacao_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="402"/>
+			<field name="code">ESA-01-02</field>
+			<field name="name" eval="&quot;&quot;&quot;Liberação do Resultado&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_dd_mm_aaaa"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_ESA17_swab_anal_resultado" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="403"/>
+			<field name="code">ESA-01-03</field>
+			<field name="name" eval="&quot;&quot;&quot;Resultado&quot;&quot;&quot;"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
+		</record>
+
+		<record id="myo_lab_test_criterion_ESA17_swab_anal_metodo" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="404"/>
+			<field name="code">ESA-01-04</field>
+			<field name="name" eval="&quot;&quot;&quot;Método utilizado&quot;&quot;&quot;"/>
+		</record>
+
+		<record id="myo_lab_test_criterion_ESA17_swab_anal_obs" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_ESA17"/>
+			<field name="sequence" eval="405"/>
+			<field name="code">ESA-01-05</field>
+			<field name="name" eval="&quot;&quot;&quot;Observações&quot;&quot;&quot;"/>
+		</record>		
+	
+	</data>
+</openerp>			

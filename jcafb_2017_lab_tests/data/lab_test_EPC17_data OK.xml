@@ -5,7 +5,7 @@
 	
 		<record id="myo_lab_test_EPC17" model="myo.lab_test.type">
 			<field name="code" eval="&quot;&quot;&quot;EPC17&quot;&quot;&quot;"/>
-			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia (Criança)&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia&quot;&quot;&quot;"/>
 		</record>
 	 
 		<record id="myo_lab_test_criterion_EPC17_exame_coproparasitologico" model="myo.lab_test.criterion">
@@ -122,24 +122,17 @@
 			<field name="normal_range" eval="&quot;&quot;&quot;Negativo&quot;&quot;&quot;"/>
 		</record>
 
-		<record id="myo_lab_test_criterion_EPC17_swab_anal_examinador" model="myo.lab_test.criterion">
+		<record id="myo_lab_test_criterion_EPC17_swab_anal_metodo" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
 			<field name="sequence" eval="404"/>
 			<field name="code">EPC-04-04</field>
-			<field name="name" eval="&quot;&quot;&quot;Examinador&quot;&quot;&quot;"/>
-		</record>
-
-		<record id="myo_lab_test_criterion_EPC17_swab_anal_metodo" model="myo.lab_test.criterion">
-			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
-			<field name="sequence" eval="405"/>
-			<field name="code">EPC-04-05</field>
 			<field name="name" eval="&quot;&quot;&quot;Método utilizado&quot;&quot;&quot;"/>
 		</record>
 
 		<record id="myo_lab_test_criterion_EPC17_swab_anal_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EPC17"/>
-			<field name="sequence" eval="406"/>
-			<field name="code">EPC-04-06</field>
+			<field name="sequence" eval="405"/>
+			<field name="code">EPC-04-05</field>
 			<field name="name" eval="&quot;&quot;&quot;Observações&quot;&quot;&quot;"/>
 		</record>		
 	

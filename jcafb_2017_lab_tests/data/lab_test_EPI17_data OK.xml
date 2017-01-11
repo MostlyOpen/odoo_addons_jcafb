@@ -5,7 +5,7 @@
 	
 		<record id="myo_lab_test_EPI17" model="myo.lab_test.type">
 			<field name="code" eval="&quot;&quot;&quot;EPI17&quot;&quot;&quot;"/>
-			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia (Idoso)&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;JCAFB 2017 - Laboratório - Parasitologia&quot;&quot;&quot;"/>
 		</record>
 	 
 		<record id="myo_lab_test_criterion_EPI17_exame_coproparasitologico" model="myo.lab_test.criterion">
