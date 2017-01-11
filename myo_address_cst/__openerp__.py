@@ -36,6 +36,7 @@
         'wizard/address_responsible_wizard_view.xml',
         'wizard/address_event_wizard_view.xml',
         'wizard/address_summary_wizard_view.xml',
+        'wizard/address_update_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
