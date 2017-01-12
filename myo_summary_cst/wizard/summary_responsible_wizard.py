@@ -71,6 +71,8 @@ class SummaryResponsibleWizard(models.TransientModel):
 
                     pass
 
+            return True
+
         else:
 
             for summary_reg in self.summary_ids:
