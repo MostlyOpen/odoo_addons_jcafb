@@ -134,7 +134,7 @@ class PersonUpdateWizard(models.TransientModel):
                 ('address_id', '=', address_id),
             ])
             if summary_search.id is False:
-                print '>>>>>>>>>>', summary_search.name
+                # print '>>>>>>>>>>', summary_search.name
                 values = {
                     'name': name,
                     'user_id': user_id,
@@ -146,16 +146,17 @@ class PersonUpdateWizard(models.TransientModel):
                 summary_model.create(values)
 
             else:
-                print '>>>>>>>>>>', summary_search.name
+                # print '>>>>>>>>>>', summary_search.name
+                pass
 
             if person_reg.is_patient is True:
-                print '>>>>>>>>>>>>>>>', person_reg.is_patient
+                # print '>>>>>>>>>>>>>>>', person_reg.is_patient
 
                 survey_ids = []
                 lab_test_type_ids = []
 
                 if person_category_id_Crianca == person_reg.category_ids.id:
-                    print '>>>>>>>>>>>>>>>', 'Criança'
+                    # print '>>>>>>>>>>>>>>>', 'Criança'
 
                     document_person_search = document_person_model.search([
                         ('person_id', '=', person_reg.id),
@@ -164,7 +165,7 @@ class PersonUpdateWizard(models.TransientModel):
 
                         survey_ids += [document_person_reg.document_id.survey_id.id]
 
-                        print '>>>>>>>>>>>>>>>>>>>>', document_person_reg.document_id.survey_id.title
+                        # print '>>>>>>>>>>>>>>>>>>>>', document_person_reg.document_id.survey_id.title
 
                     if survey_id_TCR17 not in survey_ids:
 
@@ -263,7 +264,7 @@ class PersonUpdateWizard(models.TransientModel):
 
                         lab_test_type_ids += [lab_test_request_reg.lab_test_type_id.id]
 
-                        print '>>>>>>>>>>>>>>>>>>>>', lab_test_request_reg.lab_test_type_id.name
+                        # print '>>>>>>>>>>>>>>>>>>>>', lab_test_request_reg.lab_test_type_id.name
 
                     if lab_test_type_id_EAN17 not in lab_test_type_ids:
 
@@ -282,7 +283,7 @@ class PersonUpdateWizard(models.TransientModel):
                         lab_test_request_model.create(values)
 
                 if person_category_id_Idoso == person_reg.category_ids.id:
-                    print '>>>>>>>>>>>>>>>', 'Idoso'
+                    # print '>>>>>>>>>>>>>>>', 'Idoso'
 
                     document_person_search = document_person_model.search([
                         ('person_id', '=', person_reg.id),
@@ -291,7 +292,7 @@ class PersonUpdateWizard(models.TransientModel):
 
                         survey_ids += [document_person_reg.document_id.survey_id.id]
 
-                        print '>>>>>>>>>>>>>>>>>>>>', document_person_reg.document_id.survey_id.title
+                        # print '>>>>>>>>>>>>>>>>>>>>', document_person_reg.document_id.survey_id.title
 
                     if survey_id_TID17 not in survey_ids:
 
@@ -480,7 +481,7 @@ class PersonUpdateWizard(models.TransientModel):
 
                         lab_test_type_ids += [lab_test_request_reg.lab_test_type_id.id]
 
-                        print '>>>>>>>>>>>>>>>>>>>>', lab_test_request_reg.lab_test_type_id.name
+                        # print '>>>>>>>>>>>>>>>>>>>>', lab_test_request_reg.lab_test_type_id.name
 
                     if lab_test_type_id_EAN17 not in lab_test_type_ids:
 
@@ -514,11 +515,12 @@ class PersonUpdateWizard(models.TransientModel):
                         }
                         lab_test_request_model.create(values)
 
-                print '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', survey_ids
-                print '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', lab_test_type_ids
+                # print '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', survey_ids
+                # print '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', lab_test_type_ids
 
             else:
-                print '>>>>>>>>>>>>>>>', person_reg.is_patient
+                # print '>>>>>>>>>>>>>>>', person_reg.is_patient
+                pass
 
         return True
 
