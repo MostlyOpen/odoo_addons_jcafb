@@ -28,8 +28,34 @@
                     <field name="EAN_hemoglobina_interpretacao"/>
                     <field name="EAN_obs"/>
                 </group>
-                <group attrs="{'invisible':[('is_EPC', '=', False)]}">
-                    <field name="is_EPC" invisible="True"/>
+                <group attrs="{'invisible':[('is_EDH', '=', False)]}">
+                    <field name="is_EDH" invisible="True"/>
+                    <field name="EDH_tempo_jejum"/>
+                </group>
+                <group attrs="{'invisible':[('is_ECP', '=', False)]}">
+                    <field name="is_ECP" invisible="True"/>
+                    <field name="ECP_data_entrada_material"/>
+                    <field name="ECP_liberacao_resultado"/>
+                    <field name="ECP_resultado"/>
+                    <field name="ECP_obs"/>
+                    <field name="ECP_metodo_utilizado"/>
+                    <field name="ECP_ritchie_resultado"/>
+                </group>
+                <group attrs="{'invisible':[('is_EEV', '=', False)]}">
+                    <field name="is_EEV" invisible="True"/>
+                    <field name="EEV_data_entrada_material"/>
+                    <field name="EEV_liberacao_resultado"/>
+                    <field name="EEV_resultado"/>
+                    <field name="EEV_examinador"/>
+                    <field name="EEV_metodo_utilizado"/>
+                    <field name="EEV_obs"/>
+                </group>
+                <group attrs="{'invisible':[('is_EUR', '=', False)]}">
+                    <field name="is_EUR" invisible="True"/>
+                    <field name="EUR_data_entrada_material"/>
+                    <field name="EUR_liberacao_resultado"/>
+                    <field name="EUR_examinador"/>
+                    <field name="EUR_volume"/>
                 </group>
             </group>
             <footer>
