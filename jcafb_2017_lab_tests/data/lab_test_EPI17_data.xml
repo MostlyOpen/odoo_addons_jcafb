@@ -49,7 +49,7 @@
 			<field name="lab_test_type_id" ref="myo_lab_test_EPI17"/>
 			<field name="sequence" eval="105"/>
 			<field name="code">EPI-01-05</field>
-			<field name="name" eval="&quot;&quot;&quot;Medtodologia(s) Empregada(s)&quot;&quot;&quot;"/>
+			<field name="name" eval="&quot;&quot;&quot;Metodologia(s) Empregada(s)&quot;&quot;&quot;"/>
 		</record>
 	
 		<record id="myo_lab_test_criterion_EPI17_coprop_ritchie" model="myo.lab_test.criterion">
