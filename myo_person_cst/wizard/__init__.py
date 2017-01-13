@@ -24,3 +24,6 @@ import person_direct_mail_wizard
 import person_export_wizard
 import person_summary_wizard
 import person_update_wizard
+import person_update_dhc_wizard
+import person_export_xls_wizard
+import person_export_xls_dhc_wizard
