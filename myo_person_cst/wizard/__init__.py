@@ -27,3 +27,4 @@ import person_update_wizard
 import person_update_dhc_wizard
 import person_export_xls_wizard
 import person_export_xls_dhc_wizard
+import person_export_xls_anemia_wizard

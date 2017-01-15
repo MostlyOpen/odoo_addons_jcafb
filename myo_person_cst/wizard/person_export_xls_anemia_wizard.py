@@ -26,8 +26,8 @@ import xlwt
 _logger = logging.getLogger(__name__)
 
 
-class PersonExportXlsDhcWizard(models.TransientModel):
-    _name = 'myo.person.export_xls_dhc.wizard'
+class PersonExportXlsAnemiaWizard(models.TransientModel):
+    _name = 'myo.person.export_xls_anemia.wizard'
 
     def _default_person_ids(self):
         return self._context.get('active_ids')
@@ -37,27 +37,27 @@ class PersonExportXlsDhcWizard(models.TransientModel):
         default=_default_person_ids)
 
     @api.multi
-    def do_active_export_xls_dhc(self):
+    def do_active_export_xls_anemia(self):
         self.ensure_one()
 
         survey_model = self.env['survey.survey']
-        # survey_id_QAN17 = survey_model.search([
-        #     ('code', '=', 'QAN17'),
+        survey_id_QAN17 = survey_model.search([
+            ('code', '=', 'QAN17'),
+        ]).id
+        # survey_id_QDH17 = survey_model.search([
+        #     ('code', '=', 'QDH17'),
         # ]).id
-        survey_id_QDH17 = survey_model.search([
-            ('code', '=', 'QDH17'),
-        ]).id
-        survey_id_TCP17 = survey_model.search([
-            ('code', '=', 'TCP17'),
-        ]).id
+        # survey_id_TCP17 = survey_model.search([
+        #     ('code', '=', 'TCP17'),
+        # ]).id
 
         lab_test_type_model = self.env['myo.lab_test.type']
-        # lab_test_type_id_EAN17 = lab_test_type_model.search([
-        #     ('code', '=', 'EAN17'),
-        # ]).id
-        lab_test_type_id_EDH17 = lab_test_type_model.search([
-            ('code', '=', 'EDH17'),
+        lab_test_type_id_EAN17 = lab_test_type_model.search([
+            ('code', '=', 'EAN17'),
         ]).id
+        # lab_test_type_id_EDH17 = lab_test_type_model.search([
+        #     ('code', '=', 'EDH17'),
+        # ]).id
 
         for person_reg in self.person_ids:
 
@@ -65,7 +65,7 @@ class PersonExportXlsDhcWizard(models.TransientModel):
             #     '/opt/openerp/mostlyopen_clvhealth_jcafb/export/Person_DHC_' + \
             #     person_reg.code + '_' + person_reg.name + '.xls'
             xls_filename = \
-                '/opt/openerp/mostlyopen_clvhealth_jcafb/export/Person_DHC_' + \
+                '/opt/openerp/mostlyopen_clvhealth_jcafb/export/Person_Anemia_' + \
                 person_reg.code + '.xls'
 
             book = xlwt.Workbook()
@@ -134,7 +134,6 @@ class PersonExportXlsDhcWizard(models.TransientModel):
             row.write(0, 'Address Status:')
             row.write(3, person_reg.address_id.state)
             row_nr += 1
-            row_nr += 1
 
             # row_nr += 1
             # row = sheet.row(row_nr)
@@ -160,8 +159,7 @@ class PersonExportXlsDhcWizard(models.TransientModel):
 
             for document_person in person_reg.document_person_ids:
 
-                if document_person.document_id.survey_id.id == survey_id_TCP17 or \
-                   document_person.document_id.survey_id.id == survey_id_QDH17:
+                if document_person.document_id.survey_id.id == survey_id_QAN17:
                     row = sheet.row(row_nr)
                     row.write(0, document_person.document_id.name)
                     row.write(2, document_person.document_id.code)
@@ -176,7 +174,7 @@ class PersonExportXlsDhcWizard(models.TransientModel):
 
             for lab_test_request in person_reg.lab_test_request_ids:
 
-                if lab_test_request.lab_test_type_id.id == lab_test_type_id_EDH17:
+                if lab_test_request.lab_test_type_id.id == lab_test_type_id_EAN17:
                     row = sheet.row(row_nr)
                     row.write(0, lab_test_request.lab_test_type_id.name)
                     row.write(5, lab_test_request.name)
