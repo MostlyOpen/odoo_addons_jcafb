@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_survey_file_view_form" model="ir.ui.view">
+            <field name="name">myo.survey.file.form</field>
+            <field name="model">myo.survey.file</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Survey Files" version="7.0">
+                    <sheet name="survey_file" string="Survey File">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Survey File Name..."/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="survey_title" class="oe_edit_only"/-->
+                            <label for="survey_title"/>
+                            <h3>
+                                <field name="survey_title" placeholder="Survey Title..."/>
+                            </h3>
+                            <!--label for="document_code" class="oe_edit_only"/-->
+                            <label for="document_code"/>
+                            <h3>
+                                <field name="document_code" placeholder="Document Code..."/>
+                            </h3>
+                            <!--label for="survey_id" class="oe_edit_only"/-->
+                            <label for="survey_id"/>
+                            <h3>
+                                <field name="survey_id" placeholder="Survey Type..."/>
+                            </h3>
+                            <!--label for="survey_user_input_id" class="oe_edit_only"/-->
+                            <label for="survey_user_input_id"/>
+                            <h3>
+                                <field name="survey_user_input_id" placeholder="Survey User Input..."/>
+                            </h3>
+                            <!--label for="user_id" class="oe_edit_only"/-->
+                            <label for="user_id"/>
+                            <h3>
+                                <field name="user_id" placeholder="Survey Responsible..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <group name="group_title">
+                                <group name="group_title_left">
+                                    <field name="date_survey_file"/>
+                                </group>
+                                <group name="group_title_right">
+                                </group>
+                            </group>
+                            <group name="group_title_bottom">
+                            </group>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group name="group_top">
+                            <group name="group_top_left">
+                            </group>
+                            <group name="group_top_right">
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                        </group>
+                        <notebook>
+                            <page string="Notes">
+                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                            </page>
+                            <page name="settings" string="Settings" groups="myo_base.group_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_survey_file_view_tree" model="ir.ui.view">
+            <field name="name">myo.survey.file.tree</field>
+            <field name="model">myo.survey.file</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree name="suvey_files" string="Survey Files">
+                    <field name="name"/>
+                    <field name="survey_title"/>
+                    <field name="document_code"/>
+                    <field name="survey_id"/>
+                    <field name="survey_user_input_id"/>
+                    <field name="date_survey_file"/>
+                    <field name="user_id"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_survey_file_view_search" model="ir.ui.view">
+            <field name="name">myo.survey.file.search</field>
+            <field name="model">myo.survey.file</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Survey">
+                    <field name="name"/>
+                    <field name="survey_title"/>
+                    <field name="document_code"/>
+                    <field name="survey_id"/>
+                    <field name="survey_user_input_id"/>
+                    <field name="date_survey_file"/>
+                    <field name="user_id"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group name="group_by" string="Group By...">
+                        <filter string="Survey Responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Survey Title" domain="[]" context="{'group_by':'survey_title'}"/>
+                        <filter string="Survey Type" domain="[]" context="{'group_by':'survey_id'}"/>
+                        <filter string="Survey Import Date" domain="[]" context="{'group_by': 'date_survey_file'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="myo_survey_file_view_graph" model="ir.ui.view">
+            <field name="name">myo.survey.file.graph</field>
+            <field name="model">myo.survey.file</field>
+            <field name="arch" type="xml">
+                <graph type="pivot">
+                    <!--field name="date_survey_file" interval="week"/-->
+                    <field name="user_id"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="myo_survey_file_action" model="ir.actions.act_window">
+            <field name="name">Survey Files</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.survey.file</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="search_view_id" ref="myo_survey_file_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new summary.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

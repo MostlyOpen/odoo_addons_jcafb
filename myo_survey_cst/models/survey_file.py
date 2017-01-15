@@ -1,0 +1,65 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+#
+# Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+###############################################################################
+
+# from datetime import datetime
+
+from openerp import api, fields, models
+
+
+class Summary(models.Model):
+    _name = "myo.survey.file"
+
+    # @api.multi
+    # @api.depends('name', 'code')
+    # def name_get(self):
+    #     result = []
+    #     for record in self:
+    #         result.append(
+    #             (record.id,
+    #              u'%s [%s]' % (record.name, record.code)
+    #              ))
+    #     return result
+
+    name = fields.Char('File Name', required=True, help="File Name")
+    survey_title = fields.Char('Survey Title', help="Survey Title")
+    survey_id = fields.Many2one('survey.survey', 'Survey Type', help="Survey Type")
+    survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+    document_code = fields.Char('Document Code', help="Document Code")
+    user_id = fields.Many2one('res.users', 'Survey Responsible', required=False, readonly=False)
+    date_survey_file = fields.Datetime(
+        'Survey File Date',
+        # default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    )
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean(
+        'Active',
+        help="If unchecked, it will allow you to hide the survey file without removing it.",
+        default=1
+    )
+
+    _sql_constraints = [
+        (
+            'name_uniq',
+            'UNIQUE (name)',
+            'Error! The File Name must be unique!'
+        ),
+    ]
+
+    _order = 'name'

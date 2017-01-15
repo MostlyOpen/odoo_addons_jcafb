@@ -1,0 +1,41 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_survey_file_refresh_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_survey_file_refresh_wizard</field>
+      <field name="model">myo.survey.file.refresh.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_populate_marked_persons"
+                        string="Get Marked Persons"/-->
+            </div>
+            <!--field name="dir_path"/-->
+            <group>
+                <group>
+                    <field name="dir_path"/>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_survey_file_refresh"
+                    string="Refresh" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_survey_file_refresh_wizard"
+        name="Survey File Refresh"
+        src_model="myo.survey.file"
+        res_model="myo.survey.file.refresh.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>

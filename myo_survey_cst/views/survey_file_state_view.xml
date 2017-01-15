@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_survey_file_view_form_state" model="ir.ui.view">
+            <field name="name">myo.survey.file.form</field>
+            <field name="model">myo.survey.file</field>
+            <field name="inherit_id" ref="myo_survey_cst.myo_survey_file_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <sheet name="survey_file" position="before">
+                    <header>
+                        <!--field name="state" widget="statusbar"
+                               clickable="True"
+                               statusbar_visible="draft,revised,validated,imported,canceled"/-->
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,revised,validated,imported,canceled"/>
+                    </header>
+                </sheet>
+                <div name="button_box" position="inside">
+                    <header>
+                        <!--button name="action_draft" type="object"
+                                string="Draft"
+                                states="canceled"
+                                groups="myo_base.group_document_manager"/>
+                        <button name="action_revise" type="object"
+                                string="Revise"
+                                states="draft,validate,imported"
+                                groups="myo_base.group_document_manager"/>
+                        <button name="action_validated" type="object"
+                                string="Validate"
+                                states="revised"
+                                groups="myo_base.group_document_manager"/>
+                        <button name="action_import" type="object"
+                                string="Import"
+                                states="revised,validated"
+                                groups="myo_base.group_document_manager"/>
+                        <button name="action_cancel" type="object"
+                                string="Cancel"
+                                states="draft,revised"
+                                groups="myo_base.group_document_manager"/-->
+                    </header>
+                </div>
+            </field>
+        </record>
+
+        <record id="myo_survey_file_view_tree_state" model="ir.ui.view">
+            <field name="name">myo.survey.file.tree</field>
+            <field name="model">myo.survey.file</field>
+            <field name="inherit_id" ref="myo_survey_cst.myo_survey_file_view_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="document_code" position="after">
+                    <field name="state"/>
+                </field>
+                <tree name="suvey_files" position="attributes">
+                    <attribute name="colors">gray:state=='draft';green:state=='validated';blue:state in('imported');red:state=='canceled'</attribute>
+                    <attribute name="fonts">italic:state in ('draft','canceled');bold:state=='imported'</attribute>
+                </tree>
+            </field>
+        </record>
+
+        <record id="myo_survey_file_view_search_state" model="ir.ui.view">
+            <field name="name">myo.survey.file.search</field>
+            <field name="model">myo.survey.file</field>
+            <field name="inherit_id" ref="myo_survey_cst.myo_survey_file_view_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="document_code" position="after">
+                    <field name="state"/>
+                </field>
+                <group name="group_by" position="inside">
+                    <filter string="Status" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="myo_survey_file_view_graph" model="ir.ui.view">
+            <field name="name">myo.survey.file.graph</field>
+            <field name="model">myo.survey.file</field>
+            <field name="arch" type="xml">
+                <graph type="pivot">
+                    <!--field name="date_document" interval="week"/-->
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </graph>
+            </field>
+        </record>
+
+    </data>
+</openerp>

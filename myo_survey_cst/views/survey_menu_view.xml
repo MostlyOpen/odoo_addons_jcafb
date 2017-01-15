@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Base/Base/Survey -->
+        <menuitem name="Survey" id="menu_base_base_survey"
+            parent="myo_base.menu_base_base"
+            groups="myo_base.group_survey_user"
+            sequence="90"/>
+            <!-- Base/Base/Survey/Files -->
+            <menuitem name="Files" id="menu_base_base_survey_file"
+                parent="menu_base_base_survey"
+                groups="myo_base.group_survey_user"
+                sequence="10"
+                action="myo_survey_cst.myo_survey_file_action"/>
+
+    </data>
+</openerp>
