@@ -18,5 +18,5 @@
 #
 ###############################################################################
 
-import survey_file
-import survey_file_state
+from . import survey_file
+from . import survey_file_state
