@@ -20,7 +20,7 @@
 
 # from datetime import datetime
 
-from openerp import api, fields, models
+from openerp import fields, models
 
 
 class Summary(models.Model):
@@ -40,9 +40,22 @@ class Summary(models.Model):
     name = fields.Char('File Name', required=True, help="File Name")
     survey_title = fields.Char('Survey Title', help="Survey Title")
     survey_id = fields.Many2one('survey.survey', 'Survey Type', help="Survey Type")
+    survey_description = fields.Html(
+        'Survey Type Description',
+        related='survey_id.description',
+        store=False,
+        readonly=True
+    )
     survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
     document_code = fields.Char('Document Code', help="Document Code")
-    user_id = fields.Many2one('res.users', 'Survey Responsible', required=False, readonly=False)
+    document_id = fields.Many2one('myo.document', 'Related Document', help="Related Document")
+    document_state = fields.Selection(
+        'Document Status',
+        related='document_id.state',
+        store=False,
+        readonly=True
+    )
+    user_id = fields.Many2one('res.users', 'Document Responsible', required=False, readonly=False)
     date_survey_file = fields.Datetime(
         'Survey File Date',
         # default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S')

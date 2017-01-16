@@ -27,7 +27,7 @@ class SurveyFile(models.Model):
 
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('revised', 'Revised'),
+        ('checked', 'Checked'),
         ('validated', 'Validated'),
         ('imported', 'Imported'),
         ('canceled', 'Canceled')
@@ -37,14 +37,14 @@ class SurveyFile(models.Model):
     def is_allowed_transition(self, old_state, new_state):
         # allowed = [
         #     ('canceled', 'draft'),
-        #     ('draft', 'revised'),
-        #     ('validated', 'revised'),
-        #     ('imported', 'revised'),
-        #     ('revised', 'validated'),
-        #     ('revised', 'imported'),
+        #     ('draft', 'checked'),
+        #     ('validated', 'checked'),
+        #     ('imported', 'checked'),
+        #     ('checked', 'validated'),
+        #     ('checked', 'imported'),
         #     ('validated', 'imported'),
         #     ('draft', 'canceled'),
-        #     ('revised', 'canceled')]
+        #     ('checked', 'canceled')]
         # return (old_state, new_state) in allowed
         return True
 
@@ -62,9 +62,9 @@ class SurveyFile(models.Model):
             document.change_state('draft')
 
     @api.multi
-    def action_revise(self):
+    def action_check(self):
         for document in self:
-            document.change_state('revised')
+            document.change_state('checked')
 
     @api.multi
     def action_validate(self):

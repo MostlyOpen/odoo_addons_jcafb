@@ -34,15 +34,30 @@
                             <h3>
                                 <field name="survey_id" placeholder="Survey Type..."/>
                             </h3>
+                            <!--label for="survey_description" class="oe_edit_only"/-->
+                            <label for="survey_description"/>
+                            <h3>
+                                <field name="survey_description" placeholder="Survey Type Description..."/>
+                            </h3>
                             <!--label for="survey_user_input_id" class="oe_edit_only"/-->
                             <label for="survey_user_input_id"/>
                             <h3>
                                 <field name="survey_user_input_id" placeholder="Survey User Input..."/>
                             </h3>
+                            <!--label for="document_id" class="oe_edit_only"/-->
+                            <label for="document_id"/>
+                            <h3>
+                                <field name="document_id" placeholder="Related Document..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <!--label for="document_state" class="oe_edit_only"/-->
+                            <label for="document_state" string="Document Status"/>
+                            <h3>
+                                <field name="document_state" placeholder="Document Status..."/>
+                            </h3>
                             <!--label for="user_id" class="oe_edit_only"/-->
                             <label for="user_id"/>
                             <h3>
-                                <field name="user_id" placeholder="Survey Responsible..." options="{'no_open': False, 'no_create': True}"/>
+                                <field name="user_id" placeholder="Document Responsible..." options="{'no_open': False, 'no_create': True}"/>
                             </h3>
                             <group name="group_title">
                                 <group name="group_title_left">
@@ -90,6 +105,9 @@
                     <field name="survey_title"/>
                     <field name="document_code"/>
                     <field name="survey_id"/>
+                    <field name="document_id"/>
+                    <field name="document_state" string="Document Status"/>
+                    <!--field name="survey_description"/-->
                     <field name="survey_user_input_id"/>
                     <field name="date_survey_file"/>
                     <field name="user_id"/>
@@ -114,10 +132,10 @@
                     <field name="notes"/>
                     <separator/>
                     <group name="group_by" string="Group By...">
-                        <filter string="Survey Responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Document Responsible" domain="[]" context="{'group_by':'user_id'}"/>
                         <filter string="Survey Title" domain="[]" context="{'group_by':'survey_title'}"/>
                         <filter string="Survey Type" domain="[]" context="{'group_by':'survey_id'}"/>
-                        <filter string="Survey Import Date" domain="[]" context="{'group_by': 'date_survey_file'}"/>
+                        <!--filter string="Survey Import Date" domain="[]" context="{'group_by': 'date_survey_file'}"/-->
                     </group>
                 </search>
             </field>
