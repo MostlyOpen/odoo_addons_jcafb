@@ -54,15 +54,17 @@ class SummaryUpdateyWizard(models.TransientModel):
 
                 for address_person in summary_reg.address_id.person_address_ids:
 
-                    values = {
-                        'summary_id': summary_reg.id,
-                        'address_id': summary_reg.address_id.id,
-                        'person_id': address_person.person_id.id,
-                        'role_id': address_person.role_id.id,
-                        'sign_in_date': address_person.sign_in_date,
-                        'sign_out_date': address_person.sign_out_date,
-                    }
-                    summary_address_person_model.create(values)
+                    if address_person.sign_out_date is False:
+
+                        values = {
+                            'summary_id': summary_reg.id,
+                            'address_id': summary_reg.address_id.id,
+                            'person_id': address_person.person_id.id,
+                            'role_id': address_person.role_id.id,
+                            'sign_in_date': address_person.sign_in_date,
+                            'sign_out_date': address_person.sign_out_date,
+                        }
+                        summary_address_person_model.create(values)
 
                 summary_address_event_search = summary_address_event_model.search([
                     ('summary_id', '=', summary_reg.id),
