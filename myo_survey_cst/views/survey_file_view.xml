@@ -29,6 +29,16 @@
                             <h3>
                                 <field name="document_code" placeholder="Document Code..."/>
                             </h3>
+                            <!--label for="person_code" class="oe_edit_only"/-->
+                            <label for="person_code"/>
+                            <h3>
+                                <field name="person_code" placeholder="Person Code..."/>
+                            </h3>
+                            <!--label for="address_code" class="oe_edit_only"/-->
+                            <label for="address_code"/>
+                            <h3>
+                                <field name="address_code" placeholder="Address Code..."/>
+                            </h3>
                             <!--label for="survey_id" class="oe_edit_only"/-->
                             <label for="survey_id"/>
                             <h3>
@@ -53,6 +63,16 @@
                             <label for="document_state" string="Document Status"/>
                             <h3>
                                 <field name="document_state" placeholder="Document Status..."/>
+                            </h3>
+                            <!--label for="person_id" class="oe_edit_only"/-->
+                            <label for="person_id"/>
+                            <h3>
+                                <field name="person_id" placeholder="Related Person..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <!--label for="address_id" class="oe_edit_only"/-->
+                            <label for="address_id"/>
+                            <h3>
+                                <field name="address_id" placeholder="Related Address..." options="{'no_open': False, 'no_create': True}"/>
                             </h3>
                             <!--label for="user_id" class="oe_edit_only"/-->
                             <label for="user_id"/>
@@ -104,10 +124,14 @@
                     <field name="name"/>
                     <field name="survey_title"/>
                     <field name="document_code"/>
+                    <field name="person_code"/>
+                    <field name="address_code"/>
                     <field name="survey_id"/>
                     <field name="document_id"/>
                     <field name="document_state" string="Document Status"/>
                     <!--field name="survey_description"/-->
+                    <field name="person_id"/>
+                    <field name="address_id"/>
                     <field name="survey_user_input_id"/>
                     <field name="date_survey_file"/>
                     <field name="user_id"/>
@@ -125,6 +149,8 @@
                     <field name="name"/>
                     <field name="survey_title"/>
                     <field name="document_code"/>
+                    <field name="person_code"/>
+                    <field name="address_code"/>
                     <field name="survey_id"/>
                     <field name="survey_user_input_id"/>
                     <field name="date_survey_file"/>
@@ -135,6 +161,8 @@
                         <filter string="Document Responsible" domain="[]" context="{'group_by':'user_id'}"/>
                         <filter string="Survey Title" domain="[]" context="{'group_by':'survey_title'}"/>
                         <filter string="Survey Type" domain="[]" context="{'group_by':'survey_id'}"/>
+                        <filter string="Person" domain="[]" context="{'group_by':'person_id'}"/>
+                        <filter string="Address" domain="[]" context="{'group_by':'address_id'}"/>
                         <!--filter string="Survey Import Date" domain="[]" context="{'group_by': 'date_survey_file'}"/-->
                     </group>
                 </search>

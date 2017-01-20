@@ -68,6 +68,8 @@ class SurveyFileRefreshWizard(models.TransientModel):
         # survey_question = self.env['survey.question']
         # survey_label = self.env['survey.label']
         document_model = self.env['myo.document']
+        person_model = self.env['myo.person']
+        address_model = self.env['myo.address']
 
         listdir = os.listdir(self.dir_path)
         for file in listdir:
@@ -98,14 +100,17 @@ class SurveyFileRefreshWizard(models.TransientModel):
                     survey_file.survey_title = survey_title
 
             if survey_file.state != 'imported':
+
                 document_code = False
+                person_code = 'n/a'
+                address_code = 'n/a'
 
                 survey_file.notes = False
                 survey_file.survey_id = False
                 survey_file.document_code = False
 
                 if survey_file.survey_title.replace('[', '').replace(']', '') != file[:5]:
-                    survey_file.notes = 'Erro: Nome do arquivo inválido!'
+                    survey_file.notes = 'Erro: Nome do arquivo invalido!'
                 else:
                     survey_file.notes = False
 
@@ -149,37 +154,118 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                        survey_title == '[TID17]' and code_row == '[TID17_01_01]':
                                         document_code = value
 
+                                    if survey_title == '[QAN17]' and code_row == '[QAN17_02_02]' or \
+                                       survey_title == '[QDH17]' and code_row == '[QDH17_02_02]' or \
+                                       survey_title == '[QMD17]' and code_row == '[QMD17_02_02]' or \
+                                       survey_title == '[QSC17]' and code_row == '[QSC17_02_02]' or \
+                                       survey_title == '[QSI17]' and code_row == '[QSI17_02_02]' or \
+                                       survey_title == '[TCP17]' and code_row == '[TCP17_02_02]' or \
+                                       survey_title == '[TCR17]' and code_row == '[TCR17_02_02]' or \
+                                       survey_title == '[TID17]' and code_row == '[TID17_02_02]':
+                                        person_code = value
+
+                                    if survey_title == '[QAN17]' and code_row == '[QAN17_02_05]' or \
+                                       survey_title == '[QDH17]' and code_row == '[QDH17_02_05]' or \
+                                       survey_title == '[QMD17]' and code_row == '[QMD17_02_05]' or \
+                                       survey_title == '[QSC17]' and code_row == '[QSC17_02_05]' or \
+                                       survey_title == '[QSF17]' and code_row == '[QSF17_02_02]' or \
+                                       survey_title == '[QSI17]' and code_row == '[QSI17_02_05]':
+                                        address_code = value
+
                 survey_file.document_code = document_code
                 if survey_file.document_code is False:
                     if survey_file.notes is False:
-                        survey_file.notes = 'Erro: Código do Documento inválido!'
+                        survey_file.notes = 'Erro: Codigo do Documento invalido!'
                     else:
-                        survey_file.notes += '\nErro: Código do Documento inválido!'
+                        survey_file.notes += '\nErro: Codigo do Documento invalido!'
                 else:
                     if survey_file.document_code != file[6:16]:
                         if survey_file.notes is False:
-                            survey_file.notes = 'Erro: Nome do arquivo inválido!'
+                            survey_file.notes = 'Erro: Nome do arquivo invalido!'
                         else:
-                            survey_file.notes += '\nErro: Nome do arquivo inválido!'
+                            survey_file.notes += '\nErro: Nome do arquivo invalido!'
 
                     document_search = document_model.search([
                         ('code', '=', survey_file.document_code),
                     ])
                     if document_search.id is False:
                         if survey_file.notes is False:
-                            survey_file.notes = 'Erro: Código do Documento inválido!'
+                            survey_file.notes = 'Erro: Codigo do Documento invalido!'
                         else:
                             survey_file.notes += '\nErro: Codigo do Documento invalido!'
                     else:
                         survey_file.document_id = document_search.id
                         survey_file.user_id = document_search.user_id.id
 
-                        if survey_file.notes is False:
-                            survey_file.document_id.state = 'waiting'
+                survey_file.person_code = person_code
+                if survey_file.person_code == 'n/a' and \
+                   survey_title != '[QSF17]':
+                    if survey_file.notes is False:
+                        survey_file.notes = 'Erro: Codigo da Pessoa invalido!'
+                    else:
+                        survey_file.notes += '\nErro: Codigo da Pessoa invalido!'
+                else:
+                    if survey_title != '[QSF17]':
+                        person_search = person_model.search([
+                            ('code', '=', survey_file.person_code),
+                        ])
+                        if person_search.id is False:
+                            if survey_file.notes is False:
+                                survey_file.notes = 'Erro: Codigo da Pessoa invalido!'
+                            else:
+                                survey_file.notes += '\nErro: Codigo da Pessoa invalido!'
+                        else:
+                            survey_file.person_id = person_search.id
+                            survey_file.user_id = person_search.user_id.id
+                            if person_search.id != survey_file.document_id.person_ids.person_id.id:
+                                if survey_file.notes is False:
+                                    survey_file.notes = \
+                                        'Erro: Codigo da Pessoa inconsistente com o Documento!'
+                                else:
+                                    survey_file.notes += \
+                                        '\nErro: Codigo da Pessoa inconsistente com o Documento!'
+
+                survey_file.address_code = address_code
+                if survey_file.address_code == 'n/a' and \
+                   survey_title != '[TCP17]' and \
+                   survey_title != '[TCR17]' and \
+                   survey_title != '[TID17]' and \
+                   survey_title != '[QAN17]' and \
+                   survey_title != '[QDH17]':
+                    if survey_file.notes is False:
+                        survey_file.notes = 'Erro: Codigo do Endereco invalido!'
+                    else:
+                        survey_file.notes += '\nErro: Codigo do Endereco invalido!'
+                else:
+                    if survey_title != '[TCP17]' and \
+                       survey_title != '[TCR17]' and \
+                       survey_title != '[TID17]' and \
+                       survey_title != '[QAN17]' and \
+                       survey_title != '[QDH17]':
+                        address_search = address_model.search([
+                            ('code', '=', survey_file.address_code),
+                        ])
+                        if address_search.id is False:
+                            if survey_file.notes is False:
+                                survey_file.notes = 'Erro: Codigo do Endereco invalido!'
+                            else:
+                                survey_file.notes += '\nErro: Codigo do Endereco invalido!'
+                        else:
+                            survey_file.address_id = address_search.id
+                            survey_file.user_id = address_search.user_id.id
+                            if address_search.id != survey_file.document_id.address_id.id:
+                                if survey_file.notes is False:
+                                    survey_file.notes = \
+                                        'Erro: Codigo do Endereco inconsistente com o Documento!'
+                                else:
+                                    survey_file.notes += \
+                                        '\nErro: Codigo do Endereco inconsistente com o Documento!'
 
                 if survey_file.notes is False:
                     survey_file.state = 'checked'
+                    survey_file.document_id.state = 'waiting'
                 else:
                     survey_file.state = 'draft'
+                    survey_file.document_id.state = 'draft'
 
         return True

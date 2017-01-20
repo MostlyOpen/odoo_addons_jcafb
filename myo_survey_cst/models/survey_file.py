@@ -55,6 +55,10 @@ class Summary(models.Model):
         store=False,
         readonly=True
     )
+    person_code = fields.Char('Person Code', help="Person Code")
+    person_id = fields.Many2one('myo.person', 'Related Person', help="Related Person")
+    address_code = fields.Char('Address Code', help="Address Code")
+    address_id = fields.Many2one('myo.address', 'Related Address', help="Related Address")
     user_id = fields.Many2one('res.users', 'Document Responsible', required=False, readonly=False)
     date_survey_file = fields.Datetime(
         'Survey File Date',
