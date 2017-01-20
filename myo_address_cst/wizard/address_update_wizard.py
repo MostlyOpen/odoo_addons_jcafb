@@ -109,7 +109,6 @@ class AddressUpdateWizard(models.TransientModel):
                 ('address_id', '=', address_id),
             ])
             if summary_search.id is False:
-                print '>>>>>>>>>>', summary_search.name
                 values = {
                     'name': name,
                     'user_id': user_id,
@@ -120,11 +119,7 @@ class AddressUpdateWizard(models.TransientModel):
                 }
                 summary_model.create(values)
 
-            else:
-                print '>>>>>>>>>>', summary_search.name
-
             if address_reg.is_residence is True:
-                print '>>>>>>>>>>>>>>>', address_reg.is_residence
 
                 event_names = []
                 survey_ids = []
@@ -136,10 +131,7 @@ class AddressUpdateWizard(models.TransientModel):
 
                     event_names += [event_reg.name]
 
-                    print '>>>>>>>>>>>>>>>>>>>>', event_reg.name
-
                 if address_category_id_ZonaRural == address_reg.category_ids.id:
-                    print '>>>>>>>>>>>>>>>', 'Zona Rural'
 
                     if 'Visita 1' not in event_names:
 
@@ -212,7 +204,6 @@ class AddressUpdateWizard(models.TransientModel):
                                 event_person_model.create(values)
 
                 if address_category_id_ZonaUrbana == address_reg.category_ids.id:
-                    print '>>>>>>>>>>>>>>>', 'Zona Urbana'
 
                     if 'Visita 1' not in event_names:
 
@@ -326,8 +317,6 @@ class AddressUpdateWizard(models.TransientModel):
 
                     survey_ids += [document_reg.survey_id.id]
 
-                    print '>>>>>>>>>>>>>>>>>>>>', document_reg.survey_id.title
-
                 if survey_id_QSF17 not in survey_ids:
 
                     survey_search = survey_model.search([
@@ -359,9 +348,6 @@ class AddressUpdateWizard(models.TransientModel):
                                 'person_id': person_reg.id,
                             }
                             document_person_model.create(values)
-
-            else:
-                print '>>>>>>>>>>>>>>>', address_reg.is_residence
 
         return True
 
