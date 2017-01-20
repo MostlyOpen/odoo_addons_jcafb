@@ -8,10 +8,8 @@
 
         <form>
             <div class="oe_right">
-                <!--button type="object" name="do_count_summaries"
-                        string="Count"/-->
-                <button type="object" name="do_populate_marked_summaries"
-                        string="Get Marked Summaries"/>
+                <!--button type="object" name="do_populate_marked_summaries"
+                        string="Get Marked Summaries"/-->
             </div>
             <field name="summary_ids"/>
             <!--field name="survey_ids"/-->

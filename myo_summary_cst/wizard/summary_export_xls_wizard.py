@@ -29,8 +29,9 @@ _logger = logging.getLogger(__name__)
 class SummaryExportXlsWizard(models.TransientModel):
     _name = 'myo.summary.export_xls.wizard'
 
-
-    summary_ids = fields.Many2many('myo.summary', string='Summaries')
+    def _default_summary_ids(self):
+        return self._context.get('active_ids')
+    summary_ids = fields.Many2many('myo.summary', string='Summaries', default=_default_summary_ids)
 
     @api.multi
     def do_active_export_xls(self):
@@ -60,10 +61,10 @@ class SummaryExportXlsWizard(models.TransientModel):
                 row = sheet.row(row_nr)
                 row.write(0, 'Summary for:')
                 row.write(3, summary_reg.name)
-                row_nr += 1
-                row = sheet.row(row_nr)
-                row.write(0, 'Summary Code:')
-                row.write(3, summary_reg.code)
+                # row_nr += 1
+                # row = sheet.row(row_nr)
+                # row.write(0, 'Summary Code:')
+                # row.write(3, summary_reg.code)
                 row_nr += 1
                 row = sheet.row(row_nr)
                 row.write(0, 'Summary Responsible:')
@@ -86,6 +87,10 @@ class SummaryExportXlsWizard(models.TransientModel):
                 row = sheet.row(row_nr)
                 row.write(0, 'Address Categories:')
                 row.write(3, summary_reg.address_category_ids.name)
+                row_nr += 1
+                row = sheet.row(row_nr)
+                row.write(0, 'Address Code:')
+                row.write(3, summary_reg.address_id.code)
                 row_nr += 1
 
                 row_nr += 1
@@ -112,20 +117,20 @@ class SummaryExportXlsWizard(models.TransientModel):
                     row.write(10, address_person.person_state)
                     row_nr += 1
 
-                row_nr += 1
-                row = sheet.row(row_nr)
-                row.write(0, 'Event ')
-                row.write(2, 'Code')
-                row.write(4, 'Categories')
-                row_nr += 2
+                # row_nr += 1
+                # row = sheet.row(row_nr)
+                # row.write(0, 'Event ')
+                # row.write(2, 'Code')
+                # row.write(4, 'Categories')
+                # row_nr += 2
 
-                for address_event in summary_reg.summary_address_event_ids:
+                # for address_event in summary_reg.summary_address_event_ids:
 
-                    row = sheet.row(row_nr)
-                    row.write(0, address_event.event_id.name)
-                    row.write(2, address_event.event_id.code)
-                    row.write(4, address_event.event_category_ids.name)
-                    row_nr += 1
+                #     row = sheet.row(row_nr)
+                #     row.write(0, address_event.event_id.name)
+                #     row.write(2, address_event.event_id.code)
+                #     row.write(4, address_event.event_category_ids.name)
+                #     row_nr += 1
 
                 row_nr += 1
                 row = sheet.row(row_nr)
@@ -177,10 +182,10 @@ class SummaryExportXlsWizard(models.TransientModel):
                 row = sheet.row(row_nr)
                 row.write(0, 'Summary for:')
                 row.write(3, summary_reg.name)
-                row_nr += 1
-                row = sheet.row(row_nr)
-                row.write(0, 'Summary Code:')
-                row.write(3, summary_reg.code)
+                # row_nr += 1
+                # row = sheet.row(row_nr)
+                # row.write(0, 'Summary Code:')
+                # row.write(3, summary_reg.code)
                 row_nr += 1
                 row = sheet.row(row_nr)
                 row.write(0, 'Summary Responsible:')
@@ -204,6 +209,10 @@ class SummaryExportXlsWizard(models.TransientModel):
                 row.write(0, 'Address Categories:')
                 row.write(3, summary_reg.address_category_ids.name)
                 row_nr += 1
+                row = sheet.row(row_nr)
+                row.write(0, 'Address Code:')
+                row.write(3, summary_reg.address_id.code)
+                row_nr += 1
 
                 row_nr += 1
                 row = sheet.row(row_nr)
@@ -224,20 +233,20 @@ class SummaryExportXlsWizard(models.TransientModel):
                     row.write(3, summary_reg.person_id.birthday)
                 row_nr += 1
 
-                row_nr += 1
-                row = sheet.row(row_nr)
-                row.write(0, 'Event ')
-                row.write(2, 'Code')
-                row.write(4, 'Categories')
-                row_nr += 2
+                # row_nr += 1
+                # row = sheet.row(row_nr)
+                # row.write(0, 'Event ')
+                # row.write(2, 'Code')
+                # row.write(4, 'Categories')
+                # row_nr += 2
 
-                for person_event in summary_reg.summary_person_event_ids:
+                # for person_event in summary_reg.summary_person_event_ids:
 
-                    row = sheet.row(row_nr)
-                    row.write(0, person_event.event_id.name)
-                    row.write(2, person_event.event_id.code)
-                    row.write(4, person_event.event_category_ids.name)
-                    row_nr += 1
+                #     row = sheet.row(row_nr)
+                #     row.write(0, person_event.event_id.name)
+                #     row.write(2, person_event.event_id.code)
+                #     row.write(4, person_event.event_category_ids.name)
+                #     row_nr += 1
 
                 row_nr += 1
                 row = sheet.row(row_nr)
@@ -271,20 +280,20 @@ class SummaryExportXlsWizard(models.TransientModel):
 
         return True
 
-    @api.multi
-    def do_reopen_form(self):
-        self.ensure_one()
-        return {
-            'type': 'ir.actions.act_window',
-            'res_model': self._name,  # this model
-            'res_id': self.id,  # the current wizard record
-            'view_type': 'form',
-            'view_mode': 'form, tree',
-            'target': 'new'}
+    # @api.multi
+    # def do_reopen_form(self):
+    #     self.ensure_one()
+    #     return {
+    #         'type': 'ir.actions.act_window',
+    #         'res_model': self._name,  # this model
+    #         'res_id': self.id,  # the current wizard record
+    #         'view_type': 'form',
+    #         'view_mode': 'form, tree',
+    #         'target': 'new'}
 
-    @api.multi
-    def do_populate_marked_summaries(self):
-        self.ensure_one()
-        self.summary_ids = self._context.get('active_ids')
-        # reopen wizard form on same wizard record
-        return self.do_reopen_form()
+    # @api.multi
+    # def do_populate_marked_summaries(self):
+    #     self.ensure_one()
+    #     self.summary_ids = self._context.get('active_ids')
+    #     # reopen wizard form on same wizard record
+    #     return self.do_reopen_form()

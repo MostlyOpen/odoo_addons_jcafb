@@ -111,16 +111,18 @@ class SummaryUpdateyWizard(models.TransientModel):
 
                 for address_person in summary_reg.address_id.person_address_ids:
 
-                    for lab_test_request in address_person.person_id.lab_test_request_ids:
+                    if address_person.sign_out_date is False:
 
-                        values = {
-                            'summary_id': summary_reg.id,
-                            'address_id': summary_reg.address_id.id,
-                            'lab_test_type_id': lab_test_request.lab_test_type_id.id,
-                            'lab_test_request_id': lab_test_request.id,
-                            'person_id': address_person.person_id.id,
-                        }
-                        summary_address_lab_test_request_model.create(values)
+                        for lab_test_request in address_person.person_id.lab_test_request_ids:
+
+                            values = {
+                                'summary_id': summary_reg.id,
+                                'address_id': summary_reg.address_id.id,
+                                'lab_test_type_id': lab_test_request.lab_test_type_id.id,
+                                'lab_test_request_id': lab_test_request.id,
+                                'person_id': address_person.person_id.id,
+                            }
+                            summary_address_lab_test_request_model.create(values)
 
             if summary_reg.is_person_summary:
 

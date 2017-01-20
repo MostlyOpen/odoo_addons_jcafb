@@ -20,6 +20,7 @@
                 </label-->
                 <group name="group_title_left" position="inside">
                     <field name="address_id" placeholder="Address..." context="{'show_address_only': 1}" options='{"always_reload": True, "highlight_first_line": True, "no_open": False, "no_create": True}'/>
+                    <field name="address_code"/>
                     <field name="address_category_ids" widget="many2many_tags" options="{'no_open': False, 'no_create': True}"/>
                     <field name="person_id" placeholder="Person..." options="{'no_open': False, 'no_create': True}" attrs="{'invisible':[('is_person_summary', '!=', True)]}"/>
                     <field name="person_category_ids" widget="many2many_tags" attrs="{'invisible':[('is_person_summary', '!=', True)]}" options="{'no_open': False, 'no_create': True}"/>
