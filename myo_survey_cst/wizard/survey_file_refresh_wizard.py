@@ -141,7 +141,7 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                 except:
                                     value = xlrd.empty_cell.value
                                 if value != xlrd.empty_cell.value:
-                                    print '>>>>>>>>>> (', i, j + 1, ')', value, code_row
+                                    # print '>>>>>>>>>> (', i, j + 1, ')', value, code_row
 
                                     if survey_title == '[QAN17]' and code_row == '[QAN17_01_01]' or \
                                        survey_title == '[QDH17]' and code_row == '[QDH17_01_01]' or \
