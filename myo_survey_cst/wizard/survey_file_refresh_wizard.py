@@ -266,6 +266,9 @@ class SurveyFileRefreshWizard(models.TransientModel):
                     survey_file.document_id.state = 'waiting'
                 else:
                     survey_file.state = 'draft'
-                    survey_file.document_id.state = 'draft'
+                    try:
+                        survey_file.document_id.state = 'draft'
+                    except:
+                        pass
 
         return True
