@@ -61,7 +61,7 @@ class SurveyFileImportWizard(models.TransientModel):
             book = xlrd.open_workbook(filepath)
             sheet = book.sheet_by_index(0)
             # survey_title = sheet.cell_value(0, 0)
-            print '>>>>>', survey_file_reg.survey_id.description
+            # print '>>>>>', survey_file_reg.survey_id.description
 
             if survey_file_reg.state == 'validated':
 
