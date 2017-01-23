@@ -37,6 +37,7 @@
         'wizard/survey_file_refresh_wizard_view.xml',
         'wizard/survey_file_validate_wizard_view.xml',
         'wizard/survey_file_import_wizard_view.xml',
+        'wizard/survey_file_arquive_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

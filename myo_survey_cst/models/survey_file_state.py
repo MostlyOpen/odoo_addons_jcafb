@@ -30,6 +30,7 @@ class SurveyFile(models.Model):
         ('checked', 'Checked'),
         ('validated', 'Validated'),
         ('imported', 'Imported'),
+        ('arquived', 'Arquived'),
         ('canceled', 'Canceled')
     ], string='Status', default='draft', readonly=True, required=True, help="")
 
@@ -75,6 +76,11 @@ class SurveyFile(models.Model):
     def action_import(self):
         for document in self:
             document.change_state('imported')
+
+    @api.multi
+    def action_arquive(self):
+        for document in self:
+            document.change_state('arquived')
 
     @api.multi
     def action_cancel(self):

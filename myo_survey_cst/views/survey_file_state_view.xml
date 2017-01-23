@@ -54,8 +54,8 @@
                     <field name="state"/>
                 </field>
                 <tree name="suvey_files" position="attributes">
-                    <attribute name="colors">gray:state=='draft';green:state=='validated';blue:state in('imported');red:state=='canceled'</attribute>
-                    <attribute name="fonts">italic:state in ('draft','canceled');bold:state=='imported'</attribute>
+                    <attribute name="colors">gray:state=='draft';green:state=='validated';blue:state in('imported','arquived');red:state=='canceled'</attribute>
+                    <attribute name="fonts">italic:state in ('draft','canceled');bold:state=='arquived'</attribute>
                 </tree>
             </field>
         </record>

@@ -58,127 +58,103 @@ class SurveyFileValidateWizard(models.TransientModel):
             survey_title = sheet.cell_value(0, 0)
             print '>>>>>>>>>>', '"' + survey_title + '"'
 
-            # survey_model = self.env['survey.survey']
-            survey_question_model = self.env['survey.question']
-            # survey_label = self.env['survey.label']
+            if survey_file_reg.state == 'checked':
 
-            question_code = False
-            question_type = False
-            question_matrix_subtype = False
-            matrix_row = False
-            question_constr_mandatory = False
-            question_comments_allowed = False
-            response_count = 0
+                # survey_model = self.env['survey.survey']
+                survey_question_model = self.env['survey.question']
+                # survey_label = self.env['survey.label']
 
-            prev_question_code = False
-            prev_question_type = False
-            prev_question_matrix_subtype = False
-            prev_matrix_row = False
-            prev_question_constr_mandatory = False
-            # prev_question_comments_allowed = False
-            # prev_response_count = 0
+                question_code = False
+                question_type = False
+                question_matrix_subtype = False
+                matrix_row = False
+                question_constr_mandatory = False
+                question_comments_allowed = False
+                response_count = 0
 
-            begin_question = False
-            end_question = False
-            last_row = sheet.nrows - 1
-            last_question_code = False
+                prev_question_code = False
+                prev_question_type = False
+                prev_question_matrix_subtype = False
+                prev_matrix_row = False
+                prev_question_constr_mandatory = False
+                # prev_question_comments_allowed = False
+                # prev_response_count = 0
 
-            print '>>>>>', last_row
-            for i in range(sheet.nrows):
+                begin_question = False
+                end_question = False
+                last_row = sheet.nrows - 1
+                last_question_code = False
 
-                prev_question_code = question_code
-                prev_question_type = question_type
-                prev_question_matrix_subtype = question_matrix_subtype
-                prev_matrix_row = matrix_row
-                prev_question_constr_mandatory = question_constr_mandatory
-                # prev_question_comments_allowed = question_comments_allowed
-                # prev_response_count = response_count
+                print '>>>>>', last_row
+                for i in range(sheet.nrows):
 
-                code_row = sheet.cell_value(i, 0)
+                    prev_question_code = question_code
+                    prev_question_type = question_type
+                    prev_question_matrix_subtype = question_matrix_subtype
+                    prev_matrix_row = matrix_row
+                    prev_question_constr_mandatory = question_constr_mandatory
+                    # prev_question_comments_allowed = question_comments_allowed
+                    # prev_response_count = response_count
 
-                if code_row == xlrd.empty_cell.value:
-                    continue
+                    code_row = sheet.cell_value(i, 0)
 
-                if code_row == '[]':
-                    code_cols = {}
-                    for k in range(sheet.ncols):
-                        code_col = sheet.cell_value(i, k)
-                        if code_col != xlrd.empty_cell.value:
-                            code_cols.update({k: code_col})
+                    if code_row == xlrd.empty_cell.value:
+                        continue
 
-                row_code = code_row.replace('[', '').replace(']', '')
+                    if code_row == '[]':
+                        code_cols = {}
+                        for k in range(sheet.ncols):
+                            code_col = sheet.cell_value(i, k)
+                            if code_col != xlrd.empty_cell.value:
+                                code_cols.update({k: code_col})
 
-                if len(row_code) < 11:
-                    continue
-                else:
-                    question_code = row_code[:11]
-                    survey_question_search = survey_question_model.search([
-                        ('code', '=', question_code),
-                    ])
-                    if survey_question_search.id is not False:
-                        matrix_row = False
-                        question_type = survey_question_search.type
-                        question_constr_mandatory = survey_question_search.constr_mandatory
-                        if question_type == 'matrix':
-                            question_matrix_subtype = survey_question_search.matrix_subtype
-                            question_comments_allowed = False
-                        else:
-                            question_matrix_subtype = False
-                            question_comments_allowed = survey_question_search.comments_allowed
-                        if question_type == 'matrix':
-                            if question_code != row_code:
-                                matrix_row = True
-                                question_code = row_code
-                                if question_code != last_question_code:
-                                    if question_code is not False and last_question_code is not False:
-                                        end_question = True
-                                    begin_question = True
-                                    last_question_code = question_code
-                    if question_code != last_question_code:
-                        if question_code is not False and last_question_code is not False:
-                            end_question = True
-                        begin_question = True
-                        last_question_code = question_code
+                    row_code = code_row.replace('[', '').replace(']', '')
 
-                if end_question is True:
+                    if len(row_code) < 11:
+                        continue
+                    else:
+                        question_code = row_code[:11]
+                        survey_question_search = survey_question_model.search([
+                            ('code', '=', question_code),
+                        ])
+                        if survey_question_search.id is not False:
+                            matrix_row = False
+                            question_type = survey_question_search.type
+                            question_constr_mandatory = survey_question_search.constr_mandatory
+                            if question_type == 'matrix':
+                                question_matrix_subtype = survey_question_search.matrix_subtype
+                                question_comments_allowed = False
+                            else:
+                                question_matrix_subtype = False
+                                question_comments_allowed = survey_question_search.comments_allowed
+                            if question_type == 'matrix':
+                                if question_code != row_code:
+                                    matrix_row = True
+                                    question_code = row_code
+                                    if question_code != last_question_code:
+                                        if question_code is not False and last_question_code is not False:
+                                            end_question = True
+                                        begin_question = True
+                                        last_question_code = question_code
+                        if question_code != last_question_code:
+                            if question_code is not False and last_question_code is not False:
+                                end_question = True
+                            begin_question = True
+                            last_question_code = question_code
 
-                    if prev_question_constr_mandatory is True:
-                        if prev_question_type in ['textbox', 'datetime']:
-                            if response_count != 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + prev_question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + prev_question_code + ' sem resposta!'
+                    if end_question is True:
 
-                        if prev_question_type in ['simple_choice']:
-                            if response_count == 0:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + prev_question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + prev_question_code + ' sem resposta!'
-                            if response_count > 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + prev_question_code + ' com mais de uma resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + prev_question_code + ' com mais de uma resposta!'
+                        if prev_question_constr_mandatory is True:
+                            if prev_question_type in ['textbox', 'datetime']:
+                                if response_count != 1:
+                                    if survey_file_reg.notes is False:
+                                        survey_file_reg.notes = \
+                                            'Erro: Questao ' + prev_question_code + ' sem resposta!'
+                                    else:
+                                        survey_file_reg.notes += \
+                                            '\nErro: Questao ' + prev_question_code + ' sem resposta!'
 
-                        if prev_question_type in ['multiple_choice']:
-                            if response_count < 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + prev_question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + prev_question_code + ' sem resposta!'
-
-                        if prev_question_type in ['matrix'] and prev_question_matrix_subtype in ['simple']:
-                            if prev_matrix_row is True:
+                            if prev_question_type in ['simple_choice']:
                                 if response_count == 0:
                                     if survey_file_reg.notes is False:
                                         survey_file_reg.notes = \
@@ -194,72 +170,73 @@ class SurveyFileValidateWizard(models.TransientModel):
                                         survey_file_reg.notes += \
                                             '\nErro: Questao ' + prev_question_code + ' com mais de uma resposta!'
 
-                    print '---------->', response_count, matrix_row, prev_matrix_row
-                    response_count = 0
-                    end_question = False
+                            if prev_question_type in ['multiple_choice']:
+                                if response_count < 1:
+                                    if survey_file_reg.notes is False:
+                                        survey_file_reg.notes = \
+                                            'Erro: Questao ' + prev_question_code + ' sem resposta!'
+                                    else:
+                                        survey_file_reg.notes += \
+                                            '\nErro: Questao ' + prev_question_code + ' sem resposta!'
 
-                if begin_question is True:
-                    print '---------->', question_code, question_type, question_matrix_subtype, question_constr_mandatory, question_comments_allowed, matrix_row, prev_matrix_row
-                    begin_question = False
+                            if prev_question_type in ['matrix'] and prev_question_matrix_subtype in ['simple']:
+                                if prev_matrix_row is True:
+                                    if response_count == 0:
+                                        if survey_file_reg.notes is False:
+                                            survey_file_reg.notes = \
+                                                'Erro: Questao ' + prev_question_code + ' sem resposta!'
+                                        else:
+                                            survey_file_reg.notes += \
+                                                '\nErro: Questao ' + prev_question_code + ' sem resposta!'
+                                    if response_count > 1:
+                                        if survey_file_reg.notes is False:
+                                            survey_file_reg.notes = \
+                                                'Erro: Questao ' + prev_question_code + ' com mais de uma resposta!'
+                                        else:
+                                            survey_file_reg.notes += \
+                                                '\nErro: Questao ' + prev_question_code + ' com mais de uma resposta!'
 
-                print '>>>>>>>>>> (', i, ')', code_row, row_code, question_code, last_question_code
+                        print '---------->', response_count, matrix_row, prev_matrix_row
+                        response_count = 0
+                        end_question = False
 
-                for j in range(sheet.ncols):
+                    if begin_question is True:
+                        print '---------->', question_code, question_type, question_matrix_subtype, question_constr_mandatory, question_comments_allowed, matrix_row, prev_matrix_row
+                        begin_question = False
 
-                    if sheet.cell_value(i, j) == '.':
-                        try:
-                            value = sheet.cell_value(i, j + 1)
-                        except:
-                            value = xlrd.empty_cell.value
-                        if value != xlrd.empty_cell.value:
-                            if question_type in ['multiple_choice', 'simple_choice']:
-                                if question_code != row_code:
+                    print '>>>>>>>>>> (', i, ')', code_row, row_code, question_code, last_question_code
+
+                    for j in range(sheet.ncols):
+
+                        if sheet.cell_value(i, j) == '.':
+                            try:
+                                value = sheet.cell_value(i, j + 1)
+                            except:
+                                value = xlrd.empty_cell.value
+                            if value != xlrd.empty_cell.value:
+                                if question_type in ['multiple_choice', 'simple_choice']:
+                                    if question_code != row_code:
+                                        response_count += 1
+                                else:
                                     response_count += 1
-                            else:
-                                response_count += 1
 
-                if i == last_row or i == last_row - 1:
-                    end_question = True
+                    if i == last_row or \
+                       (i == last_row - 1 and sheet.cell_value(i + 1, 0) == xlrd.empty_cell.value):
+                        end_question = True
 
-                if end_question is True:
+                    if end_question is True:
 
-                    if question_constr_mandatory is True:
-                        if question_type in ['textbox', 'datetime']:
-                            if response_count != 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + question_code + ' sem resposta!'
+                        if question_constr_mandatory is True:
+                            if question_type in ['textbox', 'datetime']:
+                                if response_count != 1:
+                                    if survey_file_reg.notes is False:
+                                        survey_file_reg.notes = \
+                                            'Erro: Questao ' + question_code + ' sem resposta!'
+                                    else:
+                                        survey_file_reg.notes += \
+                                            '\nErro: Questao ' + question_code + ' sem resposta!'
 
-                        if question_type in ['simple_choice']:
-                            if response_count == 0:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + question_code + ' sem resposta!'
-                            if response_count > 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + question_code + ' com mais de uma resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + question_code + ' com mais de uma resposta!'
-
-                        if question_type in ['multiple_choice']:
-                            if response_count < 1:
-                                if survey_file_reg.notes is False:
-                                    survey_file_reg.notes = \
-                                        'Erro: Questao ' + question_code + ' sem resposta!'
-                                else:
-                                    survey_file_reg.notes += \
-                                        '\nErro: Questao ' + question_code + ' sem resposta!'
-
-                        if question_type in ['matrix'] and question_matrix_subtype in ['simple']:
-                            if matrix_row is True:
+                            if question_type in ['simple_choice']:
                                 if response_count == 0:
                                     if survey_file_reg.notes is False:
                                         survey_file_reg.notes = \
@@ -275,14 +252,40 @@ class SurveyFileValidateWizard(models.TransientModel):
                                         survey_file_reg.notes += \
                                             '\nErro: Questao ' + question_code + ' com mais de uma resposta!'
 
-                    print '---------->', response_count, matrix_row, prev_matrix_row
-                    response_count = 0
-                    end_question = False
+                            if question_type in ['multiple_choice']:
+                                if response_count < 1:
+                                    if survey_file_reg.notes is False:
+                                        survey_file_reg.notes = \
+                                            'Erro: Questao ' + question_code + ' sem resposta!'
+                                    else:
+                                        survey_file_reg.notes += \
+                                            '\nErro: Questao ' + question_code + ' sem resposta!'
 
-            if survey_file_reg.notes is False:
-                survey_file_reg.state = 'validated'
-            else:
-                survey_file_reg.state = 'draft'
+                            if question_type in ['matrix'] and question_matrix_subtype in ['simple']:
+                                if matrix_row is True:
+                                    if response_count == 0:
+                                        if survey_file_reg.notes is False:
+                                            survey_file_reg.notes = \
+                                                'Erro: Questao ' + question_code + ' sem resposta!'
+                                        else:
+                                            survey_file_reg.notes += \
+                                                '\nErro: Questao ' + question_code + ' sem resposta!'
+                                    if response_count > 1:
+                                        if survey_file_reg.notes is False:
+                                            survey_file_reg.notes = \
+                                                'Erro: Questao ' + question_code + ' com mais de uma resposta!'
+                                        else:
+                                            survey_file_reg.notes += \
+                                                '\nErro: Questao ' + question_code + ' com mais de uma resposta!'
+
+                        print '---------->', response_count, matrix_row, prev_matrix_row
+                        response_count = 0
+                        end_question = False
+
+                if survey_file_reg.notes is False:
+                    survey_file_reg.state = 'validated'
+                else:
+                    survey_file_reg.state = 'draft'
 
         return True
 

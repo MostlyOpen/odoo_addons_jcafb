@@ -21,3 +21,4 @@
 import survey_file_refresh_wizard
 import survey_file_validate_wizard
 import survey_file_import_wizard
+import survey_file_arquive_wizard
