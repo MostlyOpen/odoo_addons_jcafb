@@ -110,12 +110,12 @@ class SurveyFileImportWizard(models.TransientModel):
                                         question_matrix_subtype = survey_question_search.matrix_subtype
 
                                 print '>>>>>>>>>> (', i, j + 1, ')', row_code, question_type, question_matrix_subtype
-                                print '>>>>>>>>>>>>>>>', value
-                                print '>>>>>>>>>>>>>>>', survey_question_search.survey_id.id, survey_question_search.id, survey_user_input.id
+                                # print '>>>>>>>>>>>>>>>', value
+                                # print '>>>>>>>>>>>>>>>', survey_question_search.survey_id.id, survey_question_search.id, survey_user_input.id
 
                                 if survey_question_search.type == 'textbox':
 
-                                    print '>>>>>>>>>>>>>>>>>>>>', value
+                                    # print '>>>>>>>>>>>>>>>>>>>>', value
                                     values = {
                                         'survey_id': survey_question_search.survey_id.id,
                                         'question_id': survey_question_search.id,
@@ -134,7 +134,7 @@ class SurveyFileImportWizard(models.TransientModel):
                                         ])
                                         if survey_label_search.id is not False:
 
-                                            print '>>>>>>>>>>>>>>>>>>>>', survey_label_search.value
+                                            # print '>>>>>>>>>>>>>>>>>>>>', survey_label_search.value
                                             values = {
                                                 'survey_id': survey_question_search.survey_id.id,
                                                 'question_id': survey_question_search.id,
@@ -146,7 +146,7 @@ class SurveyFileImportWizard(models.TransientModel):
                                             survey_user_input_line_model.create(values)
 
                                     else:
-                                        print '>>>>>>>>>>>>>>>>>>>>xxxxxxxxxxxxxxxxx', value
+                                        # print '>>>>>>>>>>>>>>>>>>>>xxxxxxxxxxxxxxxxx', value
                                         values = {
                                             'survey_id': survey_question_search.survey_id.id,
                                             'question_id': survey_question_search.id,
@@ -166,7 +166,7 @@ class SurveyFileImportWizard(models.TransientModel):
                                         ])
                                         if survey_label_search.id is not False:
 
-                                            print '>>>>>>>>>>>>>>>>>>>>', survey_label_search.value
+                                            # print '>>>>>>>>>>>>>>>>>>>>', survey_label_search.value
                                             values = {
                                                 'survey_id': survey_question_search.survey_id.id,
                                                 'question_id': survey_question_search.id,
@@ -178,7 +178,7 @@ class SurveyFileImportWizard(models.TransientModel):
                                             survey_user_input_line_model.create(values)
 
                                     else:
-                                        print '>>>>>>>>>>>>>>>>>>>>', value
+                                        # print '>>>>>>>>>>>>>>>>>>>>', value
                                         values = {
                                             'survey_id': survey_question_search.survey_id.id,
                                             'question_id': survey_question_search.id,
@@ -195,7 +195,7 @@ class SurveyFileImportWizard(models.TransientModel):
 
                                         col_code = code_cols[j].replace('[', '').replace(']', '')
 
-                                        print '>>>>>>>>>>>>>>>>>>>>', row_code, col_code
+                                        # print '>>>>>>>>>>>>>>>>>>>>', row_code, col_code
 
                                         survey_label_row_search = survey_labe_model.search([
                                             ('code', '=', row_code),
@@ -206,7 +206,7 @@ class SurveyFileImportWizard(models.TransientModel):
                                         if survey_label_row_search.id is not False and\
                                            survey_label_col_search.id is not False:
 
-                                            print '>>>>>>>>>>>>>>>>>>>>', survey_label_col_search.value
+                                            # print '>>>>>>>>>>>>>>>>>>>>', survey_label_col_search.value
                                             values = {
                                                 'survey_id': survey_question_search.survey_id.id,
                                                 'question_id': survey_question_search.id,
