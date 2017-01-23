@@ -60,7 +60,7 @@ class SurveyFileArquiveWizard(models.TransientModel):
 
             print '>>>>>', filepath, survey_file_reg.state
 
-            print '>>>>>', survey_file_reg.survey_id.description
+            # print '>>>>>', survey_file_reg.survey_id.description
 
             if survey_file_reg.state == 'imported':
 
