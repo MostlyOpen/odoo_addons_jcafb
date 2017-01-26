@@ -18,9 +18,31 @@
 #
 ###############################################################################
 
-from . import lab_test_seq
-from . import lab_test_request_direct_mail
-from . import lab_test_person
-from . import lab_test_anemia_dhc
-from . import lab_test_parasito_swab
-from . import lab_test_urina
+# from datetime import datetime
+
+from openerp import fields, models
+
+
+class LabTestPerson(models.Model):
+    _name = "myo.lab_test.person"
+
+    access_id = fields.Integer('Access ID', help="Access ID")
+    name = fields.Char('Person Name', required=True, help="Person Name")
+    code = fields.Char('Person Code', required=False, help="Person Code")
+    person_id = fields.Many2one('myo.person', 'Related Person', help="Related Person")
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean(
+        'Active',
+        help="If unchecked, it will allow you to hide the lab test person without removing it.",
+        default=1
+    )
+
+    # _sql_constraints = [
+    #     (
+    #         'name_uniq',
+    #         'UNIQUE (name)',
+    #         'Error! The Person Name must be unique!'
+    #     ),
+    # ]
+
+    _order = 'name'

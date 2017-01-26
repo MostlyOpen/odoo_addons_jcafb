@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_lab_test_parasito_swab_view_form" model="ir.ui.view">
+            <field name="name">myo.lab_test.parasito_swab.form</field>
+            <field name="model">myo.lab_test.parasito_swab</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Lab Test Parasito SWAB" version="7.0">
+                    <sheet name="lab_test_parasito_swab" string="Lab Test Parasito SWAB">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <!--label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Lab Request Code..."/>
+                            </h1-->
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="access_id" class="oe_edit_only"/-->
+                            <label for="access_id"/>
+                            <h3>
+                                <field name="access_id" placeholder="Access ID..."/>
+                            </h3>
+                            <!--label for="lab_test_person_id" class="oe_edit_only"/-->
+                            <label for="lab_test_person_id"/>
+                            <h3>
+                                <field name="lab_test_person_id" placeholder="Related Lab Test Person..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <group name="group_title">
+                                <group name="group_title_left">
+                                    <field name="request_code_parasito"/>
+                                    <field name="request_id_parasito" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="date_parasito"/>
+                                    <field name="resultado_parasito"/>
+                                    <field name="metodos_parasito"/>
+                                    <field name="entrada_parasito"/>
+                                    <field name="saida_parasito"/>
+                                    <field name="laudo_so_parasito"/>
+                                    <field name="resultado_parasito_2"/>
+                                    <field name="result_liberado_1a"/>
+                                    <field name="result_liberado_1b"/>
+                                    <field name="result_liberado_1c"/>
+                                    <field name="result_liberado_1d"/>
+                                    <field name="result_liberado_1e"/>
+                                    <field name="result_liberado_1f"/>
+                                    <field name="result_liberado_2a"/>
+                                    <field name="result_liberado_2b"/>
+                                    <field name="result_liberado_2c"/>
+                                    <field name="result_liberado_2d"/>
+                                    <field name="result_liberado_2e"/>
+                                    <field name="result_liberado_2f"/>
+                                    <field name="obs_interno_parasito"/>
+                                    <field name="laudo_parasito_swab"/>
+                                    <field name="realizados"/>
+                                    <field name="se_ambos"/>
+                                    <field name="result_parasito_ritchie"/>
+                                    <field name="examinador_ritchie"/>
+                                    <field name="result_parasito_hoffmann"/>
+                                    <field name="examinador_hoffmann"/>
+                                    <field name="status_parasito"/>
+                                </group>
+                                <group name="group_title_right">
+                                    <field name="request_code_swab"/>
+                                    <field name="request_id_swab" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="date_swab"/>
+                                    <field name="entrada_swab"/>
+                                    <field name="saida_swab"/>
+                                    <field name="metodo_swab"/>
+                                    <field name="result_swab"/>
+                                    <field name="laudo_so_swab"/>
+                                    <field name="examinador_swab"/>
+                                    <field name="status_swab"/>
+                                </group>
+                            </group>
+                            <group name="group_title_bottom">
+                                    <field name="farmaceutico_respons"/>
+                            </group>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group name="group_top">
+                            <group name="group_top_left">
+                            </group>
+                            <group name="group_top_right">
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                        </group>
+                        <notebook>
+                            <page string="Notes">
+                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                            </page>
+                            <page name="settings" string="Settings" groups="myo_base.group_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_parasito_swab_view_tree" model="ir.ui.view">
+            <field name="name">myo.lab_test.parasito_swab.tree</field>
+            <field name="model">myo.lab_test.parasito_swab</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree name="suvey_parasito_swabs" string="Lab Test Parasito SWAB">
+                    <!--field name="name"/-->
+                    <field name="access_id"/>
+                    <field name="lab_test_person_id"/>
+                    <field name="request_code_parasito"/>
+                    <field name="request_id_parasito" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_code_swab"/>
+                    <field name="request_id_swab" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_parasito_swab_view_search" model="ir.ui.view">
+            <field name="name">myo.lab_test.parasito_swab.search</field>
+            <field name="model">myo.lab_test.parasito_swab</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Survey">
+                    <!--field name="name"/-->
+                    <field name="access_id"/>
+                    <field name="lab_test_person_id"/>
+                    <field name="request_code_parasito"/>
+                    <field name="request_id_parasito"/>
+                    <field name="request_code_swab"/>
+                    <field name="request_id_swab"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group name="group_by" string="Group By...">
+                        <filter string="Access ID" domain="[]" context="{'group_by':'access_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_parasito_swab_action" model="ir.actions.act_window">
+            <field name="name">Lab Test Parasito SWAB</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.lab_test.parasito_swab</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="myo_lab_test_parasito_swab_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new lab test parasito_swab.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

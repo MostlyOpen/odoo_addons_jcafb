@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_lab_test_person_view_form" model="ir.ui.view">
+            <field name="name">myo.lab_test.person.form</field>
+            <field name="model">myo.lab_test.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Lab Test Persons" version="7.0">
+                    <sheet name="lab_test_person" string="Survey File">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="access_id" class="oe_edit_only"/-->
+                            <label for="access_id"/>
+                            <h3>
+                                <field name="access_id" placeholder="Access ID..."/>
+                            </h3>
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Person Name..."/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h3>
+                                <field name="code" placeholder="Person Code..."/>
+                            </h3>
+                            <!--label for="person_id" class="oe_edit_only"/-->
+                            <label for="person_id"/>
+                            <h3>
+                                <field name="person_id" placeholder="Related Person..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <group name="group_title">
+                                <group name="group_title_left">
+                                </group>
+                                <group name="group_title_right">
+                                </group>
+                            </group>
+                            <group name="group_title_bottom">
+                            </group>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group name="group_top">
+                            <group name="group_top_left">
+                            </group>
+                            <group name="group_top_right">
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                        </group>
+                        <notebook>
+                            <page string="Notes">
+                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                            </page>
+                            <page name="settings" string="Settings" groups="myo_base.group_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_person_view_tree" model="ir.ui.view">
+            <field name="name">myo.lab_test.person.tree</field>
+            <field name="model">myo.lab_test.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree name="suvey_persons" string="Lab Test Persons">
+                    <field name="access_id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="person_id"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_person_view_search" model="ir.ui.view">
+            <field name="name">myo.lab_test.person.search</field>
+            <field name="model">myo.lab_test.person</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Survey">
+                    <field name="access_id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group name="group_by" string="Group By...">
+                        <filter string="Person Name" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Person Code" domain="[]" context="{'group_by':'code'}"/>
+                        <filter string="Person" domain="[]" context="{'group_by':'person_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="myo_lab_test_person_action" model="ir.actions.act_window">
+            <field name="name">Lab Test Persons</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.lab_test.person</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="myo_lab_test_person_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new lab test person.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

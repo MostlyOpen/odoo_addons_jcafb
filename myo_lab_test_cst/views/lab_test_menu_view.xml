@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Health/Health/Lab Test/Access -->
+        <menuitem name="Access" id="menu_health_health_lab_test_access"
+            parent="myo_lab_test.menu_health_health_lab_test"
+            groups="myo_base.group_lab_test_user"
+            sequence="90"/>
+            <!-- Health/Health/Lab Test/Access/Persons -->
+            <menuitem name="Persons" id="menu_health_health_lab_test_access_persons"
+                parent="menu_health_health_lab_test_access"
+                groups="myo_base.group_lab_test_user"
+                sequence="10"
+                action="myo_lab_test_cst.myo_lab_test_person_action"/>
+                <!-- Health/Health/Lab Test/Access/Persons/Import -->
+                <menuitem name="Import" id="menu_health_health_lab_test_access_persons_import"
+                    parent="menu_health_health_lab_test_access_persons"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_lab_test_cst.action_myo_lab_test_person_import_wizard"/>
+            <!-- Health/Health/Lab Test/Access/Anemia DHC -->
+            <menuitem name="Anemia DHC" id="menu_health_health_lab_test_access_anemia_dhc"
+                parent="menu_health_health_lab_test_access"
+                groups="myo_base.group_lab_test_user"
+                sequence="20"
+                action="myo_lab_test_cst.myo_lab_test_anemia_dhc_action"/>
+                <!-- Health/Health/Lab Test/Access/Anemia DHC/Import -->
+                <menuitem name="Import" id="menu_health_health_lab_test_access_anemia_dhc_import"
+                    parent="menu_health_health_lab_test_access_anemia_dhc"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_lab_test_cst.action_myo_lab_test_anemia_dhc_import_wizard"/>
+            <!-- Health/Health/Lab Test/Access/Parasito SWAB -->
+            <menuitem name="Parasito SWAB" id="menu_health_health_lab_test_access_parasito_swab"
+                parent="menu_health_health_lab_test_access"
+                groups="myo_base.group_lab_test_user"
+                sequence="30"
+                action="myo_lab_test_cst.myo_lab_test_parasito_swab_action"/>
+                <!-- Health/Health/Lab Test/Access/Parasito SWAB/Import -->
+                <menuitem name="Import" id="menu_health_health_lab_test_access_parasito_swab_import"
+                    parent="menu_health_health_lab_test_access_parasito_swab"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_lab_test_cst.action_myo_lab_test_parasito_swab_import_wizard"/>
+            <!-- Health/Health/Lab Test/Access/Urina -->
+            <menuitem name="Urina" id="menu_health_health_lab_test_access_urina"
+                parent="menu_health_health_lab_test_access"
+                groups="myo_base.group_lab_test_user"
+                sequence="40"
+                action="myo_lab_test_cst.myo_lab_test_urina_action"/>
+                <!-- Health/Health/Lab Test/Access/Urina/Import -->
+                <menuitem name="Import" id="menu_health_health_lab_test_access_urina_import"
+                    parent="menu_health_health_lab_test_access_urina"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_lab_test_cst.action_myo_lab_test_urina_import_wizard"/>
+
+    </data>
+</openerp>

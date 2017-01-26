@@ -20,3 +20,7 @@
 
 import lab_test_edit_wizard
 import lab_test_request_direct_mail_wizard
+import lab_test_person_import_wizard
+import lab_test_anemia_dhc_import_wizard
+import lab_test_parasito_swab_import_wizard
+import lab_test_urina_import_wizard
