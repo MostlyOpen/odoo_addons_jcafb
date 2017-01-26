@@ -244,10 +244,19 @@
 			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
 		</record>
 	
-		<record id="myo_lab_test_criterion_EUR17_cilindros_outros_tipos" model="myo.lab_test.criterion">
+		<record id="myo_lab_test_criterion_EUR17_cilindros_cereos" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
 			<field name="sequence" eval="411"/>
 			<field name="code">EUR-04-11</field>
+			<field name="name" eval="&quot;&quot;&quot;Cilindros Céreos&quot;&quot;&quot;"/>
+			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
+			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
+		</record>
+	
+		<record id="myo_lab_test_criterion_EUR17_cilindros_outros_tipos" model="myo.lab_test.criterion">
+			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
+			<field name="sequence" eval="412"/>
+			<field name="code">EUR-04-12</field>
 			<field name="name" eval="&quot;&quot;&quot;Outros tipos de Cilindros&quot;&quot;&quot;"/>
 			<field name="unit_id" ref="myo_lab_test_cst.myo_lab_test_unit_no_ml"/>
 			<field name="normal_range" eval="&quot;&quot;&quot;Ausentes&quot;&quot;&quot;"/>
@@ -255,7 +264,7 @@
 	
 		<record id="myo_lab_test_criterion_EUR17_obs" model="myo.lab_test.criterion">
 			<field name="lab_test_type_id" ref="myo_lab_test_EUR17"/>
-			<field name="sequence" eval="412"/>
+			<field name="sequence" eval="413"/>
 			<field name="name" eval="&quot;&quot;&quot;&quot;&quot;&quot;"/>
 			<field name="normal_range" eval="&quot;&quot;&quot;Obs.: Leveduras/Trichomonas sp: Ausentes&quot;&quot;&quot;"/>
 		</record>
