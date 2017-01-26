@@ -94,7 +94,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="TCP17_02"/>
                     <field name="sequence" eval="30"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Nome do Responsável Legal.</field>
                 </record>
 
@@ -104,7 +104,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="TCP17_02"/>
                     <field name="sequence" eval="40"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Código do Responsável Legal.</field>
                 </record>
 
