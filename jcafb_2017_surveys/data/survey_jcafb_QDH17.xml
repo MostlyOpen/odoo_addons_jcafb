@@ -46,7 +46,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_01"/>
                     <field name="sequence" eval="30"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o(s) Código(s) do(s) entrevistador(es).</field>
                 </record>
 
@@ -94,7 +94,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="30"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com Idade do Paciente em 31/01/2017 (data de referência)</field>
                 </record>
 
@@ -104,7 +104,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="40"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Nome do Endereço em que o Paciente reside.</field>
                 </record>
 
@@ -114,7 +114,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="50"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Código do Endereço em que o Paciente reside.</field>
                 </record>
 
@@ -162,7 +162,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="70"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Nome do Entrevistado que respondeu o questionário.</field>
                 </record>
 
@@ -172,7 +172,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_02"/>
                     <field name="sequence" eval="80"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Preencher com o Código do Entrevistado que respondeu o questionário.</field>
                 </record>
 
@@ -350,7 +350,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="20"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida do peso.</field>
                 </record>
 
@@ -370,7 +370,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="40"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida da altura.</field>
                 </record>
 
@@ -390,7 +390,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="60"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida do IMC.</field>
                 </record>
 
@@ -472,7 +472,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_04"/>
                     <field name="sequence" eval="90"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida da circunferência abdominal.</field>
                 </record>
 
@@ -544,7 +544,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_05"/>
                     <field name="sequence" eval="20"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial autom.</field>
                 </record>
 
@@ -564,7 +564,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_05"/>
                     <field name="sequence" eval="40"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida da pressão arterial manual.</field>
                 </record>
 
@@ -636,7 +636,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_06"/>
                     <field name="sequence" eval="20"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida da glicemia.</field>
                 </record>
 
@@ -712,7 +712,7 @@
                     <field name="type">textbox</field>
                     <field name="page_id" ref="QDH17_06"/>
                     <field name="sequence" eval="50"/>
-                    <field name="constr_mandatory">True</field>
+                    <field name="constr_mandatory">False</field>
                     <field name="constr_error_msg">Informar o código do responsável pela medida do colesterol.</field>
                 </record>
 
