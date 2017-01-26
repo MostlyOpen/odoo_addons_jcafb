@@ -70,6 +70,7 @@ class SurveyFileRefreshWizard(models.TransientModel):
         document_model = self.env['myo.document']
         person_model = self.env['myo.person']
         address_model = self.env['myo.address']
+        lab_test_request_model = self.env['myo.lab_test.request']
 
         listdir = os.listdir(self.dir_path)
         for file in listdir:
@@ -104,6 +105,7 @@ class SurveyFileRefreshWizard(models.TransientModel):
                 document_code = False
                 person_code = 'n/a'
                 address_code = 'n/a'
+                lab_test_request_code = 'n/a'
 
                 survey_file.notes = False
                 survey_file.survey_id = False
@@ -172,6 +174,10 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                        survey_title == '[QSI17]' and code_row == '[QSI17_02_05]':
                                         address_code = value
 
+                                    if survey_title == '[QAN17]' and code_row == '[QAN17_01_04]' or \
+                                       survey_title == '[QDH17]' and code_row == '[QDH17_01_04]':
+                                        lab_test_request_code = value
+
                 survey_file.document_code = document_code
                 if survey_file.document_code is False:
                     if survey_file.notes is False:
@@ -197,6 +203,12 @@ class SurveyFileRefreshWizard(models.TransientModel):
                         survey_file.document_id = document_search.id
                         survey_file.user_id = document_search.user_id.id
 
+                    if document_search.survey_id.id != survey_file.survey_id.id:
+                        if survey_file.notes is False:
+                            survey_file.notes = 'Erro: Tipo de Questionario inconsistente com o Documento!'
+                        else:
+                            survey_file.notes += '\nErro: Tipo de Questionario inconsistente com o Documento!'
+
                 survey_file.person_code = person_code
                 if survey_file.person_code == 'n/a' and \
                    survey_title != '[QSF17]':
@@ -216,7 +228,6 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                 survey_file.notes += '\nErro: Codigo da Pessoa invalido!'
                         else:
                             survey_file.person_id = person_search.id
-                            survey_file.user_id = person_search.user_id.id
                             if person_search.id != survey_file.document_id.person_ids.person_id.id:
                                 if survey_file.notes is False:
                                     survey_file.notes = \
@@ -260,6 +271,45 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                 else:
                                     survey_file.notes += \
                                         '\nErro: Codigo do Endereco inconsistente com o Documento!'
+
+                survey_file.lab_test_request_code = lab_test_request_code
+                if survey_file.lab_test_request_code == 'n/a' and \
+                   (survey_title == '[QAN17]' or survey_title == '[QDH17]'):
+                    if survey_file.notes is False:
+                        survey_file.notes = 'Erro: Codigo da Requisicao de Exames invalido!'
+                    else:
+                        survey_file.notes += '\nErro: Codigo da Requisicao de Exames invalido!'
+                else:
+                    if survey_title == '[QAN17]' or \
+                       survey_title == '[QDH17]':
+                        lab_test_request_search = lab_test_request_model.search([
+                            ('name', '=', survey_file.lab_test_request_code),
+                        ])
+                        if lab_test_request_search.id is False:
+                            if survey_file.notes is False:
+                                survey_file.notes = 'Erro: Codigo da Requisicao de Exames invalido!'
+                            else:
+                                survey_file.notes += '\nErro: Codigo da Requisicao de Exames invalido!'
+                        else:
+                            survey_file.lab_test_request_id = lab_test_request_search.id
+                            if lab_test_request_search.patient_id.id != survey_file.person_id.id:
+                                if survey_file.notes is False:
+                                    survey_file.notes = \
+                                        'Erro: Paciente da Requisicao de Exames inconsistente com o Questionario!'
+                                else:
+                                    survey_file.notes += \
+                                        '\nErro: Paciente da Requisicao de Exames inconsistente com o Questionario!'
+
+                            if (survey_title == '[QAN17]' and
+                                    lab_test_request_search.lab_test_type_id.code != 'EAN17') or \
+                               (survey_title == '[QDH17]' and
+                                    lab_test_request_search.lab_test_type_id.code != 'EDH17'):
+                                if survey_file.notes is False:
+                                    survey_file.notes = \
+                                        'Erro: Tipo do Exame inconsistente com o Questionario!'
+                                else:
+                                    survey_file.notes += \
+                                        '\nErro: Tipo do Exame inconsistente com o Questionario!'
 
                 if survey_file.notes is False:
                     survey_file.state = 'checked'

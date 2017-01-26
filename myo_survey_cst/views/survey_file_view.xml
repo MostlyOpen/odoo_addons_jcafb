@@ -39,6 +39,11 @@
                             <h3>
                                 <field name="address_code" placeholder="Address Code..."/>
                             </h3>
+                            <!--label for="lab_test_request_code" class="oe_edit_only"/-->
+                            <label for="lab_test_request_code"/>
+                            <h3>
+                                <field name="lab_test_request_code" placeholder="Lab Test Request Code..."/>
+                            </h3>
                             <!--label for="survey_id" class="oe_edit_only"/-->
                             <label for="survey_id"/>
                             <h3>
@@ -73,6 +78,11 @@
                             <label for="address_id"/>
                             <h3>
                                 <field name="address_id" placeholder="Related Address..." options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <!--label for="lab_test_request_id" class="oe_edit_only"/-->
+                            <label for="lab_test_request_id"/>
+                            <h3>
+                                <field name="lab_test_request_id" placeholder="Related Lab Test Request..." options="{'no_open': False, 'no_create': True}"/>
                             </h3>
                             <!--label for="user_id" class="oe_edit_only"/-->
                             <label for="user_id"/>
@@ -126,12 +136,14 @@
                     <field name="document_code"/>
                     <field name="person_code"/>
                     <field name="address_code"/>
+                    <field name="lab_test_request_code"/>
                     <field name="survey_id"/>
                     <field name="document_id"/>
                     <field name="document_state" string="Document Status"/>
                     <!--field name="survey_description"/-->
                     <field name="person_id"/>
                     <field name="address_id"/>
+                    <field name="lab_test_request_id"/>
                     <field name="survey_user_input_id"/>
                     <field name="date_survey_file"/>
                     <field name="user_id"/>
@@ -151,6 +163,7 @@
                     <field name="document_code"/>
                     <field name="person_code"/>
                     <field name="address_code"/>
+                    <field name="lab_test_request_code"/>
                     <field name="survey_id"/>
                     <field name="survey_user_input_id"/>
                     <field name="date_survey_file"/>

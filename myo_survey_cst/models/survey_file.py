@@ -59,6 +59,12 @@ class Summary(models.Model):
     person_id = fields.Many2one('myo.person', 'Related Person', help="Related Person")
     address_code = fields.Char('Address Code', help="Address Code")
     address_id = fields.Many2one('myo.address', 'Related Address', help="Related Address")
+    lab_test_request_code = fields.Char('Lab Test Request Code', help="Lab Test Request Code")
+    lab_test_request_id = fields.Many2one(
+        'myo.lab_test.request',
+        'Related Lab Test Request',
+        help="Related Lab Test Request"
+    )
     user_id = fields.Many2one('res.users', 'Document Responsible', required=False, readonly=False)
     date_survey_file = fields.Datetime(
         'Survey File Date',

@@ -22,6 +22,7 @@ from openerp import api, fields, models
 
 import logging
 import xlrd
+import datetime
 
 _logger = logging.getLogger(__name__)
 
@@ -114,6 +115,21 @@ class SurveyFileImportWizard(models.TransientModel):
                                 # print '>>>>>>>>>>>>>>>', survey_question_search.survey_id.id, survey_question_search.id, survey_user_input.id
 
                                 if survey_question_search.type == 'textbox':
+
+                                    if question_code == 'TCP17_01_02' or \
+                                       question_code == 'TCR17_01_02' or \
+                                       question_code == 'TID17_01_02' or \
+                                       question_code == 'QSF17_01_02' or \
+                                       question_code == 'QSI17_01_02' or \
+                                       question_code == 'QSC17_01_02' or \
+                                       question_code == 'QMD17_01_02' or \
+                                       question_code == 'QAN17_01_02' or \
+                                       question_code == 'QDH17_01_02':
+                                        date = value
+                                        if date != 0:
+                                            date = datetime.datetime(
+                                                *xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
+                                            value = date
 
                                     # print '>>>>>>>>>>>>>>>>>>>>', value
                                     values = {
@@ -221,6 +237,7 @@ class SurveyFileImportWizard(models.TransientModel):
                 survey_user_input.linked_code = survey_file_reg.document_code
                 survey_user_input.linked_state = 'linked'
                 survey_file_reg.state = 'imported'
+                survey_file_reg.survey_user_input_id = survey_user_input.id
                 survey_file_reg.document_id.survey_user_input_id = survey_user_input.id
                 survey_file_reg.document_id.state = 'done'
 

@@ -28,6 +28,7 @@
     'website': 'http://mostlyopen.org',
     'depends': [
         'myo_survey',
+        'myo_lab_test',
     ],
     'data': [
         'security/ir.model.access.csv',
