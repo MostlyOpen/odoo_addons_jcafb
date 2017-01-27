@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_survey_qan17_view_form" model="ir.ui.view">
+            <field name="name">myo.survey.qan17.form</field>
+            <field name="model">myo.survey.qan17</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Survey QAN17" version="7.0">
+                    <sheet name="survey_qan17" string="Survey File">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <label for="person_code"/>
+                            <h1>
+                                <field name="person_code" default_focus="1"/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <label for="address_code"/>
+                            <h3>
+                                <field name="address_code"/>
+                            </h3>
+                            <label for="document_code"/>
+                            <h3>
+                                <field name="document_code"/>
+                            </h3>
+                            <label for="survey_title"/>
+                            <h3>
+                                <field name="survey_title"/>
+                            </h3>
+                            <!--label for="person_id"/>
+                            <h3>
+                                <field name="person_id" options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <label for="address_id"/>
+                            <h3>
+                                <field name="address_id" options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <label for="document_id"/>
+                            <h3>
+                                <field name="document_id" options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <label for="survey_id"/>
+                            <h3>
+                                <field name="survey_id" options="{'no_open': False, 'no_create': True}"/>
+                            </h3>
+                            <label for="survey_user_input_id"/>
+                            <h3>
+                                <field name="survey_user_input_id" options="{'no_open': False, 'no_create': True}"/>
+                            </h3-->
+                            <group name="group_title">
+                                <group name="group_title_left">
+                                    <field name="gender"/>
+                                    <field name="age"/>
+                                    <field name="person_category"/>
+                                    <field name="person_status"/>
+                                    <field name="address_city"/>
+                                    <field name="address_category"/>
+                                    <field name="address_ditrict"/>
+                                </group>
+                                <group name="group_title_right">
+                                    <field name="QAN17_03_01"/>
+                                    <field name="QAN17_03_03"/>
+                                    <field name="QAN17_04_03"/>
+                                    <field name="QAN17_04_05"/>
+                                    <field name="QAN17_05_01"/>
+                                    <field name="QAN17_05_02"/>
+                                    <field name="QAN17_05_03"/>
+                                    <field name="QAN17_05_05"/>
+                                </group>
+                            </group>
+                            <group name="group_title_bottom">
+                            </group>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group name="group_top">
+                            <group name="group_top_left">
+                            </group>
+                            <group name="group_top_right">
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                        </group>
+                        <notebook>
+                            <page string="Notes">
+                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                            </page>
+                            <page name="settings" string="Settings" groups="myo_base.group_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="myo_survey_qan17_view_tree" model="ir.ui.view">
+            <field name="name">myo.survey.qan17.tree</field>
+            <field name="model">myo.survey.qan17</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree name="suvey_qan17s" string="Survey QAN17">
+                    <field name="person_code"/>
+                    <field name="address_code"/>
+                    <field name="document_code"/>
+                    <field name="gender"/>
+                    <field name="age"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="myo_survey_qan17_view_search" model="ir.ui.view">
+            <field name="name">myo.survey.qan17.search</field>
+            <field name="model">myo.survey.qan17</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Survey">
+                    <field name="person_code"/>
+                    <field name="address_code"/>
+                    <field name="document_code"/>
+                    <field name="gender"/>
+                    <field name="age"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group name="group_by" string="Group By...">
+                        <filter string="Address" domain="[]" context="{'group_by':'address_code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="myo_survey_qan17_action" model="ir.actions.act_window">
+            <field name="name">Survey QAN17</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myo.survey.qan17</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="myo_survey_qan17_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new register.
+              </p>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

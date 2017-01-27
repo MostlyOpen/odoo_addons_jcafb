@@ -14,5 +14,30 @@
                 sequence="10"
                 action="myo_survey_cst.myo_survey_file_action"/>
 
+            <!-- Base/Base/Survey/QAN17 -->
+            <menuitem name="QAN17" id="menu_base_base_survey_qan17"
+                parent="menu_base_base_survey"
+                groups="myo_base.group_survey_user"
+                sequence="20"
+                action="myo_survey_cst.myo_survey_qan17_action"/>
+                <!-- Base/Base/Survey/QAN17/Refresh -->
+                <menuitem name="Refresh" id="menu_base_base_survey_qan17_refresh"
+                    parent="menu_base_base_survey_qan17"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_survey_cst.action_myo_survey_qan17_refresh_wizard"/>
+            <!-- Base/Base/Survey/QDH17 -->
+            <menuitem name="QDH17" id="menu_base_base_survey_qdh17"
+                parent="menu_base_base_survey"
+                groups="myo_base.group_survey_user"
+                sequence="20"
+                action="myo_survey_cst.myo_survey_qdh17_action"/>
+                <!-- Base/Base/Survey/QDH17/Refresh -->
+                <menuitem name="Refresh" id="menu_base_base_survey_qdh17_refresh"
+                    parent="menu_base_base_survey_qdh17"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_survey_cst.action_myo_survey_qdh17_refresh_wizard"/>
+
     </data>
 </openerp>
