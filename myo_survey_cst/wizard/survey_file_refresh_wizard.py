@@ -228,6 +228,7 @@ class SurveyFileRefreshWizard(models.TransientModel):
                                 survey_file.notes += '\nErro: Codigo da Pessoa invalido!'
                         else:
                             survey_file.person_id = person_search.id
+                            print '>>>>>>>>>>', person_search.code, survey_file.document_id.code
                             if person_search.id != survey_file.document_id.person_ids.person_id.id:
                                 if survey_file.notes is False:
                                     survey_file.notes = \
