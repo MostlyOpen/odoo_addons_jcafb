@@ -127,9 +127,12 @@ class SurveyFileImportWizard(models.TransientModel):
                                        question_code == 'QDH17_01_02':
                                         date = value
                                         if date != 0:
-                                            date = datetime.datetime(
-                                                *xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
-                                            value = date
+                                            try:
+                                                datetime.datetime.strptime(value, '%Y-%m-%d')
+                                            except:
+                                                date = datetime.datetime(
+                                                    *xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
+                                                value = date
 
                                     # print '>>>>>>>>>>>>>>>>>>>>', value
                                     values = {

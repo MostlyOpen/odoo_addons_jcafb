@@ -232,16 +232,19 @@ class SurveyFileValidateWizard(models.TransientModel):
                                    row_code == 'QDH17_01_02':
                                     date = value
                                     try:
-                                        date = datetime.datetime(
-                                            *xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
-                                        value = date
+                                        datetime.datetime.strptime(value, '%Y-%m-%d')
                                     except:
-                                        if survey_file_reg.notes is False:
-                                            survey_file_reg.notes = \
-                                                'Erro: Questao ' + question_code + ' com formato invalido!'
-                                        else:
-                                            survey_file_reg.notes += \
-                                                '\nErro: Questao ' + question_code + ' com formato invalido!'
+                                        try:
+                                            date = datetime.datetime(
+                                                *xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
+                                            value = date
+                                        except:
+                                            if survey_file_reg.notes is False:
+                                                survey_file_reg.notes = \
+                                                    'Erro: Questao ' + question_code + ' com formato invalido!'
+                                            else:
+                                                survey_file_reg.notes += \
+                                                    '\nErro: Questao ' + question_code + ' com formato invalido!'
 
                     if i == last_row or \
                        (i == last_row - 1 and sheet.cell_value(i + 1, 0) == xlrd.empty_cell.value):
