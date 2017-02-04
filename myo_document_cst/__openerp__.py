@@ -41,6 +41,7 @@
         'views/document_view.xml',
         'views/address_view.xml',
         'views/document_menu_view.xml',
+        'wizard/document_create_xls_TCP17_wizard_view.xml',
     ],
     'demo': [],
     'test': [],
