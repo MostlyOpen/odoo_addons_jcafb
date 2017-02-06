@@ -37,6 +37,7 @@
         'views/lab_test_person_view.xml',
         'views/lab_test_person_state_view.xml',
         'views/lab_test_anemia_dhc_view.xml',
+        'views/lab_test_anemia_dhc_state_view.xml',
         'views/lab_test_parasito_swab_view.xml',
         'views/lab_test_urina_view.xml',
         'views/lab_test_urina_state_view.xml',

@@ -93,7 +93,7 @@
             <field name="model">myo.lab_test.anemia_dhc</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree name="suvey_anemia_dhcs" string="Lab Test Anemia DHC">
+                <tree name="lab_test_anemia_dhc" string="Lab Test Anemia DHC">
                     <!--field name="name"/-->
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>
