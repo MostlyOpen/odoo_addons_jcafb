@@ -19,3 +19,5 @@
 ###############################################################################
 
 import document_create_xls_TCP17_wizard
+import document_create_xls_TCR17_wizard
+import document_create_xls_TID17_wizard
