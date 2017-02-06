@@ -18,13 +18,25 @@
 #
 ###############################################################################
 
-import lab_test_edit_wizard
-import lab_test_request_direct_mail_wizard
-import lab_test_person_import_wizard
-import lab_test_person_check_wizard
-import lab_test_anemia_dhc_import_wizard
-import lab_test_anemia_dhc_check_wizard
-import lab_test_parasito_swab_import_wizard
-import lab_test_parasito_swab_check_wizard
-import lab_test_urina_import_wizard
-import lab_test_urina_check_wizard
+from openerp import api, fields, models
+
+
+class LabTestParasitoSwabCheckWizard(models.TransientModel):
+    _name = 'myo.lab_test.parasito_swab.check.wizard'
+
+    def _default_lab_test_parasito_swab_ids(self):
+        return self._context.get('active_ids')
+    lab_test_parasito_swab_ids = fields.Many2many(
+        'myo.lab_test.parasito_swab',
+        'myo_lab_test_parasito_swab_check_wizard_rel',
+        string='Survey Files',
+        default=_default_lab_test_parasito_swab_ids)
+
+    @api.multi
+    def do_lab_test_parasito_swab_check(self):
+        self.ensure_one()
+
+        for lab_test_parasito_swab_reg in self.lab_test_parasito_swab_ids:
+            print '>>>>>', lab_test_parasito_swab_reg.request_code_parasito, lab_test_parasito_swab_reg.request_code_swab
+
+        return True

@@ -18,13 +18,25 @@
 #
 ###############################################################################
 
-import lab_test_edit_wizard
-import lab_test_request_direct_mail_wizard
-import lab_test_person_import_wizard
-import lab_test_person_check_wizard
-import lab_test_anemia_dhc_import_wizard
-import lab_test_anemia_dhc_check_wizard
-import lab_test_parasito_swab_import_wizard
-import lab_test_parasito_swab_check_wizard
-import lab_test_urina_import_wizard
-import lab_test_urina_check_wizard
+from openerp import api, fields, models
+
+
+class LabTestUrinaCheckWizard(models.TransientModel):
+    _name = 'myo.lab_test.urina.check.wizard'
+
+    def _default_lab_test_urina_ids(self):
+        return self._context.get('active_ids')
+    lab_test_urina_ids = fields.Many2many(
+        'myo.lab_test.urina',
+        'myo_lab_test_urina_check_wizard_rel',
+        string='Survey Files',
+        default=_default_lab_test_urina_ids)
+
+    @api.multi
+    def do_lab_test_urina_check(self):
+        self.ensure_one()
+
+        for lab_test_urina_reg in self.lab_test_urina_ids:
+            print '>>>>>', lab_test_urina_reg.request_code_urina
+
+        return True
