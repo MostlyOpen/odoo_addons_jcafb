@@ -3,3 +3,11 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_myo_survey_file_survey_user,myo.survey.file,model_myo_survey_file,myo_base.group_survey_user,1,0,0,0
 access_myo_survey_file_survey_manager,myo.survey.file,model_myo_survey_file,myo_base.group_survey_manager,1,1,1,0
 access_myo_survey_file_smanager,myo.survey.file,model_myo_survey_file,myo_base.group_smanager,1,1,1,1
+
+access_myo_survey_qan17_survey_user,myo.survey.qan17,model_myo_survey_qan17,myo_base.group_survey_user,1,0,0,0
+access_myo_survey_qan17_survey_manager,myo.survey.qan17,model_myo_survey_qan17,myo_base.group_survey_manager,1,1,1,0
+access_myo_survey_qan17_smanager,myo.survey.qan17,model_myo_survey_qan17,myo_base.group_smanager,1,1,1,1
+
+access_myo_survey_qdh17_survey_user,myo.survey.qdh17,model_myo_survey_qdh17,myo_base.group_survey_user,1,0,0,0
+access_myo_survey_qdh17_survey_manager,myo.survey.qdh17,model_myo_survey_qdh17,myo_base.group_survey_manager,1,1,1,0
+access_myo_survey_qdh17_smanager,myo.survey.qdh17,model_myo_survey_qdh17,myo_base.group_smanager,1,1,1,1
