@@ -21,6 +21,7 @@
 from . import lab_test_seq
 from . import lab_test_request_direct_mail
 from . import lab_test_person
+from . import lab_test_person_state
 from . import lab_test_anemia_dhc
 from . import lab_test_parasito_swab
 from . import lab_test_urina

@@ -35,6 +35,7 @@
         'data/lab_test_unit_data.xml',
         'views/lab_test_request_direct_mail_view.xml',
         'views/lab_test_person_view.xml',
+        'views/lab_test_person_state_view.xml',
         'views/lab_test_anemia_dhc_view.xml',
         'views/lab_test_parasito_swab_view.xml',
         'views/lab_test_urina_view.xml',

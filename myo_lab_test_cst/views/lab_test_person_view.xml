@@ -74,7 +74,7 @@
             <field name="model">myo.lab_test.person</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree name="suvey_persons" string="Lab Test Persons">
+                <tree name="lab_test_person" string="Lab Test Persons">
                     <field name="access_id"/>
                     <field name="name"/>
                     <field name="code"/>
