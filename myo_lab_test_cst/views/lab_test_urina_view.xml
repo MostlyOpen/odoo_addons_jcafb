@@ -103,7 +103,7 @@
             <field name="model">myo.lab_test.urina</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree name="suvey_urinas" string="Lab Test Urina">
+                <tree name="lab_test_urina" string="Lab Test Urina">
                     <!--field name="name"/-->
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>

@@ -38,6 +38,7 @@
         'views/lab_test_anemia_dhc_view.xml',
         'views/lab_test_parasito_swab_view.xml',
         'views/lab_test_urina_view.xml',
+        'views/lab_test_urina_state_view.xml',
         'views/lab_test_request_direct_mail_menu_view.xml',
         'wizard/lab_test_edit_wizard_view.xml',
         'wizard/lab_test_request_direct_mail_wizard_view.xml',

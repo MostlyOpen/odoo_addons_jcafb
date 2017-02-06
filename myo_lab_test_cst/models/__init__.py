@@ -24,3 +24,4 @@ from . import lab_test_person
 from . import lab_test_anemia_dhc
 from . import lab_test_parasito_swab
 from . import lab_test_urina
+from . import lab_test_urina_state
