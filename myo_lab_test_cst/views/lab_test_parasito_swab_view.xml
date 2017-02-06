@@ -110,7 +110,7 @@
             <field name="model">myo.lab_test.parasito_swab</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree name="suvey_parasito_swabs" string="Lab Test Parasito SWAB">
+                <tree name="lab_test_parasito_swab" string="Lab Test Parasito SWAB">
                     <!--field name="name"/-->
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>
