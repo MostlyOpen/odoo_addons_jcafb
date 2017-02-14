@@ -18,7 +18,7 @@
 #
 ###############################################################################
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class LabTestUrina(models.Model):
@@ -27,7 +27,8 @@ class LabTestUrina(models.Model):
     access_id = fields.Integer('Access ID', help="Access ID")
     lab_test_person_id = fields.Many2one(
         'myo.lab_test.person',
-        'Related Lab Test Person'
+        'Related Lab Test Person',
+        ondelete='restrict'
     )
 
     request_code_urina = fields.Char('Lab Request Code (Urina)')
@@ -50,7 +51,7 @@ class LabTestUrina(models.Model):
     sangue = fields.Char("Sangue")
     urobilinogenio = fields.Char("Urobilinogênio")
     nitrito = fields.Char("Nitrito")
-    cels_epitcels_epit = fields.Char("Células Epiteliais")
+    cels_epit = fields.Char("Células Epiteliais")
     muco = fields.Char("Muco")
     cristais = fields.Char("Cristais")
     leucocitos = fields.Char("Leucócitos")
@@ -78,3 +79,22 @@ class LabTestUrina(models.Model):
     _rec_name = 'access_id'
 
     _order = 'access_id'
+
+
+class LabTestPerson(models.Model):
+    _inherit = 'myo.lab_test.person'
+
+    lab_test_urina_ids = fields.One2many(
+        'myo.lab_test.urina',
+        'lab_test_person_id',
+        'Exames de Urina'
+    )
+    count_lab_test_urina = fields.Integer(
+        'Number of Exames de Urina',
+        compute='_compute_count_lab_test_urina'
+    )
+
+    @api.depends('lab_test_urina_ids')
+    def _compute_count_lab_test_urina(self):
+        for r in self:
+            r.count_lab_test_urina = len(r.lab_test_urina_ids)

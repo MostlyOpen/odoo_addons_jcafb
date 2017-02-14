@@ -2,6 +2,29 @@
 <openerp>
     <data>
 
+        <record id="myo_lab_test_person_view_form_lab_test_urina" model="ir.ui.view">
+            <field name="name">myo.lab_test.person.form</field>
+            <field name="model">myo.lab_test.person</field>
+            <field name="inherit_id" ref="myo_lab_test_cst.myo_lab_test_person_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <!--page name="settings" position="before">
+                    <page string="Exames de Unrina">
+                        <group>
+                            <field name="count_lab_test_urina"/>
+                            <field name="lab_test_urina_ids" colspan="4" nolabel="1"/>
+                        </group>
+                    </page>
+                </page-->
+                <field name="person_id" position="after">
+                    <group>
+                        <field name="count_lab_test_urina"/>
+                        <field name="lab_test_urina_ids" colspan="4" nolabel="1"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
         <record id="myo_lab_test_urina_view_form" model="ir.ui.view">
             <field name="name">myo.lab_test.urina.form</field>
             <field name="model">myo.lab_test.urina</field>
@@ -48,7 +71,7 @@
                                     <field name="sangue"/>
                                     <field name="urobilinogenio"/>
                                     <field name="nitrito"/>
-                                    <field name="cels_epitcels_epit"/>
+                                    <field name="cels_epit"/>
                                     <field name="muco"/>
                                     <field name="cristais"/>
                                     <field name="leucocitos"/>

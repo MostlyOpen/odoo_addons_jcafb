@@ -20,7 +20,7 @@
 
 # from datetime import datetime
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class LabTestAnemiaDHC(models.Model):
@@ -30,7 +30,8 @@ class LabTestAnemiaDHC(models.Model):
     access_id = fields.Integer('Access ID', help="Access ID")
     lab_test_person_id = fields.Many2one(
         'myo.lab_test.person',
-        'Related Lab Test Person'
+        'Related Lab Test Person',
+        ondelete='restrict'
     )
 
     request_code_anemia = fields.Char('Lab Request Code (Anemia)')
@@ -83,3 +84,22 @@ class LabTestAnemiaDHC(models.Model):
     _rec_name = 'access_id'
 
     _order = 'access_id'
+
+
+class LabTestPerson(models.Model):
+    _inherit = 'myo.lab_test.person'
+
+    lab_test_anemia_dhc_ids = fields.One2many(
+        'myo.lab_test.anemia_dhc',
+        'lab_test_person_id',
+        'Exames de Anemia e DHC'
+    )
+    count_lab_test_anemia_dhc = fields.Integer(
+        'Number of Exames de Anemia e DHC',
+        compute='_compute_count_lab_test_anemia_dhc'
+    )
+
+    @api.depends('lab_test_anemia_dhc_ids')
+    def _compute_count_lab_test_anemia_dhc(self):
+        for r in self:
+            r.count_lab_test_anemia_dhc = len(r.lab_test_anemia_dhc_ids)

@@ -35,7 +35,41 @@ class LabTestPersonCheckWizard(models.TransientModel):
     def do_lab_test_person_check(self):
         self.ensure_one()
 
+        person_model = self.env['myo.person']
+        lab_test_person_model = self.env['myo.lab_test.person']
+
         for lab_test_person_reg in self.lab_test_person_ids:
             print '>>>>>', lab_test_person_reg.code
+
+            lab_test_person_reg.notes = False
+
+            person_search = person_model.search([
+                ('code', '=', lab_test_person_reg.code),
+            ])
+            if person_search.id is False:
+                if lab_test_person_reg.notes is False:
+                    lab_test_person_reg.notes = 'Erro: Codigo da pessoa invalido!'
+                else:
+                    lab_test_person_reg.notes += '\nErro: Codigo da pessoa invalido!'
+            else:
+                if lab_test_person_reg.name != person_search.name:
+                    if lab_test_person_reg.notes is False:
+                        lab_test_person_reg.notes = 'Erro: Nome da Pessoa Invalido!'
+                    else:
+                        lab_test_person_reg.notes += '\nErro: Nome da Pessoa Invalido!'
+
+                lab_test_person_search = lab_test_person_model.search([
+                    ('code', '=', lab_test_person_reg.code),
+                ])
+                if len(lab_test_person_search) > 1:
+                    if lab_test_person_reg.notes is False:
+                        lab_test_person_reg.notes = 'Erro: Codigo da Pessoa Duplicado!'
+                    else:
+                        lab_test_person_reg.notes += '\nErro: Codigo da Pessoa Duplicado!'
+
+            if lab_test_person_reg.notes is False:
+                lab_test_person_reg.state = 'checked'
+            else:
+                lab_test_person_reg.state = 'draft'
 
         return True

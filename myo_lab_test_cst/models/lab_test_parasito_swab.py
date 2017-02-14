@@ -18,7 +18,7 @@
 #
 ###############################################################################
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class LabTestParasitoSWAB(models.Model):
@@ -27,7 +27,8 @@ class LabTestParasitoSWAB(models.Model):
     access_id = fields.Integer('Access ID', help="Access ID")
     lab_test_person_id = fields.Many2one(
         'myo.lab_test.person',
-        'Related Lab Test Person'
+        'Related Lab Test Person',
+        ondelete='restrict'
     )
 
     request_code_parasito = fields.Char('Lab Request Code (Parasito)')
@@ -90,3 +91,22 @@ class LabTestParasitoSWAB(models.Model):
     _rec_name = 'access_id'
 
     _order = 'access_id'
+
+
+class LabTestPerson(models.Model):
+    _inherit = 'myo.lab_test.person'
+
+    lab_test_parasito_swab_ids = fields.One2many(
+        'myo.lab_test.parasito_swab',
+        'lab_test_person_id',
+        'Exames de Parasito e SWAB'
+    )
+    count_lab_test_parasito_swab = fields.Integer(
+        'Number of Exames de Parasito e SWAB',
+        compute='_compute_count_lab_test_parasito_swab'
+    )
+
+    @api.depends('lab_test_parasito_swab_ids')
+    def _compute_count_lab_test_parasito_swab(self):
+        for r in self:
+            r.count_lab_test_parasito_swab = len(r.lab_test_parasito_swab_ids)
