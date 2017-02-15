@@ -36,7 +36,88 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
     def do_lab_test_parasito_swab_check(self):
         self.ensure_one()
 
+        lab_test_request_model = self.env['myo.lab_test.request']
+        lab_test_parasito_swab_model = self.env['myo.lab_test.parasito_swab']
+
         for lab_test_parasito_swab_reg in self.lab_test_parasito_swab_ids:
-            print '>>>>>', lab_test_parasito_swab_reg.request_code_parasito, lab_test_parasito_swab_reg.request_code_swab
+            print '>>>>>', \
+                  lab_test_parasito_swab_reg.request_code_parasito, lab_test_parasito_swab_reg.request_code_swab
+
+            lab_test_parasito_swab_reg.notes = False
+
+            if lab_test_parasito_swab_reg.request_code_parasito != 'n/d':
+
+                lab_test_request_search = lab_test_request_model.search([
+                    ('name', '=', lab_test_parasito_swab_reg.request_code_parasito),
+                ])
+                if lab_test_request_search.id is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Codigo da Requisição (Parasito) inválido!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (Parasito) inválido!'
+                else:
+                    if lab_test_parasito_swab_reg.request_id_parasito.lab_test_type_id.name != \
+                       u'JCAFB 2017 - Laboratório - Parasitologia (Criança)' and \
+                       lab_test_parasito_swab_reg.request_id_parasito.lab_test_type_id.name != \
+                       u'JCAFB 2017 - Laboratório - Parasitologia (Idoso)':
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = \
+                                u'Erro: Tipo de Exame da Requisição (Parasito) inválido!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += \
+                                u'\nErro: Tipo de Exame da Requisição (Parasito) inválido!'
+                    if lab_test_parasito_swab_reg.request_id_parasito.patient_id.name != \
+                       lab_test_parasito_swab_reg.lab_test_person_id.name:
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = u'Erro: Pessoa da Requisição (Parasito) inválida!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += u'\nErro: Pessoa da Requisição (Parasito) inválida!'
+
+                    lab_test_parasito_swab_search = lab_test_parasito_swab_model.search([
+                        ('request_code_parasito', '=', lab_test_parasito_swab_reg.request_code_parasito),
+                    ])
+                    if len(lab_test_parasito_swab_search) > 1:
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = u'Erro: Codigo da Requisição (Parasito) Duplicado!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (Parasito) Duplicado!'
+
+            if lab_test_parasito_swab_reg.request_code_swab != 'n/d':
+
+                lab_test_request_search = lab_test_request_model.search([
+                    ('name', '=', lab_test_parasito_swab_reg.request_code_swab),
+                ])
+                if lab_test_request_search.id is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Codigo da Requisição (SWAB) inválido!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (SWAB) inválido!'
+                else:
+                    if lab_test_parasito_swab_reg.request_id_swab.lab_test_type_id.name != \
+                       u'JCAFB 2017 - Laboratório - Pesquisa de Enterobius vermicularis':
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = u'Erro: Tipo de Exame da Requisição (SWAB) inválido!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += u'\nErro: Tipo de Exame da Requisição (SWAB) inválido!'
+                    if lab_test_parasito_swab_reg.request_id_swab.patient_id.name != \
+                       lab_test_parasito_swab_reg.lab_test_person_id.name:
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = u'Erro: Pessoa da Requisição (SWAB) inválida!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += u'\nErro: Pessoa da Requisição (SWAB) inválida!'
+
+                    lab_test_parasito_swab_search = lab_test_parasito_swab_model.search([
+                        ('request_code_swab', '=', lab_test_parasito_swab_reg.request_code_swab),
+                    ])
+                    if len(lab_test_parasito_swab_search) > 1:
+                        if lab_test_parasito_swab_reg.notes is False:
+                            lab_test_parasito_swab_reg.notes = u'Erro: Codigo da Requisição (SWAB) Duplicado!'
+                        else:
+                            lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (SWAB) Duplicado!'
+
+            if lab_test_parasito_swab_reg.notes is False:
+                lab_test_parasito_swab_reg.state = 'checked'
+            else:
+                lab_test_parasito_swab_reg.state = 'draft'
 
         return True
