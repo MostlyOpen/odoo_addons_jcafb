@@ -36,7 +36,50 @@ class LabTestUrinaCheckWizard(models.TransientModel):
     def do_lab_test_urina_check(self):
         self.ensure_one()
 
+        lab_test_request_model = self.env['myo.lab_test.request']
+        lab_test_urina_model = self.env['myo.lab_test.urina']
+
         for lab_test_urina_reg in self.lab_test_urina_ids:
             print '>>>>>', lab_test_urina_reg.request_code_urina
+
+            lab_test_urina_reg.notes = False
+
+            if lab_test_urina_reg.request_code_urina != 'n/d':
+
+                lab_test_request_search = lab_test_request_model.search([
+                    ('name', '=', lab_test_urina_reg.request_code_urina),
+                ])
+                if lab_test_request_search.id is False:
+                    if lab_test_urina_reg.notes is False:
+                        lab_test_urina_reg.notes = u'Erro: Codigo da Requisição (Urina) inválido!'
+                    else:
+                        lab_test_urina_reg.notes += u'\nErro: Codigo da Requisição (Urina) inválido!'
+                else:
+                    if lab_test_urina_reg.request_id_urina.lab_test_type_id.name != \
+                       u'JCAFB 2017 - Laboratório - Urinálise':
+                        if lab_test_urina_reg.notes is False:
+                            lab_test_urina_reg.notes = u'Erro: Tipo de Exame da Requisição (Urina) inválido!'
+                        else:
+                            lab_test_urina_reg.notes += u'\nErro: Tipo de Exame da Requisição (Urina) inválido!'
+                    if lab_test_urina_reg.request_id_urina.patient_id.name != \
+                       lab_test_urina_reg.lab_test_person_id.name:
+                        if lab_test_urina_reg.notes is False:
+                            lab_test_urina_reg.notes = u'Erro: Pessoa da Requisição (Urina) inválida!'
+                        else:
+                            lab_test_urina_reg.notes += u'\nErro: Pessoa da Requisição (Urina) inválida!'
+
+                    lab_test_urina_search = lab_test_urina_model.search([
+                        ('request_code_urina', '=', lab_test_urina_reg.request_code_urina),
+                    ])
+                    if len(lab_test_urina_search) > 1:
+                        if lab_test_urina_reg.notes is False:
+                            lab_test_urina_reg.notes = u'Erro: Codigo da Requisição (Urina) Duplicado!'
+                        else:
+                            lab_test_urina_reg.notes += u'\nErro: Codigo da Requisição (Urina) Duplicado!'
+
+            if lab_test_urina_reg.notes is False:
+                lab_test_urina_reg.state = 'checked'
+            else:
+                lab_test_urina_reg.state = 'draft'
 
         return True
