@@ -52,6 +52,7 @@
         'wizard/lab_test_anemia_dhc_validate_wizard_view.xml',
         'wizard/lab_test_parasito_swab_import_wizard_view.xml',
         'wizard/lab_test_parasito_swab_check_wizard_view.xml',
+        'wizard/lab_test_parasito_swab_validate_wizard_view.xml',
         'wizard/lab_test_urina_import_wizard_view.xml',
         'wizard/lab_test_urina_check_wizard_view.xml',
         'wizard/lab_test_urina_validate_wizard_view.xml',

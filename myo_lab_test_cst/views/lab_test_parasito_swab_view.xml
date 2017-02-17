@@ -56,6 +56,7 @@
                                 <group name="group_title_left">
                                     <field name="request_code_parasito"/>
                                     <field name="request_id_parasito" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="result_id_parasito" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="date_parasito"/>
                                     <field name="resultado_parasito"/>
                                     <field name="metodos_parasito"/>
@@ -88,6 +89,7 @@
                                 <group name="group_title_right">
                                     <field name="request_code_swab"/>
                                     <field name="request_id_swab" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="result_id_swab" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="date_swab"/>
                                     <field name="entrada_swab"/>
                                     <field name="saida_swab"/>
@@ -138,9 +140,11 @@
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>
                     <field name="request_code_parasito"/>
-                    <field name="request_id_parasito" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_id_parasito"/>
+                    <field name="result_id_parasito"/>
                     <field name="request_code_swab"/>
-                    <field name="request_id_swab" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_id_swab"/>
+                    <field name="result_id_swab"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -157,8 +161,10 @@
                     <field name="lab_test_person_id"/>
                     <field name="request_code_parasito"/>
                     <field name="request_id_parasito"/>
+                    <field name="result_id_parasito"/>
                     <field name="request_code_swab"/>
                     <field name="request_id_swab"/>
+                    <field name="result_id_swab"/>
                     <field name="notes"/>
                     <separator/>
                     <group name="group_by" string="Group By...">

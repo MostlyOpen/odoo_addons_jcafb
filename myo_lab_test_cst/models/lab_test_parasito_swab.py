@@ -36,6 +36,10 @@ class LabTestParasitoSWAB(models.Model):
         'myo.lab_test.request',
         'Related Lab Test Request (Parasito)'
     )
+    result_id_parasito = fields.Many2one(
+        'myo.lab_test.result',
+        'Related Lab Test Result (Parasito)'
+    )
     date_parasito = fields.Char("Data (Parasito)")
     resultado_parasito = fields.Char("Resultado Parasito")
     metodos_parasito = fields.Char("Métodos Parasito")
@@ -69,6 +73,10 @@ class LabTestParasitoSWAB(models.Model):
     request_id_swab = fields.Many2one(
         'myo.lab_test.request',
         'Related Lab Test Request (SWAB)'
+    )
+    result_id_swab = fields.Many2one(
+        'myo.lab_test.result',
+        'Related Lab Test Result (SWAB)'
     )
     date_swab = fields.Char("Data (SWAB)")
     entrada_swab = fields.Char("Entrada Swab")
