@@ -24,6 +24,7 @@ import lab_test_person_import_wizard
 import lab_test_person_check_wizard
 import lab_test_anemia_dhc_import_wizard
 import lab_test_anemia_dhc_check_wizard
+import lab_test_anemia_dhc_validate_wizard
 import lab_test_parasito_swab_import_wizard
 import lab_test_parasito_swab_check_wizard
 import lab_test_urina_import_wizard

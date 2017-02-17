@@ -56,6 +56,7 @@
                                 <group name="group_title_left">
                                     <field name="request_code_anemia"/>
                                     <field name="request_id_anemia" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="result_id_anemia" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="farmaceutico_anemia"/>
                                     <field name="date_anemia"/>
                                     <field name="peso_anemia"/>
@@ -67,6 +68,7 @@
                                 <group name="group_title_right">
                                     <field name="request_code_dhc"/>
                                     <field name="request_id_dhc" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="result_id_dhc" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="farmaceutico_dhc"/>
                                     <field name="date_dhc"/>
                                     <field name="peso_dhc"/>
@@ -121,9 +123,11 @@
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>
                     <field name="request_code_anemia"/>
-                    <field name="request_id_anemia" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_id_anemia"/>
+                    <field name="result_id_anemia"/>
                     <field name="request_code_dhc"/>
-                    <field name="request_id_dhc" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_id_dhc"/>
+                    <field name="result_id_dhc"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -140,8 +144,10 @@
                     <field name="lab_test_person_id"/>
                     <field name="request_code_anemia"/>
                     <field name="request_id_anemia"/>
+                    <field name="result_id_anemia"/>
                     <field name="request_code_dhc"/>
                     <field name="request_id_dhc"/>
+                    <field name="result_id_dhc"/>
                     <field name="notes"/>
                     <separator/>
                     <group name="group_by" string="Group By...">

@@ -39,6 +39,10 @@ class LabTestAnemiaDHC(models.Model):
         'myo.lab_test.request',
         'Related Lab Test Request (Anemia)'
     )
+    result_id_anemia = fields.Many2one(
+        'myo.lab_test.result',
+        'Related Lab Test Result (Anemia)'
+    )
     farmaceutico_anemia = fields.Char('Farmacêutico Responsável (Anemia)')
     date_anemia = fields.Char("Data (Anemia)")
     peso_anemia = fields.Char("Peso (Anemia)")
@@ -51,6 +55,10 @@ class LabTestAnemiaDHC(models.Model):
     request_id_dhc = fields.Many2one(
         'myo.lab_test.request',
         'Related Lab Test Request (DHC)'
+    )
+    result_id_dhc = fields.Many2one(
+        'myo.lab_test.result',
+        'Related Lab Test Result (DHC)'
     )
     farmaceutico_dhc = fields.Char('Farmacêutico Responsável (DHC)')
     date_dhc = fields.Char("Data (DHC)")
