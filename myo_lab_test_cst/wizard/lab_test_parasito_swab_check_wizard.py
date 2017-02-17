@@ -59,7 +59,9 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
                     if lab_test_parasito_swab_reg.request_id_parasito.lab_test_type_id.name != \
                        u'JCAFB 2017 - Laboratório - Parasitologia (Criança)' and \
                        lab_test_parasito_swab_reg.request_id_parasito.lab_test_type_id.name != \
-                       u'JCAFB 2017 - Laboratório - Parasitologia (Idoso)':
+                       u'JCAFB 2017 - Laboratório - Parasitologia (Idoso)' and \
+                       lab_test_parasito_swab_reg.request_id_parasito.lab_test_type_id.name != \
+                       u'JCAFB 2017 - Laboratório - Parasitologia':
                         if lab_test_parasito_swab_reg.notes is False:
                             lab_test_parasito_swab_reg.notes = \
                                 u'Erro: Tipo de Exame da Requisição (Parasito) inválido!'
