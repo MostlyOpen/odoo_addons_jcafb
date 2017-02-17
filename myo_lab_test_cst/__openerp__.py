@@ -53,6 +53,7 @@
         'wizard/lab_test_parasito_swab_check_wizard_view.xml',
         'wizard/lab_test_urina_import_wizard_view.xml',
         'wizard/lab_test_urina_check_wizard_view.xml',
+        'wizard/lab_test_urina_validate_wizard_view.xml',
         'views/lab_test_menu_view.xml',
     ],
     'demo': [],

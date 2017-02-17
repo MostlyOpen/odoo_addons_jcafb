@@ -56,6 +56,7 @@
                                 <group name="group_title_left">
                                     <field name="request_code_urina"/>
                                     <field name="request_id_urina" options="{'no_open': False, 'no_create': True}"/>
+                                    <field name="result_id_urina" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="farmaceutico_resp"/>
                                     <field name="date_urina"/>
                                     <field name="volume"/>
@@ -131,7 +132,8 @@
                     <field name="access_id"/>
                     <field name="lab_test_person_id"/>
                     <field name="request_code_urina"/>
-                    <field name="request_id_urina" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="request_id_urina"/>
+                    <field name="result_id_urina"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -148,6 +150,7 @@
                     <field name="lab_test_person_id"/>
                     <field name="request_code_urina"/>
                     <field name="request_id_urina"/>
+                    <field name="result_id_urina"/>
                     <field name="notes"/>
                     <separator/>
                     <group name="group_by" string="Group By...">

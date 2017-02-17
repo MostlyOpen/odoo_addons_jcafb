@@ -36,6 +36,10 @@ class LabTestUrina(models.Model):
         'myo.lab_test.request',
         'Related Lab Test Request (Urina)'
     )
+    result_id_urina = fields.Many2one(
+        'myo.lab_test.result',
+        'Related Lab Test Result (Urina)'
+    )
     farmaceutico_resp = fields.Char('Farmacêutico Responsável')
     date_urina = fields.Char("Data do Exame")
     volume = fields.Char("Volume")

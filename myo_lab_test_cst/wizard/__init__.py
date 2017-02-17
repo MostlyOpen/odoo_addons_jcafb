@@ -28,3 +28,4 @@ import lab_test_parasito_swab_import_wizard
 import lab_test_parasito_swab_check_wizard
 import lab_test_urina_import_wizard
 import lab_test_urina_check_wizard
+import lab_test_urina_validate_wizard
