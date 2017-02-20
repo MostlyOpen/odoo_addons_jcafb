@@ -58,6 +58,7 @@
                                     <field name="request_id_urina" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="result_id_urina" options="{'no_open': False, 'no_create': True}"/>
                                     <field name="farmaceutico_resp"/>
+                                    <field name="professional_id"/>
                                     <field name="date_urina"/>
                                     <field name="volume"/>
                                     <field name="densidade"/>
@@ -134,6 +135,8 @@
                     <field name="request_code_urina"/>
                     <field name="request_id_urina"/>
                     <field name="result_id_urina"/>
+                    <field name="farmaceutico_resp"/>
+                    <field name="professional_id"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -151,10 +154,14 @@
                     <field name="request_code_urina"/>
                     <field name="request_id_urina"/>
                     <field name="result_id_urina"/>
+                    <field name="farmaceutico_resp"/>
+                    <field name="professional_id"/>
                     <field name="notes"/>
                     <separator/>
                     <group name="group_by" string="Group By...">
                         <filter string="Access ID" domain="[]" context="{'group_by':'access_id'}"/>
+                        <filter string="Farmcêutico Responsável" domain="[]" context="{'group_by':'farmaceutico_resp'}"/>
+                        <filter string="Professional" domain="[]" context="{'group_by':'professional_id'}"/>
                     </group>
                 </search>
             </field>

@@ -38,6 +38,7 @@ class LabTestUrinaCheckWizard(models.TransientModel):
 
         lab_test_request_model = self.env['myo.lab_test.request']
         lab_test_urina_model = self.env['myo.lab_test.urina']
+        professional_model = self.env['myo.professional']
 
         for lab_test_urina_reg in self.lab_test_urina_ids:
             print '>>>>>', lab_test_urina_reg.request_code_urina
@@ -76,6 +77,26 @@ class LabTestUrinaCheckWizard(models.TransientModel):
                             lab_test_urina_reg.notes = u'Erro: Codigo da Requisição (Urina) Duplicado!'
                         else:
                             lab_test_urina_reg.notes += u'\nErro: Codigo da Requisição (Urina) Duplicado!'
+
+                if lab_test_urina_reg.farmaceutico_resp != 'Alice Herminia Serpentino - CRF (SP): 7.891' and \
+                   lab_test_urina_reg.farmaceutico_resp != 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                    if lab_test_urina_reg.notes is False:
+                        lab_test_urina_reg.notes = u'Erro: Farmacẽutico Responsável inválido!'
+                    else:
+                        lab_test_urina_reg.notes += u'\nErro: Farmacẽutico Responsável inválido!'
+                else:
+                    if lab_test_urina_reg.farmaceutico_resp == 'Alice Herminia Serpentino - CRF (SP): 7.891':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Alice Herminia Serpentino'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_urina_reg.professional_id = professional_search.id
+                    if lab_test_urina_reg.farmaceutico_resp == 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Valdir Azevedo dos Santos'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_urina_reg.professional_id = professional_search.id
 
             if lab_test_urina_reg.notes is False:
                 lab_test_urina_reg.state = 'checked'

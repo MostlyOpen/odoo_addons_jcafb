@@ -41,6 +41,7 @@ class LabTestUrina(models.Model):
         'Related Lab Test Result (Urina)'
     )
     farmaceutico_resp = fields.Char('Farmacêutico Responsável')
+    professional_id = fields.Many2one('myo.professional', 'Related Professional', help="Related Professional")
     date_urina = fields.Char("Data do Exame")
     volume = fields.Char("Volume")
     densidade = fields.Char("Densidade")
