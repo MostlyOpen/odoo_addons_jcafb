@@ -14,9 +14,13 @@
             <field name="lab_test_urina_ids"/>
             <group>
                 <group>
+                    <field name="file_path"/>
                 </group>
             </group>
             <footer>
+                <button type="object" name="do_lab_test_urina_refresh_date"
+                    string="Refresh Date"
+                    />
                 <button type="object" name="do_lab_test_urina_validate"
                     string="Validate" class="oe_highlight"
                     />

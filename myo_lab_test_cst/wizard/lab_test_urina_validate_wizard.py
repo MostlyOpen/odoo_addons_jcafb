@@ -20,6 +20,9 @@
 
 from openerp import api, fields, models
 
+import xlrd
+import datetime
+
 
 class LabTestUrinaValidateWizard(models.TransientModel):
     _name = 'myo.lab_test.urina.validate.wizard'
@@ -31,6 +34,60 @@ class LabTestUrinaValidateWizard(models.TransientModel):
         'myo_lab_test_urina_validate_wizard_rel',
         string='Exames de Urina',
         default=_default_lab_test_urina_ids)
+
+    file_path = fields.Char(
+        'File Path',
+        required=True,
+        help="File Path",
+        default='/opt/openerp/mostlyopen_clvhealth_jcafb/lab_test/input/3-TABELA URINA TIPO I 2017.xls'
+    )
+
+    @api.multi
+    def do_lab_test_urina_refresh_date(self):
+        self.ensure_one()
+
+        book = xlrd.open_workbook(self.file_path)
+        sheet = book.sheet_by_index(0)
+
+        lab_test_urina_model = self.env['myo.lab_test.urina']
+
+        for i in range(sheet.nrows):
+
+            if i == 0:
+
+                name_cols = {}
+                for k in range(sheet.ncols):
+                    name_col = sheet.cell_value(i, k)
+                    if name_col != xlrd.empty_cell.value:
+                        name_cols.update({name_col: k})
+
+                print '>>>>>', name_cols
+
+                continue
+
+            CODIGO_Access_PESSOAS = sheet.cell_value(i, name_cols['CODIGO_Access_PESSOAS'])
+
+            DataExame2017 = False
+            date = sheet.cell_value(i, name_cols[u'DataExame2017'])
+            if date != xlrd.empty_cell.value and date != 0:
+                date = datetime.datetime(*xlrd.xldate_as_tuple(date, book.datemode)).strftime('%Y-%m-%d')
+                DataExame2017 = date
+
+            Sg2017 = sheet.cell_value(i, name_cols[u'Sg2017'])
+            try:
+                access_id = int(CODIGO_Access_PESSOAS)
+            except:
+                access_id = False
+
+            lab_test_urina_search = lab_test_urina_model.search([
+                ('access_id', '=', access_id),
+            ])
+
+            if lab_test_urina_search.id is not False:
+
+                lab_test_urina_search.date_urina = DataExame2017
+
+                lab_test_urina_search.sangue = Sg2017
 
     @api.multi
     def do_lab_test_urina_validate(self):
