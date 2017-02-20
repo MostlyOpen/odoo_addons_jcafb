@@ -1,0 +1,40 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_lab_test_anemia_dhc_transcribe_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_lab_test_anemia_dhc_transcribe_wizard</field>
+      <field name="model">myo.lab_test.anemia_dhc.transcribe.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+                <!--button type="object" name="do_populate_marked_lab_test_anemia_dhcs"
+                        string="Get Marked Survey Files"/-->
+            </div>
+            <field name="lab_test_anemia_dhc_ids"/>
+            <group>
+                <group>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_lab_test_anemia_dhc_transcribe"
+                    string="Transcribe" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_lab_test_anemia_dhc_transcribe_wizard"
+        name="Lab Test Anemia DHC Transcribe"
+        src_model="myo.lab_test.anemia_dhc"
+        res_model="myo.lab_test.anemia_dhc.transcribe.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>

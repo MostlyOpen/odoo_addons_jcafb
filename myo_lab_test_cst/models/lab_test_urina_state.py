@@ -29,7 +29,7 @@ class LabTestUrina(models.Model):
         ('draft', 'Draft'),
         ('checked', 'Checked'),
         ('validated', 'Validated'),
-        ('imported', 'Imported'),
+        ('transcribed', 'Transcribed'),
         ('canceled', 'Canceled')
     ], string='Status', default='draft', readonly=True, required=True, help="")
 
@@ -61,9 +61,9 @@ class LabTestUrina(models.Model):
             document.change_state('validated')
 
     @api.multi
-    def action_import(self):
+    def action_transcribe(self):
         for document in self:
-            document.change_state('imported')
+            document.change_state('transcribed')
 
     @api.multi
     def action_cancel(self):

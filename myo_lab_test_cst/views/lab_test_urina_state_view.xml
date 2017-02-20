@@ -12,9 +12,9 @@
                     <header>
                         <!--field name="state" widget="statusbar"
                                clickable="True"
-                               statusbar_visible="draft,checked,validated,imported,canceled"/-->
+                               statusbar_visible="draft,checked,validated,transcribed,canceled"/-->
                         <field name="state" widget="statusbar"
-                               statusbar_visible="draft,checked,validated,imported,canceled"/>
+                               statusbar_visible="draft,checked,validated,transcribed,canceled"/>
                     </header>
                 </sheet>
                 <div name="button_box" position="inside">
@@ -25,14 +25,14 @@
                                 groups="myo_base.group_document_manager"/>
                         <button name="action_check" type="object"
                                 string="Revise"
-                                states="draft,validate,imported"
+                                states="draft,validate,transcribed"
                                 groups="myo_base.group_document_manager"/>
                         <button name="action_validated" type="object"
                                 string="Validate"
                                 states="checked"
                                 groups="myo_base.group_document_manager"/>
-                        <button name="action_import" type="object"
-                                string="Import"
+                        <button name="action_transcribe" type="object"
+                                string="Trancribe"
                                 states="checked,validated"
                                 groups="myo_base.group_document_manager"/>
                         <button name="action_cancel" type="object"
@@ -54,7 +54,7 @@
                     <field name="state"/>
                 </field>
                 <tree name="lab_test_urina" position="attributes">
-                    <attribute name="colors">gray:state=='draft';green:state=='validated';blue:state in('imported','arquived');red:state=='canceled'</attribute>
+                    <attribute name="colors">gray:state=='draft';green:state=='validated';blue:state in('transcribed','arquived');red:state=='canceled'</attribute>
                     <attribute name="fonts">italic:state in ('draft','canceled');bold:state=='arquived'</attribute>
                 </tree>
             </field>
