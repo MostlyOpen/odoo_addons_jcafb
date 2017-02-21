@@ -41,9 +41,6 @@ class LabTestAnemiaDHCValidatekWizard(models.TransientModel):
         for lab_test_anemia_dhc_reg in self.lab_test_anemia_dhc_ids:
             print '>>>>>', lab_test_anemia_dhc_reg.request_code_anemia, lab_test_anemia_dhc_reg.request_code_dhc
 
-            lab_test_result_data = {}
-            test_cases = []
-
             if lab_test_anemia_dhc_reg.request_code_anemia != 'n/d' and \
                lab_test_anemia_dhc_reg.state == 'checked':
 
@@ -61,6 +58,9 @@ class LabTestAnemiaDHCValidatekWizard(models.TransientModel):
                     if lab_test_result_search.id is False:
 
                         if lab_test_anemia_dhc_reg.request_id_anemia.state == 'draft':
+
+                            lab_test_result_data = {}
+                            test_cases = []
 
                             lab_test_result_data['name'] = lab_test_anemia_dhc_reg.request_id_anemia.name
                             lab_test_result_data['lab_test_type_id'] = \
@@ -101,6 +101,9 @@ class LabTestAnemiaDHCValidatekWizard(models.TransientModel):
                     if lab_test_result_search.id is False:
 
                         if lab_test_anemia_dhc_reg.request_id_dhc.state == 'draft':
+
+                            lab_test_result_data = {}
+                            test_cases = []
 
                             lab_test_result_data['name'] = lab_test_anemia_dhc_reg.request_id_dhc.name
                             lab_test_result_data['lab_test_type_id'] = \

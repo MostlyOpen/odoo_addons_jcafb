@@ -116,6 +116,18 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
                         if professional_search.id is not False:
                             lab_test_parasito_swab_reg.professional_id = professional_search.id
 
+                if lab_test_parasito_swab_reg.entrada_parasito is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Entrada Parasito não definida!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Entrada Parasito não definida!'
+
+                if lab_test_parasito_swab_reg.saida_parasito is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Saida Parasito não definida!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Saida Parasito não definida!'
+
             if lab_test_parasito_swab_reg.request_code_swab != 'n/d':
 
                 lab_test_request_search = lab_test_request_model.search([
@@ -171,6 +183,18 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
                         ])
                         if professional_search.id is not False:
                             lab_test_parasito_swab_reg.professional_id = professional_search.id
+
+                if lab_test_parasito_swab_reg.entrada_swab is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Entrada Swab não definida!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Entrada Swab não definida!'
+
+                if lab_test_parasito_swab_reg.saida_swab is False:
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Saida Swab não definida!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Saida Swab não definida!'
 
             if lab_test_parasito_swab_reg.notes is False:
                 lab_test_parasito_swab_reg.state = 'checked'

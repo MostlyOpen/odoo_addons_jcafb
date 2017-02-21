@@ -42,9 +42,6 @@ class LabTestParasitoSWABValidatekWizard(models.TransientModel):
             print '>>>>>', lab_test_parasito_swab_reg.request_code_parasito, \
                   lab_test_parasito_swab_reg.request_code_swab
 
-            lab_test_result_data = {}
-            test_cases = []
-
             if lab_test_parasito_swab_reg.request_code_parasito != 'n/d' and \
                lab_test_parasito_swab_reg.state == 'checked':
 
@@ -62,6 +59,9 @@ class LabTestParasitoSWABValidatekWizard(models.TransientModel):
                     if lab_test_result_search.id is False:
 
                         if lab_test_parasito_swab_reg.request_id_parasito.state == 'draft':
+
+                            lab_test_result_data = {}
+                            test_cases = []
 
                             lab_test_result_data['name'] = lab_test_parasito_swab_reg.request_id_parasito.name
                             lab_test_result_data['lab_test_type_id'] = \
@@ -102,6 +102,9 @@ class LabTestParasitoSWABValidatekWizard(models.TransientModel):
                     if lab_test_result_search.id is False:
 
                         if lab_test_parasito_swab_reg.request_id_swab.state == 'draft':
+
+                            lab_test_result_data = {}
+                            test_cases = []
 
                             lab_test_result_data['name'] = lab_test_parasito_swab_reg.request_id_swab.name
                             lab_test_result_data['lab_test_type_id'] = \
