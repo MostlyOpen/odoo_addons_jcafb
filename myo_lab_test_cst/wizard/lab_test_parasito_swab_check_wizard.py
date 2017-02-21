@@ -38,6 +38,7 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
 
         lab_test_request_model = self.env['myo.lab_test.request']
         lab_test_parasito_swab_model = self.env['myo.lab_test.parasito_swab']
+        professional_model = self.env['myo.professional']
 
         for lab_test_parasito_swab_reg in self.lab_test_parasito_swab_ids:
             print '>>>>>', \
@@ -84,6 +85,29 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
                         else:
                             lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (Parasito) Duplicado!'
 
+                if lab_test_parasito_swab_reg.farmaceutico_respons != 'Alice Herminia Serpentino - CRF (SP): 7.891' \
+                   and \
+                   lab_test_parasito_swab_reg.farmaceutico_respons != 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Farmacẽutico Responsável inválido!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Farmacẽutico Responsável inválido!'
+                else:
+                    if lab_test_parasito_swab_reg.farmaceutico_respons == \
+                       'Alice Herminia Serpentino - CRF (SP): 7.891':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Alice Herminia Serpentino'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_parasito_swab_reg.professional_id = professional_search.id
+                    if lab_test_parasito_swab_reg.farmaceutico_respons == \
+                       'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Valdir Azevedo dos Santos'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_parasito_swab_reg.professional_id = professional_search.id
+
             if lab_test_parasito_swab_reg.request_code_swab != 'n/d':
 
                 lab_test_request_search = lab_test_request_model.search([
@@ -116,6 +140,29 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
                             lab_test_parasito_swab_reg.notes = u'Erro: Codigo da Requisição (SWAB) Duplicado!'
                         else:
                             lab_test_parasito_swab_reg.notes += u'\nErro: Codigo da Requisição (SWAB) Duplicado!'
+
+                if lab_test_parasito_swab_reg.farmaceutico_respons != 'Alice Herminia Serpentino - CRF (SP): 7.891' \
+                   and \
+                   lab_test_parasito_swab_reg.farmaceutico_respons != 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                    if lab_test_parasito_swab_reg.notes is False:
+                        lab_test_parasito_swab_reg.notes = u'Erro: Farmacẽutico Responsável inválido!'
+                    else:
+                        lab_test_parasito_swab_reg.notes += u'\nErro: Farmacẽutico Responsável inválido!'
+                else:
+                    if lab_test_parasito_swab_reg.farmaceutico_respons == \
+                       'Alice Herminia Serpentino - CRF (SP): 7.891':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Alice Herminia Serpentino'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_parasito_swab_reg.professional_id = professional_search.id
+                    if lab_test_parasito_swab_reg.farmaceutico_respons == \
+                       'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Valdir Azevedo dos Santos'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_parasito_swab_reg.professional_id = professional_search.id
 
             if lab_test_parasito_swab_reg.notes is False:
                 lab_test_parasito_swab_reg.state = 'checked'

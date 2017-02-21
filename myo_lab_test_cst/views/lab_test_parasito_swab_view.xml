@@ -102,6 +102,7 @@
                             </group>
                             <group name="group_title_bottom">
                                     <field name="farmaceutico_respons"/>
+                                    <field name="professional_id"/>
                             </group>
                         </div>
                         <div class="oe_right oe_button_box" name="button_box">
@@ -145,6 +146,7 @@
                     <field name="request_code_swab"/>
                     <field name="request_id_swab"/>
                     <field name="result_id_swab"/>
+                    <field name="professional_id"/>
                     <field name="notes"/>
                 </tree>
             </field>
@@ -169,6 +171,7 @@
                     <separator/>
                     <group name="group_by" string="Group By...">
                         <filter string="Access ID" domain="[]" context="{'group_by':'access_id'}"/>
+                        <filter string="Related Professional" domain="[]" context="{'group_by':'professional_id'}"/>
                     </group>
                 </search>
             </field>

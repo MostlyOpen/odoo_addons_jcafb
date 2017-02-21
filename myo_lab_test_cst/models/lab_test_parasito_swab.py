@@ -88,6 +88,7 @@ class LabTestParasitoSWAB(models.Model):
     status_swab = fields.Char("Status Swab")
 
     farmaceutico_respons = fields.Char('Farmacêutico Responsável')
+    professional_id = fields.Many2one('myo.professional', 'Related Professional', help="Related Professional")
 
     notes = fields.Text(string='Notes')
     active = fields.Boolean(
