@@ -45,6 +45,14 @@ class LabTestAnemiaDHCCheckWizard(models.TransientModel):
 
             lab_test_anemia_dhc_reg.notes = False
 
+            if lab_test_anemia_dhc_reg.request_code_anemia == 'n/d' and \
+               lab_test_anemia_dhc_reg.request_code_dhc == 'n/d':
+
+                if lab_test_anemia_dhc_reg.notes is False:
+                    lab_test_anemia_dhc_reg.notes = u'Erro: Nenhum resultado de exame definido!'
+                else:
+                    lab_test_anemia_dhc_reg.notes += u'\nErro: Nenhum resultado de exame definido'
+
             if lab_test_anemia_dhc_reg.request_code_anemia != 'n/d':
 
                 lab_test_request_search = lab_test_request_model.search([

@@ -46,6 +46,14 @@ class LabTestParasitoSwabCheckWizard(models.TransientModel):
 
             lab_test_parasito_swab_reg.notes = False
 
+            if lab_test_parasito_swab_reg.request_code_parasito == 'n/d' and \
+               lab_test_parasito_swab_reg.request_code_swab == 'n/d':
+
+                if lab_test_parasito_swab_reg.notes is False:
+                    lab_test_parasito_swab_reg.notes = u'Erro: Nenhum resultado de exame definido!'
+                else:
+                    lab_test_parasito_swab_reg.notes += u'\nErro: Nenhum resultado de exame definido'
+
             if lab_test_parasito_swab_reg.request_code_parasito != 'n/d':
 
                 lab_test_request_search = lab_test_request_model.search([
