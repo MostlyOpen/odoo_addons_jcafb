@@ -44,6 +44,11 @@ class LabTestAnemiaDHC(models.Model):
         'Related Lab Test Result (Anemia)'
     )
     farmaceutico_anemia = fields.Char('Farmacêutico Responsável (Anemia)')
+    professional_id_anemia = fields.Many2one(
+        'myo.professional',
+        'Related Professional (Anemia)',
+        help="Related Professional (Anemia)"
+    )
     date_anemia = fields.Char("Data (Anemia)")
     peso_anemia = fields.Char("Peso (Anemia)")
     altura_anemia = fields.Char("Altura (Anemia)")
@@ -61,6 +66,11 @@ class LabTestAnemiaDHC(models.Model):
         'Related Lab Test Result (DHC)'
     )
     farmaceutico_dhc = fields.Char('Farmacêutico Responsável (DHC)')
+    professional_id_dhc = fields.Many2one(
+        'myo.professional',
+        'Related Professional (DHC)',
+        help="Related Professional (DHC)"
+    )
     date_dhc = fields.Char("Data (DHC)")
     peso_dhc = fields.Char("Peso (DHC)")
     altura_dhc = fields.Char("Altura (DHC)")

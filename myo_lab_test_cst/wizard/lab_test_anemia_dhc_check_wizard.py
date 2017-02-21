@@ -38,6 +38,7 @@ class LabTestAnemiaDHCCheckWizard(models.TransientModel):
 
         lab_test_request_model = self.env['myo.lab_test.request']
         lab_test_anemia_dhc_model = self.env['myo.lab_test.anemia_dhc']
+        professional_model = self.env['myo.professional']
 
         for lab_test_anemia_dhc_reg in self.lab_test_anemia_dhc_ids:
             print '>>>>>', lab_test_anemia_dhc_reg.request_code_anemia, lab_test_anemia_dhc_reg.request_code_dhc
@@ -77,6 +78,26 @@ class LabTestAnemiaDHCCheckWizard(models.TransientModel):
                         else:
                             lab_test_anemia_dhc_reg.notes += u'\nErro: Codigo da Requisição (Anemia) Duplicado!'
 
+                if lab_test_anemia_dhc_reg.farmaceutico_anemia != 'Alice Herminia Serpentino - CRF (SP): 7.891' and \
+                   lab_test_anemia_dhc_reg.farmaceutico_anemia != 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                    if lab_test_anemia_dhc_reg.notes is False:
+                        lab_test_anemia_dhc_reg.notes = u'Erro: Farmacẽutico Responsável inválido!'
+                    else:
+                        lab_test_anemia_dhc_reg.notes += u'\nErro: Farmacẽutico Responsável inválido!'
+                else:
+                    if lab_test_anemia_dhc_reg.farmaceutico_anemia == 'Alice Herminia Serpentino - CRF (SP): 7.891':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Alice Herminia Serpentino'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_anemia_dhc_reg.professional_id_anemia = professional_search.id
+                    if lab_test_anemia_dhc_reg.farmaceutico_anemia == 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Valdir Azevedo dos Santos'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_anemia_dhc_reg.professional_id_anemia = professional_search.id
+
             if lab_test_anemia_dhc_reg.request_code_dhc != 'n/d':
 
                 lab_test_request_search = lab_test_request_model.search([
@@ -109,6 +130,26 @@ class LabTestAnemiaDHCCheckWizard(models.TransientModel):
                             lab_test_anemia_dhc_reg.notes = u'Erro: Codigo da Requisição (DHC) Duplicado!'
                         else:
                             lab_test_anemia_dhc_reg.notes += u'\nErro: Codigo da Requisição (DHC) Duplicado!'
+
+                if lab_test_anemia_dhc_reg.farmaceutico_dhc != 'Alice Herminia Serpentino - CRF (SP): 7.891' and \
+                   lab_test_anemia_dhc_reg.farmaceutico_dhc != 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                    if lab_test_anemia_dhc_reg.notes is False:
+                        lab_test_anemia_dhc_reg.notes = u'Erro: Farmacẽutico Responsável inválido!'
+                    else:
+                        lab_test_anemia_dhc_reg.notes += u'\nErro: Farmacẽutico Responsável inválido!'
+                else:
+                    if lab_test_anemia_dhc_reg.farmaceutico_dhc == 'Alice Herminia Serpentino - CRF (SP): 7.891':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Alice Herminia Serpentino'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_anemia_dhc_reg.professional_id_dhc = professional_search.id
+                    if lab_test_anemia_dhc_reg.farmaceutico_dhc == 'Valdir Azevedo dos Santos - CRF (SP): 26.169':
+                        professional_search = professional_model.search([
+                            ('name', '=', 'Valdir Azevedo dos Santos'),
+                        ])
+                        if professional_search.id is not False:
+                            lab_test_anemia_dhc_reg.professional_id_dhc = professional_search.id
 
             if lab_test_anemia_dhc_reg.notes is False:
                 lab_test_anemia_dhc_reg.state = 'checked'
