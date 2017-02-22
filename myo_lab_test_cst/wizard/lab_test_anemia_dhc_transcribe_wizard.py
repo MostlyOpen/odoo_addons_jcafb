@@ -36,7 +36,7 @@ class LabTestAnemiaDHCTranscribeWizard(models.TransientModel):
     def do_lab_test_anemia_dhc_transcribe(self):
         self.ensure_one()
 
-        # lab_test_result_model = self.env['myo.lab_test.result']
+        lab_test_result_model = self.env['myo.lab_test.result']
 
         for lab_test_anemia_dhc_reg in self.lab_test_anemia_dhc_ids:
             print '>>>>>', lab_test_anemia_dhc_reg.request_code_anemia, lab_test_anemia_dhc_reg.request_code_dhc
@@ -44,16 +44,108 @@ class LabTestAnemiaDHCTranscribeWizard(models.TransientModel):
             if lab_test_anemia_dhc_reg.request_code_anemia != 'n/d' and \
                lab_test_anemia_dhc_reg.state == 'validated':
 
-                if lab_test_anemia_dhc_reg.request_id_anemia_dhc.lab_test_type_id.name == \
+                if lab_test_anemia_dhc_reg.request_id_anemia.lab_test_type_id.name == \
                    u'JCAFB 2017 - Exames para detecção de Anemia':
-                    pass
+
+                    lab_test_result_search = lab_test_result_model.search([
+                        ('name', '=', lab_test_anemia_dhc_reg.request_code_anemia),
+                    ])
+                    if lab_test_result_search.id is not False:
+
+                        lab_test_result_search.professional_id = lab_test_anemia_dhc_reg.professional_id_anemia
+                        if lab_test_anemia_dhc_reg.date_anemia is not False:
+                            lab_test_result_search.date_result = lab_test_anemia_dhc_reg.date_anemia + ' 20:00:00'
+
+                        for criterion_reg in lab_test_result_search.criterion_ids:
+
+                            if criterion_reg.code == 'EAN-01-01':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.peso_anemia
+                            # if criterion_reg.code == 'EAN-01-02':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EAN-01-03':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.altura_anemia
+                            # if criterion_reg.code == 'EAN-01-04':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+
+                            # if criterion_reg.code == 'EAN-02-01':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EAN-02-02':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EAN-02-03':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.hemoglobina_anemia
+                            # if criterion_reg.code == 'EAN-02-04':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EAN-02-05':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+
+                            if criterion_reg.code == 'EAN-03-01':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.obs_anemia
+
+                        # if lab_test_anemia_dhc_reg.notes is False:
+                        #     lab_test_result_search.state = 'transcribed'
 
             if lab_test_anemia_dhc_reg.request_code_dhc != 'n/d' and \
                lab_test_anemia_dhc_reg.state == 'validated':
 
-                if lab_test_anemia_dhc_reg.request_id_anemia_dhc.lab_test_type_id.name == \
+                if lab_test_anemia_dhc_reg.request_id_dhc.lab_test_type_id.name == \
                    u'JCAFB 2017 - Exames - Diabetes, Hipertensão Arterial e Hipercolesterolemia':
-                    pass
+
+                    lab_test_result_search = lab_test_result_model.search([
+                        ('name', '=', lab_test_anemia_dhc_reg.request_code_dhc),
+                    ])
+                    if lab_test_result_search.id is not False:
+
+                        lab_test_result_search.professional_id = lab_test_anemia_dhc_reg.professional_id_dhc
+                        if lab_test_anemia_dhc_reg.date_dhc is not False:
+                            lab_test_result_search.date_result = lab_test_anemia_dhc_reg.date_dhc + ' 20:00:00'
+
+                        for criterion_reg in lab_test_result_search.criterion_ids:
+
+                            # if criterion_reg.code == 'EDH-01-01':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+
+                            if criterion_reg.code == 'EDH-02-01':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.peso_dhc
+                            if criterion_reg.code == 'EDH-02-02':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.altura_dhc
+                            # if criterion_reg.code == 'EDH-02-03':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EDH-02-04':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EDH-02-05':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EDH-02-06':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.circ_abdm_dhc
+                            # if criterion_reg.code == 'EDH-02-07':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EDH-02-08':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+
+                            if criterion_reg.code == 'EDH-03-01':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.pressao_sist_dhc + 'x' + \
+                                    lab_test_anemia_dhc_reg.pressao_diast_dhc
+                            # if criterion_reg.code == 'EDH-03-02':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EDH-03-03':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EDH-03-04':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.obs_pressao_dhc
+
+                            if criterion_reg.code == 'EDH-04-01':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.glicemia_dhc
+                            # if criterion_reg.code == 'EDH-04-02':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            # if criterion_reg.code == 'EDH-04-03':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EDH-04-04':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.colesterol_dhc
+                            # if criterion_reg.code == 'EDH-04-05':
+                            #     criterion_reg.result = lab_test_anemia_dhc_reg.?
+                            if criterion_reg.code == 'EDH-04-06':
+                                criterion_reg.result = lab_test_anemia_dhc_reg.obs_dhc
+
+                        # if lab_test_anemia_dhc_reg.notes is False:
+                        #     lab_test_result_search.state = 'transcribed'
 
             if lab_test_anemia_dhc_reg.notes is False:
                 lab_test_anemia_dhc_reg.state = 'transcribed'

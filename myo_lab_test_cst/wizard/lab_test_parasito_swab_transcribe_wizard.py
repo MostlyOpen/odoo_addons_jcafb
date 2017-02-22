@@ -54,6 +54,7 @@ class LabTestParasitoSWABTranscribeWizard(models.TransientModel):
                     if lab_test_result_search.id is not False:
 
                         lab_test_result_search.professional_id = lab_test_parasito_swab_reg.professional_id
+                        lab_test_result_search.date_result = lab_test_parasito_swab_reg.saida_parasito + ' 20:00:00'
 
                         for criterion_reg in lab_test_result_search.criterion_ids:
 
@@ -94,6 +95,7 @@ class LabTestParasitoSWABTranscribeWizard(models.TransientModel):
                     if lab_test_result_search.id is not False:
 
                         lab_test_result_search.professional_id = lab_test_parasito_swab_reg.professional_id
+                        lab_test_result_search.date_result = lab_test_parasito_swab_reg.saida_swab + ' 20:00:00'
 
                         for criterion_reg in lab_test_result_search.criterion_ids:
 

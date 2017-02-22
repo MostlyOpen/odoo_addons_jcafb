@@ -53,6 +53,8 @@ class LabTestUrinaTranscribeWizard(models.TransientModel):
                     if lab_test_result_search.id is not False:
 
                         lab_test_result_search.professional_id = lab_test_urina_reg.professional_id
+                        if lab_test_urina_reg.date_urina is not False:
+                            lab_test_result_search.date_result = lab_test_urina_reg.date_urina + ' 20:00:00'
 
                         for criterion_reg in lab_test_result_search.criterion_ids:
 

@@ -98,6 +98,12 @@ class LabTestUrinaCheckWizard(models.TransientModel):
                         if professional_search.id is not False:
                             lab_test_urina_reg.professional_id = professional_search.id
 
+                # if lab_test_urina_reg.date_urina is False:
+                #     if lab_test_urina_reg.notes is False:
+                #         lab_test_urina_reg.notes = u'Erro: Data do Exame não definida!'
+                #     else:
+                #         lab_test_urina_reg.notes += u'\nErro: Data do Exame não definida!'
+
             if lab_test_urina_reg.notes is False:
                 lab_test_urina_reg.state = 'checked'
             else:
