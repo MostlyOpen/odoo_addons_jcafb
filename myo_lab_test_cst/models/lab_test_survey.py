@@ -18,14 +18,14 @@
 #
 ###############################################################################
 
-from . import lab_test_seq
-from . import lab_test_survey
-from . import lab_test_request_direct_mail
-from . import lab_test_person
-from . import lab_test_person_state
-from . import lab_test_anemia_dhc
-from . import lab_test_anemia_dhc_state
-from . import lab_test_parasito_swab
-from . import lab_test_parasito_swab_state
-from . import lab_test_urina
-from . import lab_test_urina_state
+from openerp import models, fields
+
+
+class LabTestResult(models.Model):
+    _inherit = 'myo.lab_test.result'
+
+    survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+
+
+# class LabTestRequest(models.Model):
+#     _inherit = 'myo.lab_test.request'

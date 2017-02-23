@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="myo_lab_test_result_view_form_survey_user_input" model="ir.ui.view">
+            <field name="name">myo.lab_test.result.form</field>
+            <field name="model">myo.lab_test.result</field>
+            <field name="inherit_id" ref="myo_lab_test.myo_lab_test_result_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <label for="professional_id" position="before">
+                    <!--label for="survey_user_input_id" class="oe_edit_only"/-->
+                    <label for="survey_user_input_id"/>
+                    <h3>
+                        <field name="survey_user_input_id" placeholder="Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
+                </label>
+            </field>
+        </record>
+
+        <record id="myo_lab_test_result_view_search_survey_user_input" model="ir.ui.view">
+            <field name="name">myo.lab_test.result.search</field>
+            <field name="model">myo.lab_test.result</field>
+            <field name="inherit_id" ref="myo_lab_test.myo_lab_test_result_view_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <group name="group_by" position="before">
+                    <filter name="filter_has_survey_user_input" string="Has Survey User Input" domain="[('survey_user_input_id','!=',False)]"/>
+                    <filter name="filter_has_not_survey_user_input" string="Has Not Survey User Input" domain="[('survey_user_input_id','=',False)]"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

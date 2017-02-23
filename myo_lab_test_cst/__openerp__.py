@@ -28,11 +28,13 @@
     'website': 'http://clvsol.com',
     'depends': [
         'myo_lab_test',
+        'myo_survey',
     ],
     'data': [
         'security/ir.model.access.csv',
         'data/lab_test_seq.xml',
         'data/lab_test_unit_data.xml',
+        'views/lab_test_survey_view.xml',
         'views/lab_test_request_direct_mail_view.xml',
         'views/lab_test_person_view.xml',
         'views/lab_test_person_state_view.xml',
