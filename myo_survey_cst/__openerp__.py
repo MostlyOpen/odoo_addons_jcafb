@@ -43,6 +43,7 @@
         'wizard/survey_qan17_refresh_wizard_view.xml',
         'wizard/survey_qdh17_refresh_wizard_view.xml',
         'wizard/survey_user_input_validate_wizard_view.xml',
+        'wizard/survey_user_input_transcribe_wizard_view.xml',
         'views/survey_menu_view.xml',
     ],
     'demo': [],
