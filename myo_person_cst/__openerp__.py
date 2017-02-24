@@ -47,6 +47,7 @@
         'wizard/person_export_xls_wizard_view.xml',
         'wizard/person_export_xls_dhc_wizard_view.xml',
         'wizard/person_export_xls_anemia_wizard_view.xml',
+        'wizard/person_address_validate_wizard_view.xml',
     ],
     'demo': [],
     'test': [],

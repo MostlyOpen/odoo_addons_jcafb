@@ -1,0 +1,38 @@
+<openerp>
+  <data>
+
+    <record id="view_form_myo_person_address_validate_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_person_address_validate_wizard</field>
+      <field name="model">myo.person.address.validate.wizard</field>
+      <field name="arch" type="xml">
+
+        <form>
+            <div class="oe_right">
+            </div>
+            <field name="person_ids"/>
+            <group>
+                <group>
+                </group>
+            </group>
+            <footer>
+                <button type="object" name="do_person_address_validate"
+                    string="Validate" class="oe_highlight"
+                    />
+                <button special="cancel" string="Cancel"/>
+            </footer>
+        </form>
+
+      </field>
+    </record>
+
+    <!-- More button Action -->
+    <act_window id="action_myo_person_address_validate_wizard"
+        name="Person Address Validate"
+        src_model="myo.person"
+        res_model="myo.person.address.validate.wizard"
+        view_mode="form, tree"
+        key2="client_action_multi"
+        target="new"/>
+
+  </data>
+</openerp>
