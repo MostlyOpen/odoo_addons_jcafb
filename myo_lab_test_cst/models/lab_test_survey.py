@@ -27,5 +27,7 @@ class LabTestResult(models.Model):
     survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
 
 
-# class LabTestRequest(models.Model):
-#     _inherit = 'myo.lab_test.request'
+class LabTestRequest(models.Model):
+    _inherit = 'myo.lab_test.request'
+
+    survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
