@@ -94,6 +94,7 @@ class SurveyUserInputValidateWizard(models.TransientModel):
                         survey_user_input_reg.linked_message += \
                             u'\nErro: Codigo da requisição do Exame (Anemia) inválido!'
                 else:
+                    lab_test_request_search.survey_user_input_id = survey_user_input_reg.id
                     if lab_test_request_search.lab_test_type_id.name != \
                        u'JCAFB 2017 - Exames para detecção de Anemia':
                         if survey_user_input_reg.linked_message is False:
@@ -113,6 +114,8 @@ class SurveyUserInputValidateWizard(models.TransientModel):
                     else:
                         survey_user_input_reg.linked_message += \
                             u'\nErro: Codigo do Exame (Anemia) inválido!'
+                else:
+                    lab_test_result_search.survey_user_input_id = survey_user_input_reg.id
 
             if survey_user_input_reg.survey_id.title == '[QDH17]':
 
@@ -129,6 +132,7 @@ class SurveyUserInputValidateWizard(models.TransientModel):
                         survey_user_input_reg.linked_message += \
                             u'\nErro: Codigo da requisição do Exame (DHC) inválido!'
                 else:
+                    lab_test_request_search.survey_user_input_id = survey_user_input_reg.id
                     if lab_test_request_search.lab_test_type_id.name != \
                        u'JCAFB 2017 - Exames - Diabetes, Hipertensão Arterial e Hipercolesterolemia':
                         if survey_user_input_reg.linked_message is False:
@@ -148,5 +152,7 @@ class SurveyUserInputValidateWizard(models.TransientModel):
                     else:
                         survey_user_input_reg.linked_message += \
                             u'\nErro: Codigo do Exame (DHC) inválido!'
+                else:
+                    lab_test_result_search.survey_user_input_id = survey_user_input_reg.id
 
         return True
