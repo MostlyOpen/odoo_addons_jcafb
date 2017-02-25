@@ -32,8 +32,14 @@ class DocumentCategory(models.Model):
 class Document(models.Model):
     _inherit = 'myo.document'
 
+    base_document_id = fields.Many2one('myo.document', 'Base Document', help="Base Document")
     survey_id = fields.Many2one('survey.survey', 'Survey Type', help="Survey Type")
     survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+    base_survey_user_input_id = fields.Many2one(
+        'survey.user_input',
+        'Base Survey User Input',
+        help="Base Survey User Input"
+    )
 
     _defaults = {
         'active_log': True,

@@ -9,6 +9,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <label for="user_id" position="before">
+                    <!--label for="base_document_id" class="oe_edit_only"/-->
+                    <label for="base_document_id"/>
+                    <h3>
+                        <field name="base_document_id" placeholder="Base Document..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
                     <!--label for="survey_id" class="oe_edit_only"/-->
                     <label for="survey_id"/>
                     <h3>
@@ -18,6 +23,11 @@
                     <label for="survey_user_input_id"/>
                     <h3>
                         <field name="survey_user_input_id" placeholder="Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
+                    <!--label for="base_survey_user_input_id" class="oe_edit_only"/-->
+                    <label for="base_survey_user_input_id"/>
+                    <h3>
+                        <field name="base_survey_user_input_id" placeholder="Base Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
                     </h3>
                 </label>
             </field>
@@ -29,7 +39,14 @@
             <field name="inherit_id" ref="myo_document.myo_document_view_search"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
+                <group name="group_by" position="before">
+                    <filter name="filter_has_base_document" string="Has Base Document" domain="[('base_document_id','!=',False)]"/>
+                    <filter name="filter_has_not_document" string="Has Not Base Document" domain="[('base_document_id','=',False)]"/>
+                    <filter name="filter_has_base_survey_user_input" string="Has Base Survey User Input" domain="[('base_survey_user_input_id','!=',False)]"/>
+                    <filter name="filter_has_not_base_survey_user_input" string="Has Not Base Survey User Input" domain="[('base_survey_user_input_id','=',False)]"/>
+                </group>
                 <group name="group_by" position="inside">
+                    <filter string="Base Document" context="{'group_by': 'base_document_id'}"/>
                     <filter string="Survey Type" context="{'group_by': 'survey_id'}"/>
                 </group>
             </field>
