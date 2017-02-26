@@ -25,6 +25,12 @@ class LabTestResult(models.Model):
     _inherit = 'myo.lab_test.result'
 
     survey_user_input_id = fields.Many2one('survey.user_input', 'Survey User Input', help="Survey User Input")
+    base_document_id = fields.Many2one('myo.document', 'Base Document', help="Base Document")
+    base_survey_user_input_id = fields.Many2one(
+        'survey.user_input',
+        'Base Survey User Input',
+        help="Base Survey User Input"
+    )
 
 
 class LabTestRequest(models.Model):

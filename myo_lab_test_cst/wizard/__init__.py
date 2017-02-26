@@ -34,3 +34,4 @@ import lab_test_urina_import_wizard
 import lab_test_urina_check_wizard
 import lab_test_urina_validate_wizard
 import lab_test_urina_transcribe_wizard
+import lab_test_result_validate_wizard

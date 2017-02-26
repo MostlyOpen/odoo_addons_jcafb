@@ -61,6 +61,7 @@
         'wizard/lab_test_urina_check_wizard_view.xml',
         'wizard/lab_test_urina_validate_wizard_view.xml',
         'wizard/lab_test_urina_transcribe_wizard_view.xml',
+        'wizard/lab_test_result_validate_wizard_view.xml',
         'views/lab_test_menu_view.xml',
     ],
     'demo': [],

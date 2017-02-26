@@ -14,6 +14,16 @@
                     <h3>
                         <field name="survey_user_input_id" placeholder="Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
                     </h3>
+                    <!--label for="base_document_id" class="oe_edit_only"/-->
+                    <label for="base_document_id"/>
+                    <h3>
+                        <field name="base_document_id" placeholder="Base Document..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
+                    <!--label for="base_survey_user_input_id" class="oe_edit_only"/-->
+                    <label for="base_survey_user_input_id"/>
+                    <h3>
+                        <field name="base_survey_user_input_id" placeholder="Base Survey User Input..." options="{'no_open': False, 'no_create': True}"/>
+                    </h3>
                 </label>
             </field>
         </record>
@@ -27,6 +37,10 @@
                 <group name="group_by" position="before">
                     <filter name="filter_has_survey_user_input" string="Has Survey User Input" domain="[('survey_user_input_id','!=',False)]"/>
                     <filter name="filter_has_not_survey_user_input" string="Has Not Survey User Input" domain="[('survey_user_input_id','=',False)]"/>
+                    <filter name="filter_has_base_document" string="Has Base Document" domain="[('base_document_id','!=',False)]"/>
+                    <filter name="filter_has_not_document" string="Has Not Base Document" domain="[('base_document_id','=',False)]"/>
+                    <filter name="filter_has_base_survey_user_input" string="Has Base Survey User Input" domain="[('base_survey_user_input_id','!=',False)]"/>
+                    <filter name="filter_has_not_base_survey_user_input" string="Has Not Base Survey User Input" domain="[('base_survey_user_input_id','=',False)]"/>
                 </group>
             </field>
         </record>
