@@ -95,27 +95,27 @@ class LabTestUrinaTranscribeWizard(models.TransientModel):
 
                             if criterion_reg.code == 'EUR-04-01':
                                 criterion_reg.result = lab_test_urina_reg.cels_epit
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-02':
                                 criterion_reg.result = lab_test_urina_reg.muco
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-03':
                                 criterion_reg.result = lab_test_urina_reg.cristais
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-04':
                                 criterion_reg.result = lab_test_urina_reg.leucocitos
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-05':
                                 criterion_reg.result = lab_test_urina_reg.hemacias
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-06':
                                 criterion_reg.result = lab_test_urina_reg.cilindros
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-07':
                                 criterion_reg.result = lab_test_urina_reg.hialinos
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-08':
                                 criterion_reg.result = lab_test_urina_reg.ganulosos
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-09':
                                 criterion_reg.result = lab_test_urina_reg.leucocitarios
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-10':
                                 criterion_reg.result = lab_test_urina_reg.hematicos
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-11':
                                 criterion_reg.result = lab_test_urina_reg.cereos
-                            if criterion_reg.code == 'EUR-04-01':
+                            if criterion_reg.code == 'EUR-04-12':
                                 criterion_reg.result = lab_test_urina_reg.outros_tipos
 
                             if criterion_reg.code == 'EUR-05-01':

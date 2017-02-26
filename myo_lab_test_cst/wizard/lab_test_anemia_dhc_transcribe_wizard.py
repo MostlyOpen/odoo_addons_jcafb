@@ -81,8 +81,8 @@ class LabTestAnemiaDHCTranscribeWizard(models.TransientModel):
                             if criterion_reg.code == 'EAN-03-01':
                                 criterion_reg.result = lab_test_anemia_dhc_reg.obs_anemia
 
-                        # if lab_test_anemia_dhc_reg.notes is False:
-                        #     lab_test_result_search.state = 'transcribed'
+                        if lab_test_anemia_dhc_reg.notes is False:
+                            lab_test_result_search.state = 'transcribed'
 
             if lab_test_anemia_dhc_reg.request_code_dhc != 'n/d' and \
                lab_test_anemia_dhc_reg.state == 'validated':
@@ -144,8 +144,8 @@ class LabTestAnemiaDHCTranscribeWizard(models.TransientModel):
                             if criterion_reg.code == 'EDH-04-06':
                                 criterion_reg.result = lab_test_anemia_dhc_reg.obs_dhc
 
-                        # if lab_test_anemia_dhc_reg.notes is False:
-                        #     lab_test_result_search.state = 'transcribed'
+                        if lab_test_anemia_dhc_reg.notes is False:
+                            lab_test_result_search.state = 'transcribed'
 
             if lab_test_anemia_dhc_reg.notes is False:
                 lab_test_anemia_dhc_reg.state = 'transcribed'
