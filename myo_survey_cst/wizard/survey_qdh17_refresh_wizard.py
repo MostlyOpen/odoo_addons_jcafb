@@ -27,15 +27,26 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
     def get_value(self, question_code, survey_user_input_reg):
 
         survey_question_model = self.env['survey.question']
+        survey_label_model = self.env['survey.label']
         survey_user_input_line_model = self.env['survey.user_input_line']
 
         survey_question_search = survey_question_model.search([
-            ('code', '=', question_code),
+            ('code', '=', question_code[:11]),
         ])
-        survey_user_input_line_search = survey_user_input_line_model.search([
-            ('user_input_id', '=', survey_user_input_reg.id),
-            ('question_id', '=', survey_question_search.id),
-        ])
+        if question_code[:11] == question_code:
+            survey_user_input_line_search = survey_user_input_line_model.search([
+                ('user_input_id', '=', survey_user_input_reg.id),
+                ('question_id', '=', survey_question_search.id),
+            ])
+        else:
+            survey_label_search = survey_label_model.search([
+                ('code', '=', question_code),
+            ])
+            survey_user_input_line_search = survey_user_input_line_model.search([
+                ('user_input_id', '=', survey_user_input_reg.id),
+                ('question_id', '=', survey_question_search.id),
+                ('value_suggested_row', '=', survey_label_search.id),
+            ])
 
         if survey_question_search.type == 'textbox':
             value = survey_user_input_line_search.value_text
@@ -62,6 +73,15 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
                         value = value + '; ' + survey_user_input_line_reg.value_suggested.value
                     # else:
                     #     value = value + '; False'
+
+        if survey_question_search.type == 'matrix':
+            value = ''
+            for survey_user_input_line_reg in survey_user_input_line_search:
+                if value == '':
+                    value = survey_user_input_line_reg.value_suggested.value
+                else:
+                    if survey_user_input_line_reg.value_suggested.value is not False:
+                        value = value + '; ' + survey_user_input_line_reg.value_suggested.value
 
         return value
 
@@ -106,7 +126,11 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
 
                         QDH17_03_01 = self.get_value('QDH17_03_01', survey_user_input_reg)
 
+                        QDH17_03_02 = self.get_value('QDH17_03_02', survey_user_input_reg)
+
                         QDH17_04_07 = self.get_value('QDH17_04_07', survey_user_input_reg)
+
+                        QDH17_04_08 = self.get_value('QDH17_04_08', survey_user_input_reg)
 
                         QDH17_04_10 = self.get_value('QDH17_04_10', survey_user_input_reg)
 
@@ -118,7 +142,17 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
 
                         QDH17_07_01 = self.get_value('QDH17_07_01', survey_user_input_reg)
 
+                        QDH17_07_02 = self.get_value('QDH17_07_02', survey_user_input_reg)
+
+                        QDH17_07_03 = self.get_value('QDH17_07_03', survey_user_input_reg)
+
+                        QDH17_07_04 = self.get_value('QDH17_07_04', survey_user_input_reg)
+
                         QDH17_07_05 = self.get_value('QDH17_07_05', survey_user_input_reg)
+
+                        QDH17_07_06 = self.get_value('QDH17_07_06', survey_user_input_reg)
+
+                        QDH17_07_07 = self.get_value('QDH17_07_07', survey_user_input_reg)
 
                         QDH17_07_08 = self.get_value('QDH17_07_08', survey_user_input_reg)
 
@@ -126,11 +160,17 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
 
                         QDH17_09_02 = self.get_value('QDH17_09_02', survey_user_input_reg)
 
+                        QDH17_09_03 = self.get_value('QDH17_09_03', survey_user_input_reg)
+
                         QDH17_09_04 = self.get_value('QDH17_09_04', survey_user_input_reg)
 
                         QDH17_09_05 = self.get_value('QDH17_09_05', survey_user_input_reg)
 
                         QDH17_09_06 = self.get_value('QDH17_09_06', survey_user_input_reg)
+
+                        QDH17_10_01 = self.get_value('QDH17_10_01', survey_user_input_reg)
+
+                        QDH17_10_04_06 = self.get_value('QDH17_10_04_06', survey_user_input_reg)
 
                         values = {
                             'person_code': person_reg.code,
@@ -147,19 +187,30 @@ class SurveyQDH17RefreshWizard(models.TransientModel):
                             'address_ditrict': person_reg.address_id.district,
 
                             'QDH17_03_01': QDH17_03_01,
+                            'QDH17_03_02': QDH17_03_02,
                             'QDH17_04_07': QDH17_04_07,
+                            'QDH17_04_08': QDH17_04_08,
                             'QDH17_04_10': QDH17_04_10,
                             'QDH17_05_05': QDH17_05_05,
                             'QDH17_06_03': QDH17_06_03,
                             'QDH17_06_06': QDH17_06_06,
                             'QDH17_07_01': QDH17_07_01,
+                            'QDH17_07_01': QDH17_07_01,
+                            'QDH17_07_02': QDH17_07_02,
+                            'QDH17_07_03': QDH17_07_03,
+                            'QDH17_07_04': QDH17_07_04,
                             'QDH17_07_05': QDH17_07_05,
+                            'QDH17_07_06': QDH17_07_06,
+                            'QDH17_07_07': QDH17_07_07,
                             'QDH17_07_08': QDH17_07_08,
                             'QDH17_09_01': QDH17_09_01,
                             'QDH17_09_02': QDH17_09_02,
+                            'QDH17_09_03': QDH17_09_03,
                             'QDH17_09_04': QDH17_09_04,
                             'QDH17_09_05': QDH17_09_05,
                             'QDH17_09_06': QDH17_09_06,
+                            'QDH17_10_01': QDH17_10_01,
+                            'QDH17_10_04_06': QDH17_10_04_06,
                         }
                         survey_qdh17_model.create(values)
 

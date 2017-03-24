@@ -62,19 +62,29 @@
                                 </group>
                                 <group name="group_title_right">
                                     <field name="QDH17_03_01"/>
+                                    <field name="QDH17_03_02"/>
                                     <field name="QDH17_04_07"/>
+                                    <field name="QDH17_04_08"/>
                                     <field name="QDH17_04_10"/>
                                     <field name="QDH17_05_05"/>
                                     <field name="QDH17_06_03"/>
                                     <field name="QDH17_06_06"/>
                                     <field name="QDH17_07_01"/>
+                                    <field name="QDH17_07_02"/>
+                                    <field name="QDH17_07_03"/>
+                                    <field name="QDH17_07_04"/>
                                     <field name="QDH17_07_05"/>
+                                    <field name="QDH17_07_06"/>
+                                    <field name="QDH17_07_07"/>
                                     <field name="QDH17_07_08"/>
                                     <field name="QDH17_09_01"/>
                                     <field name="QDH17_09_02"/>
+                                    <field name="QDH17_09_03"/>
                                     <field name="QDH17_09_04"/>
                                     <field name="QDH17_09_05"/>
                                     <field name="QDH17_09_06"/>
+                                    <field name="QDH17_10_01"/>
+                                    <field name="QDH17_10_04_06"/>
                                 </group>
                             </group>
                             <group name="group_title_bottom">

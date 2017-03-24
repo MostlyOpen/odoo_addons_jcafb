@@ -27,10 +27,10 @@ class SurveyQDH17(models.Model):
     _name = "myo.survey.qdh17"
     _log_access = False
 
-    person_code = fields.Char('Person Code', required=True)
-    address_code = fields.Char('Address Code')
-    document_code = fields.Char('Document Code')
-    survey_title = fields.Char('Survey Title')
+    person_code = fields.Char(string='Person Code', required=True)
+    address_code = fields.Char(string='Address Code')
+    document_code = fields.Char(string='Document Code')
+    survey_title = fields.Char(string='Survey Title')
 
     # person_id = fields.Many2one('myo.person', 'Related Person')
     # address_id = fields.Many2one('myo.address', 'Related Address')
@@ -46,28 +46,110 @@ class SurveyQDH17(models.Model):
     #     readonly=True
     # )
 
-    gender = fields.Char('Gender')
-    age = fields.Char('Age')
-    person_category = fields.Char('Person Category')
-    person_status = fields.Char('Person Status')
-    address_city = fields.Char('Cidade')
-    address_category = fields.Char('Address Category')
-    address_ditrict = fields.Char('Address District')
+    gender = fields.Char(string='Gender')
+    age = fields.Char(string='Age')
+    person_category = fields.Char(string='Person Category')
+    person_status = fields.Char(string='Person Status')
+    address_city = fields.Char(string='Cidade')
+    address_category = fields.Char(string='Address Category')
+    address_ditrict = fields.Char(string='Address District')
 
-    QDH17_03_01 = fields.Char('Escolaridade do paciente')
-    QDH17_04_07 = fields.Char('Interpretação do valor de IMC')
-    QDH17_04_10 = fields.Char('Interpretação do valor de Circunferência Abdominal')
-    QDH17_05_05 = fields.Char('Interpretação do valor de Pressão Arteria')
-    QDH17_06_03 = fields.Char('Interpretação do valor de Glicemia')
-    QDH17_06_06 = fields.Char('Interpretação do valor de Colesterol')
-    QDH17_07_01 = fields.Char('Possui DIABETES?')
-    QDH17_07_05 = fields.Char('Possui HIPERTENSÃO?')
-    QDH17_07_08 = fields.Char('Possui HIPERCOLESTEROLEMIA?')
-    QDH17_09_01 = fields.Char('Que motivo(s) o leva(m) a procurar atendimento médico?')
-    QDH17_09_02 = fields.Char('O(A) Sr.(a) tem ou teve o hábito de fumar?')
-    QDH17_09_04 = fields.Char('Tem o hábito de tomar bebidas alcoólicas?')
-    QDH17_09_05 = fields.Char('Pratica uma ou mais das atividades físicas abaixo?')
-    QDH17_09_06 = fields.Char('Quantos dias por semana costuma praticar essa atividade?')
+    QDH17_03_01 = fields.Char(
+        string='[QDH17_03_01]',
+        help='Escolaridade do paciente'
+    )
+    QDH17_03_02 = fields.Char(
+        string='[QDH17_03_02]',
+        help='Tempo de Jejum'
+    )
+    QDH17_04_07 = fields.Char(
+        string='[QDH17_04_07]',
+        help='Interpretação do valor de IMC'
+    )
+    QDH17_04_08 = fields.Char(
+        string='[QDH17_04_08]',
+        help='Circunferência abnominal (cm)'
+    )
+    QDH17_04_10 = fields.Char(
+        string='[QDH17_04_10]',
+        help='Interpretação do valor de Circunferência Abdominal'
+    )
+    QDH17_05_05 = fields.Char(
+        string='[QDH17_05_05]',
+        help='Interpretação do valor de Pressão Arteria'
+    )
+    QDH17_06_03 = fields.Char(
+        string='[QDH17_06_03]',
+        help='Interpretação do valor de Glicemia'
+    )
+    QDH17_06_06 = fields.Char(
+        string='[QDH17_06_06]',
+        help='Interpretação do valor de Colesterol'
+    )
+    QDH17_07_01 = fields.Char(
+        string='[QDH17_07_01]',
+        help='Possui DIABETES?'
+    )
+    QDH17_07_02 = fields.Char(
+        string='[QDH17_07_02]',
+        help='Faz uso de medicamento para tratamento de DIABETES?'
+    )
+    QDH17_07_03 = fields.Char(
+        string='[QDH17_07_03]',
+        help='Fez uso hoje (de medicamento para DIABETES)?'
+    )
+    QDH17_07_04 = fields.Char(
+        string='[QDH17_07_04]',
+        help='Teve DIABETES em alguma gestação?'
+    )
+    QDH17_07_05 = fields.Char(
+        string='[QDH17_07_05]',
+        help='Possui HIPERTENSÃO?'
+    )
+    QDH17_07_06 = fields.Char(
+        string='[QDH17_07_06]',
+        help='Faz uso de medicamento para tratamento de HIPERTENSÃO?'
+    )
+    QDH17_07_07 = fields.Char(
+        string='[QDH17_07_07]',
+        help='Fez uso hoje (de medicamento para HIPERTENSÃO)?'
+    )
+    QDH17_07_08 = fields.Char(
+        string='[QDH17_07_08]',
+        help='Possui HIPERCOLESTEROLEMIA?'
+    )
+    QDH17_09_01 = fields.Char(
+        string='[QDH17_09_01]',
+        help='Que motivo(s) o leva(m) a procurar atendimento médico?'
+    )
+    QDH17_09_02 = fields.Char(
+        string='[QDH17_09_02]',
+        help='O(A) Sr.(a) tem ou teve o hábito de fumar?'
+    )
+    QDH17_09_03 = fields.Char(
+        string='[QDH17_09_03]',
+        help='Alguém da casa fuma?'
+    )
+    QDH17_09_04 = fields.Char(
+        string='[QDH17_09_04]',
+        help='Tem o hábito de tomar bebidas alcoólicas?'
+    )
+    QDH17_09_05 = fields.Char(
+        string='[QDH17_09_05]',
+        help='Pratica uma ou mais das atividades físicas abaixo?'
+    )
+    QDH17_09_06 = fields.Char(
+        string='[QDH17_09_06]',
+        help='Quantos dias por semana costuma praticar essa atividade?'
+    )
+    QDH17_10_01 = fields.Char(
+        string='[QDH17_10_01]',
+        help='Costuma adicionar sal na comida, depois de pronta? (Tem saleiro na mesa?)'
+    )
+    QDH17_10_04_06 = fields.Char(
+        string='[QDH17_10_04_06]',
+        help='Consome qual dos ítens abaixo e com que frequência na semana? (Parte 3)) - Doces'
+    )
 
     notes = fields.Text(string='Notes')
     active = fields.Boolean(
