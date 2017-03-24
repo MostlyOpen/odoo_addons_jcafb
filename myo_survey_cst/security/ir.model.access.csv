@@ -19,3 +19,7 @@ access_myo_survey_qmd17_smanager,myo.survey.qmd17,model_myo_survey_qmd17,myo_bas
 access_myo_survey_qsc17_survey_user,myo.survey.qsc17,model_myo_survey_qsc17,myo_base.group_survey_user,1,0,0,0
 access_myo_survey_qsc17_survey_manager,myo.survey.qsc17,model_myo_survey_qsc17,myo_base.group_survey_manager,1,1,1,0
 access_myo_survey_qsc17_smanager,myo.survey.qsc17,model_myo_survey_qsc17,myo_base.group_smanager,1,1,1,1
+
+access_myo_survey_qsi17_survey_user,myo.survey.qsi17,model_myo_survey_qsi17,myo_base.group_survey_user,1,0,0,0
+access_myo_survey_qsi17_survey_manager,myo.survey.qsi17,model_myo_survey_qsi17,myo_base.group_survey_manager,1,1,1,0
+access_myo_survey_qsi17_smanager,myo.survey.qsi17,model_myo_survey_qsi17,myo_base.group_smanager,1,1,1,1

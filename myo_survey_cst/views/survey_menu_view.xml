@@ -62,6 +62,18 @@
                     groups="myo_base.group_lab_test_user"
                     sequence="10"
                     action="myo_survey_cst.action_myo_survey_qsc17_refresh_wizard"/>
+            <!-- Base/Base/Survey/QSI17 -->
+            <menuitem name="QSI17" id="menu_base_base_survey_qsi17"
+                parent="menu_base_base_survey"
+                groups="myo_base.group_survey_user"
+                sequence="50"
+                action="myo_survey_cst.myo_survey_qsi17_action"/>
+                <!-- Base/Base/Survey/QSI17/Refresh -->
+                <menuitem name="Refresh" id="menu_base_base_survey_qsi17_refresh"
+                    parent="menu_base_base_survey_qsi17"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_survey_cst.action_myo_survey_qsi17_refresh_wizard"/>
 
     </data>
 </openerp>

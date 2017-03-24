@@ -1,9 +1,9 @@
 <openerp>
   <data>
 
-    <record id="view_form_myo_survey_qmd17_refresh_wizard" model="ir.ui.view">
-      <field name="name">view_form_myo_survey_qmd17_refresh_wizard</field>
-      <field name="model">myo.survey.qmd17.refresh.wizard</field>
+    <record id="view_form_myo_survey_qsc17_refresh_wizard" model="ir.ui.view">
+      <field name="name">view_form_myo_survey_qsc17_refresh_wizard</field>
+      <field name="model">myo.survey.qsc17.refresh.wizard</field>
       <field name="arch" type="xml">
 
         <form>
@@ -18,7 +18,7 @@
                 </group>
             </group>
             <footer>
-                <button type="object" name="do_survey_qmd17_refresh"
+                <button type="object" name="do_survey_qsc17_refresh"
                     string="Refresh" class="oe_highlight"
                     />
                 <button special="cancel" string="Cancel"/>
@@ -29,10 +29,10 @@
     </record>
 
     <!-- More button Action -->
-    <act_window id="action_myo_survey_qmd17_refresh_wizard"
-        name="Survey QMD17 Refresh"
-        src_model="myo.survey.qmd17"
-        res_model="myo.survey.qmd17.refresh.wizard"
+    <act_window id="action_myo_survey_qsc17_refresh_wizard"
+        name="Survey QSC17 Refresh"
+        src_model="myo.survey.qsc17"
+        res_model="myo.survey.qsc17.refresh.wizard"
         view_mode="form, tree"
         key2="client_action_multi"
         target="new"/>

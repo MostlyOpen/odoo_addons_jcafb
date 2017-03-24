@@ -24,3 +24,4 @@ from . import survey_qan17
 from . import survey_qdh17
 from . import survey_qmd17
 from . import survey_qsc17
+from . import survey_qsi17
