@@ -27,5 +27,6 @@ import survey_qdh17_refresh_wizard
 import survey_qmd17_refresh_wizard
 import survey_qsc17_refresh_wizard
 import survey_qsi17_refresh_wizard
+import survey_qsf17_refresh_wizard
 import survey_user_input_validate_wizard
 import survey_user_input_transcribe_wizard
