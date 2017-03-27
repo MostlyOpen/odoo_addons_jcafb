@@ -29,3 +29,4 @@ from . import lab_test_parasito_swab
 from . import lab_test_parasito_swab_state
 from . import lab_test_urina
 from . import lab_test_urina_state
+from . import lab_test_result_parasito
