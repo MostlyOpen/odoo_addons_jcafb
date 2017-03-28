@@ -37,3 +37,4 @@ import lab_test_urina_transcribe_wizard
 import lab_test_result_validate_wizard
 import lab_test_result_parasito_refresh_wizard
 import lab_test_result_swab_refresh_wizard
+import lab_test_result_urina_refresh_wizard
