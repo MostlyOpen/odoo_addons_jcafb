@@ -14,6 +14,18 @@
                     groups="myo_base.group_lab_test_user"
                     sequence="10"
                     action="myo_lab_test_cst.action_myo_lab_test_result_parasito_refresh_wizard"/>
+           <!-- Health/Health/Lab Test/Results/Swab -->
+            <menuitem name="Swab" id="menu_health_health_lab_test_results_swab"
+                parent="myo_lab_test.menu_health_health_lab_test_results"
+                groups="myo_base.group_survey_user"
+                sequence="20"
+                action="myo_lab_test_cst.myo_lab_test_result_swab_action"/>
+                <!-- Health/Health/Lab Test/Results/Swab/Refresh -->
+                <menuitem name="Refresh" id="menu_health_health_lab_test_results_swab_refresh"
+                    parent="menu_health_health_lab_test_results_swab"
+                    groups="myo_base.group_lab_test_user"
+                    sequence="10"
+                    action="myo_lab_test_cst.action_myo_lab_test_result_swab_refresh_wizard"/>
 
     </data>
 </openerp>

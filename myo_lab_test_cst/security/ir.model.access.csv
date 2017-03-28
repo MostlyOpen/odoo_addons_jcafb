@@ -23,3 +23,7 @@ access_myo_lab_test_urina_lab_test_manager,myo.lab_test.urina,model_myo_lab_test
 access_myo_lab_test_result_parasito_survey_user,myo.lab_test.result.parasito,model_myo_lab_test_result_parasito,myo_base.group_survey_user,1,0,0,0
 access_myo_lab_test_result_parasito_survey_manager,myo.lab_test.result.parasito,model_myo_lab_test_result_parasito,myo_base.group_survey_manager,1,1,1,0
 access_myo_lab_test_result_parasito_smanager,myo.lab_test.result.parasito,model_myo_lab_test_result_parasito,myo_base.group_smanager,1,1,1,1
+
+access_myo_lab_test_result_swab_survey_user,myo.lab_test.result.swab,model_myo_lab_test_result_swab,myo_base.group_survey_user,1,0,0,0
+access_myo_lab_test_result_swab_survey_manager,myo.lab_test.result.swab,model_myo_lab_test_result_swab,myo_base.group_survey_manager,1,1,1,0
+access_myo_lab_test_result_swab_smanager,myo.lab_test.result.swab,model_myo_lab_test_result_swab,myo_base.group_smanager,1,1,1,1
