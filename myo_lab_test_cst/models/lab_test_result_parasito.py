@@ -47,7 +47,7 @@ class LabTestResultParasito(models.Model):
     notes = fields.Text(string='Notes')
     active = fields.Boolean(
         'Active',
-        help="If unchecked, it will allow you to hide the survey qsc17 without removing it.",
+        help="If unchecked, it will allow you to hide the lab test result parasito without removing it.",
         default=1
     )
 
