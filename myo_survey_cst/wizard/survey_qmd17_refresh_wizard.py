@@ -124,7 +124,15 @@ class SurveyQMD17RefreshWizard(models.TransientModel):
                         else:
                             age = person_reg.estimated_age
 
+                        QMD17_03_01 = self.get_value('QMD17_03_01', survey_user_input_reg)
                         QMD17_03_02 = self.get_value('QMD17_03_02', survey_user_input_reg)
+                        QMD17_03_03 = self.get_value('QMD17_03_03', survey_user_input_reg)
+                        QMD17_03_04 = self.get_value('QMD17_03_04', survey_user_input_reg)
+                        QMD17_03_05 = self.get_value('QMD17_03_05', survey_user_input_reg)
+                        QMD17_04_01 = self.get_value('QMD17_04_01', survey_user_input_reg)
+                        QMD17_04_02 = self.get_value('QMD17_04_02', survey_user_input_reg)
+                        QMD17_04_03 = self.get_value('QMD17_04_03', survey_user_input_reg)
+                        QMD17_04_04 = self.get_value('QMD17_04_04', survey_user_input_reg)
 
                         print '>>>>>>>>>>', survey_user_input_reg, document_search.code, person_reg.code
 
@@ -142,7 +150,15 @@ class SurveyQMD17RefreshWizard(models.TransientModel):
                             'address_category': person_reg.address_id.category_names,
                             'address_ditrict': person_reg.address_id.district,
 
+                            'QMD17_03_01': QMD17_03_01,
                             'QMD17_03_02': QMD17_03_02,
+                            'QMD17_03_03': QMD17_03_03,
+                            'QMD17_03_04': QMD17_03_04,
+                            'QMD17_03_05': QMD17_03_05,
+                            'QMD17_04_01': QMD17_04_01,
+                            'QMD17_04_02': QMD17_04_02,
+                            'QMD17_04_03': QMD17_04_03,
+                            'QMD17_04_04': QMD17_04_04,
                         }
                         survey_qmd17_model.create(values)
 

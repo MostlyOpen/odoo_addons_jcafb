@@ -54,9 +54,41 @@ class SurveyQMD17(models.Model):
     address_category = fields.Char(string='Address Category')
     address_ditrict = fields.Char(string='Address District')
 
+    QMD17_03_01 = fields.Char(
+        string='[QMD17_03_01]',
+        help='3.1. Quem administra os medicamentos do(a) Sr.(a)?'
+    )
     QMD17_03_02 = fields.Char(
         string='[QMD17_03_02]',
-        help='O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?'
+        help='3.2. O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?'
+    )
+    QMD17_03_03 = fields.Char(
+        string='[QMD17_03_03]',
+        help='3.3. De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?'
+    )
+    QMD17_03_04 = fields.Char(
+        string='[QMD17_03_04]',
+        help='3.4. Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa)'
+    )
+    QMD17_03_05 = fields.Char(
+        string='[QMD17_03_05]',
+        help='3.5. O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?'
+    )
+    QMD17_04_01 = fields.Char(
+        string='[QMD17_04_01]',
+        help='4.1. Você, alguma vez, se esquece de tomar o seu remédio?'
+    )
+    QMD17_04_02 = fields.Char(
+        string='[QMD17_04_02]',
+        help='4.2. Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?'
+    )
+    QMD17_04_03 = fields.Char(
+        string='[QMD17_04_03]',
+        help='4.3. Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?'
+    )
+    QMD17_04_04 = fields.Char(
+        string='[QMD17_04_04]',
+        help='4.4. Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?'
     )
 
     notes = fields.Text(string='Notes')

@@ -61,7 +61,15 @@
                                     <field name="address_ditrict"/>
                                 </group>
                                 <group name="group_title_right">
+                                    <field name="QMD17_03_01"/>
                                     <field name="QMD17_03_02"/>
+                                    <field name="QMD17_03_03"/>
+                                    <field name="QMD17_03_04"/>
+                                    <field name="QMD17_03_05"/>
+                                    <field name="QMD17_04_01"/>
+                                    <field name="QMD17_04_02"/>
+                                    <field name="QMD17_04_03"/>
+                                    <field name="QMD17_04_04"/>
                                 </group>
                             </group>
                             <group name="group_title_bottom">
