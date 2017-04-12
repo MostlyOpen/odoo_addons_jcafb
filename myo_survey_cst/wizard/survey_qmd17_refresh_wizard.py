@@ -160,6 +160,13 @@ class SurveyQMD17RefreshWizard(models.TransientModel):
                             'QMD17_04_03': QMD17_04_03,
                             'QMD17_04_04': QMD17_04_04,
                         }
-                        survey_qmd17_model.create(values)
+                        try:
+                            survey_qmd17_model.create(values)
+                        except Exception as e:
+                            print
+                            print '>>>>>>>>>>', e
+                            print '>>>>>>>>>>', survey_user_input_reg, document_search.code, person_reg.code
+                            print
+                            raise
 
         return True
