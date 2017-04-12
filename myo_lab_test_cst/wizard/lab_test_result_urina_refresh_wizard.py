@@ -87,6 +87,13 @@ class LabTestResultUrinaRefreshWizard(models.TransientModel):
 
                     'EUR_03_01': EUR_03_01,
                 }
-                lab_test_result_urina_model.create(values)
+                try:
+                    lab_test_result_urina_model.create(values)
+                except Exception as e:
+                    print
+                    print '>>>>>>>>>>', e
+                    print '>>>>>>>>>>', lab_test_result_reg, lab_test_result_reg.name, person_reg.code
+                    print
+                    raise
 
         return True
