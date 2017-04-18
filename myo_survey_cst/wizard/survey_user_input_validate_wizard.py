@@ -73,6 +73,7 @@ class SurveyUserInputValidateWizard(models.TransientModel):
 
         lab_test_request_model = self.env['myo.lab_test.request']
         lab_test_result_model = self.env['myo.lab_test.result']
+        document_model = self.env['myo.document']
 
         for survey_user_input_reg in self.survey_user_input_ids:
             print '>>>>>', survey_user_input_reg.survey_id.title, survey_user_input_reg.linked_code
@@ -154,5 +155,18 @@ class SurveyUserInputValidateWizard(models.TransientModel):
                             u'\nErro: Codigo do Exame (DHC) inválido!'
                 else:
                     lab_test_result_search.survey_user_input_id = survey_user_input_reg.id
+
+            document_search = document_model.search([
+                ('code', '=', survey_user_input_reg.linked_code),
+                ('survey_user_input_id', '=', survey_user_input_reg.id),
+            ])
+            if document_search.id is False:
+                print '>>>>>>>>>>', 'Discarded!'
+                if survey_user_input_reg.linked_message is False:
+                    survey_user_input_reg.linked_message = \
+                        u'Erro: Transcrição Descartada!'
+                else:
+                    survey_user_input_reg.linked_message += \
+                        u'\nErro: Transcrição Descartada!'
 
         return True
