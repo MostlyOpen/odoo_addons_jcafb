@@ -40,6 +40,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <group name="group_by" position="before">
+                    <filter name="filter_has_not_user_input" string="Has Not User Input" domain="[('survey_user_input_id','=',False)]"/>
+                    <filter name="filter_has_user_input" string="Has User Input" domain="[('survey_user_input_id','!=',False)]"/>
                     <filter name="filter_has_base_document" string="Has Base Document" domain="[('base_document_id','!=',False)]"/>
                     <filter name="filter_has_not_document" string="Has Not Base Document" domain="[('base_document_id','=',False)]"/>
                     <filter name="filter_has_base_survey_user_input" string="Has Base Survey User Input" domain="[('base_survey_user_input_id','!=',False)]"/>

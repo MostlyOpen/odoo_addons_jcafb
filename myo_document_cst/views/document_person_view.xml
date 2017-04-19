@@ -58,6 +58,7 @@
                     <field name="document_state"/>
                     <field name="person_state"/>
                     <newline/>
+                    <filter name="filter_archived" string="Archived" domain="[('active','=',False)]"/>
                     <group expand="0" string="Group By...">
                         <filter string="Document" domain="[]" context="{'group_by':'document_id'}"/>
                         <filter string="Person" domain="[]" context="{'group_by':'person_id'}"/>
