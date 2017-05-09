@@ -40,10 +40,114 @@ class LabTestResultUrina(models.Model):
     address_category = fields.Char(string='Address Category')
     address_ditrict = fields.Char(string='Address District')
 
+    EUR_02_01 = fields.Char(
+        string='EUR-02-01',
+        help='Volume'
+    )
+    EUR_02_02 = fields.Char(
+        string='EUR-02-02',
+        help='Densidade'
+    )
+    EUR_02_03 = fields.Char(
+        string='EUR-02-03',
+        help='Aspecto'
+    )
+    EUR_02_04 = fields.Char(
+        string='EUR-02-04',
+        help='Cor'
+    )
+    EUR_02_05 = fields.Char(
+        string='EUR-02-05',
+        help='Odor'
+    )
+
     EUR_03_01 = fields.Char(
         string='EUR-03-01',
         help='ph'
     )
+    EUR_03_02 = fields.Char(
+        string='EUR-03-02',
+        help='Proteínas'
+    )
+    EUR_03_03 = fields.Char(
+        string='EUR-03-03',
+        help='Glicose'
+    )
+    EUR_03_04 = fields.Char(
+        string='EUR-03-04',
+        help='Cetona'
+    )
+    EUR_03_05 = fields.Char(
+        string='EUR-03-05',
+        help='Pigmentos biliares'
+    )
+    EUR_03_06 = fields.Char(
+        string='EUR-03-06',
+        help='Sangue'
+    )
+    EUR_03_07 = fields.Char(
+        string='EUR-03-07',
+        help='Urobilinogênio'
+    )
+    EUR_03_08 = fields.Char(
+        string='EUR-03-08',
+        help='Nitrito'
+    )
+
+    EUR_04_01 = fields.Char(
+        string='EUR-04-01',
+        help='Células Epiteliais'
+    )
+    EUR_04_02 = fields.Char(
+        string='EUR-04-02',
+        help='Muco'
+    )
+    EUR_04_03 = fields.Char(
+        string='EUR-04-03',
+        help='Cristais'
+    )
+    EUR_04_04 = fields.Char(
+        string='EUR-04-04',
+        help='Leucócitos'
+    )
+    EUR_04_05 = fields.Char(
+        string='EUR-04-05',
+        help='Hemácias'
+    )
+    EUR_04_06 = fields.Char(
+        string='EUR-04-06',
+        help='Cilindros'
+    )
+    EUR_04_07 = fields.Char(
+        string='EUR-04-07',
+        help='Cilindros Hialinos'
+    )
+    EUR_04_08 = fields.Char(
+        string='EUR-04-08',
+        help='Cilindros Granulosos'
+    )
+    EUR_04_09 = fields.Char(
+        string='EUR-04-09',
+        help='Cilindros Leucocitários'
+    )
+    EUR_04_10 = fields.Char(
+        string='EUR-04-10',
+        help='Cilindros Hemáticos'
+    )
+    EUR_04_11 = fields.Char(
+        string='EUR-04-11',
+        help='Cilindros Céreos'
+    )
+    EUR_04_12 = fields.Char(
+        string='EUR-04-12',
+        help='Outros tipos de Cilindros'
+    )
+
+    EUR_05_01 = fields.Char(
+        string='EUR-05-01',
+        help='Observações'
+    )
+
     notes = fields.Text(string='Notes')
     active = fields.Boolean(
         'Active',

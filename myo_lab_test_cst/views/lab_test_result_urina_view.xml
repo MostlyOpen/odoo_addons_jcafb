@@ -41,7 +41,32 @@
                                     <field name="address_ditrict"/>
                                 </group>
                                 <group name="group_title_right">
+                                    <field name="EUR_02_01"/>
+                                    <field name="EUR_02_02"/>
+                                    <field name="EUR_02_03"/>
+                                    <field name="EUR_02_04"/>
+                                    <field name="EUR_02_05"/>
                                     <field name="EUR_03_01"/>
+                                    <field name="EUR_03_02"/>
+                                    <field name="EUR_03_03"/>
+                                    <field name="EUR_03_04"/>
+                                    <field name="EUR_03_05"/>
+                                    <field name="EUR_03_06"/>
+                                    <field name="EUR_03_07"/>
+                                    <field name="EUR_03_08"/>
+                                    <field name="EUR_04_01"/>
+                                    <field name="EUR_04_02"/>
+                                    <field name="EUR_04_03"/>
+                                    <field name="EUR_04_04"/>
+                                    <field name="EUR_04_05"/>
+                                    <field name="EUR_04_06"/>
+                                    <field name="EUR_04_07"/>
+                                    <field name="EUR_04_08"/>
+                                    <field name="EUR_04_09"/>
+                                    <field name="EUR_04_10"/>
+                                    <field name="EUR_04_11"/>
+                                    <field name="EUR_04_12"/>
+                                    <field name="EUR_05_01"/>
                                 </group>
                             </group>
                             <group name="group_title_bottom">
